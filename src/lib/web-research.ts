@@ -155,6 +155,10 @@ export function groundedClaims(claims: z.infer<typeof claimSchema>[], sources: D
 }
 
 /** Shows a literal listing when a generated comparison cannot be source-validated. */
+export function standardizeResearchSections(sections: LiveDiligenceResult["sections"]): LiveDiligenceResult["sections"] {
+  return (Object.keys(categoryTitles) as DiligenceCategory[]).map(category=>sections.find(section=>section.category===category)||{category,title:categoryTitles[category],summary:"No supported account of this topic was established. Review the source coverage and ask the company for supporting evidence.",claims:[]});
+}
+
 export function addCompetitorSourceExcerpt(sections: LiveDiligenceResult["sections"], sources: DiligenceSource[]): { sections: LiveDiligenceResult["sections"]; added: boolean } {
   if (sections.some((section) => section.category === "competitors" && section.claims.length)) return { sections, added: false };
   for (const source of sources.filter((item) => item.status === "fetched" && item.category === "competitors")) {
@@ -301,6 +305,7 @@ export async function runWebDiligence(request: DiligenceRequest, onEvent?: (even
   const financials: LiveDiligenceResult["financials"] = { annualRevenue: emptyFinancial(), arr: emptyFinancial(), valuation: emptyFinancial(), runwayMonths: emptyFinancial() };
   let removedClaims = 0, correctedClaims = 0;
   let sections = parsed ? parsed.sections.map((section) => { const checked = groundedClaims(section.claims, sources); removedClaims += checked.removed; correctedClaims += checked.corrected; return { ...section, summary: !checked.claims.length ? "A supported account of this topic was not established in retained sources. Review the source coverage and open questions." : /\d/.test(section.summary) ? "Review the cited source passages below; quantitative details require their stated basis." : section.summary, claims: checked.claims }; }) : (Object.keys(categoryTitles) as DiligenceCategory[]).map((category) => ({ category, title: categoryTitles[category], summary: fetched.some((source) => source.category === category) ? "Sources retained; a reliable synthesized account was not available." : "No readable source evidence was retrieved for this topic.", claims: [] }));
+  sections = standardizeResearchSections(sections);
   const excerptStarted = Date.now();
   const excerpt = addCompetitorSourceExcerpt(sections, sources);
   sections = excerpt.sections;

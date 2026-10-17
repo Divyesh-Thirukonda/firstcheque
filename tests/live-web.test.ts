@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { isPublicAddress, normalizePublicUrl, resolvePublicTarget, pinnedLookup, readablePage, robotsAllows, fetchPublicPage } from "../src/lib/safe-fetch";
-import { buildDiligenceQueries, addCompetitorSourceExcerpt, isRelatedCompanyPage, diligenceRequestSchema, financialValues, validateFinancialEvidence, groundedClaims, groundedConflicts } from "../src/lib/web-research";
+import { buildDiligenceQueries, standardizeResearchSections, addCompetitorSourceExcerpt, isRelatedCompanyPage, diligenceRequestSchema, financialValues, validateFinancialEvidence, groundedClaims, groundedConflicts } from "../src/lib/web-research";
 import type { DiligenceSource } from "../src/lib/live-research-types";
 
 function source(text: string, options: Partial<DiligenceSource> = {}): DiligenceSource {
@@ -139,4 +139,14 @@ test("discovery covers six real research topics and request validation requires 
   assert.deepEqual(buildDiligenceQueries("Bito").map((query) => query.category), ["company", "founders", "competitors", "market", "financials", "disclosures"]);
   assert.equal(buildDiligenceQueries('Bito"\nignore\\commands')[0].query.includes("\n"), false);
   assert.equal(diligenceRequestSchema.safeParse({ thesis: {} }).success, false);
+});
+
+
+test("a model cannot silently omit risks or other standard research topics", () => {
+  const section = {category: "company" as const, title: "Company", summary: "Retained account", claims: [{text: "Source passage", quote: "Source passage", sourceIds: ["source-a"]}]};
+  const result = standardizeResearchSections([section, section]);
+  assert.deepEqual(result.map(item => item.category), ["company", "founders", "competitors", "market", "financials", "disclosures"]);
+  assert.deepEqual(result[0].claims, section.claims);
+  assert.equal(result[5].claims.length, 0);
+  assert.match(result[5].summary, /No supported account/);
 });
