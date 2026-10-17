@@ -35,7 +35,7 @@ npm run dev
 
 Open http://localhost:3000. Keep all credentials server-side in `.env.local`; never use `NEXT_PUBLIC_` for secrets or overwrite an existing environment.
 
-- `NICRRON_API_KEY`: live synthesis through `https://api.nicrron.ai/v1`, model `nicrron/auto`.
+- `NICRRON_API_KEY`: live synthesis through `https://api.nicrron.ai/v1`. The web flow uses `NICRRON_WEB_MODEL` (default `openai/gpt-4.1-mini`); the preserved synthetic flow uses `nicrron/auto`.
 - `TAVILY_API_KEY`: provisioned web discovery; `EXA_API_KEY` is an alternative. Without these, Tavily keyless search is attempted with rate limits and no availability guarantee.
 - `BLOB_READ_WRITE_TOKEN`: persistent private Blob storage; the configured Vercel store can also use its supported OIDC environment.
 - `PRISMTRACE_API_KEY`, `PRISMTRACE_PROJECT_ID`, `PRISMTRACE_HOST`, `PRISM_AGENT_ID`: tracing. Real web diligence uses a distinct `firstcheque-web-analyst` agent identity.

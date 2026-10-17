@@ -25,7 +25,7 @@ test("platform URL validation rejects alternate origins and private or non-detai
 
 test("seed minima use actual individual offering terms and closed rounds stay separate", () => {
   const terms = Object.fromEntries(OFFERING_SEEDS.filter(company => company.minInvestment !== null).map(company => [company.name, company.minInvestment]));
-  assert.deepEqual(terms, { "Miso Robotics": 1052.16, "TRADEFUNDED LLC": 350, "The Gifted": 100 });
+  assert.deepEqual(terms, { "Bito": 1000, "Miso Robotics": 1052.16, "TRADEFUNDED LLC": 350, "The Gifted": 100 });
   assert.equal(OFFERING_SEEDS.find(company => company.name === "Canopii")?.offeringStatus, "closed");
   assert.equal(OFFERING_SEEDS.find(company => company.name === "The Gifted")?.website, "");
   assert.ok(OFFERING_SEEDS.every(company => company.annualRevenue === null && company.arr === null && company.financialsAsOf === null));

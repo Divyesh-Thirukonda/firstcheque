@@ -18,7 +18,7 @@ export const OFFERING_SEEDS: DiscoveryCompany[] = [
     "offeringStatus": "open",
     "offeringUrl": "https://wefunder.com/bito",
     "platform": "Wefunder",
-    "minInvestment": null,
+    "minInvestment": 1000,
     "currency": "USD",
     "annualRevenue": null,
     "arr": null,
@@ -28,11 +28,11 @@ export const OFFERING_SEEDS: DiscoveryCompany[] = [
       "https://wefunder.com/bito",
       "https://www.bito.ai"
     ],
-    "lastCheckedAt": "2026-10-17T15:38:40.000Z",
+    "lastCheckedAt": "2026-10-17T15:50:54.000Z",
     "researchStatus": "not-started",
     "riskLevel": "unknown",
     "statusEvidence": "Public page displayed \"FIRST GOAL HIT (You can still invest)\" at the manual source check. This is source-reported status; direct automated refresh is unavailable, and offering eligibility is not verified.",
-    "minimumEvidence": "The accessible source did not disclose a current individual minimum check; perk thresholds are not treated as minima."
+    "minimumEvidence": "The public Wefunder profile's investment panel displayed \"min $1,000\" during manual native-browser inspection on 2026-10-17. Evidence recorded at 15:50:54 UTC; no investment action or sign-in was performed."
   },
   {
     "id": "wefunder-riecomp",

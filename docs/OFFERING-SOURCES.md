@@ -4,7 +4,7 @@ These records are separate from the frozen synthetic hackathon experiment. `src/
 
 | Company / platform | Source-reported state | Individual minimum | Primary offering page |
 |---|---|---:|---|
-| Bito / Wefunder | You can still invest | Unknown | [Offering](https://wefunder.com/bito) |
+| Bito / Wefunder | You can still invest | $1,000 | [Offering](https://wefunder.com/bito) |
 | Riemann Computing / Wefunder | You can still invest | Unknown | [Offering](https://wefunder.com/riecomp) |
 | Namecoach / Wefunder | You can still invest | Unknown | [Offering](https://wefunder.com/namecoach) |
 | RISE Robotics / Wefunder | Almost Fully Funded | Unknown | [Offering](https://wefunder.com/riserobotics) |
@@ -16,6 +16,8 @@ These records are separate from the frozen synthetic hackathon experiment. `src/
 | Canopii / Wefunder | Funded — closed | Unknown | [Campaign](https://wefunder.com/canopii) |
 
 Checks occurred October 17, 2026, around 15:38–15:42 UTC; each record retains a timestamp, original URLs and a status excerpt. Web retrieval may serve cached content; a check timestamp is not a guarantee that the origin was freshly fetched. Wefunder direct server retrieval returned HTTP 403. Republic public detail pages returned HTTP 200. No login, payment, reservation or investment was attempted.
+
+Bito's minimum was subsequently checked in a native browser on October 17, 2026, through the public Wefunder profile. Its investment panel displayed “min $1,000”; the evidence was recorded at 15:50:54 UTC. The exact native observation time was not captured. No account sign-in or investment action was performed. This manual review does not enable automated platform retrieval.
 
 The Gifted's issuer is OPTIMISTIC PRODUCTIONS LLC; its page did not provide a separate issuer website, so `website` is empty. Its instrument is a revenue participation agreement; it is not represented as startup equity. Mintworks was excluded because the page reports reservations before the offering starts; its $100 reservation is not used as an investment minimum. Canopii's current detail page says funded even though an older search excerpt still advertised a raise.
 
