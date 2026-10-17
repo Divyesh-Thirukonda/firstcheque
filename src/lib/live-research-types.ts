@@ -28,6 +28,8 @@ export interface DiligenceRequest {
 }
 
 export interface DiligenceSource {
+  scope?: "company" | "competitive-context" | "market-context";
+  links?: string[];
   id: string;
   url: string;
   title: string;
