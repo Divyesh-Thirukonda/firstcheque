@@ -48,7 +48,7 @@ const questions = [
     title: "Round & eligibility",
     detail:
       "Are you raising now? Which offering route, instrument and minimum check apply? Can this investor participate?",
-    icon: SearchIcon,
+    icon: MessageSquare,
   },
   {
     title: "Ownership & dilution",
@@ -69,9 +69,6 @@ const questions = [
     icon: ShieldCheck,
   },
 ];
-function SearchIcon({ size = 17 }: { size?: number }) {
-  return <MessageSquare size={size} />;
-}
 function persistDraft(draft: ProposalDraft) {
   const previous = hydrateProposals(localStorage.getItem(PROPOSAL_STORAGE_KEY));
   localStorage.setItem(
@@ -106,7 +103,6 @@ export function InvestmentProposal({
     [saved, setSaved] = useState(false),
     [busy, setBusy] = useState<"voice" | "terms" | null>(null),
     [audioUrl, setAudioUrl] = useState(""),
-    [trace, setTrace] = useState<boolean | null>(null),
     [copied, setCopied] = useState(false);
   const workspaceRef = useRef<HTMLElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
@@ -193,7 +189,6 @@ export function InvestmentProposal({
       if (currentAudio.current) URL.revokeObjectURL(currentAudio.current);
       currentAudio.current = URL.createObjectURL(blob);
       setAudioUrl(currentAudio.current);
-      setTrace(response.headers.get("X-Prism-Recorded") === "true");
     } catch (e) {
       setError(e instanceof Error ? e.message : "Voice preview unavailable.");
     } finally {
@@ -217,7 +212,6 @@ export function InvestmentProposal({
         sample: result.sample === true,
         step: 2,
       });
-      setTrace(result.trace?.recorded === true);
     } catch (e) {
       setError(e instanceof Error ? e.message : "Term extraction unavailable.");
     } finally {
@@ -863,9 +857,6 @@ export function InvestmentProposal({
           <ShieldCheck size={13} />
           Stored in this browser · No money moved
         </span>
-        {trace !== null ? (
-          <span>{trace ? "PRISM trace recorded" : "Trace unavailable"}</span>
-        ) : null}
       </footer>
     </section>
   );
