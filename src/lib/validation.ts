@@ -24,7 +24,7 @@ export const modelReportSchema = z.object({
   title: z.string().max(180),
   summary: z.string().max(1800),
   recommendation: z.enum(["research", "watch", "pass"]),
-  strengths: z.array(z.object({ text: z.string().max(700), sourceIds: z.array(z.string()).max(5), confidence: z.enum(["high", "medium", "low"]), metric: z.object({ key: z.enum(["annualRevenue", "arr", "growthPct", "runwayMonths", "customers", "valuation", "grossMarginPct", "customerConcentrationPct"]), value: z.number() }).nullable() })).min(1).max(5),
-  risks: z.array(z.object({ text: z.string().max(700), sourceIds: z.array(z.string()).max(5), confidence: z.enum(["high", "medium", "low"]), metric: z.object({ key: z.enum(["annualRevenue", "arr", "growthPct", "runwayMonths", "customers", "valuation", "grossMarginPct", "customerConcentrationPct"]), value: z.number() }).nullable() })).min(1).max(5),
+  strengths: z.array(z.object({ text: z.string().max(700), sourceIds: z.array(z.string()).max(5), confidence: z.enum(["high", "medium", "low"]), metric: z.object({ key: z.enum(["annualRevenue", "arr", "growthPct", "runwayMonths", "customers", "valuation", "grossMarginPct", "customerConcentrationPct", "fundingTarget"]), value: z.number() }).nullable() })).min(1).max(5),
+  risks: z.array(z.object({ text: z.string().max(700), sourceIds: z.array(z.string()).max(5), confidence: z.enum(["high", "medium", "low"]), metric: z.object({ key: z.enum(["annualRevenue", "arr", "growthPct", "runwayMonths", "customers", "valuation", "grossMarginPct", "customerConcentrationPct", "fundingTarget"]), value: z.number() }).nullable() })).min(1).max(5),
   diligenceQuestions: z.array(z.string().max(500)).min(2).max(6),
 });

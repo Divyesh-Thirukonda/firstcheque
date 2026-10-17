@@ -31,7 +31,7 @@ async function main() {
     "Create a skeptical research memo for a new private-market investor.",
     "How does this company align with the investor's stage, industry, and holding horizon?",
   ];
-  let dataset: Array<ResearchInput & { caseId: string }>;
+  let dataset: Array<ResearchInput & { caseId: string; caseType?: string; category?: string }>;
   try { dataset = JSON.parse(await readFile("work/research-dataset.json", "utf8")); }
   catch {
     dataset = Array.from({ length: 50 }, (_, index) => ({
@@ -56,15 +56,15 @@ async function main() {
   await Promise.all(Array.from({ length: concurrency }, async () => {
     while (next < dataset.length) {
       const index = next++;
-      const { caseId, ...sourceInput } = dataset[index];
+      const { caseId, caseType, category, ...sourceInput } = dataset[index];
       const input: ResearchInput = { ...sourceInput, mode: "live", version, sessionId: `${session}-${caseId}` };
       try {
         const detailed = await runResearchDetailed(input);
-        results[index] = { caseId, input, status: detailed.rawModelOutput ? "live-complete" : "not-live", ...detailed };
+        results[index] = { caseId, caseType, category, input, status: detailed.rawModelOutput ? "live-complete" : "not-live", ...detailed };
         console.log(`${index + 1}/${dataset.length} ${caseId} ${sourceInput.startupId} ${version} grounding=${detailed.evaluation.score} trace=${detailed.report.traceId} displayed=${detailed.report.mode}`);
       } catch (error) {
         const failure = error as { rawModelOutput?: string; traceId?: string; prompt?: unknown };
-        results[index] = { caseId, input, status: "error", error: error instanceof Error ? error.message : String(error), rawModelOutput: failure.rawModelOutput || null, traceId: failure.traceId, prompt: failure.prompt };
+        results[index] = { caseId, caseType, category, input, status: "error", error: error instanceof Error ? error.message : String(error), rawModelOutput: failure.rawModelOutput || null, traceId: failure.traceId, prompt: failure.prompt };
         console.error(`${index + 1}/${dataset.length} ${caseId} failed: ${results[index].error}`);
       }
       await save();

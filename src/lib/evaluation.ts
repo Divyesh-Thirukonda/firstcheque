@@ -4,20 +4,29 @@ import type { CitedClaim, EvaluationFinding, EvaluationResult, Evidence, MetricK
 type GroundableReport = Pick<ResearchResult, "summary" | "strengths" | "risks">;
 const moneyValue = (number: string, suffix = "") => Number(number.replaceAll(",", "")) * (/^m/i.test(suffix) ? 1000000 : /^k|thousand/i.test(suffix) ? 1000 : 1);
 
-type ProseAssertion = { key: MetricKey | "nonRecurringRevenue"; value: number; start: number; end: number };
+type ProseAssertion = { key: MetricKey | "nonRecurringRevenue" | "recurringSharePct"; value: number; start: number; end: number };
 function proseAssertions(text: string): ProseAssertion[] {
   const values: ProseAssertion[] = [];
   const add = (pattern: RegExp, key: ProseAssertion["key"], numberGroup = 1, suffixGroup?: number) => {
-    for (const match of text.matchAll(pattern)) values.push({ key, value: moneyValue(match[numberGroup], suffixGroup ? match[suffixGroup] : ""), start: match.index!, end: match.index! + match[0].length });
+    for (const match of text.matchAll(pattern)) {
+      let resolvedKey = key;
+      if (key === "customerConcentrationPct") {
+        const prefix = text.slice(Math.max(0, match.index! - 100), match.index).split(/[.;!?]/).at(-1) || "";
+        if (/\bARR\b|recurring/i.test(prefix)) resolvedKey = "recurringSharePct";
+        else if (!/customer|operator|largest|concentration|contribut|account/i.test(prefix)) continue;
+      }
+      values.push({ key: resolvedKey, value: moneyValue(match[numberGroup], suffixGroup ? match[suffixGroup] : ""), start: match.index!, end: match.index! + match[0].length });
+    }
   };
-  const amount = "(?:\\$\\s*)?(\\d[\\d,.]*)\\s*(million|thousand|[km])?";
+  const amount = "(?:\\$\\s*)?(\\d+(?:,\\d{3})*(?:\\.\\d+)?)\\s*(million|thousand|[km])?";
   for (const [key, label] of [
     ["arr", "(?:ARR|annual recurring revenue)"],
     ["annualRevenue", "(?:(?:total|annual|trailing(?: 12-month)?|TTM)\\s+)*(?<!recurring )revenue"],
     ["valuation", "(?:indicative\\s+)?valuation"],
+    ["fundingTarget", "(?:funding target|round target|raising)"],
     ["nonRecurringRevenue", "(?:one-time|non-recurring|nonrecurring)(?:\\s+(?:installation|services|revenue|and)){0,4}"],
   ] as const) {
-    add(new RegExp(`${amount}\\s*(?:(?:in|is)\\s+)?${label}\\b`, "gi"), key, 1, 2);
+    add(new RegExp(`${amount}\\s*(?:(?:in|is|of)\\s+)?${label}\\b`, "gi"), key, 1, 2);
     add(new RegExp(`\\b${label}(?:\\s+(?:is|of|at|was|:|stands at))?\\s*${amount}`, "gi"), key, 1, 2);
   }
   add(/\b(\d[\d,.]*)\s*%\s*(?:(?:year[- ]over[- ]year|annual|YoY|revenue)\s+){0,3}(?:revenue\s+)?growth\b/gi, "growthPct");
@@ -36,6 +45,7 @@ function proseAssertions(text: string): ProseAssertion[] {
 function expectedValues(key: ProseAssertion["key"], sources: Evidence[]): number[] {
   return sources.flatMap((source) => {
     if (key === "nonRecurringRevenue") return source.metrics.annualRevenue !== undefined && source.metrics.arr !== undefined ? [source.metrics.annualRevenue - source.metrics.arr] : [];
+    if (key === "recurringSharePct") return source.metrics.annualRevenue && source.metrics.arr !== undefined ? [source.metrics.arr / source.metrics.annualRevenue * 100] : [];
     return source.metrics[key] === undefined ? [] : [source.metrics[key]!];
   });
 }
@@ -44,13 +54,13 @@ function inspectProse(text: string, sources: Evidence[]): EvaluationFinding[] {
   const assertions = proseAssertions(text);
   const findings: EvaluationFinding[] = assertions.map(({ key, value }) => {
     const expected = expectedValues(key, sources);
-    const passed = expected.includes(value);
+    const passed = expected.some((expectedValue) => key === "recurringSharePct" ? Math.abs(expectedValue - value) <= 0.51 : expectedValue === value);
     return { claim: text, rule: key === "arr" ? "arr_semantics" : "financial_prose_grounding", passed,
       explanation: passed ? `Written ${key}=${value} matches the cited field.` : `The prose claims ${key}=${value}; cited ${key} is ${expected.length ? expected.join(", ") : "not reported"}. Correct structured metadata cannot override contradictory prose.` };
   });
   // Reject unknown money/percentage assertions instead of silently treating them as grounded.
   // Dates, holding horizons, and numbered questions are intentionally outside this financial detector.
-  const financialTokens = /\$\s*\d[\d,.]*\s*(?:million|thousand|[km])?\b|\b\d[\d,.]*\s*%|\b\d[\d,.]*\s*(?:million|thousand)\b/gi;
+  const financialTokens = /\$\s*\d+(?:,\d{3})*(?:\.\d+)?(?:\s*(?:million|thousand|[km])\b)?|\b\d+(?:,\d{3})*(?:\.\d+)?\s*%|\b\d+(?:,\d{3})*(?:\.\d+)?\s*(?:million|thousand)\b/gi;
   for (const token of text.matchAll(financialTokens)) {
     const start = token.index!, end = start + token[0].trimEnd().length;
     if (!assertions.some((assertion) => assertion.start <= start && assertion.end >= end)) findings.push({ claim: text, rule: "financial_numeric_coverage", passed: false, explanation: `The financial number “${token[0].trim()}” has no verifiable metric context. Name the exact financial field and cite evidence for it.` });

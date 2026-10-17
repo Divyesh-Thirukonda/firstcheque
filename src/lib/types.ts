@@ -24,7 +24,7 @@ export interface Evidence {
   metrics: Partial<Record<MetricKey, number>>;
 }
 
-export type MetricKey = "annualRevenue" | "arr" | "growthPct" | "runwayMonths" | "customers" | "valuation" | "grossMarginPct" | "customerConcentrationPct";
+export type MetricKey = "annualRevenue" | "arr" | "growthPct" | "runwayMonths" | "customers" | "valuation" | "grossMarginPct" | "customerConcentrationPct" | "fundingTarget";
 
 export interface Startup {
   id: string;

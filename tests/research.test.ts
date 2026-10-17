@@ -41,6 +41,13 @@ test("financial fabrications in a summary are checked independently of valid cla
   assert.equal(result.passed, false);
 });
 
+test("actual live-smoke phrasing accepts sourced services, fundraising, and a rounded derived revenue share", () => {
+  const summary = "VoltGrid's ARR is $620,000. Total trailing 12-month revenue is $840,000, which adds $220,000 of one-time installation and services revenue. ARR is about 74% of revenue. It is raising $2M at an indicative $12M valuation.";
+  const base = report({ text: "Gross margin of 71% is founder-reported.", sourceIds: ["volt-financials"], confidence: "medium", metric: { key: "grossMarginPct", value: 71 } }, summary);
+  assert.equal(evaluateGrounding(base, getEvidence("voltgrid")).passed, true);
+  assert.equal(evaluateGrounding({ ...base, summary: summary.replace("74%", "90%") }, getEvidence("voltgrid")).passed, false);
+});
+
 test("citations from another company, nonexistent sources, and missing citations fail", () => {
   for (const sourceIds of [["bridge-financials"], ["invented-document"], []]) {
     assert.equal(evaluateGrounding(report({ text: "Revenue is founder-reported.", sourceIds, confidence: "medium" }), getEvidence("voltgrid")).passed, false);
