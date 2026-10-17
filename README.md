@@ -44,9 +44,9 @@ Without model credentials, the real-company flow can retain fetched sources with
 
 ## Deployment evidence
 
-[Current protected workspace](https://firstcheque-7ggp819u5-divyesh-thirukondas-projects.vercel.app) is READY from source `b6506bae588a4def4427e33e664f067d1836c6ef`. The hosted check completed real web discovery, Nicrron synthesis, PRISM recording and private Blob dossier readback. Coverage was partial: seven readable pages, six standard topics, and unknown financial fields. One bounded JSON correction was needed (two actual model calls). [Verification receipt](docs/live-workflow-verification.json).
+[Current protected workspace](https://firstcheque-iknhx7072-divyesh-thirukondas-projects.vercel.app) is READY from source `8a6fb71a17ef9800eac2cdc5d587c68a163e4533`. Discover now uses one reading column, preferences show the essentials before advanced filters, and research reports have a wider reading area with expandable evidence. Desktop and narrow layouts, hosted brief parsing and saved-report reopening were checked. The 48 offline tests, TypeScript and production build pass. [Readability receipt](docs/readability-verification.json).
 
-A browser-only usability test verified brief review, strict exclusions, Watchlist persistence, saved-report reopening and the correct external offering handoff. The 47 offline tests, TypeScript and production build pass. Temporary judge access is supplied separately; access tokens are excluded from Git and source archives.
+The earlier [hosted research receipt](docs/live-workflow-verification.json) records actual web discovery, Nicrron synthesis, PRISM recording and private Blob readback from source `b6506bae588a4def4427e33e664f067d1836c6ef`. That run had partial coverage, seven readable pages and unknown financials; one bounded JSON correction made two actual model calls. No new model calls were needed for this interface refinement. Temporary access is supplied separately; access tokens are excluded from Git and source archives.
 
 The [earlier deployment receipt](docs/evidence/deployment.json) remains the record of the original fictional-demo build, with its original source revision.
 

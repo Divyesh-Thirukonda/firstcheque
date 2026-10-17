@@ -1,0 +1,36 @@
+{
+  "scope": "Readability refinement; original research evidence retained",
+  "sourceRevision": "8a6fb71a17ef9800eac2cdc5d587c68a163e4533",
+  "deployment": {
+    "id": "dpl_A8wjiDQ9Bo8WqgdyQQHemMUFvmsk",
+    "url": "https://firstcheque-iknhx7072-divyesh-thirukondas-projects.vercel.app",
+    "state": "READY",
+    "environment": "preview",
+    "protection": "Vercel Authentication retained; temporary access supplied separately"
+  },
+  "validation": {
+    "offlineTests": 48,
+    "typecheck": "passed",
+    "productionBuild": "passed",
+    "desktopWidth": 1440,
+    "narrowWidth": 400,
+    "hostedBriefParsing": "AI and climate interests plus positive annual revenue requirement preserved",
+    "hostedSavedDossier": "read back and opened in browser",
+    "modelCallsThisRefinement": 0
+  },
+  "verifiedInteractions": [
+    "Review editable preferences using dollar limits",
+    "Open advanced filters without overloading the first view",
+    "Show clear exclusions after strict filtering",
+    "Read existing company report with optional Agent pane",
+    "Open the exact passage behind a claim before full page text",
+    "Open Agent composer into view on a narrow screen"
+  ],
+  "blindReview": "Desktop text size, contrast, spacing, financial unknowns and source metadata were reported clear; parser wording, source-reader context and misleading report headings were corrected.",
+  "preserved": [
+    "Unknown financial values",
+    "Source attribution and dates",
+    "Frozen synthetic benchmark artifacts",
+    "Existing PRISM and Nicrron wiring"
+  ]
+}
