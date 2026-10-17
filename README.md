@@ -6,10 +6,10 @@ The main **Discover → Agent workspace** flow uses real company sources. A sepa
 
 ## Real-company workflow
 
-1. Describe your budget, interests, risk preference and research constraints; review the editable filters.
-2. Inspect a source-checked offering snapshot, or paste a public company website into the agent workspace.
-3. Follow the search, source retrieval, synthesis and validation steps. Inspect the retained passages, source dates, financial fields and remaining questions.
-4. Reopen the saved company dossier from the shared research library.
+1. Describe your budget, interests and requirements; review the filters and start a search.
+2. Each search keeps its own criteria, catalog results and conversation. Refine that search as you learn, or start a separate one with fresh filters.
+3. Open company reports inside the search, or add a company website to the same search. Return to Results to explore another company.
+4. Inspect source retrieval, synthesis and validation, then read cited passages, dates, financial fields and unanswered questions. Shared company dossiers can be reused across searches.
 
 The catalog starts with ten manually checked primary-source snapshots: nine pages reporting active offerings and one closed campaign. These are **not a live platform feed**. Status timestamps, original URLs and unknown terms are visible. Unknown individual minimums do not pass a strict budget check. Researching a company does not establish that it currently offers securities. See [offering provenance](docs/OFFERING-SOURCES.md).
 
@@ -19,7 +19,7 @@ Financial values require an attributable passage, the correct financial definiti
 
 ## Storage
 
-The configured deployment uses **private Vercel Blob** for server-side company cards and saved dossiers. The research library is shared within this prototype; private Blob access does not mean a separate private account for each visitor. Saved shared reports remove personalized thesis-fit text. Watchlists, paper allocations and editable preferences remain browser state.
+The configured deployment uses **private Vercel Blob** for server-side company cards and saved dossiers. The research library is shared within this prototype; private Blob access does not mean a separate private account for each visitor. Saved shared reports remove personalized thesis-fit text. Search threads, criteria, conversations, watchlists and paper allocations remain in the current browser. They are separate from the shared company research library. Switching or reloading a search restores its own state; opening a company report does not create a new thread.
 
 Without Blob configuration, local development saves to ignored `work/company-library/`. A deployment without persistent storage reports that limitation instead of claiming a successful save.
 
@@ -44,7 +44,7 @@ Without model credentials, the real-company flow can retain fetched sources with
 
 ## Deployment evidence
 
-[Current protected workspace](https://firstcheque-iknhx7072-divyesh-thirukondas-projects.vercel.app) is READY from source `8a6fb71a17ef9800eac2cdc5d587c68a163e4533`. Discover now uses one reading column, preferences show the essentials before advanced filters, and research reports have a wider reading area with expandable evidence. Desktop and narrow layouts, hosted brief parsing and saved-report reopening were checked. The 48 offline tests, TypeScript and production build pass. [Readability receipt](docs/readability-verification.json).
+[Current protected workspace](https://firstcheque-jj22cdktw-divyesh-thirukondas-projects.vercel.app) is READY from source `0f107a3baf083126f2c33936680f48b0186a6e4c`. Threads represent investor searches, each with its own criteria, catalog results and conversation. Company reports open inside a search. New searches reset criteria; refinements update the existing search. Search switching, reload, report drill-ins, website imports and desktop/narrow layouts were checked. The 57 offline tests, TypeScript and production build pass. [Search-thread receipt](docs/search-thread-verification.json). The earlier [readability receipt](docs/readability-verification.json) remains unchanged.
 
 The earlier [hosted research receipt](docs/live-workflow-verification.json) records actual web discovery, Nicrron synthesis, PRISM recording and private Blob readback from source `b6506bae588a4def4427e33e664f067d1836c6ef`. That run had partial coverage, seven readable pages and unknown financials; one bounded JSON correction made two actual model calls. No new model calls were needed for this interface refinement. Temporary access is supplied separately; access tokens are excluded from Git and source archives.
 

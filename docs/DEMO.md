@@ -6,11 +6,11 @@
 
 | Time | Action | Talk track |
 |---|---|---|
-| 0:00–0:25 | Enter a brief in Discover → Find companies; review preferences | “Tell us your budget and interests. Unknown revenue and minimum checks do not silently become a match.” |
-| 0:25–0:45 | Open a real offering snapshot and its source | “These are manually source-checked listings, with dates and original links. The source platform determines current terms and eligibility; this is not a live offering feed.” |
-| 0:45–1:20 | Paste a company website or select a company; start research | “The agent searches company, founder, competitor, market, financial and disclosure evidence, then reads accessible pages. Watch the actual retrieval and synthesis steps.” |
+| 0:00–0:25 | Enter a brief in Discover → Find companies → review → Start search | “Tell us your budget and interests. Unknown revenue and minimum checks do not silently become a match.” |
+| 0:25–0:45 | Open the saved search results, then a real offering and its source | “These are manually source-checked listings, with dates and original links. The source platform determines current terms and eligibility; this is not a live offering feed.” |
+| 0:45–1:20 | Within that search, add a company website or select a result; start research | “The agent searches company, founder, competitor, market, financial and disclosure evidence, then reads accessible pages. Watch the actual retrieval and synthesis steps.” |
 | 1:20–1:50 | Inspect Report, Financials and Sources | “A Source button opens the passage behind its claim first. These financial fields need the right definition, currency and reporting period. Blocked sources, disagreements and unknowns stay visible.” |
-| 1:50–2:05 | Reopen a saved dossier | “The private Blob-backed library retains company research. This prototype's library is shared; personalized thesis-fit text is removed from saved shared reports.” |
+| 1:50–2:05 | Return to Results; refine or reopen the search | “A thread is an investor search. Its criteria, results and conversation stay together. Company reports are reusable evidence inside it; the prototype's company library is shared.” |
 | 2:05–2:40 | Open Demo & proof → Research Lab and PRISM | “The original controlled source pack is fictional. We recorded 50 genuine baseline responses before the fix: 48 contract-valid memos became 50 on the same saved inputs. One actual v2 response needed a bounded repair, and both attempts are retained.” |
 | 2:40–2:55 | Show Root Cause and evaluator caveat | “Three cluster examples exposed a logging-normalization defect. Our custom judge failed calibration, so we retain its results without claiming a score improvement. The 48-to-50 count comes from the application schema.” |
 | 2:55–3:00 | Return to the product | “Your first cheque starts with better questions.” |

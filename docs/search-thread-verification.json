@@ -1,0 +1,46 @@
+{
+  "scope": "Search threads replace company threads; company dossiers remain reusable research artifacts",
+  "sourceRevision": "0f107a3baf083126f2c33936680f48b0186a6e4c",
+  "deployment": {
+    "id": "dpl_7PHRdD4gfBMsRVueexTTtxJUcpP6",
+    "url": "https://firstcheque-jj22cdktw-divyesh-thirukondas-projects.vercel.app",
+    "environment": "preview",
+    "protection": "Vercel Authentication retained; temporary access supplied separately",
+    "state": "READY"
+  },
+  "validation": {
+    "offlineTests": 57,
+    "typecheck": "passed",
+    "productionBuild": "passed",
+    "desktopWidth": 1440,
+    "narrowWidth": 400,
+    "narrowPageWidth": 400,
+    "modelCallsThisRefinement": 0,
+    "hostedBriefRefinement": "Budget changed to $8,000 with AI interests preserved"
+  },
+  "localBrowserChecks": [
+    "Create a $5,000 AI search; two catalog results",
+    "Open Bito report inside the search and return to Results without creating a thread",
+    "Refine budget to $8,000; keep search ID, AI interests and original brief; append review history",
+    "New search resets previous criteria; a separate $2,000 climate plus annual-revenue search has zero eligible results",
+    "Switch and reload; restore the AI search with $8,000 filters and its four-message history",
+    "Add a website within the same search; show an explicit research target without an automatic paid run",
+    "Narrow view has labeled searches control and no horizontal page overflow"
+  ],
+  "storage": "Personal search criteria, result IDs and conversation are browser-local. Shared company dossiers remain separate. No server-private account history is claimed.",
+  "limitations": [
+    "Searches filter the source-checked catalog; no live offering feed is claimed",
+    "The existing hosted real-web research receipt remains separate; no new model or PRISM quality run was made"
+  ],
+  "preserved": [
+    "Frozen synthetic benchmark artifacts",
+    "Source provenance and unknown financial fields",
+    "Existing Nicrron and PRISM wiring"
+  ],
+  "hostedBrowserChecks": [
+    "Create an AI search with its own two catalog results",
+    "Open the retained Bito dossier inside that search",
+    "Reload and restore the same search ID and selected company report",
+    "Return to Results without creating a company thread"
+  ]
+}
