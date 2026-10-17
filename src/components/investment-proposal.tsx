@@ -1,4 +1,5 @@
 "use client";
+import { contractText } from "@/lib/proposal-contract";
 
 import { useEffect, useRef, useState } from "react";
 import {
@@ -27,7 +28,6 @@ import {
   newProposal,
   openingScript,
   PROPOSAL_STORAGE_KEY,
-  proposalDocument,
   proposalMessage,
   SAMPLE_CONVERSATION,
   TERM_LABELS,
@@ -101,7 +101,7 @@ export function InvestmentProposal({
   const [ready, setReady] = useState(false),
     [error, setError] = useState(""),
     [saved, setSaved] = useState(false),
-    [busy, setBusy] = useState<"voice" | "terms" | null>(null),
+    [busy, setBusy] = useState<"voice" | "terms" | "pdf" | null>(null),
     [audioUrl, setAudioUrl] = useState(""),
     [copied, setCopied] = useState(false);
   const workspaceRef = useRef<HTMLElement>(null);
@@ -231,20 +231,40 @@ export function InvestmentProposal({
       ],
     });
   }
-  function download() {
-    const blob = new Blob([proposalDocument(draft)], {
-      type: "text/plain;charset=utf-8",
-    });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = `seed-street-${company.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-discussion-draft.txt`;
-    a.click();
-    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  async function download() {
+    setBusy("pdf");
+    setError("");
+    try {
+      const { generateProposalPdf } = await import("@/lib/proposal-pdf");
+      const response = await fetch("/fonts/Geist-Regular.ttf");
+      if (!response.ok)
+        throw new Error("Could not load the PDF font. Please retry.");
+      const bytes = await generateProposalPdf(
+        draft,
+        new Uint8Array(await response.arrayBuffer()),
+      );
+      const blob = new Blob([new Uint8Array(bytes).buffer], {
+        type: "application/pdf",
+      });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `seed-street-${company.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-contract-draft.pdf`;
+      a.click();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    } catch (error) {
+      setError(
+        error instanceof Error
+          ? error.message
+          : "Could not export the PDF. Your draft is still available to copy.",
+      );
+    } finally {
+      setBusy(null);
+    }
   }
   async function copy() {
     try {
-      await navigator.clipboard.writeText(proposalDocument(draft));
+      await navigator.clipboard.writeText(contractText(draft));
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch {
@@ -253,7 +273,18 @@ export function InvestmentProposal({
   }
   const offering = safeOffering(company),
     missing = (
-      ["entity", "instrument", "valuation", "capTable", "route"] as TermKey[]
+      [
+        "entity",
+        "jurisdiction",
+        "signatory",
+        "instrument",
+        "valuation",
+        "conversionTerms",
+        "capTable",
+        "route",
+        "closingDate",
+        "governingLaw",
+      ] as TermKey[]
     ).filter(
       (key) => !draft.terms.some((t) => t.key === key && t.value.trim()),
     );
@@ -710,7 +741,7 @@ export function InvestmentProposal({
               className="fc-btn primary"
               onClick={() => update({ step: 3 })}
             >
-              Prepare discussion draft
+              Prepare contract draft
               <ArrowRight size={16} />
             </button>
           </div>
@@ -722,20 +753,20 @@ export function InvestmentProposal({
             <div className="sp-section-head">
               <div>
                 <p className="sp-eyebrow">READY FOR YOUR REVIEW</p>
-                <h2>A draft. Then a proper closing.</h2>
+                <h2>Your contract draft.</h2>
               </div>
             </div>
             <div className="sp-review-card">
               <FileText size={26} />
               <div>
-                <strong>Investment discussion draft</strong>
+                <strong>Investment agreement draft</strong>
                 <p>
                   {company.name} · {dollars(draft.amount)} · USD
                 </p>
                 <span>
                   {draft.sample
                     ? "Synthetic rehearsal"
-                    : "Nonbinding · Unsigned"}
+                    : "Draft · Pending signatures"}
                 </span>
               </div>
             </div>
@@ -763,29 +794,32 @@ export function InvestmentProposal({
               <div>
                 <span>3</span>
                 <section>
-                  <strong>Legal review & eligible offering</strong>
+                  <strong>Export your unsigned PDF</strong>
                   <p>
-                    Confirm the issuer, exemption, investor eligibility,
-                    disclosures and approvals with securities counsel or the
-                    registered intermediary.
+                    Missing details stay marked in the document. Review and
+                    complete them before any later signing.
                   </p>
                 </section>
               </div>
               <div>
                 <span>4</span>
                 <section>
-                  <strong>Sign definitive documents</strong>
+                  <strong>Review and sign later</strong>
                   <p>
-                    The approved closing process handles both signatures and
-                    payment. A verbal yes does not complete the investment.
+                    Both parties still need to approve and sign a final
+                    agreement outside Seed Street.
                   </p>
                 </section>
               </div>
             </div>
             <div className="sp-bottom-actions">
-              <button className="fc-btn primary" onClick={download}>
+              <button
+                className="fc-btn primary"
+                onClick={download}
+                disabled={busy !== null}
+              >
                 <Download size={16} />
-                Download discussion draft
+                {busy === "pdf" ? "Preparing PDF…" : "Export contract PDF"}
               </button>
               <button className="fc-btn secondary" onClick={copy}>
                 {copied ? <Check size={16} /> : <Clipboard size={16} />}{" "}
@@ -835,18 +869,18 @@ export function InvestmentProposal({
           </div>
           <aside className="sp-contract-preview">
             <div className="sp-contract-title">
-              <span>DISCUSSION DRAFT</span>
-              <span>{draft.sample ? "SYNTHETIC" : "NOT FOR SIGNATURE"}</span>
+              <span>CONTRACT DRAFT</span>
+              <span>{draft.sample ? "SYNTHETIC" : "PENDING SIGNATURES"}</span>
             </div>
-            <pre>{proposalDocument(draft)}</pre>
+            <pre>{contractText(draft)}</pre>
             <div className="sp-signatures">
               <div>
                 <span>Investor</span>
-                <strong>Pending legal review</strong>
+                <strong>Signature pending</strong>
               </div>
               <div>
                 <span>Issuer representative</span>
-                <strong>Pending legal review</strong>
+                <strong>Signature pending</strong>
               </div>
             </div>
           </aside>

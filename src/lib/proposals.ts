@@ -11,6 +11,12 @@ export const TERM_LABELS = {
   discount: "Conversion discount",
   minimum: "Minimum investment",
   entity: "Legal entity",
+  jurisdiction: "Issuer jurisdiction",
+  signatory: "Authorized signer & authority",
+  conversionTerms: "Conversion, interest & maturity",
+  shareClass: "Share class, count & price",
+  closingDate: "Proposed closing date",
+  governingLaw: "Governing law & disputes",
   route: "Offering route & eligibility",
   interest: "Founder interest",
   nextStep: "Next step",
@@ -26,7 +32,7 @@ export const extractedTermsSchema = z.object({
         quote: z.string().min(1).max(700),
       }),
     )
-    .max(16),
+    .max(24),
 });
 export type ExtractedTerm = z.infer<
   typeof extractedTermsSchema
@@ -56,7 +62,7 @@ export const proposalSchema = z.object({
         edited: z.boolean().optional(),
       }),
     )
-    .max(16),
+    .max(24),
   step: z.number().int().min(0).max(3),
   updatedAt: z.string().datetime(),
 });
@@ -69,7 +75,7 @@ export function dollars(value: number) {
   }).format(value);
 }
 export function openingScript(companyName: string, amount: number) {
-  return `Hi there. I'm Seed Street's AI assistant, working with Divyesh. An investor is interested in exploring a ${dollars(amount)} investment in ${companyName}. This is a nonbinding conversation. Are you currently raising, and is there an eligible offering or round we should review? What instrument and minimum check do you use? If you're open to discussing terms, could you walk us through the valuation or SAFE cap, the cap table, and investor rights?`;
+  return `Hi there. I'm Seed Street's AI assistant, working with Divyesh. An investor is interested in exploring a ${dollars(amount)} investment in ${companyName}. This is a nonbinding conversation. Are you currently raising, and is there an eligible offering or round we should review? What instrument and minimum check do you use? If you're open to discussing terms, could you walk us through the valuation or SAFE cap, the cap table, and investor rights? What is the issuer's legal name and jurisdiction, who can sign for it, and which conversion, closing and governing-law terms still need confirmation?`;
 }
 export function proposalMessage(amount: number) {
   return `I'd like to learn about your current round, proposed terms, and whether a ${dollars(amount).replace(/\.00$/, "")} investment would be eligible.`;

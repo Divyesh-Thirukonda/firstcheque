@@ -7,8 +7,8 @@ Checked October 17, 2026. This feature prepares an investor for a founder conver
 1. Open any company from Discover, a saved list, or agent results and choose **Draft proposal**. Edit the proposed USD amount, investor name, instrument preference and note. The paper preview updates immediately.
 2. Prepare the conversation. Edit the opening and generate a real ElevenLabs audio preview. The stock voice introduces the AI assistant; a server-added preview disclosure remains even if the editable script changes. No telephone number is dialed.
 3. Paste actual notes or try the explicitly fictional rehearsal. Nicrron extracts proposed terms and retains continuous source passages. Missing terms stay open. A disclosed cap and discount can share the same instrument passage; the app never computes current equity from a SAFE cap.
-4. Review and edit proposed terms, with original note passages available beside edits. The discussion document is assembled automatically and marked nonbinding and unsigned. Synthetic notes remain labeled in the document, including when pasted without selecting the example button.
-5. Download or copy the discussion draft for legal review. The final screen identifies issuer, cap table, offering and eligibility work before definitive documents and signatures. If a company has a sourced offering URL, the investor can continue at that original source. Its current status and eligibility still require intermediary review.
+4. Review and edit proposed terms, with original note passages available beside edits. An instrument-aware proposed investment agreement is assembled automatically and marked Draft - Pending Signatures. Legal entity, jurisdiction, signer authority, conversion mechanics, share details, closing date and governing law remain editable; absent details are explicit placeholders. Synthetic notes remain labeled in the document, including when pasted without selecting the example button.
+5. Export a formatted PDF or copy the contract draft for review. PDF generation runs locally in the browser using pdf-lib and an embedded OFL-licensed Geist font, with automatic pagination, page numbers and blank signature lines. There are no signature fields, captured signatures or prefilled signature names. The final screen identifies missing details and later review/signing outside Seed Street. Verbal interest is never converted into a signature. If a company has a sourced offering URL, the investor can continue at that original source. Its current status and eligibility still require intermediary review.
 
 The **Proposals** tab resumes drafts saved in this browser. Drafts, notes, names and terms are not added to the shared company library. Audio is temporary browser memory. ElevenLabs receives the script on generation; Nicrron receives notes on extraction. PRISM receives execution metadata, field names, validation results and token counts, with note text, investor names, amounts and audio redacted before ingest. Real model execution on a synthetic rehearsal is recorded as live execution with a synthetic-source flag.
 
@@ -25,6 +25,8 @@ Primary references:
 - [SEC accredited-investor assessment under Regulation D](https://www.sec.gov/resources-small-businesses/capital-raising-building-blocks/assessing-accredited-investors-under-regulation-d)
 - [FCC AI voice ruling, FCC 24-17](https://docs.fcc.gov/public/attachments/FCC-24-17A1_Rcd.pdf)
 - [ElevenLabs text-to-speech API](https://elevenlabs.io/docs/api-reference/text-to-speech/convert)
+
+Unsigned does not by itself guarantee absence of legal effect: oral contracts and securities offers can have consequences before signing. Draft status records the intended use, rather than certifying legal validity. See [oral contracts](https://www.law.cornell.edu/wex/oral_contract) and [15 USC 77b(a)(3)](https://www.law.cornell.edu/uscode/text/15/77b).
 
 ## Configuration
 
