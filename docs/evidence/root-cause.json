@@ -1,0 +1,359 @@
+{
+  "cluster": {
+    "id": "e56129cf-9b65-4333-ba4f-7e3d33aae8d4",
+    "project_id": "b67f67cc-c7e0-46ed-9f20-fd4d63eeba9d",
+    "cluster_key": "trajectory_rule:agent:firstcheque v1:CORR-001+ROB-001",
+    "label": "failures in FirstCheque v1 on path request_init>llm_call>tool_call>final_answer (Task Completion, Error Handling)",
+    "cause_class": "prompt",
+    "evidence_tier": "tentative",
+    "diagnosis": {
+      "class": "prompt",
+      "judge": null,
+      "purity": null,
+      "rationale": "decisive detector vote: prompt (unsupported_answer); no judge corroboration",
+      "readiness": {
+        "patch_ready": false,
+        "prompt_hash": false,
+        "source_signals": false,
+        "localization_hit": false,
+        "replayable_traces": true
+      },
+      "localization": {
+        "hit": false,
+        "note": null,
+        "status": "not_attempted",
+        "suspect_file_count": 0,
+        "prompt_hash_matched": false,
+        "prompt_hash_present": false,
+        "suspect_window_days": null
+      },
+      "decision_path": [
+        "decisive detector vote: prompt (unsupported_answer)",
+        "no judge corroboration"
+      ],
+      "engine_run_id": "878ec4a3-014d-48ae-a9db-c3b1924e9bb6",
+      "evidence_tier": "tentative",
+      "detector_votes": [
+        {
+          "finding": false,
+          "version": 1,
+          "decisive": false,
+          "detector": "failed_tool_call",
+          "fire_rate": 0,
+          "votes_for": [
+            "tool"
+          ],
+          "fired_count": 0,
+          "member_count": 52,
+          "sample_trace_ids": []
+        },
+        {
+          "finding": false,
+          "version": 2,
+          "decisive": false,
+          "detector": "retrieval_without_grounding",
+          "fire_rate": 0,
+          "votes_for": [
+            "rag",
+            "knowledge_gap"
+          ],
+          "fired_count": 0,
+          "member_count": 52,
+          "sample_trace_ids": []
+        },
+        {
+          "finding": false,
+          "version": 1,
+          "decisive": false,
+          "detector": "loop_repetition",
+          "fire_rate": 0,
+          "votes_for": [
+            "prompt",
+            "code"
+          ],
+          "fired_count": 0,
+          "member_count": 52,
+          "sample_trace_ids": []
+        },
+        {
+          "finding": false,
+          "version": 2,
+          "decisive": false,
+          "detector": "premature_termination",
+          "fire_rate": 0,
+          "votes_for": [
+            "prompt",
+            "policy"
+          ],
+          "fired_count": 0,
+          "member_count": 52,
+          "sample_trace_ids": []
+        },
+        {
+          "finding": false,
+          "version": 1,
+          "decisive": false,
+          "detector": "guardrail_flag",
+          "fire_rate": 0,
+          "votes_for": [
+            "policy"
+          ],
+          "fired_count": 0,
+          "member_count": 52,
+          "sample_trace_ids": []
+        },
+        {
+          "finding": false,
+          "version": 1,
+          "decisive": false,
+          "detector": "reasoning_action_mismatch",
+          "fire_rate": 0,
+          "votes_for": [
+            "prompt",
+            "code"
+          ],
+          "fired_count": 0,
+          "member_count": 52,
+          "sample_trace_ids": []
+        },
+        {
+          "finding": false,
+          "version": 1,
+          "decisive": false,
+          "detector": "voice_boundary_drift",
+          "fire_rate": 0,
+          "votes_for": [
+            "tool"
+          ],
+          "fired_count": 0,
+          "member_count": 52,
+          "sample_trace_ids": []
+        },
+        {
+          "finding": false,
+          "version": 1,
+          "decisive": true,
+          "detector": "unsupported_answer",
+          "fire_rate": 1,
+          "votes_for": [
+            "prompt"
+          ],
+          "fired_count": 52,
+          "member_count": 52,
+          "sample_trace_ids": [
+            "traj:2ee000e4-8453-4d27-9664-81df1b275690",
+            "traj:3f88d384-95be-463b-97cf-0886fb334440",
+            "traj:3ad75b64-3b5e-48a5-bee6-fd23ae2c828f",
+            "traj:c81b048b-c606-45e7-aebc-3e0752c231b2",
+            "traj:e078b3cb-499d-4e24-8a26-d4d77fb31cbc"
+          ]
+        }
+      ],
+      "detector_findings": [],
+      "judge_consistency": null,
+      "evidence_trace_ids": [
+        "f120d01f-7dc5-4c65-89a4-9479b4fde65a",
+        "4e92d33a-2a25-416b-922b-93acc59df364",
+        "84d0c51b-22ab-4f69-a7a8-2050f6e55564",
+        "3d927294-19fa-4607-ba8f-2297b0cd3be3",
+        "3d86a3c3-e6b9-4f72-b5d7-3b6f631521d8",
+        "5cdf8770-4c33-49b6-bb05-a7c6f87b5e85",
+        "c68930b9-4c95-4cf6-91fc-efdba563c1fa",
+        "641982c0-005c-4a56-9ad3-92e62a654abc",
+        "23b61cac-53c8-4fa9-b13d-cc6483652602",
+        "bdd35094-ba88-47ca-9299-d6eebb4e5856"
+      ],
+      "judged_member_count": null,
+      "span_evidence_version": 2,
+      "detector_vote_snapshot": [
+        "prompt"
+      ]
+    },
+    "severity": "high",
+    "prompt_hash": null,
+    "suspect_files": [],
+    "suspect_commit": null,
+    "suspect_commit_at": null,
+    "owner_email": null,
+    "evidence_trace_ids": [
+      "f120d01f-7dc5-4c65-89a4-9479b4fde65a",
+      "4e92d33a-2a25-416b-922b-93acc59df364",
+      "84d0c51b-22ab-4f69-a7a8-2050f6e55564",
+      "3d927294-19fa-4607-ba8f-2297b0cd3be3",
+      "3d86a3c3-e6b9-4f72-b5d7-3b6f631521d8",
+      "5cdf8770-4c33-49b6-bb05-a7c6f87b5e85",
+      "c68930b9-4c95-4cf6-91fc-efdba563c1fa",
+      "641982c0-005c-4a56-9ad3-92e62a654abc",
+      "23b61cac-53c8-4fa9-b13d-cc6483652602",
+      "bdd35094-ba88-47ca-9299-d6eebb4e5856"
+    ],
+    "member_count": 52,
+    "trend": "rising",
+    "status": "open",
+    "resolved_at": null,
+    "reopened_at": null,
+    "first_seen_at": "2026-10-17T14:30:22.145914+00:00",
+    "last_seen_at": "2026-10-17T14:38:51.312299+00:00",
+    "detector_evidence": [
+      {
+        "finding": false,
+        "version": 1,
+        "decisive": false,
+        "detector": "failed_tool_call",
+        "fire_rate": 0,
+        "votes_for": [
+          "tool"
+        ],
+        "fired_count": 0,
+        "member_count": 52,
+        "sample_trace_ids": []
+      },
+      {
+        "finding": false,
+        "version": 2,
+        "decisive": false,
+        "detector": "retrieval_without_grounding",
+        "fire_rate": 0,
+        "votes_for": [
+          "rag",
+          "knowledge_gap"
+        ],
+        "fired_count": 0,
+        "member_count": 52,
+        "sample_trace_ids": []
+      },
+      {
+        "finding": false,
+        "version": 1,
+        "decisive": false,
+        "detector": "loop_repetition",
+        "fire_rate": 0,
+        "votes_for": [
+          "prompt",
+          "code"
+        ],
+        "fired_count": 0,
+        "member_count": 52,
+        "sample_trace_ids": []
+      },
+      {
+        "finding": false,
+        "version": 2,
+        "decisive": false,
+        "detector": "premature_termination",
+        "fire_rate": 0,
+        "votes_for": [
+          "prompt",
+          "policy"
+        ],
+        "fired_count": 0,
+        "member_count": 52,
+        "sample_trace_ids": []
+      },
+      {
+        "finding": false,
+        "version": 1,
+        "decisive": false,
+        "detector": "guardrail_flag",
+        "fire_rate": 0,
+        "votes_for": [
+          "policy"
+        ],
+        "fired_count": 0,
+        "member_count": 52,
+        "sample_trace_ids": []
+      },
+      {
+        "finding": false,
+        "version": 1,
+        "decisive": false,
+        "detector": "reasoning_action_mismatch",
+        "fire_rate": 0,
+        "votes_for": [
+          "prompt",
+          "code"
+        ],
+        "fired_count": 0,
+        "member_count": 52,
+        "sample_trace_ids": []
+      },
+      {
+        "finding": false,
+        "version": 1,
+        "decisive": false,
+        "detector": "voice_boundary_drift",
+        "fire_rate": 0,
+        "votes_for": [
+          "tool"
+        ],
+        "fired_count": 0,
+        "member_count": 52,
+        "sample_trace_ids": []
+      },
+      {
+        "finding": false,
+        "version": 1,
+        "decisive": true,
+        "detector": "unsupported_answer",
+        "fire_rate": 1,
+        "votes_for": [
+          "prompt"
+        ],
+        "fired_count": 52,
+        "member_count": 52,
+        "sample_trace_ids": [
+          "traj:2ee000e4-8453-4d27-9664-81df1b275690",
+          "traj:3f88d384-95be-463b-97cf-0886fb334440",
+          "traj:3ad75b64-3b5e-48a5-bee6-fd23ae2c828f",
+          "traj:c81b048b-c606-45e7-aebc-3e0752c231b2",
+          "traj:e078b3cb-499d-4e24-8a26-d4d77fb31cbc"
+        ]
+      }
+    ],
+    "human_verified_class": null,
+    "repo_id": null,
+    "source_signals": [],
+    "consumed_by_fix_attempt_id": null,
+    "fix_lease_expires_at": null,
+    "fix_lease_owner": null,
+    "localization_status": "not_attempted",
+    "resolution_reason": null,
+    "created_at": "2026-10-17T14:39:12.553225+00:00",
+    "updated_at": "2026-10-17T14:39:12.553225+00:00",
+    "path_signature": "request_init>llm_call>tool_call>final_answer",
+    "agent_name": "FirstCheque v1"
+  },
+  "confirmedMemberExamples": [
+    {
+      "caseId": "case-050",
+      "traceId": "6b6a58f1-7ade-42ae-9026-dfdd37574150",
+      "trajectoryId": "17008dd4-8139-4e71-83df-3c8f3d580580",
+      "membershipEvidence": {
+        "trace_id": "traj:17008dd4-8139-4e71-83df-3c8f3d580580",
+        "trace_occurred_at": "2026-10-17T14:38:51.312299+00:00",
+        "assigned_at": "2026-10-17T14:39:23.953564+00:00"
+      }
+    },
+    {
+      "caseId": "case-049",
+      "traceId": "82f505c4-f5a6-48f7-a4fe-8e1531f24727",
+      "trajectoryId": "0a484c17-ef9a-41ae-bd2a-9b7e3c357071",
+      "membershipEvidence": {
+        "trace_id": "traj:0a484c17-ef9a-41ae-bd2a-9b7e3c357071",
+        "trace_occurred_at": "2026-10-17T14:38:47.969500+00:00",
+        "assigned_at": "2026-10-17T14:39:23.953564+00:00"
+      }
+    },
+    {
+      "caseId": "case-048",
+      "traceId": "403e8ad6-b411-4ffb-a966-fa63d54a60bc",
+      "trajectoryId": "428625c6-08d5-4bd6-a3f9-49638bce6a31",
+      "membershipEvidence": {
+        "trace_id": "traj:428625c6-08d5-4bd6-a3f9-49638bce6a31",
+        "trace_occurred_at": "2026-10-17T14:38:36.644986+00:00",
+        "assigned_at": "2026-10-17T14:39:23.953564+00:00"
+      }
+    }
+  ],
+  "interpretation": "Recurring code/observability defect localized by comparing the stored answer with immutable raw model output. The service's suggested prompt cause and detector warnings are tentative, not corroborated hallucination findings."
+}

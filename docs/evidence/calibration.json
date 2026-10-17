@@ -1,0 +1,36 @@
+[
+  {
+    "fixture": "valid",
+    "taskId": "2c5538ea-df80-4ddf-9486-980b7495120c",
+    "results": [
+      {
+        "id": "ae4e526d-6e27-4761-8e8f-b5872b40ce2e",
+        "traceId": "d78b9530-ead7-4d7d-a052-338a76044e5c",
+        "taskId": "2c5538ea-df80-4ddf-9486-980b7495120c",
+        "evaluatorId": "5268937c-d0cd-4a28-9d15-116bb7df1ffb",
+        "score": 0,
+        "label": "fail",
+        "reasoning": "The title exceeds the maximum 180 characters (it is 189 characters: 'VoltGrid (fictional demo): recurring revenue vs. total revenue'). Additionally, the summary exceeds the task-specified 500-character limit at approximately 520 characters, violating the explicit constraint in the model request. These are concrete schema defects that prevent compliance with the stated contract.",
+        "createdAt": "2026-10-17T14:54:26.156260Z"
+      }
+    ],
+    "interpretation": "Incorrect rejection: independently schema-valid and grounded recorded output; judge invented length/schema violations."
+  },
+  {
+    "fixture": "malformed",
+    "taskId": "0f07f181-e1cc-4c88-88e6-e74c5c113829",
+    "results": [
+      {
+        "id": "c1f8c0f0-4e5e-45e4-a88f-c62d9777eddc",
+        "traceId": "3b49ebb0-eb1c-4b2c-8295-745499798aed",
+        "taskId": "0f07f181-e1cc-4c88-88e6-e74c5c113829",
+        "evaluatorId": "5268937c-d0cd-4a28-9d15-116bb7df1ffb",
+        "score": 0,
+        "label": "fail",
+        "reasoning": "The output contains three strength objects when the task explicitly required exactly two strengths; the third strength is marked 'Placeholder removed' but remains in the array as a malformed entry. Additionally, the title exceeds the 180-character maximum at 181 characters ('Rethread (fictional demo): Seed-stage circular commerce platform for indie fashion brands'). These are concrete schema defects that violate the CONTRACT requirements.",
+        "createdAt": "2026-10-17T14:54:31.198994Z"
+      }
+    ],
+    "interpretation": "Actual missing claim fields, but the judge also added incorrect length/schema assertions. A fail does not validate its reasoning."
+  }
+]

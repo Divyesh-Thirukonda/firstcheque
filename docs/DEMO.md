@@ -1,53 +1,48 @@
-# FirstCheque — live demo script
+# FirstCheque — three-minute demo
 
-**One sentence:** FirstCheque makes private-company research understandable, personal, and inspectable before someone writes their first cheque.
+**Pitch:** FirstCheque makes private-company research personal and inspectable before someone writes their first cheque.
 
-**Honest demo label:** Synthetic companies and documents. Live AI research when configured. Paper allocations only.
-
-## Three-minute walkthrough
+**Opening label:** Synthetic companies and documents. Genuine Nicrron AI research. Paper allocations only.
 
 | Time | Action | Talk track |
 |---|---|---|
-| 0:00–0:20 | Open the investing workspace | “The next great company may be private. Understanding it should not require a venture fund's research team.” |
-| 0:20–0:45 | Set thesis, preferred industries, stage and risk appetite | “I want climate infrastructure, an early round, and a clear view of what could go wrong. FirstCheque explains fit in the context of my thesis.” |
-| 0:45–1:20 | Open a company and generate its research memo | “The agent reads the company documents, separates evidence from open questions, and explains upside and downside. These companies and numbers are synthetic for this prototype.” |
-| 1:20–1:40 | Inspect a factual claim and its source; show a missing fact | “A confident answer is not enough. I can inspect what supports the claim. When runway is not disclosed, it should say so.” |
-| 1:40–2:25 | Open PRISM: KB → failed run cluster → evaluator comparison | “We tested a baseline, found a repeated failure, and changed the agent. Here are the same inputs before and after, scored by the same grounding evaluator.” Use only the actual observed cause, count and scores. |
-| 2:25–2:50 | Add a paper allocation and view concentration | “Research becomes a decision I can rehearse. I can see how this allocation changes my sector and stage exposure.” |
-| 2:50–3:00 | Return to product | “FirstCheque democratizes the research layer. The path to real investing would connect eligible offerings to a registered partner.” |
+| 0:00–0:20 | Open the workspace | “The next great company may be private. Understanding it should not require a venture fund's research team.” |
+| 0:20–0:40 | Edit the thesis, industry, stage and risk appetite | “I want climate infrastructure, an early round, and a clear view of what could go wrong. The shortlist explains why an opportunity fits my thesis.” |
+| 0:40–1:10 | Research VoltGrid; inspect a claim and its source | “The agent reads the assigned documents, writes a diligence memo, and exposes missing information. These companies and numbers are fictional; the model call and research pipeline are real.” |
+| 1:10–1:35 | Open Research Lab's live experiment card | “We recorded 50 baseline responses before fixing anything. Two failed the actual memo contract. The same 50 user inputs produced 50 contract-valid live memos in v2.” |
+| 1:35–2:15 | Open PRISM Knowledge Base, Root Cause and evidence | “Eighteen documents are assigned to the agent. PRISM grouped recurring warnings. Inspecting three actual cluster members showed that our retrieval span had overwritten the logged memo. We fixed the span hierarchy. Separately, one bounded correction now recovers malformed memo output; here are both real attempts from case018.” |
+| 2:15–2:30 | Show evaluator rubric and saved results | “We ran the same custom evaluator on both versions. Its calibration was unreliable, so we retain its results without claiming a score improvement. The 48-to-50 metric comes from the exact application schema.” |
+| 2:30–2:50 | Add a paper allocation and view concentration | “I can rehearse a decision, see concentration and stay within my paper budget. No money moves.” |
+| 2:50–3:00 | Return to the product | “FirstCheque democratizes the research layer. Your first cheque starts with better questions.” |
 
-If the event gives a different time limit, preserve the research flow and reliability proof; shorten the introduction first.
+## Rehearsal
 
-## Before the judge arrives
-
-- Start the app and confirm the thesis, company detail, research and paper portfolio flow works.
-- Open the correct PRISM project, uploaded research documents, relevant retrieval run, failure cluster and completed evaluator comparison in separate tabs.
-- Use the exact matched v1/v2 input when demonstrating improvement. Know the sample size and the limitations.
-- Confirm a fresh application research request creates an inspectable trace. Keep the provider/model visible where useful; hide keys and secrets.
-- Have a saved real research output ready if the provider is slow, label it as a previously generated result, and keep its trace link. Do not relabel a local fixture as a live model call.
-- Verify repo and demo URLs, capture the actual submission confirmation, and keep any externally incomplete steps explicit.
+- Open the app and PRISM evidence tabs beforehand. Workspace access is required for PRISM; the repository contains a non-secret evidence export.
+- Verify thesis → research → source → paper allocation. A fresh live memo can be slow; a saved real response may be shown as a previously generated result with its trace ID.
+- Use the **live experiment** card for the genuine 50-case counts. The separate **illustrative regression replay** is a labeled deterministic example, not the measured provider baseline.
+- Keep secrets and account settings out of the recording. Use the current hosted demo link in the repository README.
 
 ## Questions judges may ask
 
-**“Is this another AI stock picker?”**
+**What improved?**
 
-“The useful output is an evidence-linked diligence memo and a view of how the opportunity fits a thesis. We expose missing information and investment risk, and let people rehearse allocations.”
+“Contract-valid delivered memos increased from 48/50 to 50/50 on identical saved user inputs. V2 made 51 provider calls for 50 cases because case018 needed one bounded repair. We retained its invalid first response and valid correction. The routing slug stayed `nicrron/auto`, but the router can choose underlying models, so we describe observed pipeline outcomes.”
 
-**“Why PRISM?”**
+**What did Root Cause find?**
 
-“The product depends on trust in sparse company information. PRISM lets us inspect retrieval and model behavior, group recurring failures, and test whether a targeted fix improves the exact same cases.” Point to the actual completed evidence.
+“The cluster contained 52 tentative instrumentation-affected warnings. We directly verified three members where stored output was a retrieval payload rather than the actual memo. Comparing traces with immutable raw outputs identified a span-normalization bug. We do not call those 52 hallucinations.”
 
-**“What did you improve?”**
+**Did the custom judge prove the answers are correct?**
 
-Use the recorded result: “Across [N] matched inputs, [observed failure] changed from [measured v1] to [measured v2] after [specific change].” If no completed measurement exists, say the comparison is pending. Do not fill these placeholders from intuition.
+“No. We ran the same custom rubric and reference catalog across the matched cases, but its golden calibration rejected a valid answer for incorrect schema reasons. The raw verdicts are available. We publish only the independently validated contract metric, with no grounding score.”
 
-**“Can I really invest?”**
+**Can users really invest?**
 
-“This hackathon build uses synthetic companies and paper allocations. Real eligibility depends on the offering. Execution would need the appropriate registered partner; the research experience is what we demonstrate today.”
+“This build uses synthetic companies and paper allocations. Real access depends on the offering and investor eligibility; execution would require an appropriate registered partner.”
 
-**“What is the moat?”**
+**Why this product?**
 
-“A user-owned thesis, evidence history, and a measurable research process. The product can explain why an opportunity fits, where its facts came from, what is missing, and how confidence changes when documents change.”
+“A familiar investing workspace can help people ask better diligence questions. Thesis fit, evidence, uncertainty and concentration belong in one experience.”
 
 ## Submission copy
 
@@ -57,8 +52,12 @@ Use the recorded result: “Across [N] matched inputs, [observed failure] change
 
 **Track:** Money Intelligence
 
-**Description:** FirstCheque is a private-market research workspace that turns an investor's thesis, industries and risk preferences into a company shortlist, evidence-linked AI memos and a paper portfolio. It makes early-stage diligence approachable while keeping missing information and downside visible. The prototype uses synthetic company data. Nicrron powers configured live research; PRISM traces retrieval and model behavior so reliability can be inspected and improved.
+**Description:** FirstCheque turns an investor's thesis, industry preferences and risk appetite into a private-company shortlist, evidence-linked AI memos and a paper portfolio. Synthetic company documents keep the hackathon demonstration reproducible. Genuine Nicrron calls power the research; PRISM records retrieval and model behavior so failures can be inspected.
 
-**Reliability claim:** Replace with completed evidence only: [baseline sample size], [observed failure cluster], [specific improvement], [matched evaluator results].
+**Technical evidence:** 18 assigned Knowledge Base documents; 50 genuine baseline calls before the fix; a real Root Cause cluster with three verified observability failures; the same custom evaluator on 50 matched cases per version. Independent contract validation improved from 48/50 to 50/50, including one retained invalid-to-valid bounded repair. The external judge failed calibration, so no external score or factual-grounding improvement is claimed.
 
-**Links:** Add verified repository, working demo, PRISM evidence and any requested video links. Do not submit this file's unfilled placeholders as completed results.
+**Repository:** https://github.com/Divyesh-Thirukonda/firstcheque
+
+**Evidence:** `docs/evidence/README.md`; hosted demo link is maintained in the repository README.
+
+**Submission:** prepared; the event form had not been released when the build was completed.

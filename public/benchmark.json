@@ -1,0 +1,30 @@
+{
+  "status": "complete",
+  "caseCount": 50,
+  "metricLabel": "contract-valid memos",
+  "normalCases": 25,
+  "adversarialCases": 25,
+  "provider": "Nicrron",
+  "model": "nicrron/auto",
+  "baseline": {
+    "label": "v1 · initial memo pipeline",
+    "usableCount": 48,
+    "groundedCount": null
+  },
+  "improved": {
+    "label": "v2 · one bounded contract repair",
+    "usableCount": 50,
+    "groundedCount": null
+  },
+  "failure": {
+    "title": "Trace normalization obscured the memo",
+    "description": "PRISM grouped 52 tentative, instrumentation-affected warnings. Three verified cluster members stored a retrieval payload instead of the generated memo; inspecting the trace localized the span-normalization bug. These are observability failures, not 52 hallucinations.",
+    "clusterId": "e56129cf-9b65-4333-ba4f-7e3d33aae8d4"
+  },
+  "proofs": {
+    "knowledgeDocuments": 18,
+    "projectUrl": "https://prism.blockconvey.com/?project_id=b67f67cc-c7e0-46ed-9f20-fd4d63eeba9d",
+    "evaluatorUrl": "https://prism.blockconvey.com/evaluators"
+  },
+  "methodology": "50 fixed inputs per version (25 normal + 25 adversarial), independently checked with the application JSON schema. Baseline had two true contract failures; v2 delivered 50 live memos using 51 provider calls, including one retained invalid→valid repair. Routing slug stayed nicrron/auto; underlying models may vary. The external PRISM judge did not calibrate, so no external score or factual-grounding improvement is claimed."
+}

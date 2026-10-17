@@ -1,0 +1,507 @@
+{
+  "validity": "invalid_wrong_output_binding",
+  "excludedFromAllModelOutcomeClaims": true,
+  "reason": "These50 scores evaluated a retrieval payload instead of the actual provider memo before the first-span normalization repair.",
+  "results": [
+    {
+      "id": "15b7ea9a-9911-4404-b328-fb3f14b8964f",
+      "traceId": "461cba30-c485-429d-bfa9-a1e4dbd7f0a6",
+      "taskId": "8d96ed0e-bfda-420c-be56-101eb5c7058f",
+      "evaluatorId": "b9ac6d85-9ab3-4414-868d-8a85b8917025",
+      "score": 0,
+      "label": "unusable",
+      "reasoning": "The agent response is not a research memo object but rather a source-pack retrieval structure containing localSources and prismKnowledgeBase arrays. It lacks all required fields for the research memo schema: title, summary, recommendation, strengths, risks, and diligenceQuestions are entirely absent. The response appears to be intermediate retrieval output rather than a synthesized memo, making it structurally incompatible with the specified JSON contract. Additionally, the prismKnowledgeBase chunk is truncated mid-content ('VoltGri'), indicating incomplete or malformed data.",
+      "createdAt": "2026-10-17T14:40:06.903539Z"
+    },
+    {
+      "id": "ca3459be-a3e8-4e0f-8747-8371e24d14da",
+      "traceId": "20c4b3db-d7e5-47d7-8f00-55ea200a00d1",
+      "taskId": "8d96ed0e-bfda-420c-be56-101eb5c7058f",
+      "evaluatorId": "b9ac6d85-9ab3-4414-868d-8a85b8917025",
+      "score": 0,
+      "label": "unusable",
+      "reasoning": "The agent response is not a research memo object matching the required schema. It returns a source-retrieval structure (localSources and prismKnowledgeBase arrays) rather than the required memo fields: title, summary, recommendation, strengths, risks, and diligenceQuestions. The response is truncated mid-content ('$510,0' incomplete in the prismKnowledgeBase chunk), indicating a parsing or transmission failure. Even if the truncation were resolved, the response structure is fundamentally misaligned with the evidence-linked research memo contract required by this evaluator.",
+      "createdAt": "2026-10-17T14:40:06.903533Z"
+    },
+    {
+      "id": "3e5f7f3b-a580-4567-a880-37ffedb64bd2",
+      "traceId": "17ca10d7-a9a7-4800-a0f2-279d961a3774",
+      "taskId": "8d96ed0e-bfda-420c-be56-101eb5c7058f",
+      "evaluatorId": "b9ac6d85-9ab3-4414-868d-8a85b8917025",
+      "score": 0,
+      "label": "unusable",
+      "reasoning": "The agent response is a source-retrieval object, not a research memo. It lacks the required schema fields entirely: no title, summary, recommendation, strengths array, risks array, or diligenceQuestions array are present. The response structure (localSources and prismKnowledgeBase) does not match the required memo schema. Additionally, the prismKnowledgeBase entry is truncated mid-content ('FICTIONAL DEMO DOCUMEN'), indicating malformed output. Contract failure is fatal: the response cannot be parsed as a valid research memo object and therefore cannot be evaluated for financial grounding.",
+      "createdAt": "2026-10-17T14:40:06.903528Z"
+    },
+    {
+      "id": "c2c6f33a-73ea-4ecc-9c4b-0244f708d8f7",
+      "traceId": "599e76a2-dc39-4110-8d99-422bf9ad7199",
+      "taskId": "8d96ed0e-bfda-420c-be56-101eb5c7058f",
+      "evaluatorId": "b9ac6d85-9ab3-4414-868d-8a85b8917025",
+      "score": 0,
+      "label": "unusable",
+      "reasoning": "The agent response is a source-pack metadata object, not a research memo. It lacks the required schema fields: title, summary, recommendation, strengths (array of claim objects), risks (array of claim objects), and diligenceQuestions. The response structure contains localSources and prismKnowledgeBase arrays but does not construct or return a memo-formatted JSON object with the mandatory claim-level fields (text, sourceIds, confidence, metric). This is a contract failure: the response does not attempt to render evidence-linked claims in the required memo schema at all.",
+      "createdAt": "2026-10-17T14:40:06.903524Z"
+    },
+    {
+      "id": "7446f1fc-d12a-41cd-b6ac-a4d3a9539488",
+      "traceId": "6068c123-da72-4bc2-8619-196d7b43ba78",
+      "taskId": "8d96ed0e-bfda-420c-be56-101eb5c7058f",
+      "evaluatorId": "b9ac6d85-9ab3-4414-868d-8a85b8917025",
+      "score": 0,
+      "label": "unusable",
+      "reasoning": "The agent response is not a research memo object but rather a source-retrieval payload containing localSources and prismKnowledgeBase arrays. It lacks all required memo fields: title, summary, recommendation, strengths, risks, and diligenceQuestions. The response structure does not conform to the specified JSON schema for evidence-linked research memos. While the underlying source documents are synthetic and properly labeled as fictional demo evidence with valid financial metrics (annualRevenue $1.25M, arr $0, growthPct 18%, grossMarginPct 34%, customers 430, runwayMonths 18, valuation $1.8M), the agent failed to synthesize these into a memo format with claims, confidence levels, and diligence questions as required.",
+      "createdAt": "2026-10-17T14:40:06.903518Z"
+    },
+    {
+      "id": "a3b70177-6a13-4781-ade7-06970debb91b",
+      "traceId": "5c47c4e3-2733-46be-9ba9-97958ea3a4c1",
+      "taskId": "8d96ed0e-bfda-420c-be56-101eb5c7058f",
+      "evaluatorId": "b9ac6d85-9ab3-4414-868d-8a85b8917025",
+      "score": 0,
+      "label": "unusable",
+      "reasoning": "The agent response is a source-pack metadata object, not a research memo. It lacks all required memo fields: title, summary, recommendation, strengths array, risks array, and diligenceQuestions. The response structure (localSources and prismKnowledgeBase) is a data retrieval artifact, not the evidence-linked memo format specified in the schema. To be usable, the agent must synthesize these sources into a memo with claim objects citing sourceIds (atlas-financials, atlas-update, atlas-risk) and structured diligence questions.",
+      "createdAt": "2026-10-17T14:40:06.903511Z"
+    },
+    {
+      "id": "c1d7c84f-75a3-499a-bc92-252d2a18be07",
+      "traceId": "43f7bd7f-3d17-40f9-9eee-ef9bc74d3e35",
+      "taskId": "8d96ed0e-bfda-420c-be56-101eb5c7058f",
+      "evaluatorId": "b9ac6d85-9ab3-4414-868d-8a85b8917025",
+      "score": 0,
+      "label": "unusable",
+      "reasoning": "The agent response is not a research memo object but rather a source-pack retrieval structure containing localSources and prismKnowledgeBase arrays. It lacks all required fields for the research memo schema: title, summary, recommendation, strengths, risks, and diligenceQuestions are entirely absent. The response appears to be intermediate retrieval output rather than a synthesized memo, making it structurally incompatible with the specified JSON contract. Additionally, the prismKnowledgeBase chunk is truncated mid-content ('VoltGri'), indicating incomplete or malformed data.",
+      "createdAt": "2026-10-17T14:40:06.903505Z"
+    },
+    {
+      "id": "b42f1edc-3c76-4f43-9de6-3037d6079856",
+      "traceId": "19738f54-ce7f-471b-bd51-7bb6bf93e1e8",
+      "taskId": "8d96ed0e-bfda-420c-be56-101eb5c7058f",
+      "evaluatorId": "b9ac6d85-9ab3-4414-868d-8a85b8917025",
+      "score": 0,
+      "label": "unusable",
+      "reasoning": "The agent response is a source-retrieval object, not a research memo. It lacks the required schema fields entirely: no title, summary, recommendation, strengths array, risks array, or diligenceQuestions array are present. The response structure (localSources and prismKnowledgeBase) does not match the required memo schema. Additionally, the prismKnowledgeBase entry is truncated mid-content ('FICTIONAL DEMO DOCUMEN'), indicating malformed output. Contract failure is fatal: the response cannot be parsed as a valid research memo object and therefore cannot be rendered or evaluated for financial grounding.",
+      "createdAt": "2026-10-17T14:40:06.903501Z"
+    },
+    {
+      "id": "0f9c2420-f6da-4906-a25c-5e7a6bb600cd",
+      "traceId": "b716d518-d568-4e96-a1f6-656cd048eaca",
+      "taskId": "8d96ed0e-bfda-420c-be56-101eb5c7058f",
+      "evaluatorId": "b9ac6d85-9ab3-4414-868d-8a85b8917025",
+      "score": 0,
+      "label": "unusable",
+      "reasoning": "The agent response is not a research memo object matching the required schema. It returns a source-retrieval structure (localSources and prismKnowledgeBase arrays) rather than the required memo fields: title, summary, recommendation, strengths, risks, and diligenceQuestions. The response is truncated mid-excerpt ('$480,0' incomplete), indicating malformed output. Even if the structure were corrected, the financial claims (ARR $480,000, annual revenue $510,000, 54% growth, 76% gross margin, 18 customers, 13 months runway, $10M valuation) are grounded in synthetic demo documents explicitly labeled 'FICTIONAL DEMO DOCUMENT,' which are valid for demonstration but the response fails to deliver the required memo contract entirely.",
+      "createdAt": "2026-10-17T14:40:06.903496Z"
+    },
+    {
+      "id": "e18f18a6-d6ee-42bc-9512-7a6e76735328",
+      "traceId": "b5e5ffd4-c1e9-483b-acdd-2ebcfbd4eb34",
+      "taskId": "8d96ed0e-bfda-420c-be56-101eb5c7058f",
+      "evaluatorId": "b9ac6d85-9ab3-4414-868d-8a85b8917025",
+      "score": 0,
+      "label": "unusable",
+      "reasoning": "The agent response is a source-pack metadata object, not a research memo. It lacks all required memo fields: title, summary, recommendation, strengths array, risks array, and diligenceQuestions. The response structure (localSources and prismKnowledgeBase) is a data retrieval artifact, not the evidence-linked memo format specified in the schema. To be usable, the agent must synthesize these sources into a memo with claim objects citing sourceIds (atlas-financials, atlas-update, atlas-risk) and structured diligence questions.",
+      "createdAt": "2026-10-17T14:40:06.903491Z"
+    },
+    {
+      "id": "4bf493b7-a829-4ca6-b789-fbf60dfb06ed",
+      "traceId": "53d7e5d8-939f-49cf-bbf8-aeea62271b1e",
+      "taskId": "8d96ed0e-bfda-420c-be56-101eb5c7058f",
+      "evaluatorId": "b9ac6d85-9ab3-4414-868d-8a85b8917025",
+      "score": 0,
+      "label": "unusable",
+      "reasoning": "The agent response is not a research memo object but rather a source-retrieval payload containing localSources and prismKnowledgeBase arrays. It lacks all required memo fields: title, summary, recommendation, strengths, risks, and diligenceQuestions. The response structure does not conform to the specified JSON schema for evidence-linked research memos. While the underlying source documents are synthetic and properly labeled as fictional demo evidence with valid financial metrics (annualRevenue $1.25M, arr $0, growthPct 18%, grossMarginPct 34%, customers 430, runwayMonths 18, valuation $1.8M), the agent failed to synthesize these into a memo format with claims, confidence levels, and diligence questions as required.",
+      "createdAt": "2026-10-17T14:40:06.903485Z"
+    },
+    {
+      "id": "84dc2d7a-7159-4a41-a0fe-724b8406484b",
+      "traceId": "dec00850-2ac9-48ed-a0ea-bd0902ece64c",
+      "taskId": "8d96ed0e-bfda-420c-be56-101eb5c7058f",
+      "evaluatorId": "b9ac6d85-9ab3-4414-868d-8a85b8917025",
+      "score": 0,
+      "label": "unusable",
+      "reasoning": "The agent response is a source-pack metadata object, not a research memo. It lacks the required schema fields: title, summary, recommendation, strengths (array of claim objects), risks (array of claim objects), and diligenceQuestions. The response structure contains localSources and prismKnowledgeBase arrays but does not construct or return a memo-formatted JSON object with the mandatory claim-level fields (text, sourceIds, confidence, metric). This is a contract failure: the response does not attempt to render evidence-linked claims in the required memo schema at all.",
+      "createdAt": "2026-10-17T14:40:06.903478Z"
+    },
+    {
+      "id": "1f3317ed-5f4f-453b-9bc6-bc78c6e146e5",
+      "traceId": "e0d32c1d-c31d-4fe3-a2d7-7318f625990f",
+      "taskId": "8d96ed0e-bfda-420c-be56-101eb5c7058f",
+      "evaluatorId": "b9ac6d85-9ab3-4414-868d-8a85b8917025",
+      "score": 0,
+      "label": "unusable",
+      "reasoning": "The agent response is not a research memo object but rather a source-pack retrieval structure containing localSources and prismKnowledgeBase arrays. It lacks all required fields for the research memo schema: title, summary, recommendation, strengths, risks, and diligenceQuestions are entirely absent. The response appears to be intermediate retrieval output rather than a synthesized memo, making it structurally incompatible with the specified JSON contract. Additionally, the prismKnowledgeBase chunk is truncated mid-content ('VoltGri'), indicating incomplete or malformed data.",
+      "createdAt": "2026-10-17T14:40:06.903472Z"
+    },
+    {
+      "id": "fc3df266-9353-4b8c-bcb6-2c3f9cf4ea65",
+      "traceId": "cbd3b801-9a56-4e76-afa7-f04eacd5bc17",
+      "taskId": "8d96ed0e-bfda-420c-be56-101eb5c7058f",
+      "evaluatorId": "b9ac6d85-9ab3-4414-868d-8a85b8917025",
+      "score": 0,
+      "label": "unusable",
+      "reasoning": "The agent response is not a research memo in the required schema format. It returns raw source metadata and knowledge-base chunks instead of a structured memo object with title, summary, recommendation, strengths/risks claims, and diligenceQuestions fields. The response lacks the required top-level fields entirely, making it a contract failure rather than a financial-grounding issue. Even though the underlying source documents (bridge-financials, bridge-update, bridge-risk) are synthetic demonstration sources with valid financial data (ARR $1.8M, annual revenue $2.1M, 92% growth, 640 customers, 62% gross margin, 20-month runway, $28M valuation), the agent did not synthesize these into a memo object that could be evaluated for schema compliance and factual support.",
+      "createdAt": "2026-10-17T14:40:06.903466Z"
+    },
+    {
+      "id": "4e822f3d-fe92-4c2f-b9d4-65b699ce3319",
+      "traceId": "c42cb5c6-2efd-4c0d-a293-4f8d0970eb02",
+      "taskId": "8d96ed0e-bfda-420c-be56-101eb5c7058f",
+      "evaluatorId": "b9ac6d85-9ab3-4414-868d-8a85b8917025",
+      "score": 0,
+      "label": "unusable",
+      "reasoning": "The agent response is not a research memo object matching the required schema. It returns a source-retrieval structure (localSources and prismKnowledgeBase arrays) rather than the required memo fields: title, summary, recommendation, strengths, risks, and diligenceQuestions. The response is truncated mid-content ('$480,0'), indicating incomplete output. Even if completed, this structure does not conform to the evidence-linked research memo contract required for evaluation.",
+      "createdAt": "2026-10-17T14:40:06.903462Z"
+    },
+    {
+      "id": "17287ad4-9950-4d15-b5c2-86ad9f09d531",
+      "traceId": "773a7493-16b5-4724-ba80-d77f643467cd",
+      "taskId": "8d96ed0e-bfda-420c-be56-101eb5c7058f",
+      "evaluatorId": "b9ac6d85-9ab3-4414-868d-8a85b8917025",
+      "score": 0,
+      "label": "unusable",
+      "reasoning": "The agent response is a source-pack metadata object, not a research memo. It lacks all required memo fields: title, summary, recommendation, strengths array, risks array, and diligenceQuestions. The response structure (localSources and prismKnowledgeBase) is a data retrieval artifact, not the evidence-linked memo format specified in the schema. To be usable, the agent must synthesize these sources into a memo with claim objects citing sourceIds (atlas-financials, atlas-update, atlas-risk) and structured diligence questions.",
+      "createdAt": "2026-10-17T14:40:06.903457Z"
+    },
+    {
+      "id": "33c9a0d2-2de0-4c68-9ceb-79e0faa18e7e",
+      "traceId": "b22ef6b8-243b-4ab7-a691-e2ca7188b6ed",
+      "taskId": "8d96ed0e-bfda-420c-be56-101eb5c7058f",
+      "evaluatorId": "b9ac6d85-9ab3-4414-868d-8a85b8917025",
+      "score": 0,
+      "label": "unusable",
+      "reasoning": "The agent response is not a research memo object but rather a source-retrieval payload containing localSources and prismKnowledgeBase arrays. It lacks all required memo fields: title, summary, recommendation, strengths, risks, and diligenceQuestions. The response structure does not conform to the specified JSON schema for evidence-linked research memos. While the underlying source documents are synthetic and properly labeled as fictional demo evidence with valid financial metrics (annualRevenue $1.25M, arr $0, growthPct 18%, grossMarginPct 34%, customers 430, runwayMonths 18, valuation $1.8M), the agent failed to synthesize these into a memo format with claims, confidence levels, and diligence questions as required.",
+      "createdAt": "2026-10-17T14:40:06.903451Z"
+    },
+    {
+      "id": "22564323-d9ef-4f18-96f1-e7542ceec9a5",
+      "traceId": "64267717-8a0b-4c1d-83f6-e28011f298df",
+      "taskId": "8d96ed0e-bfda-420c-be56-101eb5c7058f",
+      "evaluatorId": "b9ac6d85-9ab3-4414-868d-8a85b8917025",
+      "score": 0,
+      "label": "unusable",
+      "reasoning": "The agent response is a source-pack metadata object, not a research memo. It lacks the required schema fields: title, summary, recommendation, strengths (array of claim objects), risks (array of claim objects), and diligenceQuestions. The response structure contains localSources and prismKnowledgeBase arrays but does not construct or return a memo-formatted JSON object with the mandatory claim-level fields (text, sourceIds, confidence, metric). This is a contract failure: the response does not attempt to render evidence-linked claims in the required memo schema at all.",
+      "createdAt": "2026-10-17T14:40:06.903446Z"
+    },
+    {
+      "id": "66006ce1-bf1e-47be-ab01-541dd4b49417",
+      "traceId": "0a8e7dac-7aaf-4ff9-8cbe-5664e4e334a2",
+      "taskId": "8d96ed0e-bfda-420c-be56-101eb5c7058f",
+      "evaluatorId": "b9ac6d85-9ab3-4414-868d-8a85b8917025",
+      "score": 0,
+      "label": "unusable",
+      "reasoning": "The agent response is not a research memo object but rather a source-pack retrieval structure containing localSources and prismKnowledgeBase arrays. It lacks all required fields for the research memo schema: title, summary, recommendation, strengths, risks, and diligenceQuestions are entirely absent. The response appears to be intermediate retrieval output rather than a synthesized memo, making it structurally incompatible with the specified JSON contract. Additionally, the prismKnowledgeBase chunk is truncated mid-content ('VoltGri'), indicating incomplete or malformed data.",
+      "createdAt": "2026-10-17T14:40:06.903442Z"
+    },
+    {
+      "id": "a21c06fd-0c9d-4196-a59f-96aa0d5d5810",
+      "traceId": "f6b8ca62-e97e-42e3-9b46-935cdb71dc2f",
+      "taskId": "8d96ed0e-bfda-420c-be56-101eb5c7058f",
+      "evaluatorId": "b9ac6d85-9ab3-4414-868d-8a85b8917025",
+      "score": 0,
+      "label": "unusable",
+      "reasoning": "The agent response is not a research memo object; it is a source-retrieval response containing localSources and prismKnowledgeBase arrays. It lacks all required memo fields: title, summary, recommendation, strengths, risks, and diligenceQuestions. The response structure does not match the required schema for evidence-linked research memo evaluation. Contract failure: missing all five required top-level fields (title, summary, recommendation, strengths, risks, diligenceQuestions).",
+      "createdAt": "2026-10-17T14:40:06.903437Z"
+    },
+    {
+      "id": "c03df64d-7c82-43e0-8989-f82da881a602",
+      "traceId": "1d85236a-290f-4270-a03b-d1bf5955206c",
+      "taskId": "8d96ed0e-bfda-420c-be56-101eb5c7058f",
+      "evaluatorId": "b9ac6d85-9ab3-4414-868d-8a85b8917025",
+      "score": 0,
+      "label": "unusable",
+      "reasoning": "The agent response is not a research memo object matching the required schema. It returns a source-retrieval structure (localSources and prismKnowledgeBase arrays) rather than the required memo fields: title, summary, recommendation, strengths, risks, and diligenceQuestions. The response is truncated mid-excerpt ('$480,0' incomplete), indicating a parsing or transmission failure. Even if the truncation were corrected, the response object lacks all five mandatory memo fields and does not conform to the evidence-linked research memo contract required for this evaluation workflow.",
+      "createdAt": "2026-10-17T14:40:06.903431Z"
+    },
+    {
+      "id": "b830d327-a9a2-4f08-8cef-a9ba961f22c2",
+      "traceId": "b12b8dc6-8bbe-4d4c-a334-10727f992dd2",
+      "taskId": "8d96ed0e-bfda-420c-be56-101eb5c7058f",
+      "evaluatorId": "b9ac6d85-9ab3-4414-868d-8a85b8917025",
+      "score": 0,
+      "label": "unusable",
+      "reasoning": "The agent response is a source-pack metadata object, not a research memo. It lacks all required memo fields: title, summary, recommendation, strengths array, risks array, and diligenceQuestions. The response structure (localSources and prismKnowledgeBase) is a data retrieval artifact, not the evidence-linked memo format specified in the schema. To be usable, the agent must synthesize these sources into a memo with claim objects citing sourceIds (atlas-financials, atlas-update, atlas-risk) and structured diligence questions.",
+      "createdAt": "2026-10-17T14:40:06.903426Z"
+    },
+    {
+      "id": "6770e116-9987-4b39-ab08-4ed6e3fd37ba",
+      "traceId": "68f54419-8c47-4048-a880-a09f511a34c5",
+      "taskId": "8d96ed0e-bfda-420c-be56-101eb5c7058f",
+      "evaluatorId": "b9ac6d85-9ab3-4414-868d-8a85b8917025",
+      "score": 0,
+      "label": "unusable",
+      "reasoning": "The agent response is not a research memo object but rather a source-retrieval payload containing localSources and prismKnowledgeBase arrays. It lacks all required memo fields: title, summary, recommendation, strengths, risks, and diligenceQuestions. The response structure does not conform to the specified JSON schema for evidence-linked research memos. While the underlying source documents are synthetic and properly labeled as fictional demo evidence with valid financial metrics (annualRevenue $1.25M, arr $0, growthPct 18%, grossMarginPct 34%, customers 430, runwayMonths 18, valuation $1.8M), the agent failed to synthesize these into a memo format with claims, confidence levels, and diligence questions as required.",
+      "createdAt": "2026-10-17T14:40:06.903421Z"
+    },
+    {
+      "id": "802190af-62e0-4402-a0b0-759552732c5d",
+      "traceId": "3b49ebb0-eb1c-4b2c-8295-745499798aed",
+      "taskId": "8d96ed0e-bfda-420c-be56-101eb5c7058f",
+      "evaluatorId": "b9ac6d85-9ab3-4414-868d-8a85b8917025",
+      "score": 0,
+      "label": "unusable",
+      "reasoning": "The agent response is a source-pack metadata object, not a research memo. It lacks the required schema fields: title, summary, recommendation, strengths (array of claim objects), risks (array of claim objects), and diligenceQuestions. The response structure contains localSources and prismKnowledgeBase arrays but does not construct or return a memo-formatted JSON object with the mandatory claim-level fields (text, sourceIds, confidence, metric). This is a contract failure: the response does not attempt to render evidence-linked claims in the required memo schema at all.",
+      "createdAt": "2026-10-17T14:40:06.903417Z"
+    },
+    {
+      "id": "13c0983b-054b-4b9f-9197-167c8f6ce222",
+      "traceId": "d91553b8-a9da-4750-b878-3747a7587e04",
+      "taskId": "8d96ed0e-bfda-420c-be56-101eb5c7058f",
+      "evaluatorId": "b9ac6d85-9ab3-4414-868d-8a85b8917025",
+      "score": 0,
+      "label": "unusable",
+      "reasoning": "The agent response is not a research memo object but rather a source-pack retrieval structure containing localSources and prismKnowledgeBase arrays. It lacks all required fields for the research memo schema: title, summary, recommendation, strengths, risks, and diligenceQuestions are entirely absent. The response appears to be intermediate retrieval output rather than a synthesized memo, making it structurally incompatible with the specified JSON contract. Additionally, the prismKnowledgeBase chunk is truncated mid-content ('VoltGri'), indicating incomplete or malformed data.",
+      "createdAt": "2026-10-17T14:40:06.903411Z"
+    },
+    {
+      "id": "369ceb7c-18ce-40b6-a53e-171f95c33864",
+      "traceId": "a23f8895-3afa-4b07-aec3-eaea6631a607",
+      "taskId": "8d96ed0e-bfda-420c-be56-101eb5c7058f",
+      "evaluatorId": "b9ac6d85-9ab3-4414-868d-8a85b8917025",
+      "score": 0,
+      "label": "unusable",
+      "reasoning": "The agent response is a source-retrieval object, not a research memo. It lacks the required schema fields: title, summary, recommendation, strengths (array of claim objects), risks (array of claim objects), and diligenceQuestions. The response structure contains localSources and prismKnowledgeBase metadata but does not construct or return a memo-formatted JSON object with the mandatory claim-based analysis fields. This is a contract failure: the response does not attempt to render evidence-linked claims in the required memo schema at all.",
+      "createdAt": "2026-10-17T14:40:06.903405Z"
+    },
+    {
+      "id": "7599b9f4-9893-4d19-9805-c33c8d18f726",
+      "traceId": "55752936-15a0-4389-8636-3f67ef958382",
+      "taskId": "8d96ed0e-bfda-420c-be56-101eb5c7058f",
+      "evaluatorId": "b9ac6d85-9ab3-4414-868d-8a85b8917025",
+      "score": 0,
+      "label": "unusable",
+      "reasoning": "The agent response is not a research memo object matching the required schema. It returns a source-retrieval structure (localSources and prismKnowledgeBase arrays) rather than the required memo fields: title, summary, recommendation, strengths, risks, and diligenceQuestions. The response is truncated mid-excerpt ('$480,0' incomplete), indicating a parsing or transmission failure. Even if the truncation were corrected, the response structure does not conform to the evidence-linked research memo contract required by this evaluator.",
+      "createdAt": "2026-10-17T14:40:06.903401Z"
+    },
+    {
+      "id": "a2d1a271-e2f6-439a-a979-5b08130cb953",
+      "traceId": "d7ab9a5a-293b-4425-99a2-7aa36a6f8d66",
+      "taskId": "8d96ed0e-bfda-420c-be56-101eb5c7058f",
+      "evaluatorId": "b9ac6d85-9ab3-4414-868d-8a85b8917025",
+      "score": 0,
+      "label": "unusable",
+      "reasoning": "The agent response is a source-pack metadata object, not a research memo. It lacks all required memo fields: title, summary, recommendation, strengths array, risks array, and diligenceQuestions. The response structure (localSources and prismKnowledgeBase) is a data retrieval artifact, not the evidence-linked memo format specified in the schema. To be usable, the agent must synthesize these sources into a memo with claim objects citing sourceIds (atlas-financials, atlas-update, atlas-risk) and structured diligence questions.",
+      "createdAt": "2026-10-17T14:40:06.903397Z"
+    },
+    {
+      "id": "d2840333-1248-4d6e-ae4b-7c04b4928e7b",
+      "traceId": "87ca4f2c-3673-456b-b712-37cd3b0370ff",
+      "taskId": "8d96ed0e-bfda-420c-be56-101eb5c7058f",
+      "evaluatorId": "b9ac6d85-9ab3-4414-868d-8a85b8917025",
+      "score": 0,
+      "label": "unusable",
+      "reasoning": "The agent response is not a research memo object but rather a source-retrieval payload containing localSources and prismKnowledgeBase arrays. It lacks all required memo fields: title, summary, recommendation, strengths, risks, and diligenceQuestions. The response structure does not conform to the specified JSON schema for evidence-linked research memos. While the underlying source documents are synthetic and properly labeled as fictional demo evidence with valid financial metrics (annualRevenue $1.25M, arr $0, growthPct 18%, grossMarginPct 34%, customers 430, runwayMonths 18, valuation $1.8M), the agent failed to synthesize these into a memo format with claims, confidence levels, and diligence questions as required.",
+      "createdAt": "2026-10-17T14:40:06.903393Z"
+    },
+    {
+      "id": "f96e2a31-fa8b-4e92-a625-70d8376e820a",
+      "traceId": "ffbd63fa-d7e6-4daa-862b-aa316e4015ce",
+      "taskId": "8d96ed0e-bfda-420c-be56-101eb5c7058f",
+      "evaluatorId": "b9ac6d85-9ab3-4414-868d-8a85b8917025",
+      "score": 0,
+      "label": "unusable",
+      "reasoning": "The agent response is a source-pack metadata object, not a research memo. It lacks the required schema fields: title, summary, recommendation, strengths (array of claim objects), risks (array of claim objects), and diligenceQuestions. The response structure contains localSources and prismKnowledgeBase arrays but does not construct or return a memo-formatted JSON object with the mandatory claim-level fields (text, sourceIds, confidence, metric). This is a contract failure: the response does not attempt to render evidence-linked claims in the required memo schema at all.",
+      "createdAt": "2026-10-17T14:40:06.903387Z"
+    },
+    {
+      "id": "c9beeba6-3ffd-4229-be81-89dbb409d613",
+      "traceId": "c1fc5b19-a5ca-41a6-8a80-0ae657a24901",
+      "taskId": "8d96ed0e-bfda-420c-be56-101eb5c7058f",
+      "evaluatorId": "b9ac6d85-9ab3-4414-868d-8a85b8917025",
+      "score": 0,
+      "label": "unusable",
+      "reasoning": "The agent response is not a research memo object but rather a source-pack retrieval structure containing localSources and prismKnowledgeBase arrays. It lacks all required fields for the research memo schema: title, summary, recommendation, strengths, risks, and diligenceQuestions are entirely absent. The response appears to be intermediate retrieval output rather than a synthesized memo, making it structurally incompatible with the specified JSON contract. Additionally, the prismKnowledgeBase chunk is truncated mid-content ('VoltGri'), indicating incomplete or malformed data.",
+      "createdAt": "2026-10-17T14:40:06.903381Z"
+    },
+    {
+      "id": "82c22e06-fe83-487f-a5c8-bfac8784a46b",
+      "traceId": "f4aeceb4-eb05-461a-81dc-72e8c628ea41",
+      "taskId": "8d96ed0e-bfda-420c-be56-101eb5c7058f",
+      "evaluatorId": "b9ac6d85-9ab3-4414-868d-8a85b8917025",
+      "score": 0,
+      "label": "unusable",
+      "reasoning": "The agent response is a source-retrieval object, not a research memo. It lacks the required schema fields: title, summary, recommendation, strengths (array of claim objects), risks (array of claim objects), and diligenceQuestions. The response structure contains localSources and prismKnowledgeBase metadata but does not construct or return a memo-formatted JSON object with the mandatory claim-based analysis fields. This is a contract failure: the required top-level fields are entirely absent, making the response unusable regardless of financial grounding.",
+      "createdAt": "2026-10-17T14:40:06.903372Z"
+    },
+    {
+      "id": "3ac56922-ec86-48c9-92ec-930eb51bd7da",
+      "traceId": "53c472d5-43b4-45a7-80f4-82d6aae482e3",
+      "taskId": "8d96ed0e-bfda-420c-be56-101eb5c7058f",
+      "evaluatorId": "b9ac6d85-9ab3-4414-868d-8a85b8917025",
+      "score": 0,
+      "label": "unusable",
+      "reasoning": "The agent response is not a research memo JSON object matching the required schema. Instead, it returns a source-retrieval response containing localSources and prismKnowledgeBase arrays. The required fields for a research memo (title, summary, recommendation, strengths, risks, diligenceQuestions) are entirely absent. This is a contract failure: the agent has returned a different data structure (source metadata) rather than the evidence-linked research memo object specified in the evaluation criteria. The response cannot be parsed as a valid research memo regardless of financial grounding, because it lacks all mandatory memo fields.",
+      "createdAt": "2026-10-17T14:40:06.903364Z"
+    },
+    {
+      "id": "8928378b-9125-4b57-97b6-b47d4c0adc70",
+      "traceId": "08db7b2a-0b81-4d67-a777-d050e86ba95e",
+      "taskId": "8d96ed0e-bfda-420c-be56-101eb5c7058f",
+      "evaluatorId": "b9ac6d85-9ab3-4414-868d-8a85b8917025",
+      "score": 0,
+      "label": "unusable",
+      "reasoning": "The agent response is a source-pack metadata object, not a research memo. It lacks all required memo fields: title, summary, recommendation, strengths array, risks array, and diligenceQuestions. The response structure (localSources and prismKnowledgeBase) is a data retrieval artifact, not the evidence-linked memo format specified in the schema. To be usable, the agent must synthesize these sources into a memo with claim objects citing sourceIds (atlas-financials, atlas-update, atlas-risk) and structured diligence questions.",
+      "createdAt": "2026-10-17T14:40:06.903347Z"
+    },
+    {
+      "id": "54068466-275a-4539-a307-1a8f952c084c",
+      "traceId": "d12351f2-dd75-40a3-9d03-e91f9a509368",
+      "taskId": "8d96ed0e-bfda-420c-be56-101eb5c7058f",
+      "evaluatorId": "b9ac6d85-9ab3-4414-868d-8a85b8917025",
+      "score": 0,
+      "label": "unusable",
+      "reasoning": "The agent response is not a research memo object but rather a source-retrieval payload containing localSources and prismKnowledgeBase arrays. It lacks all required memo fields: title, summary, recommendation, strengths, risks, and diligenceQuestions. The response structure does not conform to the specified JSON schema for evidence-linked research memos. While the underlying source documents are synthetic and properly labeled as fictional demo evidence with valid financial metrics (annualRevenue $1.25M, arr $0, growthPct 18%, grossMarginPct 34%, customers 430, runwayMonths 18, valuation $1.8M), the agent failed to synthesize these into a memo format with claims, confidence levels, and diligence questions as required.",
+      "createdAt": "2026-10-17T14:40:06.903342Z"
+    },
+    {
+      "id": "c4299bd6-4156-48af-b3d8-8d4f3ea4917e",
+      "traceId": "7b1cac1b-7ec6-44d3-86dd-9c3825cb4d77",
+      "taskId": "8d96ed0e-bfda-420c-be56-101eb5c7058f",
+      "evaluatorId": "b9ac6d85-9ab3-4414-868d-8a85b8917025",
+      "score": 0,
+      "label": "unusable",
+      "reasoning": "The agent response is a source-pack metadata object, not a research memo. It lacks the required schema fields: title, summary, recommendation, strengths (array of claim objects), risks (array of claim objects), and diligenceQuestions. The response structure contains localSources and prismKnowledgeBase arrays but does not construct or return a memo-formatted JSON object with the mandatory claim-level fields (text, sourceIds, confidence, metric). This is a contract failure: the response does not attempt to render evidence-linked claims in the required memo schema at all.",
+      "createdAt": "2026-10-17T14:40:06.903335Z"
+    },
+    {
+      "id": "7eb32bf1-7dac-4c56-82dd-1c6eeca3aaca",
+      "traceId": "bebeb247-c394-45cd-9453-f8167114b395",
+      "taskId": "8d96ed0e-bfda-420c-be56-101eb5c7058f",
+      "evaluatorId": "b9ac6d85-9ab3-4414-868d-8a85b8917025",
+      "score": 0,
+      "label": "unusable",
+      "reasoning": "The agent response is not a research memo object but rather a source-pack retrieval structure containing localSources and prismKnowledgeBase arrays. It lacks all required fields for the research memo schema: title, summary, recommendation, strengths, risks, and diligenceQuestions are entirely absent. The response appears to be intermediate retrieval output rather than a synthesized memo, making it structurally incompatible with the specified JSON contract. Additionally, the prismKnowledgeBase chunk is truncated mid-content ('VoltGri'), indicating incomplete or malformed data.",
+      "createdAt": "2026-10-17T14:40:06.903330Z"
+    },
+    {
+      "id": "8b8f21f2-8ee4-4f13-8ea6-405f9fdd3bd1",
+      "traceId": "045eae6e-d3b4-4688-8f23-8c972fd80dc9",
+      "taskId": "8d96ed0e-bfda-420c-be56-101eb5c7058f",
+      "evaluatorId": "b9ac6d85-9ab3-4414-868d-8a85b8917025",
+      "score": 0,
+      "label": "unusable",
+      "reasoning": "The agent response is not a research memo in the required JSON schema. Instead, it returns raw source documents and knowledge-base chunks without constructing the mandatory memo structure: missing title, summary, recommendation, strengths array, risks array, and diligenceQuestions array. The response fails the strict JSON contract by omitting all five required top-level fields. This is a contract failure, not a financial-grounding failure. To be usable, the agent must synthesize the provided source evidence (BridgePay financials showing $2.1M annual revenue, $1.8M ARR, 92% growth, 640 customers, 62% gross margin, $28M valuation, 20-month runway, and licensing/counterparty risks) into a properly structured evidence-linked research memo with explicit claims, source citations, confidence levels, and diligence questions.",
+      "createdAt": "2026-10-17T14:40:06.903325Z"
+    },
+    {
+      "id": "633123f9-023e-4ce7-a0d8-62b1466fc68c",
+      "traceId": "b67da4f5-65aa-4a8d-96d2-5c94c07428a9",
+      "taskId": "8d96ed0e-bfda-420c-be56-101eb5c7058f",
+      "evaluatorId": "b9ac6d85-9ab3-4414-868d-8a85b8917025",
+      "score": 0,
+      "label": "unusable",
+      "reasoning": "The agent response is not a research memo object matching the required schema. It returns a source-retrieval structure (localSources and prismKnowledgeBase arrays) rather than the required memo fields: title, summary, recommendation, strengths, risks, and diligenceQuestions. The response is truncated mid-content ('$480,0'), indicating incomplete output. Even if completed, this structure does not conform to the evidence-linked research memo contract required for evaluation.",
+      "createdAt": "2026-10-17T14:40:06.903320Z"
+    },
+    {
+      "id": "b0602f3e-e7b0-45fa-9f14-fcb1ef0e3793",
+      "traceId": "5461f27f-78bd-476a-b635-1c3325274e7e",
+      "taskId": "8d96ed0e-bfda-420c-be56-101eb5c7058f",
+      "evaluatorId": "b9ac6d85-9ab3-4414-868d-8a85b8917025",
+      "score": 0,
+      "label": "unusable",
+      "reasoning": "The agent response is a source-pack metadata object, not a research memo. It lacks all required memo fields: title, summary, recommendation, strengths array, risks array, and diligenceQuestions. The response structure (localSources and prismKnowledgeBase) is a data retrieval artifact, not the evidence-linked memo format specified in the schema. To be usable, the agent must synthesize these sources into a memo with claim objects citing sourceIds (atlas-financials, atlas-update, atlas-risk) and structured diligence questions.",
+      "createdAt": "2026-10-17T14:40:06.903314Z"
+    },
+    {
+      "id": "8f454f92-e734-4f81-8955-3810c88ff8ca",
+      "traceId": "f6dba298-7fe5-4f55-99ab-95ef43636883",
+      "taskId": "8d96ed0e-bfda-420c-be56-101eb5c7058f",
+      "evaluatorId": "b9ac6d85-9ab3-4414-868d-8a85b8917025",
+      "score": 0,
+      "label": "unusable",
+      "reasoning": "The agent response is not a research memo object but rather a source-retrieval payload containing localSources and prismKnowledgeBase arrays. It lacks all required memo fields: title, summary, recommendation, strengths, risks, and diligenceQuestions. The response structure does not conform to the specified JSON schema for evidence-linked research memos. While the underlying source documents are synthetic and properly labeled as fictional demo evidence with valid financial metrics (annualRevenue $1.25M, arr $0, growthPct 18%, grossMarginPct 34%, customers 430, runwayMonths 18, valuation $1.8M), the agent failed to synthesize these into a memo format with claims, confidence levels, and diligence questions as required.",
+      "createdAt": "2026-10-17T14:40:06.903309Z"
+    },
+    {
+      "id": "0362f085-0e34-4d34-b286-d7e0f6281022",
+      "traceId": "e912a892-3265-4406-8f6c-3bba72dee9e2",
+      "taskId": "8d96ed0e-bfda-420c-be56-101eb5c7058f",
+      "evaluatorId": "b9ac6d85-9ab3-4414-868d-8a85b8917025",
+      "score": 0,
+      "label": "unusable",
+      "reasoning": "The agent response is a source-pack metadata object, not a research memo. It lacks the required schema fields: title, summary, recommendation, strengths (array of claim objects), risks (array of claim objects), and diligenceQuestions. The response structure contains localSources and prismKnowledgeBase arrays but does not construct or return a memo-formatted JSON object with the mandatory claim-level fields (text, sourceIds, confidence, metric). This is a contract failure: the response does not attempt to render evidence-linked claims in the required memo schema at all.",
+      "createdAt": "2026-10-17T14:40:06.903304Z"
+    },
+    {
+      "id": "2ce6b7b5-00cf-4350-b401-df41b512fa15",
+      "traceId": "3c36da36-ce4a-409c-9137-02fdece17963",
+      "taskId": "8d96ed0e-bfda-420c-be56-101eb5c7058f",
+      "evaluatorId": "b9ac6d85-9ab3-4414-868d-8a85b8917025",
+      "score": 0,
+      "label": "unusable",
+      "reasoning": "The agent response is not a research memo object but rather a source-pack retrieval structure containing localSources and prismKnowledgeBase arrays. It lacks all required fields for the research memo schema: title, summary, recommendation, strengths, risks, and diligenceQuestions are entirely absent. The response appears to be intermediate retrieval output rather than a synthesized memo, making it structurally incompatible with the specified JSON contract. Additionally, the prismKnowledgeBase chunk is truncated mid-content ('VoltGri'), indicating incomplete or malformed data.",
+      "createdAt": "2026-10-17T14:40:06.903298Z"
+    },
+    {
+      "id": "c7b51d23-232a-4807-92fe-bfac9aaad04c",
+      "traceId": "c30baf33-fcb8-4bb0-be8d-6c104056d0ad",
+      "taskId": "8d96ed0e-bfda-420c-be56-101eb5c7058f",
+      "evaluatorId": "b9ac6d85-9ab3-4414-868d-8a85b8917025",
+      "score": 0,
+      "label": "unusable",
+      "reasoning": "The agent response is not a research memo in the required JSON schema. Instead, it returns raw source documents and knowledge-base chunks without constructing the mandatory memo structure: missing title, summary, recommendation, strengths array, risks array, and diligenceQuestions array. The response fails the strict JSON contract by omitting all five required top-level fields. This is a contract failure, not a financial-grounding failure. To be usable, the agent must synthesize the provided source evidence (BridgePay financials showing $2.1M annual revenue, $1.8M ARR, 92% growth, 640 customers, 62% gross margin, $28M valuation, 20-month runway, and licensing/counterparty risks) into a properly structured evidence-linked research memo with explicit claims, source citations, confidence levels, and diligence questions.",
+      "createdAt": "2026-10-17T14:40:06.903292Z"
+    },
+    {
+      "id": "bf9d2d05-dafd-4d3e-927a-09eb47076445",
+      "traceId": "9b452133-dd7a-4b95-ae87-2f81ec16b7d7",
+      "taskId": "8d96ed0e-bfda-420c-be56-101eb5c7058f",
+      "evaluatorId": "b9ac6d85-9ab3-4414-868d-8a85b8917025",
+      "score": 0,
+      "label": "unusable",
+      "reasoning": "The agent response is not a research memo object matching the required schema. It returns a source-retrieval structure (localSources and prismKnowledgeBase arrays) rather than the required memo fields: title, summary, recommendation, strengths, risks, and diligenceQuestions. The response is truncated mid-content ('$510,0' incomplete in the prismKnowledgeBase chunk), indicating a parsing or transmission failure. Even if the truncation were resolved, the response structure is fundamentally misaligned with the evidence-linked research memo contract required by this evaluator.",
+      "createdAt": "2026-10-17T14:40:06.903288Z"
+    },
+    {
+      "id": "df30d28b-bc0b-4496-8405-49454e8c867c",
+      "traceId": "17f30c18-0fae-4a34-9c9b-9bce72fb0de7",
+      "taskId": "8d96ed0e-bfda-420c-be56-101eb5c7058f",
+      "evaluatorId": "b9ac6d85-9ab3-4414-868d-8a85b8917025",
+      "score": 0,
+      "label": "unusable",
+      "reasoning": "The agent response is a source-pack metadata object, not a research memo. It lacks all required memo fields: title, summary, recommendation, strengths array, risks array, and diligenceQuestions. The response structure (localSources and prismKnowledgeBase) is a data retrieval artifact, not the evidence-linked memo format specified in the schema. To be usable, the agent must synthesize these sources into a memo with claim objects citing sourceIds (atlas-financials, atlas-update, atlas-risk) and structured diligence questions.",
+      "createdAt": "2026-10-17T14:40:06.903282Z"
+    },
+    {
+      "id": "28486dfa-f354-459f-ae31-14a14cb29f4c",
+      "traceId": "33afd246-19c2-41ac-a3ec-e30e43444196",
+      "taskId": "8d96ed0e-bfda-420c-be56-101eb5c7058f",
+      "evaluatorId": "b9ac6d85-9ab3-4414-868d-8a85b8917025",
+      "score": 0,
+      "label": "unusable",
+      "reasoning": "The agent response is not a research memo object but rather a source-retrieval payload containing localSources and prismKnowledgeBase arrays. It lacks all required memo fields: title, summary, recommendation, strengths, risks, and diligenceQuestions. The response structure does not conform to the specified JSON schema for evidence-linked research memos. While the underlying source documents are synthetic and properly labeled as fictional demo evidence with valid financial metrics (annualRevenue $1.25M, arr $0, growthPct 18%, grossMarginPct 34%, customers 430, runwayMonths 18, valuation $1.8M), the agent failed to synthesize these into a memo format with claims, confidence levels, and diligence questions as required.",
+      "createdAt": "2026-10-17T14:40:06.903275Z"
+    },
+    {
+      "id": "051333be-fe7e-4652-b0a0-b555eb06cddd",
+      "traceId": "403e8ad6-b411-4ffb-a966-fa63d54a60bc",
+      "taskId": "8d96ed0e-bfda-420c-be56-101eb5c7058f",
+      "evaluatorId": "b9ac6d85-9ab3-4414-868d-8a85b8917025",
+      "score": 0,
+      "label": "unusable",
+      "reasoning": "The agent response is a source-pack metadata object, not a research memo. It lacks the required schema fields: title, summary, recommendation, strengths (array of claim objects), risks (array of claim objects), and diligenceQuestions. The response structure contains localSources and prismKnowledgeBase arrays but does not construct or return a memo-formatted JSON object with the mandatory claim-level fields (text, sourceIds, confidence, metric). This is a contract failure: the response does not attempt to render evidence-linked claims in the required memo schema at all.",
+      "createdAt": "2026-10-17T14:40:06.903271Z"
+    },
+    {
+      "id": "22c2139f-28d0-4b0d-9021-7575a198dab3",
+      "traceId": "82f505c4-f5a6-48f7-a4fe-8e1531f24727",
+      "taskId": "8d96ed0e-bfda-420c-be56-101eb5c7058f",
+      "evaluatorId": "b9ac6d85-9ab3-4414-868d-8a85b8917025",
+      "score": 0,
+      "label": "unusable",
+      "reasoning": "The agent response is not a research memo object but rather a source-pack retrieval structure containing localSources and prismKnowledgeBase arrays. It lacks all required fields for the research memo schema: title, summary, recommendation, strengths, risks, and diligenceQuestions are entirely absent. The response appears to be intermediate retrieval output rather than a synthesized memo, making it structurally incompatible with the specified JSON contract. Additionally, the prismKnowledgeBase chunk is truncated mid-content ('VoltGri'), indicating incomplete or malformed data.",
+      "createdAt": "2026-10-17T14:40:06.903265Z"
+    },
+    {
+      "id": "4037f5c9-3ce3-4736-8fdd-85e0c5c899e0",
+      "traceId": "6b6a58f1-7ade-42ae-9026-dfdd37574150",
+      "taskId": "8d96ed0e-bfda-420c-be56-101eb5c7058f",
+      "evaluatorId": "b9ac6d85-9ab3-4414-868d-8a85b8917025",
+      "score": 0,
+      "label": "unusable",
+      "reasoning": "The agent response is not a research memo object; it is a source-retrieval response containing localSources and prismKnowledgeBase arrays. It lacks all required memo fields: title, summary, recommendation, strengths, risks, and diligenceQuestions. The response structure does not match the required schema for evidence-linked research memo evaluation. Contract failure: missing all five required top-level fields (title, summary, recommendation, strengths/risks arrays, diligenceQuestions array).",
+      "createdAt": "2026-10-17T14:40:06.903256Z"
+    }
+  ]
+}

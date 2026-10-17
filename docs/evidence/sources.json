@@ -1,0 +1,269 @@
+{
+  "voltgrid": [
+    {
+      "id": "volt-financials",
+      "startupId": "voltgrid",
+      "title": "VoltGrid · financial snapshot",
+      "type": "Financials",
+      "excerpt": "FICTIONAL DEMO DOCUMENT. VoltGrid reported $840,000 in trailing 12-month revenue, comprising $620,000 of annual recurring subscription revenue (ARR) and $220,000 of one-time installation and services revenue. Revenue grew 68% year over year. Gross margin was 71%. There were 23 paying battery operators. Annual revenue must not be described as ARR.",
+      "metrics": {
+        "annualRevenue": 840000,
+        "arr": 620000,
+        "growthPct": 68,
+        "grossMarginPct": 71,
+        "customers": 23
+      },
+      "publisher": "FirstCheque · fictional demo evidence",
+      "date": "2026-10-01",
+      "url": "/api/sources/volt-financials"
+    },
+    {
+      "id": "volt-update",
+      "startupId": "voltgrid",
+      "title": "VoltGrid · founder operating update",
+      "type": "Founder update",
+      "excerpt": "FICTIONAL DEMO DOCUMENT. The team has nine people. Current cash provides 14 months of runway at the present burn rate. The company is raising $2 million at an indicative $12 million valuation to add utility integrations. These figures are founder-reported and unaudited.",
+      "metrics": {
+        "runwayMonths": 14,
+        "valuation": 12000000,
+        "fundingTarget": 2000000
+      },
+      "publisher": "FirstCheque · fictional demo evidence",
+      "date": "2026-10-01",
+      "url": "/api/sources/volt-update"
+    },
+    {
+      "id": "volt-risk",
+      "startupId": "voltgrid",
+      "title": "VoltGrid · concentration & market risks",
+      "type": "Risk disclosure",
+      "excerpt": "FICTIONAL DEMO DOCUMENT. The three largest operators contribute 46% of revenue. Utility interconnection and market-participation approvals can delay deployments. There is no active secondary market, no scheduled exit, and no guarantee that the round will close. Investors may lose their entire investment.",
+      "metrics": {
+        "customerConcentrationPct": 46
+      },
+      "publisher": "FirstCheque · fictional demo evidence",
+      "date": "2026-10-01",
+      "url": "/api/sources/volt-risk"
+    }
+  ],
+  "bridgepay": [
+    {
+      "id": "bridge-financials",
+      "startupId": "bridgepay",
+      "title": "BridgePay · financial snapshot",
+      "type": "Financials",
+      "excerpt": "FICTIONAL DEMO DOCUMENT. Trailing annual revenue is $2.1 million, of which $1.8 million is contracted recurring platform revenue (ARR). Revenue grew 92% year over year. There are 640 paying business customers. Gross margin is 62%. Payment processing volume is not company revenue.",
+      "metrics": {
+        "annualRevenue": 2100000,
+        "arr": 1800000,
+        "growthPct": 92,
+        "customers": 640,
+        "grossMarginPct": 62
+      },
+      "publisher": "FirstCheque · fictional demo evidence",
+      "date": "2026-10-01",
+      "url": "/api/sources/bridge-financials"
+    },
+    {
+      "id": "bridge-update",
+      "startupId": "bridgepay",
+      "title": "BridgePay · founder operating update",
+      "type": "Founder update",
+      "excerpt": "FICTIONAL DEMO DOCUMENT. BridgePay has a 24-person team and 20 months of cash runway. Its indicative valuation is $28 million. It plans to expand beyond two live payment corridors. Founder figures are unaudited, and corridor expansion remains a plan.",
+      "metrics": {
+        "runwayMonths": 20,
+        "valuation": 28000000
+      },
+      "publisher": "FirstCheque · fictional demo evidence",
+      "date": "2026-10-01",
+      "url": "/api/sources/bridge-update"
+    },
+    {
+      "id": "bridge-risk",
+      "startupId": "bridgepay",
+      "title": "BridgePay · licensing & counterparty risks",
+      "type": "Risk disclosure",
+      "excerpt": "FICTIONAL DEMO DOCUMENT. The company depends on licensed payment partners and third-party banks. Changes in partner access, compliance requirements, fraud losses, or FX settlement could materially affect revenue. Shares are illiquid and may lose all value.",
+      "metrics": {},
+      "publisher": "FirstCheque · fictional demo evidence",
+      "date": "2026-10-01",
+      "url": "/api/sources/bridge-risk"
+    }
+  ],
+  "careloop": [
+    {
+      "id": "care-financials",
+      "startupId": "careloop",
+      "title": "CareLoop · financial snapshot",
+      "type": "Financials",
+      "excerpt": "FICTIONAL DEMO DOCUMENT. CareLoop has $510,000 of trailing annual revenue, including $480,000 ARR and $30,000 one-time onboarding services. Annual revenue growth is 54%, gross margin 76%, and the customer base is 18 clinics.",
+      "metrics": {
+        "annualRevenue": 510000,
+        "arr": 480000,
+        "growthPct": 54,
+        "grossMarginPct": 76,
+        "customers": 18
+      },
+      "publisher": "FirstCheque · fictional demo evidence",
+      "date": "2026-10-01",
+      "url": "/api/sources/care-financials"
+    },
+    {
+      "id": "care-update",
+      "startupId": "careloop",
+      "title": "CareLoop · founder operating update",
+      "type": "Founder update",
+      "excerpt": "FICTIONAL DEMO DOCUMENT. A 12-person team has 13 months of runway. The indicative valuation is $10 million. The next milestone is two electronic health record integrations. Claimed patient improvements have not been established in a controlled study.",
+      "metrics": {
+        "runwayMonths": 13,
+        "valuation": 10000000
+      },
+      "publisher": "FirstCheque · fictional demo evidence",
+      "date": "2026-10-01",
+      "url": "/api/sources/care-update"
+    },
+    {
+      "id": "care-risk",
+      "startupId": "careloop",
+      "title": "CareLoop · privacy & procurement risks",
+      "type": "Risk disclosure",
+      "excerpt": "FICTIONAL DEMO DOCUMENT. Health data handling creates privacy and security obligations. Lengthy clinic procurement and EHR integration dependence can delay cash collection. Product outcomes are unverified. There is no liquidity promise and an investor may lose all capital.",
+      "metrics": {},
+      "publisher": "FirstCheque · fictional demo evidence",
+      "date": "2026-10-01",
+      "url": "/api/sources/care-risk"
+    }
+  ],
+  "atlas": [
+    {
+      "id": "atlas-financials",
+      "startupId": "atlas",
+      "title": "Atlas · financial snapshot",
+      "type": "Financials",
+      "excerpt": "FICTIONAL DEMO DOCUMENT. Atlas reported $96,000 annual revenue, consisting of $84,000 ARR and $12,000 pilot services. There are 32 paying teams. Revenue growth is 120% from a small base. Gross margin is 58% after model inference costs.",
+      "metrics": {
+        "annualRevenue": 96000,
+        "arr": 84000,
+        "customers": 32,
+        "growthPct": 120,
+        "grossMarginPct": 58
+      },
+      "publisher": "FirstCheque · fictional demo evidence",
+      "date": "2026-10-01",
+      "url": "/api/sources/atlas-financials"
+    },
+    {
+      "id": "atlas-update",
+      "startupId": "atlas",
+      "title": "Atlas · founder operating update",
+      "type": "Founder update",
+      "excerpt": "FICTIONAL DEMO DOCUMENT. The company has five employees and eight months of runway. The indicative valuation is $6 million. Product retention beyond six months has not been measured. Model inference costs can change with provider prices.",
+      "metrics": {
+        "runwayMonths": 8,
+        "valuation": 6000000
+      },
+      "publisher": "FirstCheque · fictional demo evidence",
+      "date": "2026-10-01",
+      "url": "/api/sources/atlas-update"
+    },
+    {
+      "id": "atlas-risk",
+      "startupId": "atlas",
+      "title": "Atlas · product & financing risks",
+      "type": "Risk disclosure",
+      "excerpt": "FICTIONAL DEMO DOCUMENT. Atlas faces model-provider dependence, commoditization, document security risks, and an urgent future funding requirement. Early growth does not establish product-market fit. Shares are illiquid and an investor may lose their entire investment.",
+      "metrics": {},
+      "publisher": "FirstCheque · fictional demo evidence",
+      "date": "2026-10-01",
+      "url": "/api/sources/atlas-risk"
+    }
+  ],
+  "goodharvest": [
+    {
+      "id": "harvest-financials",
+      "startupId": "goodharvest",
+      "title": "Good Harvest · financial snapshot",
+      "type": "Financials",
+      "excerpt": "FICTIONAL DEMO DOCUMENT. Annual revenue is $1.25 million, year-over-year growth 18%, and gross margin 34%. There are 430 active households. The business has no contracted annual recurring revenue (ARR); subscriptions may be cancelled at any time.",
+      "metrics": {
+        "annualRevenue": 1250000,
+        "arr": 0,
+        "growthPct": 18,
+        "grossMarginPct": 34,
+        "customers": 430
+      },
+      "publisher": "FirstCheque · fictional demo evidence",
+      "date": "2026-10-01",
+      "url": "/api/sources/harvest-financials"
+    },
+    {
+      "id": "harvest-update",
+      "startupId": "goodharvest",
+      "title": "Good Harvest · owner operating update",
+      "type": "Founder update",
+      "excerpt": "FICTIONAL DEMO DOCUMENT. The 11-person business has an estimated 18 months of operating cash runway. Its indicative equity valuation is $1.8 million. Expansion would fund cold storage and a second neighborhood pickup location. Revenue is not profit.",
+      "metrics": {
+        "runwayMonths": 18,
+        "valuation": 1800000
+      },
+      "publisher": "FirstCheque · fictional demo evidence",
+      "date": "2026-10-01",
+      "url": "/api/sources/harvest-update"
+    },
+    {
+      "id": "harvest-risk",
+      "startupId": "goodharvest",
+      "title": "Good Harvest · operating risks",
+      "type": "Risk disclosure",
+      "excerpt": "FICTIONAL DEMO DOCUMENT. Crop disruptions, spoilage, food safety, a single storefront lease, and thin retail margins are material risks. No dividends or buybacks have been promised. This is illiquid private equity and capital may be lost in full.",
+      "metrics": {},
+      "publisher": "FirstCheque · fictional demo evidence",
+      "date": "2026-10-01",
+      "url": "/api/sources/harvest-risk"
+    }
+  ],
+  "rethread": [
+    {
+      "id": "rethread-financials",
+      "startupId": "rethread",
+      "title": "Rethread · financial snapshot",
+      "type": "Financials",
+      "excerpt": "FICTIONAL DEMO DOCUMENT. Annual revenue is $390,000, including $240,000 ARR from platform contracts and $150,000 transaction and repair services. Growth is 43% and gross margin 48%. Fourteen brands are paying partners. Gross merchandise value is not company revenue.",
+      "metrics": {
+        "annualRevenue": 390000,
+        "arr": 240000,
+        "growthPct": 43,
+        "grossMarginPct": 48,
+        "customers": 14
+      },
+      "publisher": "FirstCheque · fictional demo evidence",
+      "date": "2026-10-01",
+      "url": "/api/sources/rethread-financials"
+    },
+    {
+      "id": "rethread-update",
+      "startupId": "rethread",
+      "title": "Rethread · founder operating update",
+      "type": "Founder update",
+      "excerpt": "FICTIONAL DEMO DOCUMENT. The eight-person team has 10 months of runway and an indicative $7.5 million valuation. Expansion to new repair vendors is planned. Environmental benefits have not been independently verified.",
+      "metrics": {
+        "runwayMonths": 10,
+        "valuation": 7500000
+      },
+      "publisher": "FirstCheque · fictional demo evidence",
+      "date": "2026-10-01",
+      "url": "/api/sources/rethread-update"
+    },
+    {
+      "id": "rethread-risk",
+      "startupId": "rethread",
+      "title": "Rethread · retail & execution risks",
+      "type": "Risk disclosure",
+      "excerpt": "FICTIONAL DEMO DOCUMENT. Seasonal fashion demand, return rates, inventory handling, and dependence on a small number of brands may affect outcomes. Environmental impact statements are unverified. There is no guaranteed return or liquidity; the entire investment may be lost.",
+      "metrics": {},
+      "publisher": "FirstCheque · fictional demo evidence",
+      "date": "2026-10-01",
+      "url": "/api/sources/rethread-risk"
+    }
+  ]
+}

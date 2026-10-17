@@ -1,0 +1,889 @@
+{
+  "assignedAgentId": "firstcheque-analyst",
+  "readyDocumentCount": 18,
+  "documents": [
+    {
+      "id": "1bf9aee0-45ac-4c37-a8c6-1e61228f05d5",
+      "name": "volt-update.txt",
+      "agentId": "firstcheque-analyst",
+      "status": "ready",
+      "chunks": 1,
+      "createdAt": "2026-10-17T14:27:01.729248Z"
+    },
+    {
+      "id": "ab110d87-c9ee-4553-b3d2-d5938b1e2477",
+      "name": "volt-risk.txt",
+      "agentId": "firstcheque-analyst",
+      "status": "ready",
+      "chunks": 1,
+      "createdAt": "2026-10-17T14:26:59.153131Z"
+    },
+    {
+      "id": "a46006f9-5313-42f7-bdfe-350db7bdcb62",
+      "name": "volt-financials.txt",
+      "agentId": "firstcheque-analyst",
+      "status": "ready",
+      "chunks": 1,
+      "createdAt": "2026-10-17T14:26:56.533423Z"
+    },
+    {
+      "id": "2d87c40b-2461-4a17-bcf6-d21f8201f0c0",
+      "name": "rethread-update.txt",
+      "agentId": "firstcheque-analyst",
+      "status": "ready",
+      "chunks": 1,
+      "createdAt": "2026-10-17T14:26:53.836788Z"
+    },
+    {
+      "id": "fbfe329d-f3f7-42e0-8a88-9e3fff459fdb",
+      "name": "rethread-risk.txt",
+      "agentId": "firstcheque-analyst",
+      "status": "ready",
+      "chunks": 1,
+      "createdAt": "2026-10-17T14:26:51.247419Z"
+    },
+    {
+      "id": "d535e0ea-7a1a-485d-ba2a-fd7d1676e23a",
+      "name": "rethread-financials.txt",
+      "agentId": "firstcheque-analyst",
+      "status": "ready",
+      "chunks": 1,
+      "createdAt": "2026-10-17T14:26:48.646742Z"
+    },
+    {
+      "id": "3925b1e3-ba5c-4a7b-a693-d490629e4305",
+      "name": "harvest-update.txt",
+      "agentId": "firstcheque-analyst",
+      "status": "ready",
+      "chunks": 1,
+      "createdAt": "2026-10-17T14:26:45.996695Z"
+    },
+    {
+      "id": "bbd942b7-4f85-4eb4-b4d4-51b30faa18be",
+      "name": "harvest-risk.txt",
+      "agentId": "firstcheque-analyst",
+      "status": "ready",
+      "chunks": 1,
+      "createdAt": "2026-10-17T14:26:43.339232Z"
+    },
+    {
+      "id": "05367057-fa7c-4e5a-b44c-9d80c4d1301d",
+      "name": "harvest-financials.txt",
+      "agentId": "firstcheque-analyst",
+      "status": "ready",
+      "chunks": 1,
+      "createdAt": "2026-10-17T14:26:40.751935Z"
+    },
+    {
+      "id": "ce65f9b3-2d1e-46e8-b9cb-98f1f8ad7651",
+      "name": "care-update.txt",
+      "agentId": "firstcheque-analyst",
+      "status": "ready",
+      "chunks": 1,
+      "createdAt": "2026-10-17T14:26:38.111447Z"
+    },
+    {
+      "id": "e2982a1d-b82c-4d5f-8acc-3c940b83e281",
+      "name": "care-risk.txt",
+      "agentId": "firstcheque-analyst",
+      "status": "ready",
+      "chunks": 1,
+      "createdAt": "2026-10-17T14:26:35.518614Z"
+    },
+    {
+      "id": "2c991618-9554-45f9-b3ae-676b649b52cb",
+      "name": "care-financials.txt",
+      "agentId": "firstcheque-analyst",
+      "status": "ready",
+      "chunks": 1,
+      "createdAt": "2026-10-17T14:26:32.919737Z"
+    },
+    {
+      "id": "e4712663-9ec5-4c3f-982f-cfc4ab32de94",
+      "name": "bridge-update.txt",
+      "agentId": "firstcheque-analyst",
+      "status": "ready",
+      "chunks": 1,
+      "createdAt": "2026-10-17T14:26:30.272400Z"
+    },
+    {
+      "id": "79205fc9-ea20-4c72-9643-3670638fd673",
+      "name": "bridge-risk.txt",
+      "agentId": "firstcheque-analyst",
+      "status": "ready",
+      "chunks": 1,
+      "createdAt": "2026-10-17T14:26:27.627595Z"
+    },
+    {
+      "id": "a42468c9-a5d7-441d-9e21-6130b7dba053",
+      "name": "bridge-financials.txt",
+      "agentId": "firstcheque-analyst",
+      "status": "ready",
+      "chunks": 1,
+      "createdAt": "2026-10-17T14:26:25.040528Z"
+    },
+    {
+      "id": "43a8ce99-8a3d-4e9e-8f69-d0ecd5fbd5d6",
+      "name": "atlas-update.txt",
+      "agentId": "firstcheque-analyst",
+      "status": "ready",
+      "chunks": 1,
+      "createdAt": "2026-10-17T14:26:22.433711Z"
+    },
+    {
+      "id": "ba9a6f93-7260-45dc-a418-f2b957ae52b3",
+      "name": "atlas-risk.txt",
+      "agentId": "firstcheque-analyst",
+      "status": "ready",
+      "chunks": 1,
+      "createdAt": "2026-10-17T14:26:19.352992Z"
+    },
+    {
+      "id": "f4ff1210-7e78-421b-91be-e578feed824c",
+      "name": "atlas-financials.txt",
+      "agentId": "firstcheque-analyst",
+      "status": "ready",
+      "chunks": 1,
+      "createdAt": "2026-10-17T14:26:16.477389Z"
+    }
+  ],
+  "recordedModelRequestsWithRetrieval": 100,
+  "sample": {
+    "version": "v1",
+    "caseId": "case-001",
+    "traceId": "461cba30-c485-429d-bfa9-a1e4dbd7f0a6",
+    "knowledgeBase": {
+      "query": "VoltGrid",
+      "assignedAgentId": "firstcheque-analyst",
+      "retrievedDocuments": [
+        {
+          "id": "9bfeb87a-c282-461d-b11a-a5fbe5fba4db",
+          "doc_id": "a46006f9-5313-42f7-bdfe-350db7bdcb62",
+          "chunk_index": 0,
+          "content": "VoltGrid · financial snapshot Document ID: volt-financials Company ID: voltgrid Publisher: FirstCheque · fictional demo evidence Date: 2026-10-01 FICTIONAL DEMO DOCUMENT. VoltGrid reported $840,000 in trailing 12-month revenue, comprising $620,000 of annual recurring subscription revenue (ARR) and $220,000 of one-time installation and services revenue. Revenue grew 68% year over year. Gross margin was 71%. There were 23 paying battery operators. Annual revenue must not be described as ARR. Exact financial fields: {\"annualRevenue\":840000,\"arr\":620000,\"growthPct\":68,\"grossMarginPct\":71,\"customers\":23}",
+          "doc_name": "volt-financials.txt",
+          "relevance_score": 0.0827
+        },
+        {
+          "id": "f6d816f9-f7b4-4ba1-8b87-0efed237d139",
+          "doc_id": "ab110d87-c9ee-4553-b3d2-d5938b1e2477",
+          "chunk_index": 0,
+          "content": "VoltGrid · concentration & market risks Document ID: volt-risk Company ID: voltgrid Publisher: FirstCheque · fictional demo evidence Date: 2026-10-01 FICTIONAL DEMO DOCUMENT. The three largest operators contribute 46% of revenue. Utility interconnection and market-participation approvals can delay deployments. There is no active secondary market, no scheduled exit, and no guarantee that the round will close. Investors may lose their entire investment. Exact financial fields: {\"customerConcentrationPct\":46}",
+          "doc_name": "volt-risk.txt",
+          "relevance_score": 0.076
+        },
+        {
+          "id": "383e67ca-081e-46a3-b6b4-8fa17a20a878",
+          "doc_id": "1bf9aee0-45ac-4c37-a8c6-1e61228f05d5",
+          "chunk_index": 0,
+          "content": "VoltGrid · founder operating update Document ID: volt-update Company ID: voltgrid Publisher: FirstCheque · fictional demo evidence Date: 2026-10-01 FICTIONAL DEMO DOCUMENT. The team has nine people. Current cash provides 14 months of runway at the present burn rate. The company is raising $2 million at an indicative $12 million valuation to add utility integrations. These figures are founder-reported and unaudited. Exact financial fields: {\"runwayMonths\":14,\"valuation\":12000000}",
+          "doc_name": "volt-update.txt",
+          "relevance_score": 0.076
+        }
+      ],
+      "instruction": "Corroborating retrieval of the same fictional source pack. Only sourcePack document IDs may be cited."
+    }
+  },
+  "retrievalCounts": [
+    {
+      "version": "v1",
+      "caseId": "case-001",
+      "traceId": "461cba30-c485-429d-bfa9-a1e4dbd7f0a6",
+      "query": "VoltGrid",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v1",
+      "caseId": "case-002",
+      "traceId": "17ca10d7-a9a7-4800-a0f2-279d961a3774",
+      "query": "BridgePay",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v1",
+      "caseId": "case-003",
+      "traceId": "20c4b3db-d7e5-47d7-8f00-55ea200a00d1",
+      "query": "CareLoop",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v1",
+      "caseId": "case-004",
+      "traceId": "5c47c4e3-2733-46be-9ba9-97958ea3a4c1",
+      "query": "Atlas",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v1",
+      "caseId": "case-005",
+      "traceId": "6068c123-da72-4bc2-8619-196d7b43ba78",
+      "query": "Good Harvest",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v1",
+      "caseId": "case-006",
+      "traceId": "599e76a2-dc39-4110-8d99-422bf9ad7199",
+      "query": "Rethread",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v1",
+      "caseId": "case-007",
+      "traceId": "43f7bd7f-3d17-40f9-9eee-ef9bc74d3e35",
+      "query": "VoltGrid",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v1",
+      "caseId": "case-008",
+      "traceId": "19738f54-ce7f-471b-bd51-7bb6bf93e1e8",
+      "query": "BridgePay",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v1",
+      "caseId": "case-009",
+      "traceId": "b716d518-d568-4e96-a1f6-656cd048eaca",
+      "query": "CareLoop",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v1",
+      "caseId": "case-010",
+      "traceId": "b5e5ffd4-c1e9-483b-acdd-2ebcfbd4eb34",
+      "query": "Atlas",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v1",
+      "caseId": "case-011",
+      "traceId": "53d7e5d8-939f-49cf-bbf8-aeea62271b1e",
+      "query": "Good Harvest",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v1",
+      "caseId": "case-012",
+      "traceId": "dec00850-2ac9-48ed-a0ea-bd0902ece64c",
+      "query": "Rethread",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v1",
+      "caseId": "case-013",
+      "traceId": "e0d32c1d-c31d-4fe3-a2d7-7318f625990f",
+      "query": "VoltGrid",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v1",
+      "caseId": "case-014",
+      "traceId": "cbd3b801-9a56-4e76-afa7-f04eacd5bc17",
+      "query": "BridgePay",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v1",
+      "caseId": "case-015",
+      "traceId": "c42cb5c6-2efd-4c0d-a293-4f8d0970eb02",
+      "query": "CareLoop",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v1",
+      "caseId": "case-016",
+      "traceId": "773a7493-16b5-4724-ba80-d77f643467cd",
+      "query": "Atlas",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v1",
+      "caseId": "case-017",
+      "traceId": "b22ef6b8-243b-4ab7-a691-e2ca7188b6ed",
+      "query": "Good Harvest",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v1",
+      "caseId": "case-018",
+      "traceId": "64267717-8a0b-4c1d-83f6-e28011f298df",
+      "query": "Rethread",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v1",
+      "caseId": "case-019",
+      "traceId": "0a8e7dac-7aaf-4ff9-8cbe-5664e4e334a2",
+      "query": "VoltGrid",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v1",
+      "caseId": "case-020",
+      "traceId": "f6b8ca62-e97e-42e3-9b46-935cdb71dc2f",
+      "query": "BridgePay",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v1",
+      "caseId": "case-021",
+      "traceId": "1d85236a-290f-4270-a03b-d1bf5955206c",
+      "query": "CareLoop",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v1",
+      "caseId": "case-022",
+      "traceId": "b12b8dc6-8bbe-4d4c-a334-10727f992dd2",
+      "query": "Atlas",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v1",
+      "caseId": "case-023",
+      "traceId": "68f54419-8c47-4048-a880-a09f511a34c5",
+      "query": "Good Harvest",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v1",
+      "caseId": "case-024",
+      "traceId": "3b49ebb0-eb1c-4b2c-8295-745499798aed",
+      "query": "Rethread",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v1",
+      "caseId": "case-025",
+      "traceId": "d91553b8-a9da-4750-b878-3747a7587e04",
+      "query": "VoltGrid",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v1",
+      "caseId": "case-026",
+      "traceId": "a23f8895-3afa-4b07-aec3-eaea6631a607",
+      "query": "BridgePay",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v1",
+      "caseId": "case-027",
+      "traceId": "55752936-15a0-4389-8636-3f67ef958382",
+      "query": "CareLoop",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v1",
+      "caseId": "case-028",
+      "traceId": "d7ab9a5a-293b-4425-99a2-7aa36a6f8d66",
+      "query": "Atlas",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v1",
+      "caseId": "case-029",
+      "traceId": "87ca4f2c-3673-456b-b712-37cd3b0370ff",
+      "query": "Good Harvest",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v1",
+      "caseId": "case-030",
+      "traceId": "ffbd63fa-d7e6-4daa-862b-aa316e4015ce",
+      "query": "Rethread",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v1",
+      "caseId": "case-031",
+      "traceId": "c1fc5b19-a5ca-41a6-8a80-0ae657a24901",
+      "query": "VoltGrid",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v1",
+      "caseId": "case-032",
+      "traceId": "f4aeceb4-eb05-461a-81dc-72e8c628ea41",
+      "query": "BridgePay",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v1",
+      "caseId": "case-033",
+      "traceId": "53c472d5-43b4-45a7-80f4-82d6aae482e3",
+      "query": "CareLoop",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v1",
+      "caseId": "case-034",
+      "traceId": "08db7b2a-0b81-4d67-a777-d050e86ba95e",
+      "query": "Atlas",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v1",
+      "caseId": "case-035",
+      "traceId": "d12351f2-dd75-40a3-9d03-e91f9a509368",
+      "query": "Good Harvest",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v1",
+      "caseId": "case-036",
+      "traceId": "7b1cac1b-7ec6-44d3-86dd-9c3825cb4d77",
+      "query": "Rethread",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v1",
+      "caseId": "case-037",
+      "traceId": "bebeb247-c394-45cd-9453-f8167114b395",
+      "query": "VoltGrid",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v1",
+      "caseId": "case-038",
+      "traceId": "045eae6e-d3b4-4688-8f23-8c972fd80dc9",
+      "query": "BridgePay",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v1",
+      "caseId": "case-039",
+      "traceId": "b67da4f5-65aa-4a8d-96d2-5c94c07428a9",
+      "query": "CareLoop",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v1",
+      "caseId": "case-040",
+      "traceId": "5461f27f-78bd-476a-b635-1c3325274e7e",
+      "query": "Atlas",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v1",
+      "caseId": "case-041",
+      "traceId": "f6dba298-7fe5-4f55-99ab-95ef43636883",
+      "query": "Good Harvest",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v1",
+      "caseId": "case-042",
+      "traceId": "e912a892-3265-4406-8f6c-3bba72dee9e2",
+      "query": "Rethread",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v1",
+      "caseId": "case-043",
+      "traceId": "3c36da36-ce4a-409c-9137-02fdece17963",
+      "query": "VoltGrid",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v1",
+      "caseId": "case-044",
+      "traceId": "c30baf33-fcb8-4bb0-be8d-6c104056d0ad",
+      "query": "BridgePay",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v1",
+      "caseId": "case-045",
+      "traceId": "9b452133-dd7a-4b95-ae87-2f81ec16b7d7",
+      "query": "CareLoop",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v1",
+      "caseId": "case-046",
+      "traceId": "17f30c18-0fae-4a34-9c9b-9bce72fb0de7",
+      "query": "Atlas",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v1",
+      "caseId": "case-047",
+      "traceId": "33afd246-19c2-41ac-a3ec-e30e43444196",
+      "query": "Good Harvest",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v1",
+      "caseId": "case-048",
+      "traceId": "403e8ad6-b411-4ffb-a966-fa63d54a60bc",
+      "query": "Rethread",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v1",
+      "caseId": "case-049",
+      "traceId": "82f505c4-f5a6-48f7-a4fe-8e1531f24727",
+      "query": "VoltGrid",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v1",
+      "caseId": "case-050",
+      "traceId": "6b6a58f1-7ade-42ae-9026-dfdd37574150",
+      "query": "BridgePay",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v2",
+      "caseId": "case-001",
+      "traceId": "fcf11fd7-769a-426b-a1f7-e3d31d027b20",
+      "query": "VoltGrid",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v2",
+      "caseId": "case-002",
+      "traceId": "5e9e85b9-cdb6-421e-8d6e-d49d11f43bcd",
+      "query": "BridgePay",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v2",
+      "caseId": "case-003",
+      "traceId": "aebf3325-9e32-4d5a-b926-30e129bfaf38",
+      "query": "CareLoop",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v2",
+      "caseId": "case-004",
+      "traceId": "4d067b93-7af3-46ab-9fa2-244306a3aef3",
+      "query": "Atlas",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v2",
+      "caseId": "case-005",
+      "traceId": "15eb4e08-77bd-42f7-b92b-68ab4979b511",
+      "query": "Good Harvest",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v2",
+      "caseId": "case-006",
+      "traceId": "d3cabb86-05a3-4d9e-9f04-b8282b8f4f00",
+      "query": "Rethread",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v2",
+      "caseId": "case-007",
+      "traceId": "a0b3b999-0897-4edd-aef5-5190079ef318",
+      "query": "VoltGrid",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v2",
+      "caseId": "case-008",
+      "traceId": "2237164c-0b5d-4e09-8a62-8709fa7983a9",
+      "query": "BridgePay",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v2",
+      "caseId": "case-009",
+      "traceId": "a616274f-2b6c-4b2d-a4dc-4de23b678511",
+      "query": "CareLoop",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v2",
+      "caseId": "case-010",
+      "traceId": "bbe6d880-de2b-4dfb-9483-7b7d898209e0",
+      "query": "Atlas",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v2",
+      "caseId": "case-011",
+      "traceId": "0fb4d52e-9267-4590-816f-6b5eed02fc34",
+      "query": "Good Harvest",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v2",
+      "caseId": "case-012",
+      "traceId": "673dc91c-b1c0-4350-9246-46e3be91dc5d",
+      "query": "Rethread",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v2",
+      "caseId": "case-013",
+      "traceId": "28125990-b18a-4a75-bce8-0240b2a44283",
+      "query": "VoltGrid",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v2",
+      "caseId": "case-014",
+      "traceId": "32b935f8-af2a-4cb8-907e-37d6bd5306a5",
+      "query": "BridgePay",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v2",
+      "caseId": "case-015",
+      "traceId": "eb34bc12-05ed-4e58-ae2d-812d59ad5232",
+      "query": "CareLoop",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v2",
+      "caseId": "case-016",
+      "traceId": "749efa6b-98fe-4257-a6a4-288dc7abe44a",
+      "query": "Atlas",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v2",
+      "caseId": "case-017",
+      "traceId": "18f64e68-1482-4ed2-a795-d438c7bb72ee",
+      "query": "Good Harvest",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v2",
+      "caseId": "case-018",
+      "traceId": "c1dc0b9a-b225-4d54-8314-0c45861f605d",
+      "query": "Rethread",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v2",
+      "caseId": "case-019",
+      "traceId": "ff538efb-01a9-43e0-a06c-8a5b5740b508",
+      "query": "VoltGrid",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v2",
+      "caseId": "case-020",
+      "traceId": "53a79ddb-483a-4edf-a475-59ec3ea12017",
+      "query": "BridgePay",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v2",
+      "caseId": "case-021",
+      "traceId": "50bd2e58-22ed-4732-9e68-998a96d2d118",
+      "query": "CareLoop",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v2",
+      "caseId": "case-022",
+      "traceId": "ac2d518a-c308-45d3-9a70-1576ec108caa",
+      "query": "Atlas",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v2",
+      "caseId": "case-023",
+      "traceId": "cf90347d-3e40-4a9a-b4d6-a1dda38223e6",
+      "query": "Good Harvest",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v2",
+      "caseId": "case-024",
+      "traceId": "c5e7f71d-1288-4fd5-9817-f4d08cf0d648",
+      "query": "Rethread",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v2",
+      "caseId": "case-025",
+      "traceId": "d9ea32de-e997-4ea9-92c5-6d0b363eb3ee",
+      "query": "VoltGrid",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v2",
+      "caseId": "case-026",
+      "traceId": "e968991f-ed6c-4c4f-8945-69bf2f543d4a",
+      "query": "BridgePay",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v2",
+      "caseId": "case-027",
+      "traceId": "e301dbe3-617e-4e78-9a7d-470b3f68cee8",
+      "query": "CareLoop",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v2",
+      "caseId": "case-028",
+      "traceId": "560b2cd9-bb8e-4ff9-93b2-8dbe8b4b084a",
+      "query": "Atlas",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v2",
+      "caseId": "case-029",
+      "traceId": "4d0d308a-6a1c-4896-8a8c-e28575f01c0c",
+      "query": "Good Harvest",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v2",
+      "caseId": "case-030",
+      "traceId": "46ef5b62-4b65-4da2-bf69-9fcb147ebcb5",
+      "query": "Rethread",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v2",
+      "caseId": "case-031",
+      "traceId": "d6094e3c-bec2-48b8-a61a-b20bb5324227",
+      "query": "VoltGrid",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v2",
+      "caseId": "case-032",
+      "traceId": "1331fee6-d3ed-4ef5-982f-f1b0151cf8ed",
+      "query": "BridgePay",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v2",
+      "caseId": "case-033",
+      "traceId": "4dedbab2-7bcc-4ae1-8502-6bb2b17477b5",
+      "query": "CareLoop",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v2",
+      "caseId": "case-034",
+      "traceId": "12339d8c-e198-4931-a6ce-302c6894eea0",
+      "query": "Atlas",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v2",
+      "caseId": "case-035",
+      "traceId": "ecdfe8a1-d767-4038-8c0a-baafcacaada9",
+      "query": "Good Harvest",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v2",
+      "caseId": "case-036",
+      "traceId": "774b5510-fe3d-4f58-98e4-36eee84dfa6d",
+      "query": "Rethread",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v2",
+      "caseId": "case-037",
+      "traceId": "6be5922e-4d63-4b7e-9722-f99cb38a24d0",
+      "query": "VoltGrid",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v2",
+      "caseId": "case-038",
+      "traceId": "ca0d6f59-67c0-4800-ac55-01a0355f0b8e",
+      "query": "BridgePay",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v2",
+      "caseId": "case-039",
+      "traceId": "c8ee5b61-781c-4138-973b-53555c716c20",
+      "query": "CareLoop",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v2",
+      "caseId": "case-040",
+      "traceId": "82f84899-ce27-4133-9c38-93ae17dd5995",
+      "query": "Atlas",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v2",
+      "caseId": "case-041",
+      "traceId": "2fd82d00-d32f-4bb2-a25a-3f71cc1df3d5",
+      "query": "Good Harvest",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v2",
+      "caseId": "case-042",
+      "traceId": "4c798d28-9b2e-45d9-bddb-21e32eb2376f",
+      "query": "Rethread",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v2",
+      "caseId": "case-043",
+      "traceId": "c047ba74-e5c4-413a-8e67-a725457807e2",
+      "query": "VoltGrid",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v2",
+      "caseId": "case-044",
+      "traceId": "abc756e9-03e1-41a7-bcc3-0bcf8d61292c",
+      "query": "BridgePay",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v2",
+      "caseId": "case-045",
+      "traceId": "f8f7e212-a0da-480a-8011-729ceb82c179",
+      "query": "CareLoop",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v2",
+      "caseId": "case-046",
+      "traceId": "12dd686c-4a91-4849-a697-18666bcbfab4",
+      "query": "Atlas",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v2",
+      "caseId": "case-047",
+      "traceId": "6ff5f860-436b-472e-939f-c725b439d72a",
+      "query": "Good Harvest",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v2",
+      "caseId": "case-048",
+      "traceId": "7c99bbc9-390c-4067-bb8a-5985d55567c0",
+      "query": "Rethread",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v2",
+      "caseId": "case-049",
+      "traceId": "965a59d9-5543-4a1f-a4d2-bf557b7a0576",
+      "query": "VoltGrid",
+      "retrievedDocumentCount": 3
+    },
+    {
+      "version": "v2",
+      "caseId": "case-050",
+      "traceId": "b1d80476-92c9-434e-89fa-c81f6fddd241",
+      "query": "BridgePay",
+      "retrievedDocumentCount": 3
+    }
+  ]
+}
