@@ -48,8 +48,19 @@ async function main() {
   const results: RecordEntry[] = [];
   let next = 0;
   let writes = Promise.resolve();
+  const counts = () => ({
+    actualCaseResponses: results.filter((record) => record?.rawModelOutput).length,
+    modelCalls: results.reduce((sum, record) => sum + Number((record?.outputContract as { modelCalls?: number })?.modelCalls ?? 0), 0),
+    rawModelResponses: results.reduce((sum, record) => sum + ((record?.generationAttempts as unknown[])?.length ?? 0), 0),
+    rawContractValidResponses: results.reduce((sum, record) => sum + ((record?.generationAttempts as { valid?: boolean }[])?.filter((attempt) => attempt.valid).length ?? 0), 0),
+    repairAttempts: results.reduce((sum, record) => sum + Number((record?.outputContract as { repairAttempts?: number })?.repairAttempts ?? 0), 0),
+    parsedReports: results.filter((record) => record?.status === "live-complete").length,
+    generatedLiveMemos: results.filter((record) => (record?.report as { mode?: string })?.mode === "live").length,
+    replayFallbacks: results.filter((record) => (record?.report as { mode?: string })?.mode === "replay").length,
+    errors: results.filter((record) => record?.status === "error").length,
+  });
   const save = () => {
-    const snapshot = JSON.stringify({ session, version, sourceHead, dataset: "work/research-dataset.json", liveOnly: true, recordedAt: new Date().toISOString(), requested: dataset.length, actualCalls: results.filter((record) => record?.rawModelOutput).length, parsedReports: results.filter((record) => record?.status === "live-complete").length, errors: results.filter((record) => record?.status === "error").length, results: results.filter(Boolean) }, null, 2);
+    const snapshot = JSON.stringify({ session, version, sourceHead, dataset: "work/research-dataset.json", requiresLiveProvider: true, benchmarkTarget: "Delivered memos with explicit live/replay mode; raw generations and contract validity recorded separately.", recordedAt: new Date().toISOString(), requested: dataset.length, actualCalls: counts().actualCaseResponses, ...counts(), results: results.filter(Boolean) }, null, 2);
     writes = writes.then(() => writeFile(outputFile, snapshot));
     return writes;
   };
@@ -63,8 +74,8 @@ async function main() {
         results[index] = { caseId, caseType, category, input, status: detailed.rawModelOutput ? "live-complete" : "not-live", ...detailed };
         console.log(`${index + 1}/${dataset.length} ${caseId} ${sourceInput.startupId} ${version} grounding=${detailed.evaluation.score} trace=${detailed.report.traceId} displayed=${detailed.report.mode}`);
       } catch (error) {
-        const failure = error as { rawModelOutput?: string; traceId?: string; prompt?: unknown };
-        results[index] = { caseId, caseType, category, input, status: "error", error: error instanceof Error ? error.message : String(error), rawModelOutput: failure.rawModelOutput || null, traceId: failure.traceId, prompt: failure.prompt };
+        const failure = error as { rawModelOutput?: string; generationAttempts?: unknown[]; outputContract?: unknown; traceId?: string; prompt?: unknown };
+        results[index] = { caseId, caseType, category, input, status: "error", error: error instanceof Error ? error.message : String(error), rawModelOutput: failure.rawModelOutput || null, generationAttempts: failure.generationAttempts, outputContract: failure.outputContract, traceId: failure.traceId, prompt: failure.prompt };
         console.error(`${index + 1}/${dataset.length} ${caseId} failed: ${results[index].error}`);
       }
       await save();
@@ -73,7 +84,7 @@ async function main() {
   await save();
   const completed = results.filter((result) => result.rawModelOutput).length;
   const errors = results.filter((result) => result.status === "error").length;
-  console.log(JSON.stringify({ outputFile, requested: dataset.length, actualCalls: completed, parsedReports: results.length - errors, errors }));
+  console.log(JSON.stringify({ outputFile, requested: dataset.length, actualCalls: completed, ...counts() }));
   if (errors || completed !== dataset.length) process.exitCode = 1;
 }
 main().catch((error) => { console.error(error.message); process.exitCode = 1; });

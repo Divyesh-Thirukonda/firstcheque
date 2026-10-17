@@ -8,6 +8,7 @@ export type ResearchTraceInput = {
   sessionId: string; traceId?: string; input: string; output: string; model: string;
   latencyMs: number; steps: ResearchTraceStep[]; promptVersion?: string; startupId?: string; error?: string;
   tokenCountInput?: number; tokenCountOutput?: number;
+  repairAttempts?: number; modelCalls?: number; deliveredMode?: "live" | "replay" | "error";
 };
 const host = () => (process.env.PRISMTRACE_HOST || 'https://api.prism.blockconvey.com').replace(/\/$/, '');
 const config = () => ({ key: process.env.PRISMTRACE_API_KEY, project: process.env.PRISMTRACE_PROJECT_ID });
@@ -43,7 +44,7 @@ export async function emitResearchTrace(input: ResearchTraceInput): Promise<{ok:
   const traceId = input.traceId || crypto.randomUUID();
   if (!prismConfigured()) return {ok:false,traceId,error:'PRISM is not configured'};
   const started = Date.now() - input.latencyMs;
-  const isReplay = input.model.startsWith('deterministic-replay');
+  const isReplay = input.model.startsWith('deterministic-');
   try {
     const result = await prismRequest('/api/traces', {
       project_id: config().project, trace_id: traceId,
@@ -55,7 +56,11 @@ export async function emitResearchTrace(input: ResearchTraceInput): Promise<{ok:
       token_count_input:input.tokenCountInput || 0, token_count_output:input.tokenCountOutput || 0,
       is_demo:isReplay,
       metadata:{product:'FirstCheque',environment:'hackathon',prompt_version:input.promptVersion || 'v2',startup_id:input.startupId,
-        data_classification:'synthetic',execution_mode:isReplay ? 'replay' : input.error ? 'error' : 'live',
+        data_classification:'synthetic',execution_mode:isReplay ? 'replay' : input.error ? 'error' : 'live',delivered_mode:input.deliveredMode,
+        repair_attempts:input.repairAttempts ?? 0,model_calls:input.modelCalls ?? 0,
+        // Spans normalization limits the displayed input to a 4,000-character
+        // prefix. Preserve the exact model request here as well as in the run ledger.
+        captured_model_input:input.input,captured_model_input_length:input.input.length,
         ...(input.error ? {error:input.error,status:'error'} : {}),
       },
     });
@@ -63,11 +68,15 @@ export async function emitResearchTrace(input: ResearchTraceInput): Promise<{ok:
     // either; return the canonical stored id so readback addresses the same row.
     const storedId = typeof result.id === 'string' ? result.id : result.trace_id;
     if (typeof storedId !== 'string' || !storedId) throw new Error('PRISM did not return a stored trace id');
+    // PRISM normalizes the top-level exchange from the first submitted span.
+    // Put the whole run first; a retrieval span here would replace the memo
+    // seen by evaluators with the retrieved documents instead.
+    const rootSpanId = `${traceId.replaceAll('-','').slice(0,12)}ffff`;
     let cursor = started;
-    const spans = input.steps.map((step,index) => {
+    const children = input.steps.map((step,index) => {
       const duration = Math.max(step.latencyMs || 1,1);
       const start = cursor; cursor += duration;
-      return {span_id:`${traceId.replaceAll('-','').slice(0,12)}${index.toString(16).padStart(4,'0')}`,
+      return {span_id:`${traceId.replaceAll('-','').slice(0,12)}${index.toString(16).padStart(4,'0')}`,parent_span_id:rootSpanId,
         name:step.name,span_type:step.kind || 'tool',start_time:new Date(start).toISOString(),
         end_time:new Date(start+duration).toISOString(),duration_ms:duration,
         input_text:step.input || '',output_text:step.output || '',status:step.status === 'error' ? 'error' : 'ok',
@@ -75,10 +84,20 @@ export async function emitResearchTrace(input: ResearchTraceInput): Promise<{ok:
         ...(step.status === 'error' ? {error_message:step.output || input.error || 'Research step failed'} : {}),
       };
     });
-    if(spans.length) await prismRequest('/api/spans/ingest',{
+    const spans = [{span_id:rootSpanId,name:'FirstCheque research run',span_type:'chain',
+      start_time:new Date(started).toISOString(),end_time:new Date().toISOString(),duration_ms:Math.max(1,Math.round(input.latencyMs)),
+      input_text:input.input,output_text:input.output,model:input.model,
+      status:input.error ? 'error' : 'ok',...(input.error ? {error_message:input.error} : {}),
+      token_count_input:input.tokenCountInput || 0,token_count_output:input.tokenCountOutput || 0,
+      metadata:{prompt_version:input.promptVersion || 'v2',delivered_mode:input.deliveredMode,output_role:'final_research_memo'},
+    },...children];
+    const ingested = await prismRequest('/api/spans/ingest',{
       trace_id:storedId,project_id:config().project,session_id:input.sessionId,spans,
       metadata:{agent_id:process.env.PRISM_AGENT_ID || 'firstcheque-analyst',prompt_version:input.promptVersion},
     });
+    if (ingested.success !== true || ingested.spans_ingested !== spans.length || ingested.trace_created !== false) {
+      throw new Error('PRISM did not confirm all research spans on the existing trace');
+    }
     return {ok:true,traceId:storedId};
   } catch(error) { return {ok:false,traceId,error:error instanceof Error ? error.message : 'PRISM ingest failed'}; }
 }

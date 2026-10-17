@@ -88,7 +88,7 @@ export interface ResearchResult {
   diligenceQuestions: string[];
   evidence: Evidence[];
   pipeline: ResearchStep[];
-  metrics: { latencyMs: number; inputTokens: number; outputTokens: number; groundingScore: number };
+  metrics: { latencyMs: number; inputTokens: number; outputTokens: number; groundingScore: number; modelCalls?: number; repairAttempts?: number };
   guardrails: string[];
   traceId: string;
   liveError?: string;
