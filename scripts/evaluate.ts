@@ -15,7 +15,7 @@ async function main() {
     version: batch.version, session: batch.session,
     cases: batch.results.map((entry: { caseId: string; report?: ResearchResult; rawModelOutput?: string; input: { startupId: string } }) => {
       let evaluation;
-      try { evaluation = entry.rawModelOutput ? evaluateGrounding(JSON.parse(entry.rawModelOutput), getEvidence(entry.input.startupId)) : null; } catch { evaluation = null; }
+      try { evaluation = entry.rawModelOutput ? evaluateGrounding(JSON.parse(entry.rawModelOutput.trim().replace(/^```(?:json)?\s*/i, "").replace(/\s*```$/, "")), getEvidence(entry.input.startupId)) : null; } catch { evaluation = null; }
       return { caseId: entry.caseId, traceId: entry.report?.traceId, live: Boolean(entry.rawModelOutput), score: evaluation?.score ?? null, passed: evaluation?.passed ?? false, failures: evaluation?.findings.filter((finding) => !finding.passed) ?? [] };
     }),
   }));

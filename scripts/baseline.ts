@@ -3,6 +3,7 @@
  * Repeat with --version=v2: work/research-dataset.json preserves identical inputs.
  */
 import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { execFileSync } from "node:child_process";
 import { DEFAULT_THESIS, STARTUPS } from "../src/lib/data";
 import { nicrronConfigured, runResearchDetailed, type ResearchInput } from "../src/lib/research";
 
@@ -15,6 +16,7 @@ async function main() {
   if (!["v1", "v2"].includes(version)) throw new Error("--version must be v1 or v2");
   const count = Math.min(100, Math.max(1, Number(flag("count", "50"))));
   const session = flag("session", `firstcheque-live-${version}-${new Date().toISOString().slice(0, 10)}`);
+  const sourceHead = execFileSync("git", ["rev-parse", "HEAD"], { encoding: "utf8" }).trim();
   const concurrency = Math.min(5, Math.max(1, Number(flag("concurrency", "3"))));
   await mkdir("work", { recursive: true });
   const questions = [
@@ -47,7 +49,7 @@ async function main() {
   let next = 0;
   let writes = Promise.resolve();
   const save = () => {
-    const snapshot = JSON.stringify({ session, version, dataset: "work/research-dataset.json", liveOnly: true, recordedAt: new Date().toISOString(), requested: dataset.length, actualCalls: results.filter((record) => record?.rawModelOutput).length, results: results.filter(Boolean) }, null, 2);
+    const snapshot = JSON.stringify({ session, version, sourceHead, dataset: "work/research-dataset.json", liveOnly: true, recordedAt: new Date().toISOString(), requested: dataset.length, actualCalls: results.filter((record) => record?.rawModelOutput).length, parsedReports: results.filter((record) => record?.status === "live-complete").length, errors: results.filter((record) => record?.status === "error").length, results: results.filter(Boolean) }, null, 2);
     writes = writes.then(() => writeFile(outputFile, snapshot));
     return writes;
   };
@@ -61,7 +63,8 @@ async function main() {
         results[index] = { caseId, input, status: detailed.rawModelOutput ? "live-complete" : "not-live", ...detailed };
         console.log(`${index + 1}/${dataset.length} ${caseId} ${sourceInput.startupId} ${version} grounding=${detailed.evaluation.score} trace=${detailed.report.traceId} displayed=${detailed.report.mode}`);
       } catch (error) {
-        results[index] = { caseId, input, status: "error", error: error instanceof Error ? error.message : String(error) };
+        const failure = error as { rawModelOutput?: string; traceId?: string; prompt?: unknown };
+        results[index] = { caseId, input, status: "error", error: error instanceof Error ? error.message : String(error), rawModelOutput: failure.rawModelOutput || null, traceId: failure.traceId, prompt: failure.prompt };
         console.error(`${index + 1}/${dataset.length} ${caseId} failed: ${results[index].error}`);
       }
       await save();
@@ -69,7 +72,8 @@ async function main() {
   }));
   await save();
   const completed = results.filter((result) => result.rawModelOutput).length;
-  console.log(JSON.stringify({ outputFile, requested: dataset.length, actualCalls: completed, errors: results.length - completed }));
-  if (completed !== dataset.length) process.exitCode = 1;
+  const errors = results.filter((result) => result.status === "error").length;
+  console.log(JSON.stringify({ outputFile, requested: dataset.length, actualCalls: completed, parsedReports: results.length - errors, errors }));
+  if (errors || completed !== dataset.length) process.exitCode = 1;
 }
 main().catch((error) => { console.error(error.message); process.exitCode = 1; });
