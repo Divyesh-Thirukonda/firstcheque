@@ -1,0 +1,173 @@
+{
+  "checkedAt": "2026-10-17",
+  "codeCommit": "bf8a28e",
+  "story": "Research a previously unseeded company, retain its logo and sourced profile, save the shared company, and render it with the same financial panel as seeded profiles.",
+  "seededCompanies": 124,
+  "seededLogos": 120,
+  "missingSeedLogos": [
+    "localhost:nyc",
+    "Mooss / Modascope",
+    "WealthRyse",
+    "The Gifted"
+  ],
+  "liveRun": {
+    "company": {
+      "name": "Resend",
+      "website": "https://resend.com/"
+    },
+    "mode": "live-web",
+    "status": "partial",
+    "persisted": true,
+    "model": {
+      "provider": "Nicrron",
+      "id": "openai/gpt-4.1-mini",
+      "inputTokens": 12591,
+      "outputTokens": 2413,
+      "calls": 1
+    },
+    "trace": {
+      "id": "a44a98b9-0d9b-4323-bea5-21bd74b09722",
+      "recorded": true
+    },
+    "logo": {
+      "status": "fetched",
+      "sourceUrl": "https://resend.com/static/favicons/favicon-marketing@57x57.png?v=1",
+      "website": "https://resend.com/",
+      "checkedAt": "2026-10-17T17:20:48.967Z",
+      "sha256": "8699385fececc94203ac8a3d42f98a6a1020dff379f41055ccdc8993b744e585",
+      "background": "#171717",
+      "method": "website-icon"
+    },
+    "funding": {
+      "stage": "Series A",
+      "amount": 18000000,
+      "currency": "$",
+      "announcedAt": "2024-12-04",
+      "sourceUrl": "https://resend.com/blog/series-a",
+      "note": "Resend just raised an $18M Series A led by Andreessen Horowitz.",
+      "basis": "disclosed-round"
+    },
+    "founders": [
+      {
+        "name": "Zeno Rocha",
+        "role": "founder",
+        "sourceUrl": "https://resend.com/about"
+      },
+      {
+        "name": "Bu Kinoshita",
+        "role": "founder",
+        "sourceUrl": "https://resend.com/about"
+      }
+    ],
+    "financials": {
+      "annualRevenue": {
+        "value": null,
+        "currency": null,
+        "period": null,
+        "asOf": null,
+        "sourceIds": [],
+        "quote": null,
+        "status": "not-found"
+      },
+      "arr": {
+        "value": null,
+        "currency": null,
+        "period": null,
+        "asOf": null,
+        "sourceIds": [],
+        "quote": null,
+        "status": "not-found"
+      },
+      "valuation": {
+        "value": null,
+        "currency": null,
+        "period": null,
+        "asOf": null,
+        "sourceIds": [],
+        "quote": null,
+        "status": "not-found"
+      },
+      "runwayMonths": {
+        "value": null,
+        "currency": null,
+        "period": null,
+        "asOf": null,
+        "sourceIds": [],
+        "quote": null,
+        "status": "not-found"
+      }
+    },
+    "sourceCount": 6
+  },
+  "prismReadback": {
+    "traceId": "a44a98b9-0d9b-4323-bea5-21bd74b09722",
+    "spanCount": 18,
+    "logoToolStored": true,
+    "profileValidatorStored": true
+  },
+  "catalogReadback": {
+    "companyId": "co-e737e16fb14ea3a8b7",
+    "stage": "Series A",
+    "logo": "fetched",
+    "financialFields": [
+      "annualRevenue",
+      "arr",
+      "valuation",
+      "runwayMonths"
+    ]
+  },
+  "checks": {
+    "testsPassed": 76,
+    "typecheck": "passed",
+    "build": "passed",
+    "browser": "Local Discover card, overview, report logo and 375px financial panel verified. Images loaded at 96px. Document width stayed 375px. Deployed Discover card and profile logo were also checked in-browser.",
+    "financialScope": "Unknowns remain null; older and missing disclosures do not erase a dated source snapshot; year-only dates retain their precision."
+  },
+  "limitations": [
+    "Report coverage is partial. Not every research topic or financial field has qualifying public evidence.",
+    "Four company images remain unavailable; no generated initials substitute for brand artwork.",
+    "Cached favicons may be stale; profile records retrieval method and source.",
+    "One malformed funding date created during testing was corrected by re-saving the actual retained live result after fixing date selection; catalog readback verified Series A dated 2024-12-04.",
+    "Name-only domain resolution has unit coverage; end-to-end research test supplied the company website."
+  ],
+  "deployment": {
+    "url": "https://firstcheque-7mya5spy4-divyesh-thirukondas-projects.vercel.app",
+    "id": "dpl_E4uB448vd4iiPqAcbSgWVcb9uV2K",
+    "readyState": "READY",
+    "sourceCommit": "bf8a28ef8b3ff7d8448f669b8daf6bffa2537fc4",
+    "catalogCompanies": 125,
+    "seededCompanies": 124,
+    "fetchedLogosIncludingLive": 121,
+    "seededOmniValuation": 1500000000,
+    "deployedLogoMatchesSourceReceipt": true,
+    "sharedPersistentStorage": true,
+    "cloudResearch": {
+      "mode": "live-web",
+      "status": "partial",
+      "persisted": true,
+      "model": {
+        "provider": "Nicrron",
+        "id": "openai/gpt-4.1-mini",
+        "inputTokens": 16791,
+        "outputTokens": 3107,
+        "calls": 1
+      },
+      "logoStatus": "fetched",
+      "logoSha256": "8699385fececc94203ac8a3d42f98a6a1020dff379f41055ccdc8993b744e585",
+      "trace": {
+        "id": "7fc15e52-9b5c-45d6-a350-c7a62a189eb3",
+        "recorded": true
+      },
+      "storedSpanCount": 23,
+      "storedLogoTool": true,
+      "storedProfileValidator": true,
+      "fundingRefresh": "No qualifying funding extracted on this cloud refresh; prior sourced financing is preserved.",
+      "financialValues": {
+        "annualRevenue": null,
+        "arr": null,
+        "valuation": null,
+        "runwayMonths": null
+      }
+    }
+  }
+}
