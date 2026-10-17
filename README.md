@@ -44,7 +44,11 @@ Without model credentials, the real-company flow can retain fetched sources with
 
 ## Deployment evidence
 
-[Previously verified protected demo](https://firstcheque-279dg3a87-divyesh-thirukondas-projects.vercel.app). Its recorded source is `fa9bb482f6d236119cd3c0bc2923ff24fe5101d8`; [the receipt](docs/evidence/deployment.json) covers that earlier fictional-demo build, not an end-to-end verification of the newer real-company workflow. Temporary judge access is supplied separately; no access token belongs in git.
+[Current protected workspace](https://firstcheque-7ggp819u5-divyesh-thirukondas-projects.vercel.app) is READY from source `b6506bae588a4def4427e33e664f067d1836c6ef`. The hosted check completed real web discovery, Nicrron synthesis, PRISM recording and private Blob dossier readback. Coverage was partial: seven readable pages, six standard topics, and unknown financial fields. One bounded JSON correction was needed (two actual model calls). [Verification receipt](docs/live-workflow-verification.json).
+
+A browser-only usability test verified brief review, strict exclusions, Watchlist persistence, saved-report reopening and the correct external offering handoff. The 47 offline tests, TypeScript and production build pass. Temporary judge access is supplied separately; access tokens are excluded from Git and source archives.
+
+The [earlier deployment receipt](docs/evidence/deployment.json) remains the record of the original fictional-demo build, with its original source revision.
 
 ## Preserved experiment
 

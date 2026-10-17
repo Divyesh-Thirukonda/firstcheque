@@ -1,0 +1,115 @@
+{
+  "scope": "Real-company workflow; separate from frozen synthetic benchmark",
+  "local_sse": {
+    "http": 200,
+    "contentType": "text/event-stream; charset=utf-8",
+    "elapsedMs": 13792,
+    "mode": "live-web",
+    "status": "partial",
+    "model": {
+      "provider": "Nicrron",
+      "id": "openai/gpt-4.1-mini",
+      "inputTokens": 9064,
+      "outputTokens": 1258,
+      "calls": 1
+    },
+    "trace": {
+      "id": "413edffd-10ec-4c7b-a0cc-9c6453940b37",
+      "recorded": true
+    },
+    "persisted": true,
+    "dossierId": "dossier-wefunder-bito"
+  },
+  "discovery": {
+    "queries": 6,
+    "completed": 6,
+    "readable_pages": 7,
+    "source_urls": [
+      "https://mstone.ai/tools-wizard/bito-ai-features-unique/",
+      "https://startupintros.com/orgs/bito",
+      "https://bito.ai/",
+      "https://bito.ai/blog/bito-fundraising-2025/",
+      "https://bito.ai/blog/best-ai-agents-for-coding/",
+      "https://www.softwarereviews.com/categories/478/products/11677/alternatives",
+      "https://bito.ai/about-us/"
+    ]
+  },
+  "postprocessing": {
+    "method": "addCompetitorSourceExcerpt",
+    "new_model_calls": 0,
+    "new_network_requests": 0,
+    "quoted_claims": 4
+  },
+  "storage_readback": {
+    "dossierId": "dossier-wefunder-bito",
+    "companyId": "wefunder-bito",
+    "storage": {
+      "mode": "blob",
+      "persistent": true,
+      "shared": true
+    },
+    "persisted": true,
+    "mode": "live-web",
+    "status": "partial",
+    "sourceCount": 13,
+    "readable": 7,
+    "quotedClaims": 4,
+    "minimumCheck": 1000,
+    "staleNamesakeUrls": []
+  },
+  "verification": {
+    "offline_tests": 47,
+    "typescript": "passed",
+    "production_build": "passed",
+    "blind_browser_checks": [
+      "brief review and strict filtering",
+      "watchlist persists after reload",
+      "saved report reopens",
+      "correct external offering handoff",
+      "source identity rejection visible"
+    ],
+    "financials": "Unknown in this run; no financial accuracy improvement measured",
+    "offering_feed": "Manually source-checked snapshots; not live-synced or eligibility verified"
+  },
+  "implementationRevision": "b6506bae588a4def4427e33e664f067d1836c6ef",
+  "hosted": {
+    "deploymentId": "dpl_CbTUrsQBzQRDyfHdjopx1atimNNz",
+    "url": "https://firstcheque-7ggp819u5-divyesh-thirukondas-projects.vercel.app",
+    "environment": "preview",
+    "state": "READY",
+    "protection": "Vercel Authentication retained; temporary judge link supplied separately",
+    "mode": "live-web",
+    "status": "partial",
+    "model": {
+      "provider": "Nicrron",
+      "id": "openai/gpt-4.1-mini",
+      "inputTokens": 19426,
+      "outputTokens": 2644,
+      "calls": 2
+    },
+    "trace": {
+      "id": "7142eb6b-f1a1-4cf5-b1d2-c60dc813e3c8",
+      "recorded": true
+    },
+    "persisted": true,
+    "savedDossierReadback": true,
+    "standardSections": [
+      "company",
+      "founders",
+      "competitors",
+      "market",
+      "financials",
+      "disclosures"
+    ],
+    "readablePages": 7,
+    "quotedClaims": 3,
+    "financialValues": {
+      "annualRevenue": null,
+      "arr": null,
+      "valuation": null,
+      "runwayMonths": null
+    },
+    "synthesisDurationMs": 19479,
+    "formatRepair": "One bounded corrective model call was required; actual total calls recorded above."
+  }
+}
