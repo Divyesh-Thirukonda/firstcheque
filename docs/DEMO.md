@@ -2,62 +2,57 @@
 
 **Pitch:** FirstCheque makes private-company research personal and inspectable before someone writes their first cheque.
 
-**Opening label:** Synthetic companies and documents. Genuine Nicrron AI research. Paper allocations only.
+**Opening distinction:** Discover and the agent workspace use real public sources. The separate fictional demo contains the paper portfolio and frozen hackathon experiment. No money moves.
 
 | Time | Action | Talk track |
 |---|---|---|
-| 0:00–0:20 | Open the workspace | “The next great company may be private. Understanding it should not require a venture fund's research team.” |
-| 0:20–0:40 | Edit the thesis, industry, stage and risk appetite | “I want climate infrastructure, an early round, and a clear view of what could go wrong. The shortlist explains why an opportunity fits my thesis.” |
-| 0:40–1:10 | Research VoltGrid; inspect a claim and its source | “The agent reads the assigned documents, writes a diligence memo, and exposes missing information. These companies and numbers are fictional; the model call and research pipeline are real.” |
-| 1:10–1:35 | Open Research Lab's live experiment card | “We recorded 50 baseline responses before fixing anything. Two failed the actual memo contract. The same 50 user inputs produced 50 contract-valid live memos in v2.” |
-| 1:35–2:15 | Open PRISM Knowledge Base, Root Cause and evidence | “Eighteen documents are assigned to the agent. PRISM grouped recurring warnings. Inspecting three actual cluster members showed that our retrieval span had overwritten the logged memo. We fixed the span hierarchy. Separately, one bounded correction now recovers malformed memo output; here are both real attempts from case018.” |
-| 2:15–2:30 | Show evaluator rubric and saved results | “We ran the same custom evaluator on both versions. Its calibration was unreliable, so we retain its results without claiming a score improvement. The 48-to-50 metric comes from the exact application schema.” |
-| 2:30–2:50 | Add a paper allocation and view concentration | “I can rehearse a decision, see concentration and stay within my paper budget. No money moves.” |
-| 2:50–3:00 | Return to the product | “FirstCheque democratizes the research layer. Your first cheque starts with better questions.” |
+| 0:00–0:25 | Enter a brief in Discover; inspect the editable filters | “Tell us your budget and interests. Unknown revenue and minimum checks do not silently become a match.” |
+| 0:25–0:45 | Open a real offering snapshot and its source | “These are manually source-checked listings, with dates and original links. The source platform determines current terms and eligibility; this is not a live offering feed.” |
+| 0:45–1:20 | Paste a company website or select a company; start research | “The agent searches company, founder, competitor, market, financial and disclosure evidence, then reads accessible pages. Watch the actual retrieval and synthesis steps.” |
+| 1:20–1:50 | Inspect Report, Financials and Sources | “Here is the retained passage behind a claim. These financial fields need the right definition, currency and reporting period. Blocked sources, disagreements and unknowns stay visible.” |
+| 1:50–2:05 | Reopen a saved dossier | “The private Blob-backed library retains company research. This prototype's library is shared; personalized thesis-fit text is removed from saved shared reports.” |
+| 2:05–2:40 | Switch to Fictional demo → Research Lab and PRISM | “The original controlled source pack is fictional. We recorded 50 genuine baseline responses before the fix: 48 contract-valid memos became 50 on the same saved inputs. One actual v2 response needed a bounded repair, and both attempts are retained.” |
+| 2:40–2:55 | Show Root Cause and evaluator caveat | “Three cluster examples exposed a logging-normalization defect. Our custom judge failed calibration, so we retain its results without claiming a score improvement. The 48-to-50 count comes from the application schema.” |
+| 2:55–3:00 | Return to the product | “Your first cheque starts with better questions.” |
 
 ## Rehearsal
 
-- Open the app and PRISM evidence tabs beforehand. Workspace access is required for PRISM; the repository contains a non-secret evidence export.
-- Verify thesis → research → source → paper allocation. A fresh live memo can be slow; a saved real response may be shown as a previously generated result with its trace ID.
-- Use the **live experiment** card for the genuine 50-case counts. The separate **illustrative regression replay** is a labeled deterministic example, not the measured provider baseline.
-- Keep secrets and account settings out of the recording. Use the current hosted demo link in the repository README.
+- Use a verified deployment and its exact source receipt. The older deployment receipt covers the fictional demo; it does not prove the new web flow works end to end.
+- Have a previously generated, saved real-company dossier ready if a fresh model or search request is slow. Show its actual retrieval time and trace; do not call it a fresh response.
+- Expect some sources to be blocked and keyless search to be rate limited. A sources-only or partial report is a valid disclosed outcome, not a complete research claim.
+- Keep unknown financials visible. Do not present search snippets, article publication dates or valuation caps as a dated annual revenue disclosure.
+- Open PRISM and the non-secret evidence index beforehand. Workspace access is required. Keep keys and temporary share tokens out of the recording.
 
 ## Questions judges may ask
 
-**What improved?**
+**Is this a live offering marketplace?**
 
-“Contract-valid delivered memos increased from 48/50 to 50/50 on identical saved user inputs. V2 made 51 provider calls for 50 cases because case018 needed one bounded repair. We retained its invalid first response and valid correction. The routing slug stayed `nicrron/auto`, but the router can choose underlying models, so we describe observed pipeline outcomes.”
+“It is a research workspace with source-checked offering snapshots and real website imports. We link to the original platform for current terms. Automated platform scraping is disabled where prohibited; a permitted live feed is not claimed.”
 
-**What did Root Cause find?**
+**What did you measure?**
 
-“The cluster contained 52 tentative instrumentation-affected warnings. We directly verified three members where stored output was a retrieval payload rather than the actual memo. Comparing traces with immutable raw outputs identified a span-normalization bug. We do not call those 52 hallucinations.”
+“The preserved synthetic-source experiment has 50 identical user inputs per version: 48/50 to 50/50 contract-valid delivered live memos. V2 made 51 calls because one invalid first response required a successful bounded repair. This does not measure the new public-web flow or establish factual accuracy.”
 
-**Did the custom judge prove the answers are correct?**
+**What did PRISM reveal?**
 
-“No. We ran the same custom rubric and reference catalog across the matched cases, but its golden calibration rejected a valid answer for incorrect schema reasons. The raw verdicts are available. We publish only the independently validated contract metric, with no grounding score.”
+“Its tentative cluster had 52 instrumentation-affected warnings. We directly verified three members where a retrieval payload replaced the memo in the logged answer. Comparing traces with immutable raw responses localized the code defect. These were not 52 hallucinations.”
 
-**Can users really invest?**
+**Did the external judge prove improvement?**
 
-“This build uses synthetic companies and paper allocations. Real access depends on the offering and investor eligibility; execution would require an appropriate registered partner.”
+“No. The same custom rubric ran across the matched cases, but calibration rejected a valid answer for incorrect schema reasons. We publish the independent contract metric and retain the unreliable verdicts with their caveat.”
 
-**Why this product?**
+**Can I invest here?**
 
-“A familiar investing workspace can help people ask better diligence questions. Thesis fit, evidence, uncertainty and concentration belong in one experience.”
+“No transaction occurs in FirstCheque. A real opportunity must be reviewed at its source intermediary. The separate fictional demo supports paper allocations.”
 
 ## Submission copy
 
-**Name:** FirstCheque
+**FirstCheque — Your first cheque starts with better questions.** Money Intelligence track.
 
-**Tagline:** Your first cheque starts with better questions.
+FirstCheque turns an investor's brief into explicit discovery constraints, source-checked offering snapshots and a research workspace for real company websites. The agent retains public evidence across company, founder, competitor, market, financial and disclosure topics; dated financial unknowns and access limitations remain visible. Saved dossiers use a shared library backed by private Vercel Blob.
 
-**Track:** Money Intelligence
+A separate fictional demo preserves the hackathon's reproducible source pack, paper portfolio and genuine Nicrron/PRISM experiment: 18 assigned Knowledge Base documents, 50 baseline calls before fixes, three verified recurring observability failures, and the same custom evaluator across matched inputs. Independent contract validity improved from 48/50 to 50/50. The external judge failed calibration, so no judge-score or factual-grounding improvement is claimed.
 
-**Description:** FirstCheque turns an investor's thesis, industry preferences and risk appetite into a private-company shortlist, evidence-linked AI memos and a paper portfolio. Synthetic company documents keep the hackathon demonstration reproducible. Genuine Nicrron calls power the research; PRISM records retrieval and model behavior so failures can be inspected.
+[Repository](https://github.com/Divyesh-Thirukonda/firstcheque) · [Offering sources](OFFERING-SOURCES.md) · [Recorded experiment](evidence/README.md). Use the README's deployment receipt for access and verification scope.
 
-**Technical evidence:** 18 assigned Knowledge Base documents; 50 genuine baseline calls before the fix; a real Root Cause cluster with three verified observability failures; the same custom evaluator on 50 matched cases per version. Independent contract validation improved from 48/50 to 50/50, including one retained invalid-to-valid bounded repair. The external judge failed calibration, so no external score or factual-grounding improvement is claimed.
-
-**Repository:** https://github.com/Divyesh-Thirukonda/firstcheque
-
-**Evidence:** `docs/evidence/README.md`; hosted demo link is maintained in the repository README.
-
-**Submission:** prepared; the event form had not been released when the build was completed.
+**Submission:** prepared; the user confirmed the event form had not been released.
