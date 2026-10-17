@@ -2,8 +2,7 @@
 
 import { useEffect, useState, type FormEvent } from "react";
 import { ArrowRight, Check, ChevronDown, X } from "lucide-react";
-import { DEFAULT_DISCOVERY_PREFERENCES, DISCOVERY_SECTORS } from "@/lib/discovery";
-import { STAGES } from "@/lib/data";
+import { DEFAULT_DISCOVERY_PREFERENCES, DISCOVERY_SECTORS, DISCOVERY_STAGES as STAGES } from "@/lib/discovery";
 import type { DiscoveryPreferences } from "@/lib/discovery-types";
 import { WorkspaceDialog } from "./workspace-dialog";
 

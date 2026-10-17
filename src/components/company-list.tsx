@@ -39,7 +39,7 @@ export function CompanyList({ entries, savedIds, onSave, onResearch }: {
   return <div className="fc-company-grid">
     {entries.map(({ company }) => {
       const minimum = company.offeringStatus === "closed" ? "Offering closed" : company.kind !== "offering" ? "Research only" : company.minInvestment !== null ? `From ${formatUSD(company.minInvestment)}` : "Minimum unknown";
-      return <CompanyTile key={company.id} id={company.id} name={company.name} description={companyTagline(company)} sector={company.sectors[0] || company.industry} footer={minimum} saved={savedIds.includes(company.id)} onSave={() => onSave(company.id)} onOpen={() => onResearch(company)}/>;
+      return <CompanyTile key={company.id} id={company.id} name={company.name} description={companyTagline(company)} sector={company.sectors[0] || company.industry} footer={company.kind === "company" && company.stage !== "Unknown" ? company.stage : minimum} secondaryLabel={company.catalogOrigin === "event-handoff" ? "Money Talks founder" : undefined} saved={savedIds.includes(company.id)} onSave={() => onSave(company.id)} onOpen={() => onResearch(company)}/>;
     })}
   </div>;
 }

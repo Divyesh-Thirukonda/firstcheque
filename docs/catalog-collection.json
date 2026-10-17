@@ -1,0 +1,2868 @@
+{
+  "collectedAt": "2026-10-17T16:52:02.706Z",
+  "requestedPages": 303,
+  "fetchedPages": 271,
+  "unavailablePages": 32,
+  "records": [
+    {
+      "name": "Go.AI",
+      "url": "https://go.ai/",
+      "kind": "website",
+      "title": "Go.AI, On-Premises AI for Regulated Industries",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:43.142Z",
+      "sha256": "82f841116d27682f66c589aee9be7b0f03f901f4ed49c113e48e13ea81b0f5c2"
+    },
+    {
+      "name": "Featherless",
+      "url": "https://featherless.ai/blog/series-a",
+      "kind": "funding",
+      "title": "Featherless Raises $20M Series A to Power Open-Source AI Infrastructure - Featherless",
+      "publishedAt": "2026-04-30T00:00:00.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:43.167Z",
+      "sha256": "2dc03bbbee7743a9d7d26bad56124f122dde1c8b61a9592150ac8b61c3bb1be0"
+    },
+    {
+      "name": "Featherless",
+      "url": "https://featherless.ai/",
+      "kind": "website",
+      "title": "Featherless - Serverless LLM Hosting",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:43.200Z",
+      "sha256": "e124101b8888ca57234f36d713453dcffef98672a9a751d57ec30709dc2b6e31"
+    },
+    {
+      "name": "Go.AI",
+      "url": "https://go.ai/company/press/series-a-funding",
+      "kind": "funding",
+      "title": "Go.AI™ Raises $85 Million Series A Led by Updata Partners | Go.AI",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:43.313Z",
+      "sha256": "a726803da1d89a0ff71c3ab7fd3b89114cdb0446b2afc1a06ad04592c0d02e18"
+    },
+    {
+      "name": "Gray Swan",
+      "url": "https://www.grayswan.ai/",
+      "kind": "website",
+      "title": "Gray Swan - Enterprise Security for AI-Powered Applications",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:43.502Z",
+      "sha256": "3b1ba607fea0a064445a739c40080ac11e3c570bafb39b041738c34593353919"
+    },
+    {
+      "name": "Gray Swan",
+      "url": "https://www.grayswan.ai/news/gray-swan-announces-series-a",
+      "kind": "funding",
+      "title": "Gray Swan",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:43.506Z",
+      "sha256": "f69ed5a990a6041c7e98b23b3af94e43783bc6742bbd52084436596ef780107d"
+    },
+    {
+      "name": "Rein Security",
+      "url": "https://www.prnewswire.com/news-releases/rein-security-raises-25-million-to-secure-the-ai-agents-enterprises-build-and-stop-the-ones-that-attack-them-302901591.html",
+      "kind": "funding",
+      "title": "Rein Security Raises $25 Million to Secure the AI Agents Enterprises Build and Stop the Ones That Attack Them",
+      "publishedAt": "2026-10-08T10:00:00.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:43.614Z",
+      "sha256": "17e2e3bac5f30116d799ef9f4a05166c9aa649235597e28f563773b5fb744536"
+    },
+    {
+      "name": "Hydra Host",
+      "url": "https://hydrahost.com/blog/news/hydra-host-raises-100m-series-a/",
+      "kind": "funding",
+      "title": "Hydra Host Raises $100 Million Series A to Expand Global AI Factory Capacity",
+      "publishedAt": "2026-06-15T00:00:00.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:43.714Z",
+      "sha256": "390c1e2d82e76f8b25606a7f98d94bbd85333327bc5defeaf87c381879aa6d33"
+    },
+    {
+      "name": "Rein Security",
+      "url": "https://reinsec.io/",
+      "kind": "website",
+      "title": "Rein Agentic AI Security Platform: See Beyond the Prompt",
+      "publishedAt": "2025-11-16T11:18:37.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:43.731Z",
+      "sha256": "e4bda0e23c502dc560bb1678155ec82fdb81caa0a049103a01ba63c378f8c85f"
+    },
+    {
+      "name": "Straiker",
+      "url": "https://www.straiker.ai/",
+      "kind": "website",
+      "title": "Straiker | The Agentic AI Security Company",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:43.746Z",
+      "sha256": "39135896412f618449f70925a4a98c4215c7b2c1ef6656fcc278a4e896f411e9"
+    },
+    {
+      "name": "Hydra Host",
+      "url": "https://hydrahost.com/",
+      "kind": "website",
+      "title": "Hydra Host GPU, Bare Metal GPU & Scalable Solutions",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:43.847Z",
+      "sha256": "5c079909ab2b9d6831992084010e6fdac1c92c7befa5ced82ccc563993b9a9fd"
+    },
+    {
+      "name": "Straiker",
+      "url": "https://www.straiker.ai/blog/straiker-raises-64m-series-a-to-secure-the-agentic-workforce",
+      "kind": "funding",
+      "title": "Straiker Raises $64M Series A for AI Agent Security",
+      "publishedAt": "2026-06-29T15:00:00.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:43.916Z",
+      "sha256": "1928421da21e5cdb6bcb0601288b96e6bd7c16d1ae1a9f3d606c206bd628ac98"
+    },
+    {
+      "name": "LemonEdge",
+      "url": "https://www.prnewswire.com/news-releases/lemonedge-announces-21m-series-a-funding-round-led-by-blackstone-innovations-investments-and-joined-by-bny-to-modernize-private-markets-infrastructure-302837890.html",
+      "kind": "funding",
+      "title": "LemonEdge announces $21M Series A funding round led by Blackstone Innovations Investments and joined by BNY, to modernize private markets infrastructure",
+      "publishedAt": "2026-07-29T14:12:00.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:43.954Z",
+      "sha256": "9d4459ac80e92c31bf4ab72736252e1c8716ed465b89f0840e9dfe012ef59c34"
+    },
+    {
+      "name": "Geordie AI",
+      "url": "https://www.geordie.ai/",
+      "kind": "website",
+      "title": "AI Governance Platform | Geordie AI",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:43.982Z",
+      "sha256": "4fcb89cb470c76a6b37a026eaa363cca8f8d72ef3c0c46934798f0c19a8f599e"
+    },
+    {
+      "name": "Geordie AI",
+      "url": "https://www.geordie.ai/resources/geordie-raises-30m-to-help-enterprises-securely-adopt-agentic-ai-at-scale/",
+      "kind": "funding",
+      "title": "Geordie Raises $30M Series A Led by Balderton Capital",
+      "publishedAt": "2026-05-28T09:00:00.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:43.986Z",
+      "sha256": "95e9d00f65b6383a4bfd391c4b376bd2b85263df8029fa80da3f27fc081a251a"
+    },
+    {
+      "name": "LemonEdge",
+      "url": "https://www.lemonedge.com/",
+      "kind": "website",
+      "title": "LemonEdge - Fund Accounting Software For Private Markets",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:44.007Z",
+      "sha256": "47b1fa193c6fe28833a44108f4ccfac433626b093fa300fd8fdc8614121426f9"
+    },
+    {
+      "name": "Duna",
+      "url": "https://duna.com/",
+      "kind": "website",
+      "status": "unavailable",
+      "error": "Source exceeds the research size limit.",
+      "checkedAt": "2026-10-17T16:51:44.057Z"
+    },
+    {
+      "name": "Stitch",
+      "url": "https://www.stitch.co/press/stitch-raises-25m-series-a-led-by-andreessen-horowitz",
+      "kind": "funding",
+      "title": "Stitch raises $25 million Series A led by Andreessen Horowitz",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:44.098Z",
+      "sha256": "58ca5f4002c8a44092b91f96b4fe612e69bc9f61b8e77f4567cd8a82967309c0"
+    },
+    {
+      "name": "Stitch",
+      "url": "https://www.stitch.co/",
+      "kind": "website",
+      "title": "Operating System for Modern Financial Institutions | Stitch",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:44.128Z",
+      "sha256": "0f6fa67c5e86df1e7f08b83775af852b49c35867dc46c88dff6a6c8e7236023e"
+    },
+    {
+      "name": "Duna",
+      "url": "https://duna.com/news/series-a",
+      "kind": "funding",
+      "title": "Duna raises €30mn Series A to redefine business identity for the internet - Duna",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:44.154Z",
+      "sha256": "49fe532dbc116e5d039573606997798609c7223dbff441c0f7909e8829f36f80"
+    },
+    {
+      "name": "Enzo Health",
+      "url": "https://www.prnewswire.com/news-releases/enzo-health-raises-26m-to-deploy-ai-across-home-health-to-meet-unprecedented-nationwide-demand-for-post-acute-care-302760538.html",
+      "kind": "funding",
+      "title": "Enzo Health Raises $26M to Deploy AI Across Home Health to Meet Unprecedented Nationwide Demand for Post-Acute Care",
+      "publishedAt": "2026-05-04T14:00:00.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:44.197Z",
+      "sha256": "1e23985c4aaddca765052411d1108168e2c21a4e1588a7b37763a98c5f2032ff"
+    },
+    {
+      "name": "Pave Finance",
+      "url": "https://www.pavefinance.com/",
+      "kind": "website",
+      "title": "Pave Finance | Personalized Portfolios at Enterprise Scale",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:44.209Z",
+      "sha256": "cfd10e9188460e2f0cdc64e5020b6dc642719aa1272ba38e1995117436caec19"
+    },
+    {
+      "name": "Pave Finance",
+      "url": "https://www.pavefinance.com/newsletter/series-a",
+      "kind": "funding",
+      "title": "Pave Finance announces Series A",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:44.230Z",
+      "sha256": "c230a3a819c2a4e9dffa084eb2481ba9eb1dc1ad505b1dc11676e40a1a6f1f0c"
+    },
+    {
+      "name": "Handl Health",
+      "url": "https://www.prnewswire.com/news-releases/handl-health-secures-14m-series-a-to-reform-healthcare-access-and-affordability-in-the-united-states-302695640.html",
+      "kind": "funding",
+      "title": "Handl Health secures $14M Series A to reform healthcare access and affordability in the United States",
+      "publishedAt": "2026-02-24T14:00:00.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:44.424Z",
+      "sha256": "3866e67edaaaebc7bde01dc5a5eff911f2149b81a87e6258ddda8fa37112f367"
+    },
+    {
+      "name": "Onos Health",
+      "url": "https://www.prnewswire.com/news-releases/onos-health-raises-17-million-series-a-to-accelerate-adoption-of-its-behavioral-health-ai-platform-for-health-plans-302860046.html",
+      "kind": "funding",
+      "title": "Onos Health Raises $17 Million Series A to Accelerate Adoption of its Behavioral Health AI Platform for Health Plans",
+      "publishedAt": "2026-08-26T14:00:00.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:44.538Z",
+      "sha256": "497020b28eb583beff3654ccc3c88a523700e638aa4cdb5a06a7c32ee0957563"
+    },
+    {
+      "name": "Zócalo Health",
+      "url": "https://www.zocalo.health/",
+      "kind": "website",
+      "title": "Zocalo Health",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:44.691Z",
+      "sha256": "2a934e281a63d020907610c0f6559b12b88e3bb6d7a7182f789f74dd117b477b"
+    },
+    {
+      "name": "Zócalo Health",
+      "url": "https://www.prnewswire.com/news-releases/zocalo-health-raises-15-million-series-a-to-scale-community-based-care-for-high-need-populations-302751096.html",
+      "kind": "funding",
+      "title": "Zócalo Health Raises $15 Million Series A to Scale Community-Based Care for High-Need Populations",
+      "publishedAt": "2026-04-23T12:00:00.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:44.732Z",
+      "sha256": "35ae6715ba778073573cbbadbd751bdf942b2af91445b0bc96f94b91339bd0cc"
+    },
+    {
+      "name": "Handl Health",
+      "url": "https://handlhealth.com/",
+      "kind": "website",
+      "title": "Health plan benchmarking & network analytics for benefits consultants | Handl Health",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:44.915Z",
+      "sha256": "e1bd81bd8700ab32deea823ac43ff2046bc5ea536f3d953b605da5d657829897"
+    },
+    {
+      "name": "Reel",
+      "url": "https://reel.energy/",
+      "kind": "website",
+      "status": "unavailable",
+      "error": "Source exceeds the research size limit.",
+      "checkedAt": "2026-10-17T16:51:45.030Z"
+    },
+    {
+      "name": "Reel",
+      "url": "https://reel.energy/series-a",
+      "kind": "funding",
+      "title": "Reel raises €15M to accelerate the energy transition",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:45.197Z",
+      "sha256": "367bb192300f076489e3152a74bfbf61b5a47e9e43dac2801c29dc2ec36dd9f4"
+    },
+    {
+      "name": "Onos Health",
+      "url": "https://onoshealth.com/",
+      "kind": "website",
+      "title": "Onos — Turning behavioral health noise into clarity and action",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:45.287Z",
+      "sha256": "1b89b769b9d5f7512136abb937bb93e32ea0a41faa34a20d5e1ec15029af9620"
+    },
+    {
+      "name": "MatrixOrigin",
+      "url": "https://www.matrixorigin.io/",
+      "kind": "website",
+      "title": "MatrixOrigin — Enterprise AI Infrastructure | The Unified Data Foundation",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:45.422Z",
+      "sha256": "16886a5c52f75906a878a8092e34eea9c84b25f42d8263d3fc69bc0ec72c6e30"
+    },
+    {
+      "name": "MatrixOrigin",
+      "url": "https://www.matrixorigin.io/blog/matrixorigin-series-a-financing-en",
+      "kind": "funding",
+      "title": "MatrixOrigin Raises $10M Series A to Scale Enterprise AI Infrastructure — MatrixOrigin",
+      "publishedAt": "2026-08-06T04:30:00.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:45.441Z",
+      "sha256": "eb782cc5b67ddd2871522a7abd0bba730c3a3d6d94989b50e4cd2fa1b85266e2"
+    },
+    {
+      "name": "Texture",
+      "url": "https://www.texturehq.com/",
+      "kind": "website",
+      "title": "Texture | The operating system for the energy grid",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:45.475Z",
+      "sha256": "33b223297b2224ad14d4a877f27062d7fa6c1176a6b158b9566a61372ea8671b"
+    },
+    {
+      "name": "GMI Cloud",
+      "url": "https://www.prnewswire.com/apac/news-releases/gmi-cloud-raises-over-660-million-to-accelerate-global-ai-infrastructure-expansion-302894628.html",
+      "kind": "funding",
+      "title": "GMI Cloud Raises Over $660 Million to Accelerate Global AI Infrastructure Expansion",
+      "publishedAt": "2026-10-01T01:05:00.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:45.510Z",
+      "sha256": "b10c72b1bcd869e41d3e4d282d49bb37745777cfdd8f35cf948f606d9fb97e4d"
+    },
+    {
+      "name": "Critical Loop",
+      "url": "https://www.criticalloop.com/",
+      "kind": "website",
+      "title": "Critical Loop | On-Demand Power Solutions for Industry",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:45.514Z",
+      "sha256": "f4e2892acf3b70cb88198d20773b7dc11a8e2fd0d10f33637440072e61d4193c"
+    },
+    {
+      "name": "Critical Loop",
+      "url": "https://www.criticalloop.com/news/blog/critical-loop-raises-26m-series-a-to-accelerate-grid-interconnection",
+      "kind": "funding",
+      "title": "Critical Loop Raises $26M Series A to Accelerate Grid Interconnection | Critical Loop",
+      "publishedAt": "2026-04-13T14:46:30.965Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:45.548Z",
+      "sha256": "a2be2d31450a85cdd9760e5130cdb32be5fdcfce0e98758e5e5517199fc70beb"
+    },
+    {
+      "name": "DeepInfra",
+      "url": "https://deepinfra.com/",
+      "kind": "website",
+      "title": "Machine Learning Models and Infrastructure | DeepInfra",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:45.738Z",
+      "sha256": "75892bccf8c09395bb34d6c89850a268793d83d8d116ce2c06668ac531329d60"
+    },
+    {
+      "name": "GMI Cloud",
+      "url": "https://www.gmicloud.ai/en",
+      "kind": "website",
+      "title": "AI Cloud for Compute, Inference & Agents | GMI Cloud",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:45.752Z",
+      "sha256": "e6e5b349e22e06e2027607076a7c8d2f704d080651d13791fdc0311fca515de4"
+    },
+    {
+      "name": "DeepInfra",
+      "url": "https://www.globenewswire.com/news-release/2026/05/04/3286977/0/en/DeepInfra-Closes-107M-Series-B-to-Power-Production-Scale-AI-Inference.html",
+      "kind": "funding",
+      "title": "DeepInfra Closes $107M Series B to Power Production-Scale",
+      "publishedAt": "2026-05-04T16:00:00.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:45.756Z",
+      "sha256": "d444eec86d854d660243a9aca7290b15e0b166987404de8b4c9f2294f242dae0"
+    },
+    {
+      "name": "Gimlet Labs",
+      "url": "https://www.globenewswire.com/news-release/2026/9/4/3356707/0/en/now-valued-at-3-billion-gimlet-labs-raises-300-million-in-series-b-led-by-andreessen-horowitz-for-industry-s-first-multi-silicon-inference-cloud-for-agentic-ai.html",
+      "kind": "funding",
+      "title": "Now Valued at $3 Billion, Gimlet Labs Raises $300 Million",
+      "publishedAt": "2026-09-04T16:00:00.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:45.933Z",
+      "sha256": "8bdb0d973c08af079b12782fcb16b75cc0b12660d703bd442268baa8db2757f7"
+    },
+    {
+      "name": "Texture",
+      "url": "https://www.texturehq.com/blog/texture-series-a",
+      "kind": "funding",
+      "title": "Texture raises $12.5M series A for the OS for energy | Texture",
+      "publishedAt": "2026-05-20T07:00:00.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:47.754Z",
+      "sha256": "d71c4a215aef3966914b05c13e5ffcddb284f0cac404e642bffa9890f7fce3ae"
+    },
+    {
+      "name": "Enzo Health",
+      "url": "https://www.enzohealth.com/",
+      "kind": "website",
+      "status": "unavailable",
+      "error": "DNS lookup timed out.",
+      "checkedAt": "2026-10-17T16:51:48.131Z"
+    },
+    {
+      "name": "Salience Labs",
+      "url": "https://www.saliencelabs.ai/",
+      "kind": "website",
+      "status": "unavailable",
+      "error": "DNS lookup timed out.",
+      "checkedAt": "2026-10-17T16:51:49.754Z"
+    },
+    {
+      "name": "Gimlet Labs",
+      "url": "https://gimletlabs.ai/",
+      "kind": "website",
+      "status": "unavailable",
+      "error": "DNS lookup timed out.",
+      "checkedAt": "2026-10-17T16:51:49.757Z"
+    },
+    {
+      "name": "Salience Labs",
+      "url": "https://www.saliencelabs.ai/salience-labs-125-million-series-b-funding/",
+      "kind": "funding",
+      "status": "unavailable",
+      "error": "DNS lookup timed out.",
+      "checkedAt": "2026-10-17T16:51:49.757Z"
+    },
+    {
+      "name": "MIND",
+      "url": "https://www.prnewswire.com/news-releases/mind-raises-72m-series-b-funding-to-bring-complete-dlp-to-the-ai-era-302881118.html",
+      "kind": "funding",
+      "title": "MIND Raises $72M Series B Funding to Bring Complete DLP to the AI Era",
+      "publishedAt": "2026-09-17T12:00:00.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:50.139Z",
+      "sha256": "50d79f75b511123724f41d608abb59c56285b8b60b5636132d8047fc6e804744"
+    },
+    {
+      "name": "Onyx Security",
+      "url": "https://www.onyx.security/press-release/onyx-security-raises-113m-series-b-to-control-advanced-ai-quadrupling-revenue-since-stealth-launch-four-months-ago",
+      "kind": "funding",
+      "title": "Onyx Security Raises $113M Series B to Control Advanced AI",
+      "publishedAt": "2026-07-29T00:00:00.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:50.146Z",
+      "sha256": "52efadd0a906b02e866c0291fe42086f36c5d58eca53d789d98ee00c529182ee"
+    },
+    {
+      "name": "Exaforce",
+      "url": "https://www.exaforce.com/press-release/exaforce-raises-125m-series-b-to-combat-ai-powered-attacks-with-real-time-security-reasoning",
+      "kind": "funding",
+      "title": "Exaforce raises $125M Series B",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:50.152Z",
+      "sha256": "f6b2183969302f1c69d0a08c4a99b9f7b63662c87380c6b589ff859bcbfc1cdc"
+    },
+    {
+      "name": "Onyx Security",
+      "url": "https://www.onyx.security/",
+      "kind": "website",
+      "title": "The Secure AI Control Plane for the Agentic Era | Onyx",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:50.157Z",
+      "sha256": "53b348a2c56c6e7b2b23cb51afe290c72b3366765d3c4e8944565b8dd85a427b"
+    },
+    {
+      "name": "Exaforce",
+      "url": "https://www.exaforce.com/",
+      "kind": "website",
+      "title": "Exaforce — Agentic SOC and MDR",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:50.175Z",
+      "sha256": "d732c2f5b73c84cd630aedda223a46c29527c31b6f8d2a55550e987c972923ea"
+    },
+    {
+      "name": "MIND",
+      "url": "https://mind.io/",
+      "kind": "website",
+      "status": "unavailable",
+      "error": "Source exceeds the research size limit.",
+      "checkedAt": "2026-10-17T16:51:50.264Z"
+    },
+    {
+      "name": "HiddenLayer",
+      "url": "https://www.hiddenlayer.com/news/hiddenlayer-100m-series-b-ai-security",
+      "kind": "funding",
+      "title": "HiddenLayer Raises $100M Series B to Advance AI Security",
+      "publishedAt": "2026-09-02T00:00:00.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:50.396Z",
+      "sha256": "64c774f764a961670f54262a6519467ea27445a07625d0b775fcc99ea288d083"
+    },
+    {
+      "name": "HiddenLayer",
+      "url": "https://www.hiddenlayer.com/",
+      "kind": "website",
+      "title": "HiddenLayer | Total AI Security",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:50.409Z",
+      "sha256": "5402ceea22c168c3093a6cd2f649536c8a98cb7c9e1bf80f28398b51901e878a"
+    },
+    {
+      "name": "equipifi",
+      "url": "https://www.equipifi.com/",
+      "kind": "website",
+      "title": "equipifi | Flexible payments & BNPL for financial institutions",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:50.425Z",
+      "sha256": "ad753002b3aabda20f04e5b7b48274aaf01d1c3754e6ca839d6762667031dc8c"
+    },
+    {
+      "name": "equipifi",
+      "url": "https://www.equipifi.com/press-releases/equipifi-secures-34-million-series-b-to-accelerate-buy-now-pay-later-across-u.s.-financial-institutions",
+      "kind": "funding",
+      "title": "equipifi Secures $34 Million Series B to Accelerate Buy Now, Pay Later Across U.S. Financial Institutions",
+      "publishedAt": "2026-05-14T04:00:00.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:50.432Z",
+      "sha256": "f1b66648b41c5d8250361e2576a31f1d9da9bc9975d919b40fea0e5c3c66a54e"
+    },
+    {
+      "name": "Databento",
+      "url": "https://databento.com/",
+      "kind": "website",
+      "status": "unavailable",
+      "error": "Source contained insufficient readable text.",
+      "checkedAt": "2026-10-17T16:51:50.496Z"
+    },
+    {
+      "name": "Forage",
+      "url": "https://www.joinforage.com/",
+      "kind": "website",
+      "status": "unavailable",
+      "error": "Source exceeds the research size limit.",
+      "checkedAt": "2026-10-17T16:51:50.681Z"
+    },
+    {
+      "name": "Multiply Labs",
+      "url": "https://www.multiplylabs.com/",
+      "kind": "website",
+      "title": "Multiply Labs | Robotic Biomanufacturing Infrastructure",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:50.770Z",
+      "sha256": "a5139bc55a07fa5c0a39cee0836eb9a9babcbc99701125df470bf24fe4dd0eea"
+    },
+    {
+      "name": "Forage",
+      "url": "https://www.joinforage.com/newsroom/forage-series-b-40m-funding",
+      "kind": "funding",
+      "status": "unavailable",
+      "error": "Source exceeds the research size limit.",
+      "checkedAt": "2026-10-17T16:51:50.770Z"
+    },
+    {
+      "name": "Multiply Labs",
+      "url": "https://www.multiplylabs.com/press/series-b-2026",
+      "kind": "funding",
+      "title": "Multiply Labs Raises $75 Million Series B | Multiply Labs",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:50.772Z",
+      "sha256": "9f0c27cd757eb2776361f1375f42012939207be6cba1a5444bce25adbceaa62b"
+    },
+    {
+      "name": "Databento",
+      "url": "https://www.databento.tech/blog/series-b",
+      "kind": "funding",
+      "title": "Databento raises $97M Series B | Databento Blog",
+      "publishedAt": "2026-07-09T00:00:00.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:50.891Z",
+      "sha256": "090cc12e27183ca4e1c10b35890db5ff063e056686d0baac6a1be2d9360583c6"
+    },
+    {
+      "name": "Tiny Health",
+      "url": "https://www.tinyhealth.com/",
+      "kind": "website",
+      "title": "Gut health for every age and stage – Tiny Health",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:50.904Z",
+      "sha256": "608592a477683ad2d573073b2cbf81f0302f3374d0f9a39f5d36487795839f1d"
+    },
+    {
+      "name": "Courier Health",
+      "url": "https://www.courierhealth.com/",
+      "kind": "website",
+      "title": "Patient Experience Platform for Biopharma | Courier Health",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:50.949Z",
+      "sha256": "3c50ba0d80018f6a5813db1caea17ebf261da0d9d9cd4e5ad2c6cb35d7bbe835"
+    },
+    {
+      "name": "Courier Health",
+      "url": "https://www.courierhealth.com/resources/courier-health-series-b",
+      "kind": "funding",
+      "title": "Courier Health Raises $50 Million Series B to Revolutionize the Biopharma Patient Experience",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:50.978Z",
+      "sha256": "da9f183444bfddaa7c93eb75d5e0a972e94bf206cac236a4a6efe9ad24da4d14"
+    },
+    {
+      "name": "Moment Energy",
+      "url": "https://www.momentenergy.com/",
+      "kind": "website",
+      "title": "Moment Energy | Repurposed EV Batteries for Clean, Reliable Energy Storage",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:51.307Z",
+      "sha256": "4309eb9885af91f7b66c3144ce466a6e175395f0ff65d7a57fe78edcd78fa595"
+    },
+    {
+      "name": "Moment Energy",
+      "url": "https://www.momentenergy.com/news/series-b",
+      "kind": "funding",
+      "title": "Moment Energy Secures $40M Series B to Scale North America’s Largest Second-Life Battery Platform and Launch the Era of Independent Energy",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:51.385Z",
+      "sha256": "2474d078f86bd387a714205dceed745725af8c6f8b3fb487fdd3d21c4ed7b990"
+    },
+    {
+      "name": "Jump",
+      "url": "https://jump.ai/blog/jump-series-b",
+      "kind": "funding",
+      "title": "Jump Series B | Jump",
+      "publishedAt": "2026-02-19T12:06:00.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:51.429Z",
+      "sha256": "56b10cd18a90101f8a03e5771795ff3bec51da986f46998fd7a17f9e983fc23d"
+    },
+    {
+      "name": "Jump",
+      "url": "https://jump.ai/",
+      "kind": "website",
+      "title": "Jump: The #1 AI Software For Financial Advisors | Jump",
+      "publishedAt": "2026-06-08T19:32:03.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:51.494Z",
+      "sha256": "151651525c7ac20d733724fde5997901e4ed7c7344e85201a873ca3e1f6b80c6"
+    },
+    {
+      "name": "Tiny Health",
+      "url": "https://www.globenewswire.com/news-release/2026/09/29/3370894/0/en/tiny-health-raises-33m-series-b-to-establish-microbiome-intelligence-as-the-standard-of-care.html",
+      "kind": "funding",
+      "title": "Tiny Health Raises $33M Series B to Establish Microbiome",
+      "publishedAt": "2026-09-29T13:00:00.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:51.532Z",
+      "sha256": "d9a9b0aeed11c3e5b01178f810806a0e0dec4823e807edddd8cfcf80670f9f09"
+    },
+    {
+      "name": "Thea Energy",
+      "url": "https://thea.energy/",
+      "kind": "website",
+      "title": "Thea Energy | Fusion Power | Reinventing the Stellarator",
+      "publishedAt": "2023-03-25T06:06:57.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:51.584Z",
+      "sha256": "7c2eeaf3166c1b1926caccef2c91d1879c5519d29998d7fd0b6086d89621fec5"
+    },
+    {
+      "name": "Tandem Health",
+      "url": "https://tandemhealth.ai/",
+      "kind": "website",
+      "status": "unavailable",
+      "error": "Source exceeds the research size limit.",
+      "checkedAt": "2026-10-17T16:51:51.694Z"
+    },
+    {
+      "name": "Tandem Health",
+      "url": "https://tandemhealth.ai/resources/news/tandem-health-raises-100m-to-bring-european-healthcare-into-the-ai-era-led-by-the-scaleup-europe-fund-managed-by-eqt",
+      "kind": "funding",
+      "title": "Tandem Health raises $100M led by the Scaleup Europe Fund managed by EQT to bring European healthcare into the AI era | Tandem Health",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:51.896Z",
+      "sha256": "ad0e3f68cf6d66cccf2c4e811cd959e10337d96e9704c3b57632fceb335f1eca"
+    },
+    {
+      "name": "Thea Energy",
+      "url": "https://www.globenewswire.com/de/news-release/2026/05/27/3302022/0/en/Thea-Energy-Raises-100-Million-Series-B-Funding-to-Build-Scalable-Fusion-Power-Plants.html",
+      "kind": "funding",
+      "title": "Thea Energy Raises $100 Million Series B Funding to Build",
+      "publishedAt": "2026-05-27T13:00:00.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:51.942Z",
+      "sha256": "5b316e9db92c50826fe5f1b164cd39f46c8afb2f5754cb4c373ef1ea2f095a43"
+    },
+    {
+      "name": "Verse",
+      "url": "https://verse.inc/newsroom/series-b",
+      "kind": "funding",
+      "title": "Verse Raises $54M and Launches \"Dispatch Intelligence\" to Accelerate Speed to Power for Data Center Developers · Verse",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:52.231Z",
+      "sha256": "79b75b33e9dd321c10ab28cb4f216608a4d87a2880d2fe906c1655e22cde1379"
+    },
+    {
+      "name": "Verse",
+      "url": "https://verse.inc/",
+      "kind": "website",
+      "title": "Verse · Faster grid connection for the AI era",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:52.259Z",
+      "sha256": "4943b42207da78129fd354905d06673437e89e4db5196c3adc331feca6ba864f"
+    },
+    {
+      "name": "DG Matrix",
+      "url": "https://www.businesswire.com/news/home/20260218937765/en/",
+      "kind": "funding",
+      "status": "unavailable",
+      "error": "Source returned HTTP 403.",
+      "checkedAt": "2026-10-17T16:51:52.286Z"
+    },
+    {
+      "name": "DG Matrix",
+      "url": "https://www.dgmatrix.com/",
+      "kind": "website",
+      "title": "DG Matrix | Solid-State Transformer (SST) Manufacturer | AI Data Center, Utility & Fleet Electrification Solutions",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:52.415Z",
+      "sha256": "9b35337e95107bf3ffecd4264d72a8d524607e5509f6b873b438c775d3838a99"
+    },
+    {
+      "name": "Together AI",
+      "url": "https://www.together.ai/blog/announcing-our-series-c",
+      "kind": "funding",
+      "title": "Announcing our $800M Series C to accelerate the shift to open-source AI",
+      "publishedAt": "2026-07-01T00:00:00.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:52.444Z",
+      "sha256": "a97ca33a4828c1a7778e8720e4c13da1d834beef2421acbb02f8a1a093dcf68f"
+    },
+    {
+      "name": "Together AI",
+      "url": "https://www.together.ai/",
+      "kind": "website",
+      "status": "unavailable",
+      "error": "Source exceeds the research size limit.",
+      "checkedAt": "2026-10-17T16:51:52.447Z"
+    },
+    {
+      "name": "Positron AI",
+      "url": "https://www.prnewswire.com/news-releases/positron-ai-raises-875-million-at-a-5-billion-valuation-to-bring-its-next-generation-inference-silicon-to-market-302874601.html",
+      "kind": "funding",
+      "title": "Positron AI Raises $875 Million at a $5 Billion Valuation to Bring Its Next-Generation Inference Silicon to Market",
+      "publishedAt": "2026-09-10T13:00:00.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:52.521Z",
+      "sha256": "a0c3e06d53ab1c4191ff5731708be75ce1bb3d5f880c438cc6c30ac248f0ff5d"
+    },
+    {
+      "name": "Type One Energy",
+      "url": "https://typeoneenergy.com/",
+      "kind": "website",
+      "title": "Home - Type One Energy",
+      "publishedAt": "2025-11-24T20:40:05.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:52.675Z",
+      "sha256": "ffffaaf6cf961e686d4a4bcbd7f923807f778dc2211f942b35e34d8e83e5d106"
+    },
+    {
+      "name": "Higharc",
+      "url": "https://www.higharc.com/newsroom/higharc-95m-series-c-for-homebuilding-ai",
+      "kind": "funding",
+      "title": "Higharc Raises $95M Series C to Scale AI for Homebuilding",
+      "publishedAt": "2026-06-30T00:00:00.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:52.848Z",
+      "sha256": "0e50de19372640aaccdb4e0a967abfc799ec561f8941425c200c986926e01ad9"
+    },
+    {
+      "name": "Higharc",
+      "url": "https://www.higharc.com/",
+      "kind": "website",
+      "title": "Homebuilding AI platform for builders | Higharc",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:52.862Z",
+      "sha256": "52145340bb540ef9d1012d6c8a5fd8ae10261aec10974b0676f6117bd329c4aa"
+    },
+    {
+      "name": "Omni",
+      "url": "https://omni.co/blog/press-release-omni-series-c-funding",
+      "kind": "funding",
+      "title": "Omni Raises Series C at $1.5B Valuation, building the AI analytics platform for the enterprise - Omni Analytics",
+      "publishedAt": "2026-04-23T00:00:00.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:52.903Z",
+      "sha256": "0bdd8137d89889e9bcbc01f94434c56cc0b648631ae8ce6361a68b2e67edf404"
+    },
+    {
+      "name": "Positron AI",
+      "url": "https://www.positron.ai/",
+      "kind": "website",
+      "title": "Positron | Generative AI Acceleration",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:52.916Z",
+      "sha256": "b37c888e2b7afed5d3fdcc4fceb3bdf7fd4e4436d91929ba50bfac2e303e3eee"
+    },
+    {
+      "name": "Type One Energy",
+      "url": "https://typeoneenergy.com/insights-announcements/type-one-energy-completes-200m-series-b-financing/",
+      "kind": "funding",
+      "title": "Type One Energy Completes $200M Series B Financing - Type One Energy",
+      "publishedAt": "2026-10-06T11:59:07.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:52.936Z",
+      "sha256": "12ed9be197f8aac378adc3cba2de628327686d95c2bf85480945108dba1261dd"
+    },
+    {
+      "name": "UpGuard",
+      "url": "https://www.prnewswire.com/news-releases/upguard-raises-75m-in-series-c-funding-to-accelerate-market-leadership-in-cyber-risk-posture-management-302697786.html",
+      "kind": "funding",
+      "title": "UpGuard Raises $75M in Series C Funding to Accelerate Market Leadership in Cyber Risk Posture Management",
+      "publishedAt": "2026-02-26T13:06:00.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:52.967Z",
+      "sha256": "5649492c7fe47e06c71ba6d865022a85bdf8f10e874309492211f39e6c47e55f"
+    },
+    {
+      "name": "GitGuardian",
+      "url": "https://www.prnewswire.com/news-releases/gitguardian-raises-50m-series-c-to-address-non-human-identities-crisis-and-ai-agent-security-gap-302684362.html",
+      "kind": "funding",
+      "title": "GitGuardian Raises $50M Series C to Address Non-Human Identities Crisis and AI Agent Security Gap",
+      "publishedAt": "2026-02-11T13:05:00.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:53.008Z",
+      "sha256": "45e6f5e698f0759f7de11e5c71e894b02c443c2c94e3d7be55a6b7791f515923"
+    },
+    {
+      "name": "UpGuard",
+      "url": "https://www.upguard.com/",
+      "kind": "website",
+      "status": "unavailable",
+      "error": "Source exceeds the research size limit.",
+      "checkedAt": "2026-10-17T16:51:53.065Z"
+    },
+    {
+      "name": "GitGuardian",
+      "url": "https://www.gitguardian.com/",
+      "kind": "website",
+      "title": "GitGuardian: Credential Layer Security Platform",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:53.097Z",
+      "sha256": "ea4fcf7b1368d7264dcbc00759239de83d0a8acd083859279b7b909fa18012d3"
+    },
+    {
+      "name": "Nucleus Security",
+      "url": "https://www.prnewswire.com/news-releases/nucleus-security-secures-20m-series-c-to-meet-surging-enterprise-demand-for-exposure-management-302684628.html",
+      "kind": "funding",
+      "title": "Nucleus Security Secures $20M Series C to Meet Surging Enterprise Demand for Exposure Management",
+      "publishedAt": "2026-02-11T14:00:00.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:53.109Z",
+      "sha256": "1657e2a24ea81fbf8a9306325377df78bb199eb71fb5f708c649ea8a56a54289"
+    },
+    {
+      "name": "Socket",
+      "url": "https://socket.dev/",
+      "kind": "website",
+      "title": "Socket - Block zero-day supply chain attacks",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:53.187Z",
+      "sha256": "43fcd3726be5dea5ca5bc5215282bf61cf0f0803f03a2a3d7848cf24af77dfa6"
+    },
+    {
+      "name": "Omni",
+      "url": "https://omni.co/",
+      "kind": "website",
+      "title": "The AI analytics platform - Omni Analytics",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:53.278Z",
+      "sha256": "2f377eff2369dbb4f41204ddfc7cc160f632a0111461e18eb87c484da2c03ede"
+    },
+    {
+      "name": "Moment",
+      "url": "https://moment.com/",
+      "kind": "website",
+      "title": "Moment · The AI Partner for Investment Management",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:53.393Z",
+      "sha256": "d259135466962e86a28dcd0c8c14faba174b0e6526c1cca55ff46d9008ad922f"
+    },
+    {
+      "name": "Moment",
+      "url": "https://moment.com/series-c",
+      "kind": "funding",
+      "title": "Series C · Moment",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:53.420Z",
+      "sha256": "95e19f77a0abf8b2ebdf6e17522e4de8602119bec91a68c28bee550ceba4646c"
+    },
+    {
+      "name": "Nucleus Security",
+      "url": "https://nucleussec.com/",
+      "kind": "website",
+      "status": "unavailable",
+      "error": "Source exceeds the research size limit.",
+      "checkedAt": "2026-10-17T16:51:53.611Z"
+    },
+    {
+      "name": "Socket",
+      "url": "https://socket.dev/blog/socket-raises-60m-series-c-press-release",
+      "kind": "funding",
+      "title": "Socket Raises $60M Series C at a $1B Valuation to Help Enterprises Build Securely With AI | Socket",
+      "publishedAt": "2026-05-20T14:07:35.790Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:53.610Z",
+      "sha256": "aa17ce41cbb01b9432085db6221068c3bb3153baf13677e01194d454eea7e7d8"
+    },
+    {
+      "name": "Slash",
+      "url": "https://www.slash.com/",
+      "kind": "website",
+      "status": "unavailable",
+      "error": "Source exceeds the research size limit.",
+      "checkedAt": "2026-10-17T16:51:53.869Z"
+    },
+    {
+      "name": "Taktile",
+      "url": "https://www.taktile.com/",
+      "kind": "website",
+      "status": "unavailable",
+      "error": "Source exceeds the research size limit.",
+      "checkedAt": "2026-10-17T16:51:53.923Z"
+    },
+    {
+      "name": "PatientIQ",
+      "url": "https://www.prnewswire.com/news-releases/patientiq-raises-30-million-series-c-to-power-the-next-generation-of-patient-reported-outcomes-intelligence-302868502.html",
+      "kind": "funding",
+      "title": "PatientIQ Raises $30 Million Series C to Power the Next Generation of Patient-Reported Outcomes Intelligence",
+      "publishedAt": "2026-09-03T13:00:00.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:53.964Z",
+      "sha256": "39687a50ff1793ebfe5c2bc63b44bd407422d9e18cb1b7fee2516459ec8c16bf"
+    },
+    {
+      "name": "Slash",
+      "url": "https://www.slash.com/blog/series-c",
+      "kind": "funding",
+      "title": "Slash raises $100M Series C at a $1.4B valuation | Slash",
+      "publishedAt": "2026-04-16T15:01:00.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:53.986Z",
+      "sha256": "8aa1cc1249d3853c48ad24e1bce631c5a1f5a30d133dbc4241aa9d94a6e85ec1"
+    },
+    {
+      "name": "Taktile",
+      "url": "https://taktile.com/blog/taktile-secures-110m-in-goldman-sachs-led-series-c-to-power-ai-transformation-in-financial-institutions",
+      "kind": "funding",
+      "title": "Taktile secures $110M in Goldman Sachs-led Series C to power AI transformation in financial institutions",
+      "publishedAt": "2026-06-24T00:00:00.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:53.996Z",
+      "sha256": "a9852952b340970f2767da149aabc0cbf8a41237c5d4c3be1e023cccc53aca50"
+    },
+    {
+      "name": "Assort Health",
+      "url": "https://www.prnewswire.com/news-releases/assort-health-raises-120-million-series-c-to-scale-largest-deployment-of-ai-agents-for-the-patient-journey-302808634.html",
+      "kind": "funding",
+      "title": "/C O R R E C T I O N -- Assort Health/",
+      "publishedAt": "2026-06-25T17:53:00.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:54.030Z",
+      "sha256": "ac4910df0da4ee400888b429735d36a2280110120d854b8af9e26a9d46c30469"
+    },
+    {
+      "name": "PatientIQ",
+      "url": "https://www.patientiq.io/",
+      "kind": "website",
+      "title": "PatientIQ: Smarter Patient Care Data Collection",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:54.035Z",
+      "sha256": "97a2c58b9eb61892f4abd71f62fbc13a311a4097eb7cd6ef202396aa78ac6072"
+    },
+    {
+      "name": "Assort Health",
+      "url": "https://www.assorthealth.com/",
+      "kind": "website",
+      "title": "AI Voice Agent for Healthcare | 300M+ Patient Interactions",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:54.139Z",
+      "sha256": "33b6ad25a8fa047ec9ccfd53b7fc877cf47bf84c8f252bde1149b48688f73327"
+    },
+    {
+      "name": "AcuityMD",
+      "url": "https://www.acuitymd.com/company/press-releases/acuitymd-lands-80-million-in-new-funding-to-fuel-ai-innovation-in-medical-device-medtech-industry",
+      "kind": "funding",
+      "title": "AcuityMD Raises $80M to Fuel MedTech AI Innovation",
+      "publishedAt": "2026-04-21T00:00:00.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:54.146Z",
+      "sha256": "03ce36abd7e1ecd8e296e348f80b0ab82ec721dd6b4ed1d96cfdcc4552b5fd77"
+    },
+    {
+      "name": "AcuityMD",
+      "url": "https://www.acuitymd.com/",
+      "kind": "website",
+      "title": "Medical Device Sales Software | AcuityMD",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:54.152Z",
+      "sha256": "3bf557e684afc822e0a72e3d1ce7edba3b1fe3023b134a4cc3816e3410aef40a"
+    },
+    {
+      "name": "Nourish",
+      "url": "https://www.nourish.com/",
+      "kind": "website",
+      "title": "Nourish | Online Dietitian Covered by Insurance",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:54.173Z",
+      "sha256": "750e3ea5fa4bc40e86fd03f56f99aff2c0efa3727bd14a10cd174ffa125bf6a8"
+    },
+    {
+      "name": "Nourish",
+      "url": "https://www.nourish.com/blog/nourish-announces-series-c",
+      "kind": "funding",
+      "title": "Nourish Raises $100M Series C to Reverse Chronic Disease with AI-Native Metabolic Clinic | Nourish",
+      "publishedAt": "2026-07-23T04:00:00.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:54.219Z",
+      "sha256": "0300a2e43fc2e0a9cd29a5aec1a760b49f45aaf7d2dec71a6210e35d27f2e385"
+    },
+    {
+      "name": "Antora Energy",
+      "url": "https://www.antora.com/insights/series-c",
+      "kind": "funding",
+      "title": "Antora – Antora Closes $550 Million in Series C Funding to Meet Surging Energy Demand and Reindustrialize America",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:54.378Z",
+      "sha256": "1c5ffdefc422c1758b0903a8dc27970450da504dc7489a2723373f53c0b3eff8"
+    },
+    {
+      "name": "Antora Energy",
+      "url": "https://www.antora.com/",
+      "kind": "website",
+      "title": "Antora – Antora | The Future of Industrial Heat & Power",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:54.406Z",
+      "sha256": "7a3db690881c01e7dcd5b4ec53b067061e1f385ea8758c80a108bc5782d19c0e"
+    },
+    {
+      "name": "Nyobolt",
+      "url": "https://nyobolt.com/",
+      "kind": "website",
+      "title": "Nyobolt Technology | Instant Power Solutions",
+      "publishedAt": "2025-08-12T14:16:56.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:54.481Z",
+      "sha256": "4d3d7f0e33984264aa8bc8eddfe256f1501235fdc74bee543d0ee62d00ff6e31"
+    },
+    {
+      "name": "Daloopa",
+      "url": "https://daloopa.com/",
+      "kind": "website",
+      "title": "Home - Daloopa",
+      "publishedAt": "2025-09-12T06:20:19.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:54.493Z",
+      "sha256": "194d865ae846b451b8f686f927801c7e84e35e49050a4efd8eb7783dc7d1197c"
+    },
+    {
+      "name": "Nyobolt",
+      "url": "https://nyobolt.com/resources/news/nyobolt-closes-series-c-round-at-1b-valuation-to-power-the-rise-of-autonomous-machines-physical-ai-applications-and-ai-data-centres/",
+      "kind": "funding",
+      "title": "Nyobolt Closes Series C Round at $1B Valuation, to Power the Rise of Autonomous Machines, Physical AI Applications and AI Data Centres | Nyobolt",
+      "publishedAt": "2026-05-06T11:07:36.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:54.495Z",
+      "sha256": "b7fb14344c4265d541bdcaf2c3ae321b07af60f5534bb4864adbb5de4df8d760"
+    },
+    {
+      "name": "Daloopa",
+      "url": "https://daloopa.com/blog/press-release/47-million-series-c",
+      "kind": "funding",
+      "title": "Daloopa Raises $47 Million Series C to Power the Data Layer Behind AI-Driven Finance - Daloopa",
+      "publishedAt": "2026-05-27T19:35:01.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:54.761Z",
+      "sha256": "a3d07e16fc1fc129e55b6500f626c6b56a97315c6fd404dcc5e845d14a2ada49"
+    },
+    {
+      "name": "Antares",
+      "url": "https://antaresindustries.com/updates/antares-raises-seriesc",
+      "kind": "funding",
+      "title": "Antares",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:54.846Z",
+      "sha256": "6b0c961eeb503dc03b03faa11d613d85fe794ec075205c40fad5456ac79abcda"
+    },
+    {
+      "name": "Utilidata",
+      "url": "https://www.karman.co/press-release/utilidata-raises-40-million-extension",
+      "kind": "funding",
+      "title": "Karman | Utilidata Raises $40 Million Extension, Completing $100M Series C to Maximize AI Compute Capacity",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:54.850Z",
+      "sha256": "151cda408082af85514ee5e73d187749c9d84e71ccf02e10be01fe5b7ed0b805"
+    },
+    {
+      "name": "Utilidata",
+      "url": "https://www.karman.co/",
+      "kind": "website",
+      "title": "Karman | Boost compute capacity by 50%",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:54.855Z",
+      "sha256": "a0bea479143c574e58a830a010c9081d6f4739fad9200e1f090a51080b9589ec"
+    },
+    {
+      "name": "Antares",
+      "url": "https://antaresindustries.com/",
+      "kind": "website",
+      "title": "Antares Nuclear: Factory-Produced Fission Microreactors for Strategic Energy",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:54.872Z",
+      "sha256": "83eb45645ce0fc59ae762a7e1bc68dd98e4803333eba91e918d9c7da8c0b6223"
+    },
+    {
+      "name": "Fireworks AI",
+      "url": "https://fireworks.ai/",
+      "kind": "website",
+      "title": "Own Your Specialized Intelligence | Fireworks",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:55.056Z",
+      "sha256": "b41c16b4becb617a8f5cb8a4d680d6d94ce3b4db5f2b95724dff9b3f790752a1"
+    },
+    {
+      "name": "Profound",
+      "url": "https://www.tryprofound.com/",
+      "kind": "website",
+      "title": "Profound | The AI Platform to Power Your Marketing",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:55.076Z",
+      "sha256": "5d8f5e549112de29fbdf363b90ad69eaa8bd5fdbe365536e54ab58e014fca45d"
+    },
+    {
+      "name": "Profound",
+      "url": "https://www.tryprofound.com/newsroom/profound-raises-usd180m-series-d-at-usd1-8b-valuation-to-build-the-ai-platform-for-marketing-teams",
+      "kind": "funding",
+      "title": "Profound Raises $180M Series D at $1.8B Valuation to Build the AI Platform For Marketing Teams",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:55.126Z",
+      "sha256": "bddbda4693df16e28a9028c74cc49895da4d08a7f5850af2c449dcb0d37d5863"
+    },
+    {
+      "name": "Legora",
+      "url": "https://legora.com/",
+      "kind": "website",
+      "status": "unavailable",
+      "error": "Source exceeds the research size limit.",
+      "checkedAt": "2026-10-17T16:51:55.153Z"
+    },
+    {
+      "name": "Legora",
+      "url": "https://legora.com/newsroom/legora-raises-550-million-series-d-to-fuel-us-growth",
+      "kind": "funding",
+      "title": "Legora raises $550 million Series D to fuel US growth - Legora",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:55.236Z",
+      "sha256": "f10b4447eca04fa28e81e4da9b157f89663d95057981ef1d600978163b518b30"
+    },
+    {
+      "name": "Temporal",
+      "url": "https://temporal.io/",
+      "kind": "website",
+      "title": "Durable Execution Solutions | Temporal",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:55.404Z",
+      "sha256": "78b5c530129f850e2ce0befe81748c08a2e6b03d124a11af85cb0a4c8bc43f75"
+    },
+    {
+      "name": "Censys",
+      "url": "https://censys.com/",
+      "kind": "website",
+      "title": "Censys | The Authority for Internet Intelligence and Insights",
+      "publishedAt": "2019-03-12T14:07:07.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:55.509Z",
+      "sha256": "2b2d812db48d82f9f04d12d8ffa190cfbc60c846e22d26cef6cc1278f915cc24"
+    },
+    {
+      "name": "Temporal",
+      "url": "https://temporal.io/news/temporal-raises-300M-to-make-agentic-ai-real-for-companies",
+      "kind": "funding",
+      "title": "Temporal raises Series D funding | Temporal",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:55.536Z",
+      "sha256": "d2d712f04e06d2937ad6daf37dae815c03b9878b46cee03d2f096c25374d4d8d"
+    },
+    {
+      "name": "Torq",
+      "url": "https://torq.io/",
+      "kind": "website",
+      "title": "Torq AI SOC Platform | AI Agents and Agentic SecOps",
+      "publishedAt": "2026-02-20T19:18:50.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:55.579Z",
+      "sha256": "2d641cd977d45ff0385311306ac4657f968b7bf13b4a7586868de6ec598417ff"
+    },
+    {
+      "name": "Torq",
+      "url": "https://torq.io/news/torq-seriesd/",
+      "kind": "funding",
+      "title": "Torq Secures $140M Series D at $1.2B Valuation to Lead the AI SOC and Agentic AI Era | Torq",
+      "publishedAt": "2026-01-09T18:35:56.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:55.586Z",
+      "sha256": "1c81c2899233e04a59129329ba40cd1b804362f81ed80e1c7167a5e3146aa075"
+    },
+    {
+      "name": "Fireworks AI",
+      "url": "https://fireworks.ai/blog/series-d-announcement",
+      "kind": "funding",
+      "title": "Fireworks Secures $1.5 Billion in Series D Funding",
+      "publishedAt": "2026-07-15T00:00:00.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:55.626Z",
+      "sha256": "0ced12f1f281adf25f48b6c0d2487f0fab011152cf400a161e02abd325999fba"
+    },
+    {
+      "name": "Censys",
+      "url": "https://censys.com/newsroom/censys-raises-70-million-in-strategic-funding-to-expand-its-internet-intelligence-platform/",
+      "kind": "funding",
+      "title": "Censys Raises $70 Million in Strategic Funding to Expand Its Internet Intelligence Platform - Censys",
+      "publishedAt": "2026-03-31T12:04:00.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:55.633Z",
+      "sha256": "4994e396a1b008ab0f79459c55f28092d3b658dca37e6764e8a0ba525c9f6cf8"
+    },
+    {
+      "name": "Obsidian Security",
+      "url": "https://www.obsidiansecurity.com/news/unlocking-ai-potential-securely",
+      "kind": "funding",
+      "title": "Obsidian Raises $85 Million Series D to Scale AI Agent Security Growth",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:55.917Z",
+      "sha256": "b9c797c7c052ad20e4ca1111da31fa7af7d253b627c969529ab6c3d9766f9223"
+    },
+    {
+      "name": "Obsidian Security",
+      "url": "https://www.obsidiansecurity.com/",
+      "kind": "website",
+      "title": "Secure AI. Fearless Innovation. | Obsidian",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:55.928Z",
+      "sha256": "e8ee1ad4eeefeebe60cb0637b06b6f4391fa001a8bf8db22254ac77b2a214c9a"
+    },
+    {
+      "name": "Pentera",
+      "url": "https://pentera.io/press-release/pentera-60m-funding-security-validation-growth/",
+      "kind": "funding",
+      "title": "Pentera Secures $60M Series D to Lead Security Validation Market Growth",
+      "publishedAt": "2025-03-12T13:00:06.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:55.935Z",
+      "sha256": "46113fb5f5b07cc21fa99e82dabf96346920cd4907c5dffa907802cc3ed326a3"
+    },
+    {
+      "name": "Pentera",
+      "url": "https://pentera.io/",
+      "kind": "website",
+      "status": "unavailable",
+      "error": "Source exceeds the research size limit.",
+      "checkedAt": "2026-10-17T16:51:55.939Z"
+    },
+    {
+      "name": "Allica Bank",
+      "url": "https://www.allica.bank/",
+      "kind": "website",
+      "title": "Allica Bank | Like your business bank again",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:56.022Z",
+      "sha256": "e281c0a270f21b83cbb5e9ca38d60059c96f27d38442b63f1c4ba828e781d22c"
+    },
+    {
+      "name": "Allica Bank",
+      "url": "https://www.allica.bank/press-releases/allica-bank-raises-155m-series-d-round-to-accelerate-uk-growth-and-tech-investment-and-commence-international-expansion",
+      "kind": "funding",
+      "title": "Allica Bank raises $155m Series D round to accelerate UK growth and tech investment and commence international expansion",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:56.066Z",
+      "sha256": "5703475939817e645b16198241a7167860f57dcf7c837be509af079274eb961d"
+    },
+    {
+      "name": "Mercury",
+      "url": "https://mercury.com/blog/series-d-announcement",
+      "kind": "funding",
+      "status": "unavailable",
+      "error": "Source exceeds the research size limit.",
+      "checkedAt": "2026-10-17T16:51:56.089Z"
+    },
+    {
+      "name": "Farther",
+      "url": "https://www.generalatlantic.com/media-article/farther-raises-150-million-series-d-led-by-general-atlantic-to-scale-intelligent-wealth-management/",
+      "kind": "funding",
+      "title": "Farther Raises $150 Million Series D Led by General Atlantic to Scale Intelligent Wealth Management | General Atlantic",
+      "publishedAt": "2026-05-21T11:00:02.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:56.095Z",
+      "sha256": "5375923e7c2f7cd0dd251a0a986410b182a30578df9873d9e37d86cac4906bdb"
+    },
+    {
+      "name": "Mercury",
+      "url": "https://mercury.com/",
+      "kind": "website",
+      "status": "unavailable",
+      "error": "Source exceeds the research size limit.",
+      "checkedAt": "2026-10-17T16:51:56.108Z"
+    },
+    {
+      "name": "Juspay",
+      "url": "https://juspay.io/us",
+      "kind": "website",
+      "title": "Juspay | Global Payments Operating System",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:56.154Z",
+      "sha256": "0ef77ef3b076dd42f30c57b228a255ea5266058444b5f5957acd5e1a38a43cb1"
+    },
+    {
+      "name": "Farther",
+      "url": "https://www.farther.com/",
+      "kind": "website",
+      "title": "Welcome to Intelligent Wealth — Farther",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:56.175Z",
+      "sha256": "2586621bc106c5fd96119900257c14ac7152462348246f6565227f134bf53d76"
+    },
+    {
+      "name": "Juspay",
+      "url": "https://juspay.io/newsroom/juspay-secures-usd50-million-investment-from-westbridge-capital",
+      "kind": "funding",
+      "title": "Juspay | Juspay Secures $50 million Investment from WestBridge Capital to Drive Global Expansion",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:56.211Z",
+      "sha256": "1dc99ccb0974ff325d3b8cdb4d74efb493f53acd00d368d0f27f4e9695c1e265"
+    },
+    {
+      "name": "Midi Health",
+      "url": "https://www.joinmidi.com/press-release/series-d-announcement",
+      "kind": "funding",
+      "title": "Midi Health Surpasses $1B Valuation | Midi Health",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:56.438Z",
+      "sha256": "efac9744353dce995b0b8c5dd11eba4a533cff7fdb401781e243acb422d3b7fc"
+    },
+    {
+      "name": "Midi Health",
+      "url": "https://www.joinmidi.com/",
+      "kind": "website",
+      "title": "Meet Midi: Insurance-Covered Care from Women's Health Specialists | Midi Health",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:56.474Z",
+      "sha256": "ec9e427fcb65a837ea26d20736a8e281d8c0cdb24801a250314b5424c86c578c"
+    },
+    {
+      "name": "Candid Health",
+      "url": "https://www.joincandidhealth.com/",
+      "kind": "website",
+      "title": "Candid Health: Revenue Cycle Management Automation Software",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:56.512Z",
+      "sha256": "7f757f8a7dd19c4faaa9762e9c0d3fa8595d16ddd64f8ddd8be775c3c811a5b2"
+    },
+    {
+      "name": "Candid Health",
+      "url": "https://sixthstreet.com/investment_announce/candid-health-raises-120m-led-by-sixth-street-growth-to-fuel-autonomous-revenue-cycle-management-in-healthcare/",
+      "kind": "funding",
+      "title": "Candid Health Raises $120M Led by Sixth Street Growth to Fuel Autonomous Revenue Cycle Management in Healthcare - Sixth Street",
+      "publishedAt": "2026-07-22T12:05:47.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:56.571Z",
+      "sha256": "913399ec8309c7418f60d69767cf77a3c5271b934c9643f3285c0231e6fc6f67"
+    },
+    {
+      "name": "ClearNote Health",
+      "url": "https://www.clearnotehealth.com/clearnote-health-secures-52-million-in-series-d-financing-and-strengthens-leadership-team-to-accelerate-growth-in-early-cancer-detection/",
+      "kind": "funding",
+      "title": "ClearNote Health Secures $52 Million in Series D Financing and Strengthens Leadership Team to Accelerate Growth in Early Cancer Detection - ClearNote Health",
+      "publishedAt": "2026-05-27T11:56:20.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:56.618Z",
+      "sha256": "1cc44f0ed74f4ccaf5747c00514a4769d4165b63d4d52a3b61966106414f5bfc"
+    },
+    {
+      "name": "Lunar Energy",
+      "url": "https://www.lunarenergy.com/",
+      "kind": "website",
+      "title": "Lunar Energy | Endless clean energy for your home",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:56.623Z",
+      "sha256": "a8cf7f33d8723201e49cda16e22beda657aa2a0935a6bc24ec32371edeac0d94"
+    },
+    {
+      "name": "ClearNote Health",
+      "url": "https://www.clearnotehealth.com/",
+      "kind": "website",
+      "title": "Empowering Early Cancer Detection - ClearNote Health",
+      "publishedAt": "2022-10-18T10:34:31.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:56.634Z",
+      "sha256": "369391f44ced3341a80ec97e2498768e541dc90a7debdeed69a71e64761437c4"
+    },
+    {
+      "name": "Base Power",
+      "url": "https://www.basepowercompany.com/",
+      "kind": "website",
+      "title": "Save money. Stay powered. | Base Power",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:56.861Z",
+      "sha256": "6990ff4f49d51cedba7a78474ac1184fd085b37614e5fb2b5d5037d13ea8796b"
+    },
+    {
+      "name": "Voltus",
+      "url": "https://www.voltus.co/",
+      "kind": "website",
+      "title": "Voltus | Unlock Demand Response Revenue",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:56.958Z",
+      "sha256": "5d6130932a7ab7371bbeff4dca6d57223bb1436b52ee3dc4afaf16754a512db5"
+    },
+    {
+      "name": "Voltus",
+      "url": "https://www.voltus.co/press/voltus-series-d-funding",
+      "kind": "funding",
+      "title": "Voltus Raises $225 Million",
+      "publishedAt": "2026-10-08T04:00:00.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:57.016Z",
+      "sha256": "a22e9ce0f414151d9d2266e359a65bf7a352e31d6aff75e1061fb5a48465c918"
+    },
+    {
+      "name": "Base Power",
+      "url": "https://jobs.a16z.com/jobs/base-power",
+      "kind": "funding",
+      "title": "Jobs at Base Power | Andreessen Horowitz",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:57.061Z",
+      "sha256": "dad0b17596ec472dcd5e3fa098082df7b57a6ea64d76fee389d3ad2edd1bc2f3"
+    },
+    {
+      "name": "Lunar Energy",
+      "url": "https://www.globenewswire.com/news-release/2026/2/4/3232099/0/en/lunar-energy-raises-232-million-to-scale-home-battery-deployments-and-ai-powered-vpp-software-to-meet-surging-demand-for-affordable-electricity.html",
+      "kind": "funding",
+      "title": "Lunar Energy raises $232 million to scale home battery",
+      "publishedAt": "2026-02-04T14:00:00.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:57.072Z",
+      "sha256": "8e04a405566db5a4491c87777f2dd0fc00ec9848feadcd3337845e690f46cc6a"
+    },
+    {
+      "name": "Group14 Technologies",
+      "url": "https://group14.technology/",
+      "kind": "website",
+      "title": "Group14 | Silicon Battery Technology & Anode Materials",
+      "publishedAt": "2026-03-07T01:53:41.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:57.500Z",
+      "sha256": "f5335504afddb6978257f7275acfdca7763a92e9b4bb508fe0deb0a43cf9056d"
+    },
+    {
+      "name": "Group14 Technologies",
+      "url": "https://group14.technology/resources/press-releases/group14-closes-us463m-series-d-funding-round-and-acquires-100-ownership-of-bam-factory-in-south-korea-from-sk-inc/",
+      "kind": "funding",
+      "title": "Group14 Closes US $463M Series D | Group14",
+      "publishedAt": "2025-08-20T11:04:32.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:57.518Z",
+      "sha256": "b5e1f17508030e842556d85bccd67184df702764661ace94e2d123c12ccfe65f"
+    },
+    {
+      "name": "Alethical",
+      "url": "https://www.alethical.com/",
+      "kind": "event-website",
+      "title": "Alethical: Minnesota political intelligence & campaign strategy",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:57.519Z",
+      "sha256": "fb7f1604fbbfc74049662b7d68c437c40402d1ab1d70f541248c8d192381a7c0"
+    },
+    {
+      "name": "Arcampass",
+      "url": "https://arcampass.com/",
+      "kind": "event-website",
+      "title": "Arcampass | Agentic Representation for Higher Education",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:57.764Z",
+      "sha256": "9928b86e402f6fb9771361369e6b884221eb72709cbd2822366606d00716c30b"
+    },
+    {
+      "name": "Archer Protocol",
+      "url": "https://www.archerprotocol.com/",
+      "kind": "event-website",
+      "title": "Archer · The rails the agent economy runs on",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:57.837Z",
+      "sha256": "6005e7c2882372bccb4d96a4539baebeb7440f107169c9454b2002d309a16877"
+    },
+    {
+      "name": "Block Convey",
+      "url": "https://blockconvey.com/",
+      "kind": "event-website",
+      "title": "AI Failure Detection and Testing | Block Convey",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:58.012Z",
+      "sha256": "814f411564dc189750a270c26d8e53c06b0567400a34b9972ca88f1aa401ca4c"
+    },
+    {
+      "name": "Bond AI",
+      "url": "https://bondcommunity.ai/",
+      "kind": "event-website",
+      "title": "Bond AI - The In-Person AI Community",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:58.135Z",
+      "sha256": "0a92a55057fe505dfb3837980464339ce56c0dc8daffa9914f97b5295559016b"
+    },
+    {
+      "name": "Apna Counsellor",
+      "url": "https://www.apnacounsellor.in/",
+      "kind": "event-website",
+      "title": "Apna Counsellor 2026 | India's #1 JoSAA, NEET UG & MHT CET Counseling Platform | Apna Counsellor 2026",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:58.376Z",
+      "sha256": "aab5a9a2c385e3e4da60beef1a29487eb45f5e6bc4654cbfcc2fd7deba0b0973"
+    },
+    {
+      "name": "Ask Nomi",
+      "url": "https://www.asknomi.ai/",
+      "kind": "event-website",
+      "title": "Ask Nomi | Endometriosis and Chronic Pain Support",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:58.585Z",
+      "sha256": "63039268eb5ce841155b2eb9460b971829eec650dd3d84f38525afcb7216b648"
+    },
+    {
+      "name": "Brix",
+      "url": "https://info.brix-ai.com/",
+      "kind": "event-website",
+      "status": "unavailable",
+      "error": "Source contained insufficient readable text.",
+      "checkedAt": "2026-10-17T16:51:58.644Z"
+    },
+    {
+      "name": "CHRP",
+      "url": "https://chrpme.io/",
+      "kind": "event-website",
+      "title": "CHRP — Push-to-talk that works with no service at all",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:58.760Z",
+      "sha256": "03d559c90c7281f299e549bcf279e149dbffc6fd3cccc323ab1bd1d63c9c6ca6"
+    },
+    {
+      "name": "CommercialDeals",
+      "url": "https://commercialdeals.com/",
+      "kind": "event-website",
+      "status": "unavailable",
+      "error": "This page disallows automated access in robots.txt; it was not fetched.",
+      "checkedAt": "2026-10-17T16:51:58.826Z"
+    },
+    {
+      "name": "Hatch'd",
+      "url": "https://gethatchd.com/",
+      "kind": "event-website",
+      "title": "The agent that learns how you work then does the work. | Hatch’d",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:59.037Z",
+      "sha256": "39343d961bf6cc0755858b6de6e2c0a6ec4f2aa77fe949bc5f64b41356764bba"
+    },
+    {
+      "name": "ChatBakers",
+      "url": "https://chatbakers.com/",
+      "kind": "event-website",
+      "title": "ChatBakers | AI Visibility Monitoring",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:59.239Z",
+      "sha256": "80d19140f4465a043c40238b6dfb03f5c2bc404194f37ef24cef4f2ba64bbd03"
+    },
+    {
+      "name": "Leo Cancer Care",
+      "url": "https://leocancercare.com/news-and-events/press-release/leo-cancer-care-raises-65m-series-d-to-scale-its-integrated-upright-cancer-care-platform/",
+      "kind": "funding",
+      "title": "Leo Cancer Care Raises $65M Series D to Scale Its Integrated Upright Cancer Care Platform - Leo Cancer Care : Leo Cancer Care",
+      "publishedAt": "2026-07-08T14:00:29.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:59.289Z",
+      "sha256": "c46b004a4646a655691925ee477aa251d85f71e74ad86e2cb4ddcaae1642177c"
+    },
+    {
+      "name": "Leo Cancer Care",
+      "url": "https://leocancercare.com/",
+      "kind": "website",
+      "status": "unavailable",
+      "error": "Source contained insufficient readable text.",
+      "checkedAt": "2026-10-17T16:51:59.409Z"
+    },
+    {
+      "name": "Dormi",
+      "url": "https://www.dormibeds.com/",
+      "kind": "event-website",
+      "title": "Dormi",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:59.426Z",
+      "sha256": "003ea1e67359d446f7d7567ae23ae291944e5a05d17fbf5a0973c4da92f87c84"
+    },
+    {
+      "name": "localhost:nyc",
+      "url": "https://localhost-nyc.com/",
+      "kind": "event-website",
+      "status": "unavailable",
+      "error": "Source contained insufficient readable text.",
+      "checkedAt": "2026-10-17T16:51:59.667Z"
+    },
+    {
+      "name": "Expediter AI",
+      "url": "https://expediter.nyc/",
+      "kind": "event-website",
+      "status": "unavailable",
+      "error": "Source contained insufficient readable text.",
+      "checkedAt": "2026-10-17T16:51:59.803Z"
+    },
+    {
+      "name": "MeghaOS",
+      "url": "https://meghaos.ai/",
+      "kind": "event-website",
+      "title": "MeghaOS: Agentic AI Operating System That Runs Locally",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:59.831Z",
+      "sha256": "b010a64e99160accffda505891dd3e5023b9a3bf4a6a03216f04b861d24e9324"
+    },
+    {
+      "name": "Kojable",
+      "url": "https://kojable.com/",
+      "kind": "event-website",
+      "title": "Kojable | Be Understood When Buyers Ask AI About You",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:51:59.885Z",
+      "sha256": "21060192638b956fcc4c7c2bf9850e270c652fa6fe524d0d60cdcda1f3fc3bdc"
+    },
+    {
+      "name": "Make ConnNext Corporation / ConnNext",
+      "url": "https://celiadavis.com/about",
+      "kind": "event-website",
+      "status": "unavailable",
+      "error": "Source returned HTTP 404.",
+      "checkedAt": "2026-10-17T16:51:59.942Z"
+    },
+    {
+      "name": "Novawerke AI",
+      "url": "https://novawerke.ai/",
+      "kind": "event-website",
+      "title": "Novawerke AI — Resilient AI Infrastructure",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:00.144Z",
+      "sha256": "e95c0fa4d074bc9728501a856a320055a5344f69d06e86e7a6083c1b600b5ee9"
+    },
+    {
+      "name": "NugeniX-AI",
+      "url": "https://www.nugenix-ai.com/",
+      "kind": "event-website",
+      "status": "unavailable",
+      "error": "Source exceeds the research size limit.",
+      "checkedAt": "2026-10-17T16:52:00.233Z"
+    },
+    {
+      "name": "Mooss / Modascope Inc.",
+      "url": "https://modascope.app/",
+      "kind": "event-website",
+      "status": "unavailable",
+      "error": "Source contained insufficient readable text.",
+      "checkedAt": "2026-10-17T16:52:00.379Z"
+    },
+    {
+      "name": "OptimChain",
+      "url": "https://optimchain.github.io/Main/",
+      "kind": "event-website",
+      "title": "What We Are | OptimChain is when industrial engineering meets analytics.",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:00.404Z",
+      "sha256": "01072d74323fac9c8edb2971b5cee057daafba9b97454ca4923314879973fe34"
+    },
+    {
+      "name": "OpFlowOS",
+      "url": "https://opflowos.com/",
+      "kind": "event-website",
+      "title": "OpFlowOS — Your company. In a box.",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:00.624Z",
+      "sha256": "ff3dd489d9111e407550a7c7ec4672d0f006c3a0676dddeeed5df83d737893e5"
+    },
+    {
+      "name": "Hudson Manpower",
+      "url": "https://hudsonmanpower.com/",
+      "kind": "event-website",
+      "title": "Hudson Manpower | Global Workforce Solutions",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:00.892Z",
+      "sha256": "1d87808ac6a7392f9669224d95263316a959084b6b829b45c94b2f9837a787bc"
+    },
+    {
+      "name": "NxtConnect AI",
+      "url": "https://www.nxtconnect.ai/",
+      "kind": "event-website",
+      "title": "NxtConnect.ai | Run your business on AI | NxtConnect AI",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:00.909Z",
+      "sha256": "5d78dfaf12822eee4ebb3be0052d0798426a03353c4a2aec537ec9a0a4e4821d"
+    },
+    {
+      "name": "Rolemate",
+      "url": "https://rolemateapp.com/",
+      "kind": "event-website",
+      "title": "Rolemate, Monetizing originality",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:00.929Z",
+      "sha256": "15496f98f35e5b94b2abe4432fbfe0e579ef2b5ade44d69e699ff9e47a4212de"
+    },
+    {
+      "name": "Quizrs",
+      "url": "https://www.quizrs.com/",
+      "kind": "event-website",
+      "title": "Quizrs — AI Quiz Generator",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:00.959Z",
+      "sha256": "f70361de48d865a1f6b9dc8ac42568292c8e823cc7f70cb454c9f52df36ca240"
+    },
+    {
+      "name": "Neat Roots",
+      "url": "https://neatroots.com/",
+      "kind": "event-website",
+      "title": "Neat Roots – Start Building Powerful Apps",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:01.228Z",
+      "sha256": "95e1b37dd1f1224ae1b458b00e44b1769f2fc09e0a51a547a8e68858be712840"
+    },
+    {
+      "name": "Water Pistol",
+      "url": "https://waterpistol.co/",
+      "kind": "event-website",
+      "title": "Water Pistol 🔫 Make AI Great Again!",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:01.234Z",
+      "sha256": "2ca3cfa1e8c47623a7e549e854c91fa20a5e3fbae5e7477c1a6795593f3ece73"
+    },
+    {
+      "name": "PillPilot",
+      "url": "https://www.pillpilot.com/",
+      "kind": "event-website",
+      "title": "PillPilot — Pharmacy Automation & AI Agents, Inside Your PMS",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:01.246Z",
+      "sha256": "f039f29f16e1c51ca28cd7fab7e3b126ae0c59fa8e2d7ad67bee332daa197843"
+    },
+    {
+      "name": "Vident",
+      "url": "https://discovervident.com/",
+      "kind": "event-website",
+      "title": "Vident | Technology built for intelligent business",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:01.249Z",
+      "sha256": "da135eb8f83fb1aeff3f91b9f1011a406afaeb614343333e27d0bcce9ae5c38e"
+    },
+    {
+      "name": "Sirca",
+      "url": "https://www.sirca.ai/",
+      "kind": "event-website",
+      "title": "Sirca",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:01.330Z",
+      "sha256": "8ffff5572e48f0c47328b6dd996c01b3ab8e05e4e884422366a11ab9fcf17095"
+    },
+    {
+      "name": "Zacc.AI",
+      "url": "https://zacc.ai/",
+      "kind": "event-website",
+      "title": "Zacc Romero — AI-native products",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:01.500Z",
+      "sha256": "25d39ee4caeb5b8b47a638329ac15f872ea9e0c2fb2ab1a9d374fe04bd76013c"
+    },
+    {
+      "name": "WealthRyse",
+      "url": "https://www.wealthryse.ai/",
+      "kind": "event-website",
+      "title": "WealthRyse (Hong Kong) Co., Limited",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:02.705Z",
+      "sha256": "b2b040df3a19e30db49dec126a4d447f1bcf73db51b295cc99171c29d1910d29"
+    },
+    {
+      "name": "Gray Swan",
+      "url": "https://www.grayswan.ai/about",
+      "kind": "profile-detail",
+      "title": "About Gray Swan",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:37.924Z"
+    },
+    {
+      "name": "Rein Security",
+      "url": "https://reinsec.io/about-us/",
+      "kind": "profile-detail",
+      "title": "About Rein: Solving Agentic AI Security",
+      "publishedAt": "2026-01-25T12:20:37.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:37.991Z"
+    },
+    {
+      "name": "Go.AI",
+      "url": "https://go.ai/company/about",
+      "kind": "profile-detail",
+      "title": "About, On-Premises AI for Regulated Industries | Go.AI",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:38.065Z"
+    },
+    {
+      "name": "Rein Security",
+      "url": "https://reinsec.io/platform/",
+      "kind": "profile-detail",
+      "title": "Enterprise Agent Security Platform | Rein Security",
+      "publishedAt": "2026-05-27T15:06:16.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:38.076Z"
+    },
+    {
+      "name": "Go.AI",
+      "url": "https://go.ai/pricing",
+      "kind": "profile-detail",
+      "title": "Pricing | Go.AI",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:38.099Z"
+    },
+    {
+      "name": "Straiker",
+      "url": "https://www.straiker.ai/about",
+      "kind": "profile-detail",
+      "title": "About Straiker | Agentic AI Security Company for AI Agents",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:38.110Z"
+    },
+    {
+      "name": "Straiker",
+      "url": "https://www.straiker.ai/platform",
+      "kind": "profile-detail",
+      "title": "AI Agent Security Platform | Straiker",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:38.165Z"
+    },
+    {
+      "name": "Featherless",
+      "url": "https://featherless.ai/about",
+      "kind": "profile-detail",
+      "title": "About Us | Featherless",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:38.189Z"
+    },
+    {
+      "name": "Geordie AI",
+      "url": "https://www.geordie.ai/product/",
+      "kind": "profile-detail",
+      "title": "Geordie AI | The Geordie Platform",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:38.260Z"
+    },
+    {
+      "name": "LemonEdge",
+      "url": "https://www.lemonedge.com/about",
+      "kind": "profile-detail",
+      "title": "About LemonEdge - Driving Innovation In Private Markets",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:38.263Z"
+    },
+    {
+      "name": "Geordie AI",
+      "url": "https://www.geordie.ai/about/",
+      "kind": "profile-detail",
+      "title": "Geordie AI | About",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:38.368Z"
+    },
+    {
+      "name": "Stitch",
+      "url": "https://www.stitch.co/about-us",
+      "kind": "profile-detail",
+      "title": "Financial infrastructure | Stitch",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:38.375Z"
+    },
+    {
+      "name": "Stitch",
+      "url": "https://www.stitch.co/platform",
+      "kind": "profile-detail",
+      "title": "All-in-One Banking & Payments Platform | Stitch",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:38.456Z"
+    },
+    {
+      "name": "Zócalo Health",
+      "url": "https://www.zocalo.health/about-us",
+      "kind": "profile-detail",
+      "title": "About Us",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:38.474Z"
+    },
+    {
+      "name": "Pave Finance",
+      "url": "https://www.pavefinance.com/company",
+      "kind": "profile-detail",
+      "title": "About Pave Finance | Our Mission, Team, and Platform",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:38.477Z"
+    },
+    {
+      "name": "Handl Health",
+      "url": "https://handlhealth.com/about-us",
+      "kind": "profile-detail",
+      "title": "Leadership and mission | Handl Health",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:38.605Z"
+    },
+    {
+      "name": "Featherless",
+      "url": "https://featherless.ai/pricing",
+      "kind": "profile-detail",
+      "title": "Pricing | Featherless",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:38.731Z"
+    },
+    {
+      "name": "Hydra Host",
+      "url": "https://hydrahost.com/about/",
+      "kind": "profile-detail",
+      "title": "About Us - Hydra Host",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:38.736Z"
+    },
+    {
+      "name": "Onos Health",
+      "url": "https://onoshealth.com/company/about/",
+      "kind": "profile-detail",
+      "title": "About — Onos",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:38.897Z"
+    },
+    {
+      "name": "Texture",
+      "url": "https://www.texturehq.com/company/about-us",
+      "kind": "profile-detail",
+      "title": "About Us | Texture",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:38.925Z"
+    },
+    {
+      "name": "Onos Health",
+      "url": "https://onoshealth.com/platform/technology/",
+      "kind": "profile-detail",
+      "title": "Technology — Onos",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:38.940Z"
+    },
+    {
+      "name": "Texture",
+      "url": "https://www.texturehq.com/platform",
+      "kind": "profile-detail",
+      "status": "unavailable",
+      "error": "PublicFetchError: Source exceeds the research size limit.",
+      "checkedAt": "2026-10-17T16:52:38.943Z"
+    },
+    {
+      "name": "Critical Loop",
+      "url": "https://www.criticalloop.com/about",
+      "kind": "profile-detail",
+      "title": "About Critical Loop | On-Demand Energy Solutions",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:38.948Z"
+    },
+    {
+      "name": "DeepInfra",
+      "url": "https://deepinfra.com/pricing",
+      "kind": "profile-detail",
+      "title": "Simple Pricing | Machine Learning Infrastructure | DeepInfra",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:39.016Z"
+    },
+    {
+      "name": "GMI Cloud",
+      "url": "https://www.gmicloud.ai/en/pricing",
+      "kind": "profile-detail",
+      "title": "GPU Cloud Pricing — NVIDIA H100, H200 & Blackwell — GMI Cloud",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:39.029Z"
+    },
+    {
+      "name": "GMI Cloud",
+      "url": "https://www.gmicloud.ai/en/company/about",
+      "kind": "profile-detail",
+      "title": "About GMI Cloud — Our Mission to Power Production AI",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:39.035Z"
+    },
+    {
+      "name": "Onyx Security",
+      "url": "https://www.onyx.security/platform",
+      "kind": "profile-detail",
+      "title": "One Platform to Discover and Control Every AI Agent | Onyx",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:39.053Z"
+    },
+    {
+      "name": "Onyx Security",
+      "url": "https://www.onyx.security/about",
+      "kind": "profile-detail",
+      "title": "About Onyx | The Team Behind the AI Control Plane",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:39.057Z"
+    },
+    {
+      "name": "DeepInfra",
+      "url": "https://deepinfra.com/about",
+      "kind": "profile-detail",
+      "title": "About Us | Production-Ready Machine Learning Models | DeepInfra",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:39.105Z"
+    },
+    {
+      "name": "HiddenLayer",
+      "url": "https://www.hiddenlayer.com/about-us",
+      "kind": "profile-detail",
+      "title": "About Us | HiddenLayer",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:39.137Z"
+    },
+    {
+      "name": "HiddenLayer",
+      "url": "https://www.hiddenlayer.com/platform",
+      "kind": "profile-detail",
+      "title": "Platform | HiddenLayer",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:39.159Z"
+    },
+    {
+      "name": "Exaforce",
+      "url": "https://www.exaforce.com/about",
+      "kind": "profile-detail",
+      "title": "About Exaforce: agentic AI for security operations",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:39.177Z"
+    },
+    {
+      "name": "Exaforce",
+      "url": "https://www.exaforce.com/platform",
+      "kind": "profile-detail",
+      "title": "Agentic AI SOC Platform Overview | Exaforce",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:39.229Z"
+    },
+    {
+      "name": "Multiply Labs",
+      "url": "https://www.multiplylabs.com/team",
+      "kind": "profile-detail",
+      "title": "Team | Multiply Labs",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:39.231Z"
+    },
+    {
+      "name": "Multiply Labs",
+      "url": "https://www.multiplylabs.com/product",
+      "kind": "profile-detail",
+      "title": "Product | Multiply Labs",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:39.234Z"
+    },
+    {
+      "name": "equipifi",
+      "url": "https://www.equipifi.com/company",
+      "kind": "profile-detail",
+      "title": "About equipifi | Flexible payments for financial institutions",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:39.243Z"
+    },
+    {
+      "name": "Tiny Health",
+      "url": "https://www.tinyhealth.com/technology",
+      "kind": "profile-detail",
+      "title": "Technology",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:39.318Z"
+    },
+    {
+      "name": "Moment Energy",
+      "url": "https://www.momentenergy.com/about-us",
+      "kind": "profile-detail",
+      "title": "About Moment Energy | Powering a Circular Future Through Clean Technology",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:39.322Z"
+    },
+    {
+      "name": "Tiny Health",
+      "url": "https://www.tinyhealth.com/about",
+      "kind": "profile-detail",
+      "title": "About - Tiny Health",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:39.414Z"
+    },
+    {
+      "name": "Courier Health",
+      "url": "https://www.courierhealth.com/about-us",
+      "kind": "profile-detail",
+      "title": "About Us | Courier Health",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:39.427Z"
+    },
+    {
+      "name": "DG Matrix",
+      "url": "https://www.dgmatrix.com/about",
+      "kind": "profile-detail",
+      "title": "About DG Matrix | The Global Energy Intelligence Company",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:39.576Z"
+    },
+    {
+      "name": "Higharc",
+      "url": "https://www.higharc.com/company/about",
+      "kind": "profile-detail",
+      "title": "Building Better Homes with Generative Design | About Higharc",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:39.679Z"
+    },
+    {
+      "name": "Positron AI",
+      "url": "https://www.positron.ai/about",
+      "kind": "profile-detail",
+      "title": "Positron | About",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:39.804Z"
+    },
+    {
+      "name": "Verse",
+      "url": "https://verse.inc/company/about",
+      "kind": "profile-detail",
+      "title": "About Us · Verse",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:39.826Z"
+    },
+    {
+      "name": "GitGuardian",
+      "url": "https://www.gitguardian.com/about-us",
+      "kind": "profile-detail",
+      "title": "About Us | GitGuardian",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:40.000Z"
+    },
+    {
+      "name": "GitGuardian",
+      "url": "https://www.gitguardian.com/platform",
+      "kind": "profile-detail",
+      "title": "Platform | GitGuardian",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:40.093Z"
+    },
+    {
+      "name": "Socket",
+      "url": "https://socket.dev/about",
+      "kind": "profile-detail",
+      "title": "Redefining Supply Chain Security - Socket",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:40.482Z"
+    },
+    {
+      "name": "Type One Energy",
+      "url": "https://typeoneenergy.com/about/",
+      "kind": "profile-detail",
+      "title": "About Us - Type One Energy",
+      "publishedAt": "2025-12-15T16:30:59.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:40.584Z"
+    },
+    {
+      "name": "Jump",
+      "url": "https://jump.ai/about",
+      "kind": "profile-detail",
+      "title": "About Page | Jump",
+      "publishedAt": "2025-08-21T17:32:30.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:40.594Z"
+    },
+    {
+      "name": "Jump",
+      "url": "https://jump.ai/pricing",
+      "kind": "profile-detail",
+      "title": "Pricing | Jump",
+      "publishedAt": "2026-06-25T00:15:19.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:40.601Z"
+    },
+    {
+      "name": "Socket",
+      "url": "https://socket.dev/pricing",
+      "kind": "profile-detail",
+      "title": "Pricing - Socket",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:40.671Z"
+    },
+    {
+      "name": "PatientIQ",
+      "url": "https://www.patientiq.io/about",
+      "kind": "profile-detail",
+      "title": "About Us | PatientIQ",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:40.712Z"
+    },
+    {
+      "name": "Assort Health",
+      "url": "https://www.assorthealth.com/platform",
+      "kind": "profile-detail",
+      "title": "Patient Access & Engagement Platform",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:40.745Z"
+    },
+    {
+      "name": "Assort Health",
+      "url": "https://www.assorthealth.com/about-us",
+      "kind": "profile-detail",
+      "title": "About Us",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:40.749Z"
+    },
+    {
+      "name": "PatientIQ",
+      "url": "https://www.patientiq.io/platform",
+      "kind": "profile-detail",
+      "title": "Patient Reported Outcomes Software | PatientIQ",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:40.787Z"
+    },
+    {
+      "name": "AcuityMD",
+      "url": "https://www.acuitymd.com/company/about-us",
+      "kind": "profile-detail",
+      "title": "About AcuityMD | MedTech Sales Intelligence Platform",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:40.796Z"
+    },
+    {
+      "name": "Nourish",
+      "url": "https://www.nourish.com/about",
+      "kind": "profile-detail",
+      "title": "Nourish | About Us - Sustainable Nutrition Changes",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:40.838Z"
+    },
+    {
+      "name": "AcuityMD",
+      "url": "https://www.acuitymd.com/platform",
+      "kind": "profile-detail",
+      "title": "Software for MedTech Companies | AcuityMD",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:40.841Z"
+    },
+    {
+      "name": "Antora Energy",
+      "url": "https://www.antora.com/technology",
+      "kind": "profile-detail",
+      "title": "Antora – Technology",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:40.982Z"
+    },
+    {
+      "name": "Antora Energy",
+      "url": "https://www.antora.com/company",
+      "kind": "profile-detail",
+      "title": "Antora – Company",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:41.004Z"
+    },
+    {
+      "name": "Nyobolt",
+      "url": "https://nyobolt.com/about-us/",
+      "kind": "profile-detail",
+      "title": "Nyobolt Instant Power | About Us | Nyobolt",
+      "publishedAt": "2023-10-11T12:22:08.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:41.008Z"
+    },
+    {
+      "name": "Nyobolt",
+      "url": "https://nyobolt.com/technology/",
+      "kind": "profile-detail",
+      "title": "Nyobolt Battery Technology | Fast Charging Battery Technology",
+      "publishedAt": "2023-10-11T09:57:09.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:41.127Z"
+    },
+    {
+      "name": "Omni",
+      "url": "https://omni.co/about",
+      "kind": "profile-detail",
+      "title": "About - Omni Analytics",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:41.185Z"
+    },
+    {
+      "name": "Fireworks AI",
+      "url": "https://fireworks.ai/pricing",
+      "kind": "profile-detail",
+      "title": "Fireworks - Pricing",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:41.258Z"
+    },
+    {
+      "name": "Temporal",
+      "url": "https://temporal.io/about",
+      "kind": "profile-detail",
+      "title": "About Temporal | Cloud-Oriented Durable Workflow Solutions | Temporal",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:41.381Z"
+    },
+    {
+      "name": "Profound",
+      "url": "https://www.tryprofound.com/pricing",
+      "kind": "profile-detail",
+      "title": "Pricing - Profound",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:41.397Z"
+    },
+    {
+      "name": "Temporal",
+      "url": "https://temporal.io/product",
+      "kind": "profile-detail",
+      "title": "Durable Execution Platform | Temporal",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:41.408Z"
+    },
+    {
+      "name": "Fireworks AI",
+      "url": "https://fireworks.ai/team",
+      "kind": "profile-detail",
+      "title": "Fireworks - Team",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:41.520Z"
+    },
+    {
+      "name": "Thea Energy",
+      "url": "https://thea.energy/about-us/",
+      "kind": "profile-detail",
+      "title": "Thea Energy | Fusion Technology | About Us",
+      "publishedAt": "2023-03-27T14:14:32.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:41.535Z"
+    },
+    {
+      "name": "Censys",
+      "url": "https://censys.com/platform/",
+      "kind": "profile-detail",
+      "title": "Censys Platform: THE Authoritative View of the Internet",
+      "publishedAt": "2026-01-19T16:44:23.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:41.616Z"
+    },
+    {
+      "name": "Obsidian Security",
+      "url": "https://www.obsidiansecurity.com/company",
+      "kind": "profile-detail",
+      "title": "Obsidian Security – Who We Are",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:41.637Z"
+    },
+    {
+      "name": "Obsidian Security",
+      "url": "https://www.obsidiansecurity.com/pricing",
+      "kind": "profile-detail",
+      "title": "Flexible SaaS Security Pricing | Obsidian",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:41.645Z"
+    },
+    {
+      "name": "Torq",
+      "url": "https://torq.io/company/",
+      "kind": "profile-detail",
+      "title": "About Torq | The Leading AI SOC Platform",
+      "publishedAt": "2023-03-29T20:37:27.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:41.695Z"
+    },
+    {
+      "name": "Juspay",
+      "url": "https://juspay.io/about",
+      "kind": "profile-detail",
+      "title": "Juspay | About Us",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:41.742Z"
+    },
+    {
+      "name": "Daloopa",
+      "url": "https://daloopa.com/about-us",
+      "kind": "profile-detail",
+      "title": "About Daloopa - Daloopa",
+      "publishedAt": "2024-09-17T21:28:34.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:41.759Z"
+    },
+    {
+      "name": "Allica Bank",
+      "url": "https://www.allica.bank/about-us",
+      "kind": "profile-detail",
+      "title": "About Us | Expert SME Banking | Allica Bank",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:41.816Z"
+    },
+    {
+      "name": "Midi Health",
+      "url": "https://www.joinmidi.com/products",
+      "kind": "profile-detail",
+      "title": "Midi Products: Supplements, Custom Rx, & More | Midi Health",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:41.826Z"
+    },
+    {
+      "name": "Lunar Energy",
+      "url": "https://www.lunarenergy.com/about",
+      "kind": "profile-detail",
+      "title": "About Lunar Energy: what we do and how we got here.",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:41.830Z"
+    },
+    {
+      "name": "Lunar Energy",
+      "url": "https://www.lunarenergy.com/lunar-enterprise/platform",
+      "kind": "profile-detail",
+      "title": "Gridshare Platform — fleet visibility and control | Lunar Enterprise",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:41.856Z"
+    },
+    {
+      "name": "ClearNote Health",
+      "url": "https://www.clearnotehealth.com/about-us/",
+      "kind": "profile-detail",
+      "title": "About Us - ClearNote Health",
+      "publishedAt": "2022-11-09T14:44:02.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:42.039Z"
+    },
+    {
+      "name": "Voltus",
+      "url": "https://www.voltus.co/about",
+      "kind": "profile-detail",
+      "title": "DER Platform & Virtual Power Plant Operator | Voltus",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:42.049Z"
+    },
+    {
+      "name": "Base Power",
+      "url": "https://www.basepowercompany.com/pricing",
+      "kind": "profile-detail",
+      "title": "Find Base plans by area | Base Power",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:42.055Z"
+    },
+    {
+      "name": "Voltus",
+      "url": "https://www.voltus.co/technology",
+      "kind": "profile-detail",
+      "title": "Voltus Platform for Distributed Energy Resources",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:42.086Z"
+    },
+    {
+      "name": "Group14 Technologies",
+      "url": "https://group14.technology/about-us/",
+      "kind": "profile-detail",
+      "title": "Leaders in Advanced Battery Materials | About Us | Group14",
+      "publishedAt": "2023-10-19T21:24:32.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:42.195Z"
+    },
+    {
+      "name": "Alethical",
+      "url": "https://www.alethical.com/about",
+      "kind": "profile-detail",
+      "title": "About us | Alethical",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:42.201Z"
+    },
+    {
+      "name": "Censys",
+      "url": "https://censys.com/leadership/",
+      "kind": "profile-detail",
+      "title": "Censys Leadership – Experts Driving Cybersecurity Innovation",
+      "publishedAt": "2026-01-19T16:44:24.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:42.223Z"
+    },
+    {
+      "name": "Block Convey",
+      "url": "https://blockconvey.com/about",
+      "kind": "profile-detail",
+      "title": "About: building better AI reliability · Block Convey",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:42.319Z"
+    },
+    {
+      "name": "Archer Protocol",
+      "url": "https://www.archerprotocol.com/pricing",
+      "kind": "profile-detail",
+      "title": "Pricing | Archer",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:42.351Z"
+    },
+    {
+      "name": "Block Convey",
+      "url": "https://blockconvey.com/pricing",
+      "kind": "profile-detail",
+      "title": "PRISM Pricing: Free, Builder, Growth · Block Convey",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:42.360Z"
+    },
+    {
+      "name": "Base Power",
+      "url": "https://www.basepowercompany.com/about",
+      "kind": "profile-detail",
+      "title": "About Base Power | Home battery and energy provider",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:42.460Z"
+    },
+    {
+      "name": "Ask Nomi",
+      "url": "https://www.asknomi.ai/about",
+      "kind": "profile-detail",
+      "title": "About Us - Ask Nomi",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:42.553Z"
+    },
+    {
+      "name": "MeghaOS",
+      "url": "https://meghaos.ai/company",
+      "kind": "profile-detail",
+      "title": "Company | MeghaOS",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:42.814Z"
+    },
+    {
+      "name": "MeghaOS",
+      "url": "https://meghaos.ai/product",
+      "kind": "profile-detail",
+      "title": "Product | MeghaOS",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:42.849Z"
+    },
+    {
+      "name": "Candid Health",
+      "url": "https://www.joincandidhealth.com/company",
+      "kind": "profile-detail",
+      "status": "unavailable",
+      "error": "PublicFetchError: Source exceeds the research size limit.",
+      "checkedAt": "2026-10-17T16:52:42.901Z"
+    },
+    {
+      "name": "Apna Counsellor",
+      "url": "https://www.apnacounsellor.in/about",
+      "kind": "profile-detail",
+      "title": "About Apna Counsellor – Your Admission Mentorship Partner",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:43.090Z"
+    },
+    {
+      "name": "PillPilot",
+      "url": "https://www.pillpilot.com/about/",
+      "kind": "profile-detail",
+      "title": "About PillPilot — Built by Pharmacy People",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:43.118Z"
+    },
+    {
+      "name": "PillPilot",
+      "url": "https://www.pillpilot.com/pricing/",
+      "kind": "profile-detail",
+      "title": "PillPilot Pricing — Custom, Scoped to Your Pharmacy",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:43.189Z"
+    },
+    {
+      "name": "Forage",
+      "url": "https://www.prnewswire.com/news-releases/forage-raises-additional-40m-to-help-low-income-families-save-on-groceries-302789551.html",
+      "kind": "funding",
+      "title": "Forage raises additional $40M to help low-income families save on groceries",
+      "publishedAt": "2026-06-03T12:01:00.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:43.215Z"
+    },
+    {
+      "name": "DG Matrix",
+      "url": "https://portal.dgmatrix.com/news-and-media",
+      "kind": "funding-support",
+      "status": "unavailable",
+      "error": "PublicFetchError: This page disallows automated access in robots.txt; it was not fetched.",
+      "checkedAt": "2026-10-17T16:52:43.280Z"
+    },
+    {
+      "name": "Rein Security",
+      "url": "https://reinsec.io/blog/series-a/",
+      "kind": "profile-detail",
+      "title": "Rein Raises $25M Series A to Secure the Agent Economy",
+      "publishedAt": "2026-10-08T10:00:50.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:43.366Z"
+    },
+    {
+      "name": "Pentera",
+      "url": "https://pentera.io/press-release/pentera-100m-arr-adversarial-exposure-validation-leader/",
+      "kind": "profile-detail",
+      "title": "Pentera Closes Record-Setting Year, Becomes First in Adversarial Exposure Validation to Surpass $100M ARR - Pentera",
+      "publishedAt": "2026-01-06T14:01:04.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:43.416Z"
+    },
+    {
+      "name": "ChatBakers",
+      "url": "https://chatbakers.com/about/",
+      "kind": "profile-detail",
+      "title": "About ChatBakers | AI Visibility Monitoring Platform",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:43.602Z"
+    },
+    {
+      "name": "NxtConnect AI",
+      "url": "https://www.nxtconnect.ai/about",
+      "kind": "profile-detail",
+      "title": "About | NxtConnect AI",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:43.627Z"
+    },
+    {
+      "name": "NxtConnect AI",
+      "url": "https://www.nxtconnect.ai/platform",
+      "kind": "profile-detail",
+      "title": "Platform | NxtConnect AI",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:43.657Z"
+    },
+    {
+      "name": "ChatBakers",
+      "url": "https://chatbakers.com/pricing/",
+      "kind": "profile-detail",
+      "title": "Pricing | ChatBakers",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:52:43.722Z"
+    },
+    {
+      "name": "Oxide Computer Company",
+      "kind": "funding",
+      "url": "https://www.prnewswire.com/news-releases/oxide-raises-445m-series-d-as-the-company-proves-vision-of-full-stack-cloud-infrastructure-enterprises-can-own-302903159.html",
+      "title": "Oxide Raises $445M Series D as the Company Proves Vision of Full-Stack Cloud Infrastructure Enterprises Can Own",
+      "publishedAt": "2026-10-09T13:00:00.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:55:23.179Z"
+    },
+    {
+      "name": "Oxide Computer Company",
+      "kind": "website",
+      "url": "https://oxide.computer/",
+      "title": "Oxide Computer Company",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:55:23.384Z"
+    },
+    {
+      "name": "Enzo Health",
+      "kind": "website",
+      "url": "https://www.enzo.health/",
+      "title": "Home Health EHR That Does the Work for You | Enzo Health",
+      "publishedAt": null,
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:55:23.633Z"
+    },
+    {
+      "name": "Salience Labs",
+      "kind": "funding",
+      "url": "https://www.saliencelabs.ai/salience-labs-125-million-series-b-funding/",
+      "title": "Salience Labs Secures $125 Million in Series B Funding",
+      "publishedAt": "2026-10-14T10:23:49.000Z",
+      "status": "fetched",
+      "checkedAt": "2026-10-17T16:55:23.730Z"
+    }
+  ]
+}

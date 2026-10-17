@@ -1,0 +1,1351 @@
+{
+  "checkedAt": "2026-10-17",
+  "companies": [
+    {
+      "id": "a-million-beads",
+      "name": "A Million Beads by Rucha",
+      "publish_status": "historical_founder_relationship",
+      "founder": "[Rucha Pingale](https://luma.com/user/usr-aL2orYOoeTeYHlt)",
+      "sector": "Craft retail",
+      "website": "https://www.instagram.com/amillionbeads/",
+      "description": "Small historical bead-related venture named in Rucha Pingale's founder profile.",
+      "capabilities": "Not established.",
+      "audience": "Craft/jewelry buyers; detailed product catalog unverified",
+      "businessModel": "Not established.",
+      "founderRole": "- Rucha Pingale: Founder; 2022-03 to 2022-06.",
+      "evidence": "Exact professional profile linked from the event profile; explicit founder-role evidence. Independent company/institutional corroboration only where cited.",
+      "reviewNotes": "Role March\u2013June 2022. Instagram is founder-linked; its content was not independently inspected. No present business activity inferred.",
+      "sources": [
+        {
+          "title": "Matched guest founder role, dates and founder-described business",
+          "url": "https://linkedin.com/in/rucha-pingale",
+          "type": "self_authored"
+        },
+        {
+          "title": "Guest profile directly links this LinkedIn identity",
+          "url": "https://luma.com/user/usr-aL2orYOoeTeYHlt",
+          "type": "event_profile"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "alchemy-jason-kende",
+      "name": "Alchemy (Jason Kende historical venture)",
+      "publish_status": "historical_founder_relationship",
+      "founder": "[Jason Kende](https://luma.com/user/samizdat)",
+      "sector": "Undisclosed",
+      "website": null,
+      "description": "A short historical co-founder role in a venture called Alchemy; product identity remains undisclosed.",
+      "capabilities": "Not established.",
+      "audience": "Not established",
+      "businessModel": "Not established.",
+      "founderRole": "- Jason Kende: Co-Founder; 2012-08 to 2012-12. No domain or product established; do not merge with Alchemy blockchain infrastructure.",
+      "evidence": "Exact professional profile linked from the event profile; explicit founder-role evidence. Independent company/institutional corroboration only where cited.",
+      "reviewNotes": "August\u2013December 2012 only. No evidence connects this venture to the blockchain developer platform or any other Alchemy namesake.",
+      "sources": [
+        {
+          "title": "Matched guest founder role, dates and founder-described business",
+          "url": "https://linkedin.com/in/jkende",
+          "type": "self_authored"
+        },
+        {
+          "title": "Guest profile directly links this LinkedIn identity",
+          "url": "https://luma.com/user/samizdat",
+          "type": "event_profile"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "analog-sense-ai",
+      "name": "Analog sense AI",
+      "publish_status": "company_details_need_review",
+      "founder": "[Henry He](https://luma.com/user/usr-mU4LGek5U0pCJQV)",
+      "sector": "AI; exact product not established",
+      "website": null,
+      "description": "Henry He reports being a principal engineer and co-founder of Analog sense AI.",
+      "capabilities": "Not established.",
+      "audience": "Not found",
+      "businessModel": "Not found.",
+      "founderRole": "Founder relationship supported by the cited source; exact title and role dates are not separately established in this record.",
+      "evidence": "Explicit founder statement on the event profile; company facts have separate sources.",
+      "reviewNotes": "No authoritative domain was found. Analog by Alex Kipman is a different identified founder/company and was excluded.",
+      "sources": [
+        {
+          "title": "Direct co-founder self-report",
+          "url": "https://luma.com/user/usr-mU4LGek5U0pCJQV",
+          "type": "guest_profile"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "apna-coding",
+      "name": "Apna Coding",
+      "publish_status": "company_details_need_review",
+      "founder": "[Shriyash Soni](https://luma.com/user/sonishriyash)",
+      "sector": "Developer community",
+      "website": null,
+      "description": "Shriyash Soni describes Apna Coding as a community providing coding resources, hackathons and career opportunities.",
+      "capabilities": "Developer resources; Community events; Career listings.",
+      "audience": "Students and early-career developers",
+      "businessModel": "Commercial terms not established.",
+      "founderRole": "Founder relationship supported by the cited source; exact title and role dates are not separately established in this record.",
+      "evidence": "Explicit founder statement on the event profile; company facts have separate sources.",
+      "reviewNotes": "A separately verified primary company domain was not established. Do not merge with unrelated coding schools.",
+      "sources": [
+        {
+          "title": "Direct founder/company claim",
+          "url": "https://luma.com/user/sonishriyash",
+          "type": "guest_profile"
+        },
+        {
+          "title": "Founder-authored description",
+          "url": "https://based-india.devfolio.co/@shriyashson/readme-md",
+          "type": "self_authored"
+        },
+        {
+          "title": "Venture description",
+          "url": "https://linkedin.com/in/shriyash-soni",
+          "type": "self_authored"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "art-in-movement",
+      "name": "Art in Movement (AIM)",
+      "publish_status": "company_details_need_review",
+      "founder": "[Zacc Romero](https://luma.com/user/usr-FJ8ggjSCEUUgSC1)",
+      "sector": "Not established",
+      "website": null,
+      "description": "Zacc Romero identifies Art in Movement as another venture he founded.",
+      "capabilities": "Not established.",
+      "audience": "Not found",
+      "businessModel": "Not found.",
+      "founderRole": "Founder relationship supported by the cited source; exact title and role dates are not separately established in this record.",
+      "evidence": "Explicit founder statement on the event profile; company facts have separate sources.",
+      "reviewNotes": "No authoritative company domain or current product was established. Do not attach unrelated AIM organizations.",
+      "sources": [
+        {
+          "title": "Founder/company self-report",
+          "url": "https://luma.com/user/usr-FJ8ggjSCEUUgSC1",
+          "type": "guest_profile"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "augen-media-works",
+      "name": "Augen Media Works",
+      "publish_status": "historical_founder_relationship",
+      "founder": "[Harish Nanjala](https://luma.com/user/usr-yp2dT4HBWqybKlN)",
+      "sector": "Marketing services",
+      "website": "https://www.augen.in/",
+      "description": "A marketing consulting and creative-services firm founded by Piyush Tyagi and Harish Nanjala.",
+      "capabilities": "Marketing consulting; Digital and creative services.",
+      "audience": "Businesses seeking marketing execution",
+      "businessModel": "Agency and consulting services; pricing not captured.",
+      "founderRole": "- Harish Nanjala: Co-Founder / CEO; 2016-01 to 2023-01.",
+      "evidence": "Exact professional profile linked from the event profile; explicit founder-role evidence. Independent company/institutional corroboration only where cited.",
+      "reviewNotes": "Identity confirmed through exact profile link. Co-founder/CEO role ended January 2023. Historical biographical turnover/client claims are not current audited metrics.",
+      "sources": [
+        {
+          "title": "Named founders",
+          "url": "https://www.augen.in/about.php",
+          "type": "company"
+        },
+        {
+          "title": "Institutional founder biography",
+          "url": "https://dukecapitalpartners.duke.edu/team/harish-nanjala/",
+          "type": "institutional"
+        },
+        {
+          "title": "Guest directly links the reviewed LinkedIn identity",
+          "url": "https://luma.com/user/usr-yp2dT4HBWqybKlN",
+          "type": "event_profile"
+        },
+        {
+          "title": "Matched founder role and source-reported dates",
+          "url": "https://linkedin.com/in/harishnanjala",
+          "type": "self_authored"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "blitzar",
+      "name": "Blitzar",
+      "publish_status": "historical_founder_relationship",
+      "founder": "[Chida Sadayappan](https://luma.com/user/chida)",
+      "sector": "Cloud, AI and data services",
+      "website": null,
+      "description": "A former Chida Sadayappan venture focused on cloud, machine learning and data analytics.",
+      "capabilities": "Cloud services; Machine learning and analytics.",
+      "audience": "Enterprise clients, according to historical biography",
+      "businessModel": "Historical technology services; current commercial status unverified.",
+      "founderRole": "Historical. The current professional profile gives an ended role. blitzar.io could not be fetched. Do not present this as the founder's current operating company or active offering.",
+      "evidence": "Event identity matched through a public handle, personal site or company context; explicit founder role in cited sources.",
+      "reviewNotes": "The current professional profile gives an ended role. blitzar.io could not be fetched. Do not present this as the founder's current operating company or active offering.",
+      "sources": [
+        {
+          "title": "Founder role dated May 2016\u2013January 2019",
+          "url": "https://linkedin.com/in/schida",
+          "type": "self_authored"
+        },
+        {
+          "title": "2018 event speaker biography and business scope",
+          "url": "http://techstarsstartupweekdc2018.sched.com/speaker/chida2",
+          "type": "event_organizer"
+        },
+        {
+          "title": "Event profile and identity context",
+          "url": "https://luma.com/user/chida",
+          "type": "event_profile"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "blockhive-technologies",
+      "name": "Blockhive Technologies",
+      "publish_status": "company_details_need_review",
+      "founder": "[Roger Benites](https://luma.com/user/rombtc)",
+      "sector": "DeFi and trading infrastructure",
+      "website": null,
+      "description": "Roger M. Benites describes work on decentralized-finance protocols, rebalancing infrastructure and automated trading systems.",
+      "capabilities": "DeFi protocols; Portfolio infrastructure; Trading automation.",
+      "audience": "Not independently established",
+      "businessModel": "Not found.",
+      "founderRole": "- Roger Benites: Founder; 2018-03 to Present (source report; current position not independently reconfirmed).",
+      "evidence": "Exact professional profile linked from the event profile; explicit founder-role evidence. Independent company/institutional corroboration only where cited.",
+      "reviewNotes": "Exact guest-linked Roger M. Benites profile confirms founder role from March 2018. No authoritative company domain established; do not attach BlockHive KOL, Estonia tokens or similarly named offerings.",
+      "sources": [
+        {
+          "title": "Explicit founder role and technical scope",
+          "url": "https://linkedin.com/in/rogermbenites",
+          "type": "self_authored"
+        },
+        {
+          "title": "Guest directly links the reviewed LinkedIn identity",
+          "url": "https://luma.com/user/rombtc",
+          "type": "event_profile"
+        },
+        {
+          "title": "Matched founder role and source-reported dates",
+          "url": "https://linkedin.com/in/roger-m-benites-a745731a4",
+          "type": "self_authored"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "brightway",
+      "name": "BrightWay",
+      "publish_status": "historical_founder_relationship",
+      "founder": "[Roman Baptiste](https://luma.com/user/usr-aiayJ2SwqJ6Bfe0)",
+      "sector": "School counselor software",
+      "website": "https://startbrightway.com/",
+      "description": "Builds a counselor copilot centralizing student context, opportunities and follow-ups.",
+      "capabilities": "Student context; Opportunities; Counselor follow-ups.",
+      "audience": "Schools and school counselors",
+      "businessModel": "Commercial terms not verified.",
+      "founderRole": "- Roman Baptiste: Co-Founder; 2025-05 to 2026-08.",
+      "evidence": "Exact professional profile linked from the event profile; explicit founder-role evidence. Independent company/institutional corroboration only where cited.",
+      "reviewNotes": "Roman's co-founder role ended August 2026. Distinct from brightwayai.com and other namesakes.",
+      "sources": [
+        {
+          "title": "Matched guest founder role, dates and founder-described business",
+          "url": "https://linkedin.com/in/romanjessebaptiste",
+          "type": "self_authored"
+        },
+        {
+          "title": "Guest profile directly links this LinkedIn identity",
+          "url": "https://luma.com/user/usr-aiayJ2SwqJ6Bfe0",
+          "type": "event_profile"
+        },
+        {
+          "title": "Current counselor product",
+          "url": "https://startbrightway.com/",
+          "type": "company"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "buildzee",
+      "name": "Buildzee",
+      "publish_status": "historical_founder_relationship",
+      "founder": "[Arjun Chaturvedi](https://luma.com/user/usr-B8pV26FCpKTMUIU)",
+      "sector": "Website building",
+      "website": "https://buildzee.com/",
+      "description": "Company-described website builder with templates and SEO analysis.",
+      "capabilities": "Templates; Responsive websites; SEO analysis.",
+      "audience": "People and businesses creating websites",
+      "businessModel": "Website-building platform; commercial terms not established.",
+      "founderRole": "- Arjun Chaturvedi: Co-Founder / CFO; 2021-08 to 2022-10.",
+      "evidence": "Exact professional profile linked from the event profile; explicit founder-role evidence. Independent company/institutional corroboration only where cited.",
+      "reviewNotes": "Arjun's role ended October 2022. Root domain live operations not verified; blog remains discoverable.",
+      "sources": [
+        {
+          "title": "Matched guest founder role, dates and founder-described business",
+          "url": "https://linkedin.com/in/arjunchaturvedi",
+          "type": "self_authored"
+        },
+        {
+          "title": "Guest profile directly links this LinkedIn identity",
+          "url": "https://luma.com/user/usr-B8pV26FCpKTMUIU",
+          "type": "event_profile"
+        },
+        {
+          "title": "Company About text and domain",
+          "url": "https://linkedin.com/company/buildzee",
+          "type": "company"
+        },
+        {
+          "title": "Company blog",
+          "url": "https://blogs.buildzee.com/",
+          "type": "company"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "cognition-medical",
+      "name": "Cognition Medical",
+      "publish_status": "historical_founder_relationship",
+      "founder": "[Jonah Bernstein](https://luma.com/user/usr-fYD7a7KYvl6NtbP)",
+      "sector": "Neurovascular medical devices",
+      "website": "https://www.cognitionmedical.com/",
+      "description": "Company materials describe development of interventional neurovascular devices.",
+      "capabilities": "Neurovascular device development.",
+      "audience": "Clinical and medical-device markets; specific buyer not verified",
+      "businessModel": "Medical-device development; commercialization and regulatory status unverified.",
+      "founderRole": "- Jonah Bernstein: Co-Founder / COO; 2012-02 to 2015-03.",
+      "evidence": "Exact professional profile linked from the event profile; explicit founder-role evidence. Independent company/institutional corroboration only where cited.",
+      "reviewNotes": "Jonah's directly linked profile lists co-founder/COO February 2012\u2013March 2015. Current company page lists other leadership. No medical efficacy, authorization or current-founder claim inferred.",
+      "sources": [
+        {
+          "title": "Matched guest founder role, dates and founder-described business",
+          "url": "https://linkedin.com/in/jonahbernstein",
+          "type": "self_authored"
+        },
+        {
+          "title": "Guest profile directly links this LinkedIn identity",
+          "url": "https://luma.com/user/usr-fYD7a7KYvl6NtbP",
+          "type": "event_profile"
+        },
+        {
+          "title": "Company technology area",
+          "url": "https://www.cognitionmedical.com/",
+          "type": "company"
+        },
+        {
+          "title": "Current company team; does not list Jonah",
+          "url": "https://www.cognitionmedical.com/about-us",
+          "type": "company"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "colabmate",
+      "name": "Colabmate LLC",
+      "publish_status": "historical_founder_relationship",
+      "founder": "[Kunal Chaudhary](https://luma.com/user/usr-1iFZYp0NT3vsozu)",
+      "sector": "Research collaboration",
+      "website": "https://colabmate.com/",
+      "description": "Company-described marketplace connecting researchers with contract research organizations, core facilities and shared equipment.",
+      "capabilities": "Research search and matching; CRO and facility discovery.",
+      "audience": "Academic, biotech and pharmaceutical researchers",
+      "businessModel": "Company About text describes fee-for-service and project-based arrangements.",
+      "founderRole": "- Kunal Chaudhary: Co-Founder; 2020-01 to 2022-01.",
+      "evidence": "Exact professional profile linked from the event profile; explicit founder-role evidence. Independent company/institutional corroboration only where cited.",
+      "reviewNotes": "Kunal's role dated January 2020\u2013January 2022; company page dates founding to 2021. Date conflict left unresolved. Website includes travel/hosting template artifacts; do not treat them as product features or production readiness.",
+      "sources": [
+        {
+          "title": "Matched guest founder role, dates and founder-described business",
+          "url": "https://linkedin.com/in/kc3",
+          "type": "self_authored"
+        },
+        {
+          "title": "Guest profile directly links this LinkedIn identity",
+          "url": "https://luma.com/user/usr-1iFZYp0NT3vsozu",
+          "type": "event_profile"
+        },
+        {
+          "title": "Company-authored research marketplace description",
+          "url": "https://linkedin.com/company/colabmate-llc",
+          "type": "company"
+        },
+        {
+          "title": "Current site, including unfinished template content",
+          "url": "https://colabmate.com/",
+          "type": "company"
+        },
+        {
+          "title": "Trade-association member description",
+          "url": "https://www.newyorkbio.org/membership-directory/corporate/1727352",
+          "type": "industry_association"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "context",
+      "name": "Context (Somya Gupta's former venture)",
+      "publish_status": "historical_founder_relationship",
+      "founder": "Somya Gupta (event host)",
+      "sector": "AI education",
+      "website": null,
+      "description": "Somya Gupta's founder biography says he started an AI education company called Context.",
+      "capabilities": "Not established.",
+      "audience": "Education users; exact segment not established",
+      "businessModel": "Historical venture; current operations not established.",
+      "founderRole": "Historical. Do not merge with other companies named Context or list this as a currently raising startup.",
+      "evidence": "Founder role supported by cited host/company materials; host tracked separately from the guest roster.",
+      "reviewNotes": "Do not merge with other companies named Context or list this as a currently raising startup.",
+      "sources": [
+        {
+          "title": "Founder and prior venture",
+          "url": "https://localhost-nyc.com/",
+          "type": "self_authored"
+        },
+        {
+          "title": "Former venture account",
+          "url": "https://www.linkedin.com/in/somya-gupta-sg",
+          "type": "self_authored"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "cosmic-tales",
+      "name": "Cosmic Tales \u2014 The Astronomy Series",
+      "publish_status": "historical_founder_relationship",
+      "founder": "[Kushal Jayakumar](https://luma.com/user/usr-uytUcE28qVLzqpk)",
+      "sector": "Science education",
+      "website": null,
+      "description": "Historical founder-described astronomy outreach initiative with interdisciplinary educational sessions.",
+      "capabilities": "Astronomy sessions; Science outreach.",
+      "audience": "Astronomy learners, schools and colleges",
+      "businessModel": "Educational initiative; commercial model unknown.",
+      "founderRole": "- Kushal Jayakumar: CEO / Co-Founder; 2021-08 to 2022-02.",
+      "evidence": "Exact professional profile linked from the event profile; explicit founder-role evidence. Independent company/institutional corroboration only where cited.",
+      "reviewNotes": "Role ended February 2022. Claimed institutional collaborations and reach counts not independently confirmed.",
+      "sources": [
+        {
+          "title": "Matched guest founder role, dates and founder-described business",
+          "url": "https://linkedin.com/in/kushaljayakumar",
+          "type": "self_authored"
+        },
+        {
+          "title": "Guest profile directly links this LinkedIn identity",
+          "url": "https://luma.com/user/usr-uytUcE28qVLzqpk",
+          "type": "event_profile"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "dotogether",
+      "name": "DoTogether",
+      "publish_status": "historical_founder_relationship",
+      "founder": "[Aung Khant Min](https://luma.com/user/usr-3f4ZoCYBBnz18mE)",
+      "sector": "Social software",
+      "website": null,
+      "description": "Historical activity-interest social network described by its co-founder.",
+      "capabilities": "Interest-based connections; Social website.",
+      "audience": "People seeking shared activities",
+      "businessModel": "Historical prototype; no commercial model verified.",
+      "founderRole": "- Aung Khant Min: Co-Founder / CTO; 2020-05 to 2020-08.",
+      "evidence": "Exact professional profile linked from the event profile; explicit founder-role evidence. Independent company/institutional corroboration only where cited.",
+      "reviewNotes": "Profile names DoTogether.ca as the historical site. Do not infer that its present registrant or content belongs to this venture.",
+      "sources": [
+        {
+          "title": "Matched guest founder role, dates and founder-described business",
+          "url": "https://linkedin.com/in/aung-khant-min",
+          "type": "self_authored"
+        },
+        {
+          "title": "Guest profile directly links this LinkedIn identity",
+          "url": "https://luma.com/user/usr-3f4ZoCYBBnz18mE",
+          "type": "event_profile"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "ekdham",
+      "name": "Ekdham",
+      "publish_status": "historical_founder_relationship",
+      "founder": "[Sameer Shaik](https://luma.com/user/usr-45SZ3Zz9HBKvxwe)",
+      "sector": "Apparel and merchandising",
+      "website": "https://ekdham.com/",
+      "description": "Company-described design and bulk-merchandising business for shirts and other promotional products.",
+      "capabilities": "Custom designs; T-shirts; Bulk merchandising.",
+      "audience": "Organizations ordering branded merchandise",
+      "businessModel": "Physical product and bulk order sales.",
+      "founderRole": "- Sameer Shaik: Co-Founder; 2021-01 to 2023-08.",
+      "evidence": "Exact professional profile linked from the event profile; explicit founder-role evidence. Independent company/institutional corroboration only where cited.",
+      "reviewNotes": "Exact guest-linked profile has co-founder role January 2021\u2013August 2023 and COO role through December 2023. Current domain not fetched. Company-authored page says Hyderabad; conflicting generated location metadata ignored. Not WashiTEC.",
+      "sources": [
+        {
+          "title": "Matched guest founder role, dates and founder-described business",
+          "url": "https://linkedin.com/in/sameershaik78",
+          "type": "self_authored"
+        },
+        {
+          "title": "Guest profile directly links this LinkedIn identity",
+          "url": "https://luma.com/user/usr-45SZ3Zz9HBKvxwe",
+          "type": "event_profile"
+        },
+        {
+          "title": "Company-authored product description and domain",
+          "url": "https://linkedin.com/company/ekdham",
+          "type": "company"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "etcetera-technologies",
+      "name": "Et Cetera Technologies / ClaimDelta",
+      "publish_status": "company_details_need_review",
+      "founder": "[Arjun Pillai](https://luma.com/user/usr-LV9NzWkYT5GZrGa)",
+      "sector": "Healthcare payment analytics",
+      "website": "https://etceteratech.net/clamdelta",
+      "description": "Arjun Pillai describes ClaimDelta as software for finding payer-contract underpayments for specialty medical practices.",
+      "capabilities": "ERA parsing; Contract-term extraction; Prioritized underpayment worklists.",
+      "audience": "Specialty medical practices",
+      "businessModel": "Founder-described B2B SaaS; pricing unverified.",
+      "founderRole": "- Arjun Pillai: Founder / Full-Stack Developer; 2026-01 to Present (source report; current position not independently reconfirmed).",
+      "evidence": "Exact professional profile linked from the event profile; explicit founder-role evidence. Independent company/institutional corroboration only where cited.",
+      "reviewNotes": "Domain/path comes directly from the founder profile, including the spelling clamdelta. Fetch failed; deployment, legal entity and security/compliance claims are not independently verified. This guest is not the Docket founder.",
+      "sources": [
+        {
+          "title": "Matched guest founder role, dates and founder-described business",
+          "url": "https://linkedin.com/in/arjunpillai008",
+          "type": "self_authored"
+        },
+        {
+          "title": "Guest profile directly links this LinkedIn identity",
+          "url": "https://luma.com/user/usr-LV9NzWkYT5GZrGa",
+          "type": "event_profile"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "future-music-group",
+      "name": "Future Music Group",
+      "publish_status": "historical_founder_relationship",
+      "founder": "[Caleb Matteis](https://luma.com/user/usr-msZvF23ZxYbonSz)",
+      "sector": "Music production",
+      "website": null,
+      "description": "Historical founder-described artist development and recording venture.",
+      "capabilities": "Recording production; Artist marketing; Project coordination.",
+      "audience": "Musicians and recording artists",
+      "businessModel": "Music production and artist services; pricing unknown.",
+      "founderRole": "- Caleb Matteis: Founder; 2010-08 to 2017-11.",
+      "evidence": "Exact professional profile linked from the event profile; explicit founder-role evidence. Independent company/institutional corroboration only where cited.",
+      "reviewNotes": "Founder role ended November 2017. Same-name businesses and generated revenue figures were not merged.",
+      "sources": [
+        {
+          "title": "Matched guest founder role, dates and founder-described business",
+          "url": "https://linkedin.com/in/caleb-matteis",
+          "type": "self_authored"
+        },
+        {
+          "title": "Guest profile directly links this LinkedIn identity",
+          "url": "https://luma.com/user/usr-msZvF23ZxYbonSz",
+          "type": "event_profile"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "green-habit",
+      "name": "Green Habit",
+      "publish_status": "community_or_nonprofit_review",
+      "founder": "[Arjun Pillai](https://luma.com/user/usr-LV9NzWkYT5GZrGa)",
+      "sector": "Public health and environment",
+      "website": null,
+      "description": "Founder-described youth NGO addressing sustainable habits, food security and health literacy in India.",
+      "capabilities": "Public-awareness campaigns; Community health literacy.",
+      "audience": "Communities and young people",
+      "businessModel": "NGO; no equity investment product established.",
+      "founderRole": "- Arjun Pillai: Co-Founder / Executive Director; 2024-08 to Present (source report; current position not independently reconfirmed).",
+      "evidence": "Exact professional profile linked from the event profile; explicit founder-role evidence. Independent company/institutional corroboration only where cited.",
+      "reviewNotes": "Name and founder role are matched; legal registration, independent website and participation metrics were not verified.",
+      "sources": [
+        {
+          "title": "Matched guest founder role, dates and founder-described business",
+          "url": "https://linkedin.com/in/arjunpillai008",
+          "type": "self_authored"
+        },
+        {
+          "title": "Guest profile directly links this LinkedIn identity",
+          "url": "https://luma.com/user/usr-LV9NzWkYT5GZrGa",
+          "type": "event_profile"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "handa-help",
+      "name": "Handa Help",
+      "publish_status": "community_or_nonprofit_review",
+      "founder": "[Samantha Vargas-Markham](https://luma.com/user/usr-F4ZFTU3L98JUe4D)",
+      "sector": "Migrant-worker legal information",
+      "website": "https://handahelp.org/",
+      "description": "Develops free multilingual legal-information flows for overseas Filipino workers in the Philippines\u2013Gulf corridor.",
+      "capabilities": "Rights and referral guidance; On-device document vault design; Emergency ID; Pre-departure information.",
+      "audience": "Overseas Filipino workers and supporting legal-aid groups",
+      "businessModel": "Company describes free access and nonprofit status; no equity opportunity verified.",
+      "founderRole": "- Samantha Vargas-Markham: Founder; 2024-12 to Present (source report; current position not independently reconfirmed).",
+      "evidence": "Exact professional profile linked from the event profile; explicit founder-role evidence. Independent company/institutional corroboration only where cited.",
+      "reviewNotes": "Website distinguishes drafted pathways from lawyer-verified releases. Legal accuracy, privacy architecture and partner relationships are company claims; not independently audited. Preview availability is not proof that all pathways are live.",
+      "sources": [
+        {
+          "title": "Matched guest founder role, dates and founder-described business",
+          "url": "https://linkedin.com/in/samantha-vargas-markham",
+          "type": "self_authored"
+        },
+        {
+          "title": "Guest profile directly links this LinkedIn identity",
+          "url": "https://luma.com/user/usr-F4ZFTU3L98JUe4D",
+          "type": "event_profile"
+        },
+        {
+          "title": "Product scope, working preview and phased roadmap",
+          "url": "https://handahelp.org/",
+          "type": "company"
+        },
+        {
+          "title": "Company description and founder association",
+          "url": "https://linkedin.com/company/handa-help",
+          "type": "company"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "hurrae",
+      "name": "Hurrae",
+      "publish_status": "historical_founder_relationship",
+      "founder": "[Manoj Maheshwar Jagadeesan](https://luma.com/user/usr-DPyQEa1vu7Ild9E)",
+      "sector": "Digital product services",
+      "website": "https://hurrae.com/",
+      "description": "A design and development venture focused on digital product experiences.",
+      "capabilities": "Product design; Web development; Creative services.",
+      "audience": "Businesses seeking digital product design and delivery",
+      "businessModel": "Project services; pricing not found.",
+      "founderRole": "- Manoj Maheshwar Jagadeesan: Founder; 2023-05 to 2024-07.",
+      "evidence": "Exact professional profile linked from the event profile; explicit founder-role evidence. Independent company/institutional corroboration only where cited.",
+      "reviewNotes": "Identity confirmed through exact profile link. Founder role ended July 2024; do not imply a current executive position. Present entity/operations not independently verified.",
+      "sources": [
+        {
+          "title": "Manoj Maheshwar JG founder and team",
+          "url": "https://hurrae.com/about-us",
+          "type": "company"
+        },
+        {
+          "title": "Matched founder role and source-reported dates",
+          "url": "https://linkedin.com/in/manojmaheshwarjg",
+          "type": "self_authored"
+        },
+        {
+          "title": "Guest directly links the reviewed LinkedIn identity",
+          "url": "https://luma.com/user/usr-DPyQEa1vu7Ild9E",
+          "type": "event_profile"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "izs-ventures",
+      "name": "I.Z.S Ventures",
+      "publish_status": "historical_founder_relationship",
+      "founder": "[Ismail Shaltuni](https://luma.com/user/usr-A7TbX4eSuIKn4dS)",
+      "sector": "Venture building",
+      "website": null,
+      "description": "Founder-described umbrella for climate and consumer-hardware projects.",
+      "capabilities": "Venture development.",
+      "audience": "Varies by project",
+      "businessModel": "Umbrella business structure and legal registration unverified.",
+      "founderRole": "- Ismail Shaltuni: Founder; 2022-01 to 2026-01.",
+      "evidence": "Exact professional profile linked from the event profile; explicit founder-role evidence. Independent company/institutional corroboration only where cited.",
+      "reviewNotes": "Listed January 2022\u2013January 2026. Related project descriptions say active but do not establish current legal ownership.",
+      "sources": [
+        {
+          "title": "Matched guest founder role, dates and founder-described business",
+          "url": "https://linkedin.com/in/ismailzshaltuni",
+          "type": "self_authored"
+        },
+        {
+          "title": "Guest profile directly links this LinkedIn identity",
+          "url": "https://luma.com/user/usr-A7TbX4eSuIKn4dS",
+          "type": "event_profile"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "ibl-impacts",
+      "name": "IBL Impacts",
+      "publish_status": "company_details_need_review",
+      "founder": "[Ismail Shaltuni](https://luma.com/user/usr-A7TbX4eSuIKn4dS)",
+      "sector": "Climate-action platform",
+      "website": "https://iblimpacts.com/",
+      "description": "Company site offers tree planting, tree gifts, branded forests and carbon-offset services.",
+      "capabilities": "Tree selection and gifting; Branded forests; Impact tracking.",
+      "audience": "Individuals and companies supporting environmental projects",
+      "businessModel": "Tree/project purchases and corporate environmental services; commercial details not audited.",
+      "founderRole": "- Ismail Shaltuni: Founder; start not established to Present (source report; current position not independently reconfirmed). Described as active within an umbrella role dated through January 2026; current relationship needs reconfirmation.",
+      "evidence": "Exact professional profile linked from the event profile; explicit founder-role evidence. Independent company/institutional corroboration only where cited.",
+      "reviewNotes": "Founder relationship is stated inside Ismail's January 2026-ended umbrella role. Current role needs reconfirmation. Carbon verification, offset totals, funded-tree counts and project impact are site claims, not independently checked.",
+      "sources": [
+        {
+          "title": "Matched guest founder role, dates and founder-described business",
+          "url": "https://linkedin.com/in/ismailzshaltuni",
+          "type": "self_authored"
+        },
+        {
+          "title": "Guest profile directly links this LinkedIn identity",
+          "url": "https://luma.com/user/usr-A7TbX4eSuIKn4dS",
+          "type": "event_profile"
+        },
+        {
+          "title": "Current product descriptions",
+          "url": "https://iblimpacts.com/",
+          "type": "company"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "khopoli-ploggers",
+      "name": "Khopoli Ploggers",
+      "publish_status": "historical_founder_relationship",
+      "founder": "[Rucha Pingale](https://luma.com/user/usr-aL2orYOoeTeYHlt)",
+      "sector": "Environmental community",
+      "website": "https://www.instagram.com/khopoliploggers/",
+      "description": "Historical community initiative named in Rucha Pingale's co-founder profile.",
+      "capabilities": "Not established.",
+      "audience": "Community participants",
+      "businessModel": "Community initiative; no investment product established.",
+      "founderRole": "- Rucha Pingale: Co-Founder; 2021-02 to 2022-06.",
+      "evidence": "Exact professional profile linked from the event profile; explicit founder-role evidence. Independent company/institutional corroboration only where cited.",
+      "reviewNotes": "Role February 2021\u2013June 2022. Social link comes from founder profile; legal status and present activity unknown.",
+      "sources": [
+        {
+          "title": "Matched guest founder role, dates and founder-described business",
+          "url": "https://linkedin.com/in/rucha-pingale",
+          "type": "self_authored"
+        },
+        {
+          "title": "Guest profile directly links this LinkedIn identity",
+          "url": "https://luma.com/user/usr-aL2orYOoeTeYHlt",
+          "type": "event_profile"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "mindbuild",
+      "name": "mindbuild.co",
+      "publish_status": "company_details_need_review",
+      "founder": "[Vama Maniar](https://luma.com/user/usr-pjGE3gvN09zOG8I)",
+      "sector": "Productivity education",
+      "website": "https://mindbuild.co/",
+      "description": "Vama Maniar describes a content community and productivity workshop business.",
+      "capabilities": "Productivity workshops; Content community.",
+      "audience": "People seeking productivity education",
+      "businessModel": "Workshops sold directly, according to founder profile.",
+      "founderRole": "- Vama Maniar: Founder; 2021-10 to Present (source report; current position not independently reconfirmed). Current according to profile; directory-index website does not establish current commercial activity.",
+      "evidence": "Exact professional profile linked from the event profile; explicit founder-role evidence. Independent company/institutional corroboration only where cited.",
+      "reviewNotes": "Exact guest-linked profile confirms founder claim. Domain exposes a directory index rather than active product content; current operating activity unverified. Followers/customer totals not audited.",
+      "sources": [
+        {
+          "title": "Matched founder role and source-reported dates",
+          "url": "https://linkedin.com/in/vamamaniar",
+          "type": "self_authored"
+        },
+        {
+          "title": "Current directory-index page",
+          "url": "https://mindbuild.co/",
+          "type": "company"
+        },
+        {
+          "title": "Guest directly links the reviewed LinkedIn identity",
+          "url": "https://luma.com/user/usr-pjGE3gvN09zOG8I",
+          "type": "event_profile"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "mlx-ai",
+      "name": "MLX Ai",
+      "publish_status": "company_details_need_review",
+      "founder": "[Amadou Diallo](https://luma.com/user/Sadio)",
+      "sector": "Not established",
+      "website": null,
+      "description": "Amadou Diallo explicitly calls himself the founder of MLX Ai on his event-linked profile.",
+      "capabilities": "Not established.",
+      "audience": "Not found",
+      "businessModel": "Not found.",
+      "founderRole": "Founder relationship supported by the cited source; exact title and role dates are not separately established in this record.",
+      "evidence": "Explicit founder statement on the event profile; company facts have separate sources.",
+      "reviewNotes": "Search did not establish a company website. mlxai.com returned parked/tracking content. Do not attach Apple's MLX project or another Amadou Diallo's employer.",
+      "sources": [
+        {
+          "title": "Founder and company self-report",
+          "url": "https://luma.com/user/Sadio",
+          "type": "guest_profile"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "node8",
+      "name": "Node8",
+      "publish_status": "company_details_need_review",
+      "founder": "[Boaz Descalo](https://luma.com/user/descalo)",
+      "sector": "AI implementation",
+      "website": null,
+      "description": "Boaz Descalo's personal work history names Node8 as his current founder/CEO venture and describes work implementing AI in regulated environments.",
+      "capabilities": "LLM implementation; Agentic AI advisory.",
+      "audience": "Organizations adopting AI, including regulated enterprises",
+      "businessModel": "Services and commercial terms not independently established.",
+      "founderRole": "Founder relationship supported by the cited source; exact title and role dates are not separately established in this record.",
+      "evidence": "Event identity matched through a public handle, personal site or company context; explicit founder role in cited sources.",
+      "reviewNotes": "AI First is separately listed as a community-host role; do not call it the same company. Node8 start year is listed as 2023 in the founder's work history.",
+      "sources": [
+        {
+          "title": "Explicit founder/CEO work history",
+          "url": "https://www.descalo.com/",
+          "type": "self_authored"
+        },
+        {
+          "title": "Event profile and identity context",
+          "url": "https://luma.com/user/descalo",
+          "type": "event_profile"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "nxt-level-lacrosse",
+      "name": "NXT Level Lacrosse",
+      "publish_status": "company_details_need_review",
+      "founder": "[Will Spangenberg](https://luma.com/user/usr-MzOzSAcibQBaFPa)",
+      "sector": "Youth sports instruction",
+      "website": null,
+      "description": "Founder-described youth lacrosse clinics and instruction in Massachusetts.",
+      "capabilities": "Youth clinics; Lacrosse coaching.",
+      "audience": "Young players and families",
+      "businessModel": "Sports instruction and clinic fees; pricing unverified.",
+      "founderRole": "- Will Spangenberg: Founder / Program Director; 2019-06 to Present (source report; current position not independently reconfirmed).",
+      "evidence": "Exact professional profile linked from the event profile; explicit founder-role evidence. Independent company/institutional corroboration only where cited.",
+      "reviewNotes": "Role lists June 2019\u2013Present. No independently confirmed official domain established. Growth, review counts and ad returns excluded.",
+      "sources": [
+        {
+          "title": "Matched guest founder role, dates and founder-described business",
+          "url": "https://linkedin.com/in/will-spangenberg",
+          "type": "self_authored"
+        },
+        {
+          "title": "Guest profile directly links this LinkedIn identity",
+          "url": "https://luma.com/user/usr-MzOzSAcibQBaFPa",
+          "type": "event_profile"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "openosmium",
+      "name": "OpenOsmium",
+      "publish_status": "historical_founder_relationship",
+      "founder": "[Chida Sadayappan](https://luma.com/user/chida)",
+      "sector": "Big-data and cloud services",
+      "website": null,
+      "description": "A historical technology-services company founded by Chida Sadayappan and acquired by Day1 Solutions.",
+      "capabilities": "Big-data solutions; Cloud implementation.",
+      "audience": "Federal and commercial organizations, per founder biography",
+      "businessModel": "Historical services business; standalone current operation not established.",
+      "founderRole": "Historical. Historical founder evidence is sufficient for the person's past role, not for a new investable company profile. Purchase price and deal terms were not verified.",
+      "evidence": "Event identity matched through a public handle, personal site or company context; explicit founder role in cited sources.",
+      "reviewNotes": "Historical founder evidence is sufficient for the person's past role, not for a new investable company profile. Purchase price and deal terms were not verified.",
+      "sources": [
+        {
+          "title": "Founder/CEO role, business scope and acquisition account",
+          "url": "https://linkedin.com/in/schida",
+          "type": "self_authored"
+        },
+        {
+          "title": "Founder and acquisition corroboration",
+          "url": "http://techstarsstartupweekdc2018.sched.com/speaker/chida2",
+          "type": "event_organizer"
+        },
+        {
+          "title": "Event profile and identity context",
+          "url": "https://luma.com/user/chida",
+          "type": "event_profile"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "palura",
+      "name": "Palura",
+      "publish_status": "historical_founder_relationship",
+      "founder": "[Nityanth (Nitu) Reddy Maramreddy](https://luma.com/user/usr-keSrIaRKN6zYpns)",
+      "sector": "Educational games",
+      "website": "https://palura.net/",
+      "description": "A founder-described game venture incorporating reading and writing into gameplay, including speech-driven spell mechanics.",
+      "capabilities": "Literacy gameplay; Speech input.",
+      "audience": "Children learning through games",
+      "businessModel": "Pricing and operating status not established.",
+      "founderRole": "- Nityanth (Nitu) Reddy Maramreddy: Co-Founder / CEO; 2025-11 to 2026-06.",
+      "evidence": "Exact professional profile linked from the event profile; explicit founder-role evidence. Independent company/institutional corroboration only where cited.",
+      "reviewNotes": "Identity confirmed through exact profile link. Co-founder/CEO role ended June 2026. Do not imply current leadership, validated child outcomes or audited participation.",
+      "sources": [
+        {
+          "title": "Matched founder role and source-reported dates",
+          "url": "https://linkedin.com/in/nityanth-maramreddy-7ba0a2208",
+          "type": "self_authored"
+        },
+        {
+          "title": "Product identity",
+          "url": "https://palura.net/",
+          "type": "company"
+        },
+        {
+          "title": "Guest directly links the reviewed LinkedIn identity",
+          "url": "https://luma.com/user/usr-keSrIaRKN6zYpns",
+          "type": "event_profile"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "project-smartcube",
+      "name": "Project SmartCube",
+      "publish_status": "company_details_need_review",
+      "founder": "[Ismail Shaltuni](https://luma.com/user/usr-A7TbX4eSuIKn4dS)",
+      "sector": "AI consumer hardware",
+      "website": null,
+      "description": "Founder-described consumer physical product using AI; detailed product and entity undisclosed.",
+      "capabilities": "Not established.",
+      "audience": "Consumer audience; specific use case undisclosed",
+      "businessModel": "Not verified.",
+      "founderRole": "- Ismail Shaltuni: Founder; start not established to Present (source report; current position not independently reconfirmed). Undisclosed AI consumer hardware project in founder bio; no verified manufacturer, patent, domain or legal entity.",
+      "evidence": "Exact professional profile linked from the event profile; explicit founder-role evidence. Independent company/institutional corroboration only where cited.",
+      "reviewNotes": "Only a founder-role lead with matched identity. Patent, manufacturer, production status, equity deal and relationship to any other SmartCube business are unverified.",
+      "sources": [
+        {
+          "title": "Matched guest founder role, dates and founder-described business",
+          "url": "https://linkedin.com/in/ismailzshaltuni",
+          "type": "self_authored"
+        },
+        {
+          "title": "Guest profile directly links this LinkedIn identity",
+          "url": "https://luma.com/user/usr-A7TbX4eSuIKn4dS",
+          "type": "event_profile"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "seqra",
+      "name": "Seqra",
+      "publish_status": "historical_founder_relationship",
+      "founder": "[Nityanth (Nitu) Reddy Maramreddy](https://luma.com/user/usr-keSrIaRKN6zYpns)",
+      "sector": "Biotechnology research",
+      "website": null,
+      "description": "A co-founder-described research venture applying protein language models and generative pipelines to antimicrobial peptide design.",
+      "capabilities": "Peptide design pipeline; Structure modeling.",
+      "audience": "Research and drug-discovery users; exact buyer not established",
+      "businessModel": "Not found.",
+      "founderRole": "- Nityanth (Nitu) Reddy Maramreddy: Co-Founder; 2026-03 to 2026-04.",
+      "evidence": "Exact professional profile linked from the event profile; explicit founder-role evidence. Independent company/institutional corroboration only where cited.",
+      "reviewNotes": "Identity confirmed through exact profile link. Co-founder role ended April 2026. No validated drug efficacy or institutional funding inferred.",
+      "sources": [
+        {
+          "title": "Matched founder role and source-reported dates",
+          "url": "https://linkedin.com/in/nityanth-maramreddy-7ba0a2208",
+          "type": "self_authored"
+        },
+        {
+          "title": "Guest directly links the reviewed LinkedIn identity",
+          "url": "https://luma.com/user/usr-keSrIaRKN6zYpns",
+          "type": "event_profile"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "shavector",
+      "name": "ShaVector Platforms",
+      "publish_status": "company_details_need_review",
+      "founder": "[Sumit Shekhar](https://luma.com/user/usr-CjDZrJk5Ip5aM3c)",
+      "sector": "Enterprise AI implementation",
+      "website": null,
+      "description": "Sumit Shekhar describes a forward-deployed consultancy delivering AI products in regulated enterprises.",
+      "capabilities": "Embedded AI delivery; Agent evaluation; AI platform architecture.",
+      "audience": "Regulated enterprise teams",
+      "businessModel": "Consulting engagements; pricing not found.",
+      "founderRole": "Founder relationship supported by the cited source; exact title and role dates are not separately established in this record.",
+      "evidence": "Explicit founder statement on the event profile; company facts have separate sources.",
+      "reviewNotes": "No authoritative company domain found. SVECTOR, founded by Siddharth Shah, was excluded as a namesake. MiraTrust.ai appears as related founder work; its standalone company status is unverified.",
+      "sources": [
+        {
+          "title": "Explicit founded/company claim",
+          "url": "https://luma.com/user/usr-CjDZrJk5Ip5aM3c",
+          "type": "guest_profile"
+        },
+        {
+          "title": "Current work and company relationship",
+          "url": "https://www.linkedin.com/in/sumitshekhar03",
+          "type": "self_authored"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "snkr-solutions",
+      "name": "SNKR Solutions",
+      "publish_status": "historical_founder_relationship",
+      "founder": "[Aung Khant Min](https://luma.com/user/usr-3f4ZoCYBBnz18mE)",
+      "sector": "Consumer products",
+      "website": null,
+      "description": "Historical student venture producing shoelace-related products, described by its co-founder.",
+      "capabilities": "Product sourcing; Manufacturing coordination.",
+      "audience": "Shoe and sneaker users",
+      "businessModel": "Physical product sales, according to profile.",
+      "founderRole": "- Aung Khant Min: Co-Founder / Production Team Member; 2019-10 to 2020-05.",
+      "evidence": "Exact professional profile linked from the event profile; explicit founder-role evidence. Independent company/institutional corroboration only where cited.",
+      "reviewNotes": "High-school venture; current operating status and sales figures are unverified.",
+      "sources": [
+        {
+          "title": "Matched guest founder role, dates and founder-described business",
+          "url": "https://linkedin.com/in/aung-khant-min",
+          "type": "self_authored"
+        },
+        {
+          "title": "Guest profile directly links this LinkedIn identity",
+          "url": "https://luma.com/user/usr-3f4ZoCYBBnz18mE",
+          "type": "event_profile"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "socialcap-ai",
+      "name": "SocialCap AI",
+      "publish_status": "company_details_need_review",
+      "founder": "[Alex Kekulov](https://luma.com/user/kekulov)",
+      "sector": "AI networking",
+      "website": null,
+      "description": "Alex Kekulov identifies SocialCap AI as his venture focused on professional relationships and social capital.",
+      "capabilities": "AI-assisted networking; Contact and relationship management positioning.",
+      "audience": "Professionals building and managing networks",
+      "businessModel": "Pricing, product availability and current company domain not established.",
+      "founderRole": "Founder relationship supported by the cited source; exact title and role dates are not separately established in this record.",
+      "evidence": "Explicit founder statement on the event profile; company facts have separate sources.",
+      "reviewNotes": "Founder identity is supported. Avoid guessing a domain or presenting product claims as independently tested.",
+      "sources": [
+        {
+          "title": "Direct founder self-report",
+          "url": "https://luma.com/user/kekulov",
+          "type": "guest_profile"
+        },
+        {
+          "title": "Founder-controlled identity and venture link",
+          "url": "https://linktr.ee/kekulov",
+          "type": "self_authored"
+        },
+        {
+          "title": "Secondary description",
+          "url": "https://www.crunchbase.com/person/alexey-kekulov",
+          "type": "secondary"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "systemind",
+      "name": "systemind",
+      "publish_status": "company_details_need_review",
+      "founder": "[Leo Li](https://luma.com/user/usr-5AcYLZ7uCuifD7m)",
+      "sector": "Multi-agent organization intelligence",
+      "website": null,
+      "description": "Leo Li describes systemind as work on organization intelligence and coordination between AI agents.",
+      "capabilities": "Agent collaboration research.",
+      "audience": "Not independently established",
+      "businessModel": "Not found.",
+      "founderRole": "Founder relationship supported by the cited source; exact title and role dates are not separately established in this record.",
+      "evidence": "Explicit founder statement on the event profile; company facts have separate sources.",
+      "reviewNotes": "Oxford Seed Fund backing is self-reported in the Luma bio and was not corroborated. SYSIND and Systemind AI search results were not proven to be this venture; do not merge them.",
+      "sources": [
+        {
+          "title": "Co-founder, product direction and investor claim",
+          "url": "https://luma.com/user/usr-5AcYLZ7uCuifD7m",
+          "type": "guest_profile"
+        },
+        {
+          "title": "Fund portfolio checked; no confirmed Systemind match",
+          "url": "https://www.sbs.ox.ac.uk/research/centres-and-initiatives/oxford-said-entrepreneurship-centre/oxford-seed-fund/oxford-seed-fund-investments",
+          "type": "institutional"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "the-waves-digital-marketing",
+      "name": "The Waves Digital Marketing",
+      "publish_status": "historical_founder_relationship",
+      "founder": "[Aaron Ndhokoyo](https://luma.com/user/usr-HlVgFS5tJFFZHUh)",
+      "sector": "Digital marketing",
+      "website": "https://thewavesdigitalmarketing.com/",
+      "description": "Founder-described digital marketing agency serving acquisition funnels and customer experience.",
+      "capabilities": "SEO; Paid search and social campaigns; Digital strategy.",
+      "audience": "Businesses seeking marketing services",
+      "businessModel": "Agency services; current pricing not established.",
+      "founderRole": "- Aaron Ndhokoyo: Founder; 2023-09 to 2024-12.",
+      "evidence": "Exact professional profile linked from the event profile; explicit founder-role evidence. Independent company/institutional corroboration only where cited.",
+      "reviewNotes": "Aaron's role ended December 2024. Linked company domain was not independently fetched; present operations unknown. Database workforce and revenue estimates excluded.",
+      "sources": [
+        {
+          "title": "Matched guest founder role, dates and founder-described business",
+          "url": "https://linkedin.com/in/aaron-ndhokoyo-97515b17a",
+          "type": "self_authored"
+        },
+        {
+          "title": "Guest profile directly links this LinkedIn identity",
+          "url": "https://luma.com/user/usr-HlVgFS5tJFFZHUh",
+          "type": "event_profile"
+        },
+        {
+          "title": "Company About text and linked business domain",
+          "url": "https://linkedin.com/company/the-waves-digital-marketing",
+          "type": "company"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "theblogspot-vama",
+      "name": "TheBlogSpot \u2014 Stay Curious Blog",
+      "publish_status": "community_or_nonprofit_review",
+      "founder": "[Vama Maniar](https://luma.com/user/usr-pjGE3gvN09zOG8I)",
+      "sector": "Online publishing",
+      "website": null,
+      "description": "Vama Maniar's founder-described personal blog covering productivity, business and other topics.",
+      "capabilities": "Written content.",
+      "audience": "Readers",
+      "businessModel": "Personal publication; revenue model not established.",
+      "founderRole": "- Vama Maniar: Founder; 2019-02 to Present (source report; current position not independently reconfirmed).",
+      "evidence": "Exact professional profile linked from the event profile; explicit founder-role evidence. Independent company/institutional corroboration only where cited.",
+      "reviewNotes": "Profile lists role as current from February 2019, but no authoritative blog domain was established. Do not associate with unrelated BlogSpot sites.",
+      "sources": [
+        {
+          "title": "Matched guest founder role, dates and founder-described business",
+          "url": "https://linkedin.com/in/vamamaniar",
+          "type": "self_authored"
+        },
+        {
+          "title": "Guest profile directly links this LinkedIn identity",
+          "url": "https://luma.com/user/usr-pjGE3gvN09zOG8I",
+          "type": "event_profile"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "web-g",
+      "name": "Web-G",
+      "publish_status": "historical_founder_relationship",
+      "founder": "[Nicolas Adem](https://luma.com/user/usr-u2DSDdaKZtz0cMX)",
+      "sector": "Web development and marketing",
+      "website": "https://webg.nicolasadem.com/",
+      "description": "Belgian student business offering website development, social media and design services.",
+      "capabilities": "Website development; Social media content; CMS integration.",
+      "audience": "Businesses seeking an online presence",
+      "businessModel": "Custom project quotes.",
+      "founderRole": "- Nicolas Adem: Founder / CEO; 2024-09 to 2026-06. Exit is self-reported, not independently verified. Founder website dates venture to 2024.",
+      "evidence": "Exact professional profile linked from the event profile; explicit founder-role evidence. Independent company/institutional corroboration only where cited.",
+      "reviewNotes": "Founder role ended June 2026; claimed profitable exit unverified. The company's sustainability claims are marketing claims, not audited environmental outcomes.",
+      "sources": [
+        {
+          "title": "Matched guest founder role, dates and founder-described business",
+          "url": "https://linkedin.com/in/nicolas-adem",
+          "type": "self_authored"
+        },
+        {
+          "title": "Guest profile directly links this LinkedIn identity",
+          "url": "https://luma.com/user/usr-u2DSDdaKZtz0cMX",
+          "type": "event_profile"
+        },
+        {
+          "title": "Company services and Nicolas Adem founding in 2024",
+          "url": "https://webg.nicolasadem.com/",
+          "type": "company"
+        },
+        {
+          "title": "Founder portfolio and first web business",
+          "url": "https://nicolasadem.com/",
+          "type": "company"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "yc-club-hk",
+      "name": "YC Club of HK",
+      "publish_status": "community_or_nonprofit_review",
+      "founder": "[allen (display name only)](https://luma.com/user/usr-s5oVG6Uuow16C3a)",
+      "sector": "Community; legal/business form unknown",
+      "website": null,
+      "description": "The guest using the display name allen describes founding YC Club of HK.",
+      "capabilities": "Not established.",
+      "audience": "Not established",
+      "businessModel": "Not established.",
+      "founderRole": "Founder relationship supported by the cited source; exact title and role dates are not separately established in this record.",
+      "evidence": "Explicit founder statement on the event profile; company facts have separate sources.",
+      "reviewNotes": "No official organization domain, company identity or affiliation with Y Combinator was independently established. Do not imply endorsement or an investment opportunity.",
+      "sources": [
+        {
+          "title": "Founder/community self-report",
+          "url": "https://luma.com/user/usr-s5oVG6Uuow16C3a",
+          "type": "guest_profile"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "zedtribe",
+      "name": "Zedtribe",
+      "publish_status": "historical_founder_relationship",
+      "founder": "[Manoj Maheshwar Jagadeesan](https://luma.com/user/usr-DPyQEa1vu7Ild9E)",
+      "sector": "Digital product services",
+      "website": null,
+      "description": "Founder-described web design and no-code development agency.",
+      "capabilities": "Webflow development; Product design; Creative design.",
+      "audience": "Businesses and founders building digital products",
+      "businessModel": "Project services; pricing unknown.",
+      "founderRole": "- Manoj Maheshwar Jagadeesan: Co-Founder (explicitly stated in role description); 2021-04 to 2022-08. Title is Founding Engineer, but body explicitly says co-founded; title alone was not used as founder proof.",
+      "evidence": "Exact professional profile linked from the event profile; explicit founder-role evidence. Independent company/institutional corroboration only where cited.",
+      "reviewNotes": "Historical role April 2021\u2013August 2022. Profile role title alone says Founding Engineer; its description explicitly states he co-founded Zedtribe. Revenue/client totals excluded.",
+      "sources": [
+        {
+          "title": "Matched guest founder role, dates and founder-described business",
+          "url": "https://linkedin.com/in/manojmaheshwarjg",
+          "type": "self_authored"
+        },
+        {
+          "title": "Guest profile directly links this LinkedIn identity",
+          "url": "https://luma.com/user/usr-DPyQEa1vu7Ild9E",
+          "type": "event_profile"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    }
+  ],
+  "founderLeads": [
+    {
+      "name": "AhYoung Kim",
+      "profileUrl": "https://luma.com/user/usr-Jq99wBAPOQVGYZg",
+      "role": "Self-reported founder and former big-tech operator; company association unresolved.",
+      "sourceUrl": "https://luma.com/user/usr-Jq99wBAPOQVGYZg",
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "name": "Alex Eick",
+      "profileUrl": "https://luma.com/user/usr-Z42Wyf7NgNaVxzv",
+      "role": "Self-reported former founder, now an AI engineer; former company not identified.",
+      "sourceUrl": "https://luma.com/user/usr-Z42Wyf7NgNaVxzv",
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "name": "Amber Khan",
+      "profileUrl": "https://luma.com/user/usr-TZrtX7ggafG3ISw",
+      "role": "Self-reported founder working on care for skin diseases; company name not identified.",
+      "sourceUrl": "https://luma.com/user/usr-TZrtX7ggafG3ISw",
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "name": "Arjun Padmajan",
+      "profileUrl": "https://luma.com/user/usr-TaLMd4lKFsdrHrR",
+      "role": "Founder at an undisclosed venture, 2026-04 to Present (self-report)",
+      "sourceUrl": "https://linkedin.com/in/apadmajan",
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "name": "David Ren",
+      "profileUrl": "https://luma.com/user/usr-fGTSFXQZupuo948",
+      "role": "Startup Founder at an undisclosed venture, 2026-01 to Present (self-report)",
+      "sourceUrl": "https://linkedin.com/in/david-ren-cse",
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "name": "Giovanni A. Forester",
+      "profileUrl": "https://luma.com/user/Forester",
+      "role": "Self-reported founder, writer and TEDx speaker; company not identified.",
+      "sourceUrl": "https://luma.com/user/Forester",
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "name": "Madhav Goenka",
+      "profileUrl": "https://luma.com/user/usr-r82ioAKV9HOIh0x",
+      "role": "Founder at an undisclosed venture, 2026-08 to Present (self-report)",
+      "sourceUrl": "https://linkedin.com/in/madhavgoenka",
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "name": "Sanjay Goel",
+      "profileUrl": "https://luma.com/user/sanjaygoel",
+      "role": "Self-reported serial founder; company association unresolved.",
+      "sourceUrl": "https://luma.com/user/sanjaygoel",
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "name": "Satyabrat Srikumar",
+      "profileUrl": "https://luma.com/user/usr-taqkpylBb0XBKil",
+      "role": "Self-reported healthcare-AI founder; company name not established.",
+      "sourceUrl": "https://luma.com/user/usr-taqkpylBb0XBKil",
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "name": "Silver Yin",
+      "profileUrl": "https://luma.com/user/UT_Silver",
+      "role": "Self-reported AI startup founder; company undisclosed. Columbia AI Club role is separate.",
+      "sourceUrl": "https://luma.com/user/UT_Silver",
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "name": "Stephen",
+      "profileUrl": "https://luma.com/user/win1step",
+      "role": "Self-reported AI founder in New York; company name and full personal name not established.",
+      "sourceUrl": "https://luma.com/user/win1step",
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "name": "Wonuola Obasa",
+      "profileUrl": "https://luma.com/user/usr-X6zQ07Y1bSpqXMP",
+      "role": "Founder / CEO at an undisclosed venture, 2026-09 to Present (self-report)",
+      "sourceUrl": "https://linkedin.com/in/wonuolaobasa",
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "name": "Zhengdong Peng",
+      "profileUrl": "https://luma.com/user/usr-DMCLGAvRBUtZtDy",
+      "role": "Self-reported founder, designer and developer; company not identified.",
+      "sourceUrl": "https://luma.com/user/usr-DMCLGAvRBUtZtDy",
+      "checkedAt": "2026-10-17"
+    }
+  ]
+}

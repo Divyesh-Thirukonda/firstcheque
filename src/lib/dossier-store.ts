@@ -3,6 +3,7 @@ import { createHash, randomUUID } from "node:crypto";
 import { mkdir, readFile, readdir, rename, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { get, list, put } from "@vercel/blob";
+import { CATALOG_SEEDS } from "./catalog-seeds";
 import type { CatalogResponse, DiscoveryCompany } from "./discovery-types";
 import type { LiveDiligenceResult } from "./live-research-types";
 
@@ -70,16 +71,17 @@ function classify(report:LiveDiligenceResult):Pick<DiscoveryCompany,"industry"|"
   if(/\b(gpu|inference|ai infrastructure|compute infrastructure|model serving)\b/.test(text))sectors.push("AI infrastructure");
   if(/\b(climate|clean energy|carbon|renewable|battery|batteries)\b/.test(text))sectors.push("Climate tech");
   if(/\b(robotics|robots)\b/.test(text))sectors.push("Robotics");
+  if(/\b(cybersecurity|cyber security|security operations|appsec)\b/.test(text))sectors.push("Cybersecurity");
   if(/\b(payments|fintech|banking)\b/.test(text))sectors.push("Fintech");
   if(/\b(healthcare|medical|biotech)\b/.test(text))sectors.push("Healthcare");
-  return {industry:sectors.includes("Climate tech")?"Climate":sectors.includes("Fintech")?"Fintech":sectors.includes("Healthcare")?"Healthcare":sectors.some(s=>["Developer tools","AI infrastructure","Robotics"].includes(s))?"AI & software":"Other",sectors};
+  return {industry:sectors.includes("Cybersecurity")?"Cybersecurity":sectors.includes("Climate tech")?"Climate":sectors.includes("Fintech")?"Fintech":sectors.includes("Healthcare")?"Healthcare":sectors.some(s=>["Developer tools","AI infrastructure","Robotics"].includes(s))?"AI & software":"Other",sectors};
 }
 
 /** The shared library stores company research, never another investor's budget or personal thesis fit. */
 export async function saveDiligenceReport(result:LiveDiligenceResult):Promise<{dossierId:string;companyId:string}>{
   const companies=await listLibraryCompanies();
   const key=identity(result.company.website||"");
-  const existing=companies.find(c=>key&&([c.website,c.offeringUrl||""].some(url=>identity(url)===key)));
+  const existing=[...companies,...CATALOG_SEEDS].find(c=>key&&([c.website,c.offeringUrl||""].some(url=>identity(url)===key)));
   const companyId=existing?.id||`co-${createHash("sha256").update(key||result.company.name.toLowerCase()).digest("hex").slice(0,18)}`;
   if(!existing&&companies.length>=200)throw new Error("The shared library has reached its 200-company prototype limit.");
   const dossierId=`dossier-${companyId}`;
@@ -88,11 +90,13 @@ export async function saveDiligenceReport(result:LiveDiligenceResult):Promise<{d
   const financials= revenue.status==="source-reported"&&revenue.value!==null?revenue:arr.status==="source-reported"&&arr.value!==null?arr:null;
   const financialSource=financials?.sourceIds.map(id=>result.sources.find(source=>source.id===id)?.url).find(Boolean)||null;
   const company:DiscoveryCompany={
+    ...existing,
     id:companyId,name:result.company.name,website:result.company.website||existing?.website||"",description:result.sections.find(section=>section.category==="company")?.claims[0]?.text.slice(0,500)||result.summary,
     ...(existing?{industry:existing.industry,sectors:existing.sectors}:classify(result)),stage:existing?.stage||"Unknown",
     kind:existing?.kind||"company",offeringStatus:existing?.offeringStatus||"not-listed",offeringUrl:existing?.offeringUrl||null,platform:existing?.platform||null,
     minInvestment:existing?.minInvestment??null,currency:"USD",
     annualRevenue:revenue.status==="source-reported"?revenue.value:null,
+    arrComparison:undefined,
     arr:arr.status==="source-reported"?arr.value:null,financialCurrency:revenue.status==="source-reported"?revenue.currency:null,arrCurrency:arr.status==="source-reported"?arr.currency:null,
     financialsAsOf:financials?.asOf||null,financialSourceUrl:financialSource,
     // Replace prior research evidence: rejected namesakes or stale sources must not survive a refresh.
@@ -107,11 +111,20 @@ export async function saveDiligenceReport(result:LiveDiligenceResult):Promise<{d
 
 export async function catalogSnapshot(seeds:DiscoveryCompany[]):Promise<CatalogResponse>{
   const stored=process.env.VERCEL&&!blobConfigured()?[]:await listLibraryCompanies();
+  const merged=mergeCatalogCompanies(seeds,stored);
+  return {companies:merged,storage:libraryStorage(),updatedAt:new Date().toISOString()};
+}
+
+/** Match canonical websites as well as IDs so a live report enriches the seeded company. */
+export function mergeCatalogCompanies(seeds:DiscoveryCompany[],stored:DiscoveryCompany[]):DiscoveryCompany[]{
   const merged=new Map(seeds.map(company=>[company.id,company]));
   for(const company of stored){
-    const seed=merged.get(company.id);
-    // A newer manual source check updates offering terms without erasing saved research.
-    merged.set(company.id,seed&&Date.parse(seed.lastCheckedAt)>Date.parse(company.lastCheckedAt)?{...company,offeringStatus:seed.offeringStatus,minInvestment:seed.minInvestment,statusEvidence:seed.statusEvidence,minimumEvidence:seed.minimumEvidence,lastCheckedAt:seed.lastCheckedAt,sourceUrls:[...new Set([...seed.sourceUrls,...company.sourceUrls])]}:company);
+    const seed=merged.get(company.id)||seeds.find(candidate=>identity(candidate.website)===identity(company.website));
+    const newestOffering=seed&&Date.parse(seed.lastCheckedAt)>Date.parse(company.lastCheckedAt);
+    const profile=seed?.catalogOrigin ? {reportedMetrics:seed.reportedMetrics,profileFieldSources:seed.profileFieldSources,catalogOrigin:seed.catalogOrigin,founders:seed.founders,capabilities:seed.capabilities,audience:seed.audience,businessModel:seed.businessModel,headquarters:seed.headquarters,foundedYear:seed.foundedYear,funding:seed.funding,profileNotes:seed.profileNotes,profileSources:seed.profileSources,profileCheckedAt:seed.profileCheckedAt,stage:seed.stage,industry:seed.industry,sectors:seed.sectors} : {};
+    // Preserve a legacy saved ID so existing watchlists and search/report links still resolve.
+    if(seed&&seed.id!==company.id)merged.delete(seed.id);
+    merged.set(company.id,{...seed,...company,...profile,arrComparison:company.arrComparison,...(seed&&/public source evidence is retained|review source dates|research retained in this session/i.test(company.description)?{description:seed.description}:{}),...(newestOffering?{offeringStatus:seed.offeringStatus,minInvestment:seed.minInvestment,statusEvidence:seed.statusEvidence,minimumEvidence:seed.minimumEvidence,lastCheckedAt:seed.lastCheckedAt}:{}),sourceUrls:[...new Set([...(seed?.sourceUrls||[]),...company.sourceUrls])]});
   }
-  return {companies:[...merged.values()],storage:libraryStorage(),updatedAt:new Date().toISOString()};
+  return [...merged.values()];
 }

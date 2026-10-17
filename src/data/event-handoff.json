@@ -1,0 +1,1137 @@
+{
+  "checkedAt": "2026-10-17",
+  "profiles": [
+    {
+      "id": "alethical",
+      "name": "Alethical",
+      "publish_status": "profile_ready",
+      "founder": "[Eugene Lopin](https://luma.com/user/euglopi)",
+      "sector": "Civic and legislative intelligence",
+      "website": "https://alethical.com/",
+      "description": "Provides plain-language answers and bill/legislator research grounded in official Minnesota legislative sources.",
+      "capabilities": "Cited legislative answers; Bill tracking; Legislator search.",
+      "audience": "People researching Minnesota law and legislative activity",
+      "businessModel": "Pricing not found.",
+      "founderRole": "Founder relationship supported by the cited source; exact title and role dates are not separately established in this record.",
+      "evidence": "Explicit founder statement on the event profile; company facts have separate sources.",
+      "reviewNotes": "The homepage supports a Minnesota-focused product. Do not generalize this to comprehensive national legal research.",
+      "sources": [
+        {
+          "title": "Direct co-founder and domain claim",
+          "url": "https://luma.com/user/euglopi",
+          "type": "guest_profile"
+        },
+        {
+          "title": "Current product scope",
+          "url": "https://alethical.com/",
+          "type": "company"
+        },
+        {
+          "title": "Co-founder role",
+          "url": "https://linkedin.com/in/eugenelopin",
+          "type": "self_authored"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "apna-counsellor",
+      "name": "Apna Counsellor",
+      "publish_status": "profile_ready",
+      "founder": "[Shriyash Soni](https://luma.com/user/sonishriyash)",
+      "sector": "Admissions guidance",
+      "website": "https://apnacounsellor.in/",
+      "description": "Provides college-admissions guidance, exam-specific resources, predictor tools and counseling in India.",
+      "capabilities": "Admission resources; College predictors; Cutoff alerts; Expert support.",
+      "audience": "Students navigating Indian college admissions",
+      "businessModel": "Counseling and support services; exact prices not captured.",
+      "founderRole": "Founder relationship supported by the cited source; exact title and role dates are not separately established in this record.",
+      "evidence": "Explicit founder statement on the event profile; company facts have separate sources.",
+      "reviewNotes": "Audience claims vary materially between sources. Do not publish accuracy, admission-success rates or student counts as independently verified.",
+      "sources": [
+        {
+          "title": "Direct founder and company claim",
+          "url": "https://luma.com/user/sonishriyash",
+          "type": "guest_profile"
+        },
+        {
+          "title": "Product and named founder",
+          "url": "https://apnacounsellor.in/",
+          "type": "company"
+        },
+        {
+          "title": "Founder-authored venture description",
+          "url": "https://based-india.devfolio.co/@shriyashson/readme-md",
+          "type": "self_authored"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "arcampass",
+      "name": "Arcampass",
+      "publish_status": "profile_ready",
+      "founder": "[Tony Dong](https://luma.com/user/usr-oa6M3EWvHxj6aLM)",
+      "sector": "AI higher education",
+      "website": "https://arcampass.com/",
+      "description": "Builds persistent agentic representations of learners and professors across individual, cohort and institution contexts.",
+      "capabilities": "Learner representation; Cohort models; Institution intelligence.",
+      "audience": "Higher-education institutions and participants",
+      "businessModel": "Access/demo conversations; price not found.",
+      "founderRole": "Founder relationship supported by the cited source; exact title and role dates are not separately established in this record.",
+      "evidence": "Explicit founder statement on the event profile; company facts have separate sources.",
+      "reviewNotes": "The site's 2027 AI-native university statement is a future expectation, not evidence of an operating university or contracted customer.",
+      "sources": [
+        {
+          "title": "Direct founder/company claim",
+          "url": "https://luma.com/user/usr-oa6M3EWvHxj6aLM",
+          "type": "guest_profile"
+        },
+        {
+          "title": "Product and named founder",
+          "url": "https://arcampass.com/",
+          "type": "company"
+        },
+        {
+          "title": "Founder and NYU affiliation",
+          "url": "https://entrepreneur.nyu.edu/blog/2026/03/23/the-story-of-nyus-first-senate-student-constituency-for-student-entrepreneurs/",
+          "type": "institutional"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "archer-protocol",
+      "name": "Archer Protocol",
+      "publish_status": "profile_ready",
+      "founder": "[Dan Kazenoff](https://luma.com/user/usr-QfVZBxrsFSMvhuG)",
+      "sector": "Agent commerce infrastructure",
+      "website": "https://www.archerprotocol.com/",
+      "description": "Provides discovery, routing, policy checks, execution and settlement for services used by AI agents.",
+      "capabilities": "API/MCP service listings; Intent routing; Guardrails; Execution receipts.",
+      "audience": "Developers publishing agent services and users of agent-enabled applications",
+      "businessModel": "Product describes per-call monetization; platform fee details not captured.",
+      "founderRole": "Founder relationship supported by the cited source; exact title and role dates are not separately established in this record.",
+      "evidence": "Event identity matched through a public handle, personal site or company context; explicit founder role in cited sources.",
+      "reviewNotes": "Dan/Daniel and the Kazenoff handle agree. Demo transaction examples are not evidence of actual volume or assets.",
+      "sources": [
+        {
+          "title": "Agent-web direction and identity",
+          "url": "https://luma.com/user/usr-QfVZBxrsFSMvhuG",
+          "type": "guest_profile"
+        },
+        {
+          "title": "Current product and explicit Daniel Kazenoff founder statement",
+          "url": "https://www.archerprotocol.com/",
+          "type": "company"
+        },
+        {
+          "title": "Name variant and founder role",
+          "url": "https://linkedin.com/in/dankazenoff",
+          "type": "self_authored"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "ask-nomi",
+      "name": "Ask Nomi",
+      "publish_status": "profile_ready",
+      "founder": "[Sai Bolla](https://luma.com/user/usr-5YtngbQGpwkXf19)",
+      "sector": "Women's health software",
+      "website": "https://www.asknomi.ai/",
+      "description": "Offers symptom conversations, pattern tracking, reports and provider-led group support for endometriosis and chronic pain.",
+      "capabilities": "Symptom logging; Pattern recognition; Doctor-ready reports; Group care.",
+      "audience": "People managing endometriosis and chronic symptoms",
+      "businessModel": "Free entry is advertised; paid plan details not captured.",
+      "founderRole": "Founder relationship supported by the cited source; exact title and role dates are not separately established in this record.",
+      "evidence": "Explicit founder statement on the event profile; company facts have separate sources.",
+      "reviewNotes": "Do not reuse example symptom percentages, trial outcomes or participant counts as company traction or clinical evidence.",
+      "sources": [
+        {
+          "title": "Attendee identity and founder claim",
+          "url": "https://luma.com/user/usr-5YtngbQGpwkXf19",
+          "type": "guest_profile"
+        },
+        {
+          "title": "Explicit co-founder/product-engineering role",
+          "url": "https://www.saibolla.com/",
+          "type": "self_authored"
+        },
+        {
+          "title": "Product and audience",
+          "url": "https://www.asknomi.ai/",
+          "type": "company"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "block-convey",
+      "name": "Block Convey",
+      "publish_status": "profile_ready",
+      "founder": "Arun Prasad (event host)",
+      "sector": "AI reliability",
+      "website": "https://blockconvey.com/",
+      "description": "Builds PRISM to test agent behavior, inspect failures and check whether changes improve user outcomes.",
+      "capabilities": "Synthetic user scenarios; Conversation and tool traces; Evaluators and repeatable checks.",
+      "audience": "Teams developing and operating AI applications",
+      "businessModel": "Free entry plan with usage credits and paid plans.",
+      "founderRole": "Founder relationship supported by the cited source; exact title and role dates are not separately established in this record.",
+      "evidence": "Founder role supported by cited host/company materials; host tracked separately from the guest roster.",
+      "reviewNotes": "Use the current reliability product description. Earlier material emphasizes governance. Homepage session counts are sample data.",
+      "sources": [
+        {
+          "title": "Product and pricing",
+          "url": "https://blockconvey.com/",
+          "type": "company"
+        },
+        {
+          "title": "Current leadership",
+          "url": "https://blockconvey.com/about",
+          "type": "company"
+        },
+        {
+          "title": "Founder role",
+          "url": "https://www.linkedin.com/in/arun-prasad-nyc",
+          "type": "self_authored"
+        },
+        {
+          "title": "NYU venture profile",
+          "url": "https://nyusternberkleycenter.com/2023-24-tvc-block-convey-inc/",
+          "type": "institutional"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "bond-ai",
+      "name": "Bond AI",
+      "publish_status": "profile_ready",
+      "founder": "Sahar Mor (event host)",
+      "sector": "AI community and events",
+      "website": "https://bondcommunity.ai/",
+      "description": "Connects AI builders, event organizers and sponsors through curated in-person events and community distribution.",
+      "capabilities": "Event discovery; Sponsor matching; Speaker and judge sourcing; Event production.",
+      "audience": "AI event organizers, sponsors and ecosystem participants",
+      "businessModel": "Partnership and event services; rates not captured.",
+      "founderRole": "Founder relationship supported by the cited source; exact title and role dates are not separately established in this record.",
+      "evidence": "Founder role supported by cited host/company materials; host tracked separately from the guest roster.",
+      "reviewNotes": "A community business, not an identified securities issuer or live offering. Homepage claims 150K+ community members; this is company-reported reach.",
+      "sources": [
+        {
+          "title": "Services and company-reported community reach",
+          "url": "https://bondcommunity.ai/",
+          "type": "company"
+        },
+        {
+          "title": "Founder and launch history",
+          "url": "https://bondcommunity.ai/blog/hello-world-again",
+          "type": "company"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "brix",
+      "name": "Brix",
+      "publish_status": "profile_ready",
+      "founder": "[Abraham Rajput](https://luma.com/user/abrahamrajput)",
+      "sector": "Real estate development software",
+      "website": "https://info.brix-ai.com/",
+      "description": "Builds AI tools for reviewing pay applications, finding land parcels, abstracting leases and tracking competing listings.",
+      "capabilities": "Pay-application checks; Parcel research; Lease abstraction; Listing monitoring.",
+      "audience": "Real estate developers and operators",
+      "businessModel": "Demo-led software; current price not captured.",
+      "founderRole": "Founder relationship supported by the cited source; exact title and role dates are not separately established in this record.",
+      "evidence": "Event identity matched through a public handle, personal site or company context; explicit founder role in cited sources.",
+      "reviewNotes": "The guest's Luma slug and professional profile use abrahamrajput. LvlUp Ventures is a separate listed affiliation, not the company being described here.",
+      "sources": [
+        {
+          "title": "Explicit co-founder and exact domain",
+          "url": "https://www.linkedin.com/in/abrahamrajput",
+          "type": "self_authored"
+        },
+        {
+          "title": "Product modules",
+          "url": "https://info.brix-ai.com/",
+          "type": "company"
+        },
+        {
+          "title": "Event profile and identity context",
+          "url": "https://luma.com/user/abrahamrajput",
+          "type": "event_profile"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "chatbakers",
+      "name": "ChatBakers",
+      "publish_status": "profile_ready",
+      "founder": "[Jan Jezek](https://luma.com/user/janjezek)",
+      "sector": "AI search visibility",
+      "website": "https://chatbakers.com/",
+      "description": "Monitors how AI systems mention and recommend brands, tracks citations and competitors, and offers AI assistant access through MCP and REST.",
+      "capabilities": "Brand monitoring; Competitor and citation analysis; API and MCP access.",
+      "audience": "Brands and marketing agencies",
+      "businessModel": "Paid software plans; current exact plan prices not captured.",
+      "founderRole": "Founder relationship supported by the cited source; exact title and role dates are not separately established in this record.",
+      "evidence": "Explicit founder statement on the event profile; company facts have separate sources.",
+      "reviewNotes": "Public company page lists Prague and New York. Displayed example brand scores and citation counts are interface examples, not verified business traction.",
+      "sources": [
+        {
+          "title": "Direct co-founder and company claim",
+          "url": "https://luma.com/user/janjezek",
+          "type": "guest_profile"
+        },
+        {
+          "title": "Founder identity",
+          "url": "https://janjezek.com/",
+          "type": "self_authored"
+        },
+        {
+          "title": "Product and interfaces",
+          "url": "https://chatbakers.com/",
+          "type": "company"
+        },
+        {
+          "title": "Company locations",
+          "url": "https://chatbakers.com/about/",
+          "type": "company"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "chrp",
+      "name": "CHRP",
+      "publish_status": "profile_ready",
+      "founder": "[Adil Rahman](https://luma.com/user/usr-uKvd72vLZrdDU3v)",
+      "sector": "Offline communications",
+      "website": "https://chrpme.io",
+      "description": "Phone-to-phone push-to-talk product marketed for use without Wi-Fi or cellular service.",
+      "capabilities": "Push-to-talk; Offline operation; No-account product positioning.",
+      "audience": "People needing resilient direct communications",
+      "businessModel": "Invitation waitlist; pricing not found.",
+      "founderRole": "Founder relationship supported by the cited source; exact title and role dates are not separately established in this record.",
+      "evidence": "Explicit founder statement on the event profile; company facts have separate sources.",
+      "reviewNotes": "Preserve the spelling CHRP / chrpme.io. Network range, supported devices and shipped functionality require founder confirmation.",
+      "sources": [
+        {
+          "title": "Founder self-report and exact domain",
+          "url": "https://luma.com/user/usr-uKvd72vLZrdDU3v",
+          "type": "guest_profile"
+        },
+        {
+          "title": "Product positioning and waitlist",
+          "url": "https://chrpme.io",
+          "type": "company"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "commercialdeals",
+      "name": "CommercialDeals",
+      "publish_status": "profile_ready",
+      "founder": "[Eugene Lopin](https://luma.com/user/euglopi)",
+      "sector": "Commercial real estate finance discovery",
+      "website": "https://commercialdeals.com/",
+      "description": "Connects borrowers, lenders and brokers around commercial-property financing requests.",
+      "capabilities": "Financing lead discovery; Borrower and lender matching.",
+      "audience": "Commercial property borrowers, lenders and brokers",
+      "businessModel": "Current page is a demo with purchases disabled.",
+      "founderRole": "Founder relationship supported by the cited source; exact title and role dates are not separately established in this record.",
+      "evidence": "Explicit founder statement on the event profile; company facts have separate sources.",
+      "reviewNotes": "The visible USD 3.2M financing request is fictional. Historical 2009 launch evidence does not establish current active transactions.",
+      "sources": [
+        {
+          "title": "Direct co-founder and domain claim",
+          "url": "https://luma.com/user/euglopi",
+          "type": "guest_profile"
+        },
+        {
+          "title": "Current demo and fictional leads",
+          "url": "https://commercialdeals.com/",
+          "type": "company"
+        },
+        {
+          "title": "Founder-authored launch release",
+          "url": "https://www.pr.com/press-release/193312",
+          "type": "self_authored"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "dormi",
+      "name": "Dormi",
+      "publish_status": "profile_ready",
+      "founder": "[Will Spangenberg](https://luma.com/user/usr-MzOzSAcibQBaFPa)",
+      "sector": "Student housing services",
+      "website": "https://www.dormibeds.com/",
+      "description": "Rents premium beds to college students with delivery, installation and end-of-year pickup.",
+      "capabilities": "Academic-year bed rental; Delivery and installation; End-of-year collection.",
+      "audience": "College students and families; campus partners",
+      "businessModel": "Bed rental and campus partnerships.",
+      "founderRole": "- Will Spangenberg: Co-Founder / CEO; 2020-10 to Present (source report; current position not independently reconfirmed).",
+      "evidence": "Exact professional profile linked from the event profile; explicit founder-role evidence. Independent company/institutional corroboration only where cited.",
+      "reviewNotes": "Official story names Will and Louis. Student totals, ratings and sleep outcomes are company claims, not independently validated.",
+      "sources": [
+        {
+          "title": "Matched guest founder role, dates and founder-described business",
+          "url": "https://linkedin.com/in/will-spangenberg",
+          "type": "self_authored"
+        },
+        {
+          "title": "Guest profile directly links this LinkedIn identity",
+          "url": "https://luma.com/user/usr-MzOzSAcibQBaFPa",
+          "type": "event_profile"
+        },
+        {
+          "title": "Will Spangenberg and Louis Fiacco founder story and services",
+          "url": "https://www.dormibeds.com/pages/our-story",
+          "type": "company"
+        },
+        {
+          "title": "Company-reported 2020 founding and rental model",
+          "url": "https://www.dormibeds.com/pages/help-faq",
+          "type": "company"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "expediter-ai",
+      "name": "Expediter AI",
+      "publish_status": "profile_ready",
+      "founder": "[Brian Pindell](https://luma.com/user/usr-MAsLiiaVdEefhoc)",
+      "sector": "Property compliance",
+      "website": "https://expediter.nyc/",
+      "description": "Brian Pindell describes a platform for building operations and safety compliance; the domain identifies a property compliance product.",
+      "capabilities": "Building compliance workflow; Property-related data visibility.",
+      "audience": "Property owners and managers",
+      "businessModel": "Pricing not found.",
+      "founderRole": "Founder relationship supported by the cited source; exact title and role dates are not separately established in this record.",
+      "evidence": "Explicit founder statement on the event profile; company facts have separate sources.",
+      "reviewNotes": "The current product page yielded very little text. The founder's older compliance project account describes regulator-driven market changes; clarify current scope and active deployments.",
+      "sources": [
+        {
+          "title": "Founder and product self-report",
+          "url": "https://luma.com/user/usr-MAsLiiaVdEefhoc",
+          "type": "guest_profile"
+        },
+        {
+          "title": "Product title",
+          "url": "https://expediter.nyc/",
+          "type": "company"
+        },
+        {
+          "title": "Related founder work",
+          "url": "https://projects.brianpindell.com/",
+          "type": "self_authored"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "hatchd",
+      "name": "Hatch'd",
+      "publish_status": "profile_ready",
+      "founder": "[Frank Ivey](https://luma.com/user/usr-cfrLts3lTDaIG5R)",
+      "sector": "Enterprise workflow agents",
+      "website": "https://gethatchd.com/",
+      "description": "Builds operational AI assistants that learn approved work rules and act across existing email, spreadsheets and CRM systems.",
+      "capabilities": "Workflow context; Rule learning; Approval-based actions.",
+      "audience": "Operational teams, including industrial businesses",
+      "businessModel": "Founder post invites partnership and paid-pilot discussions; exact terms not found.",
+      "founderRole": "- Frank Ivey: Co-Founder / CTO; 2026-07 to Present (source report; current position not independently reconfirmed).",
+      "evidence": "Exact professional profile linked from the event profile; explicit founder-role evidence. Independent company/institutional corroboration only where cited.",
+      "reviewNotes": "Exact Luma-to-LinkedIn identity link confirmed. Current founder role from July 2026. Illustrative orders and margin rules are not business performance.",
+      "sources": [
+        {
+          "title": "Current product",
+          "url": "https://gethatchd.com/",
+          "type": "company"
+        },
+        {
+          "title": "Frank Ivey's co-founder/CTO statement",
+          "url": "https://www.linkedin.com/posts/frankleeiveyjr_the-agent-that-learns-how-you-work-then-does-activity-7508562454562635776-6rOZ",
+          "type": "self_authored"
+        },
+        {
+          "title": "Guest directly links the reviewed LinkedIn identity",
+          "url": "https://luma.com/user/usr-cfrLts3lTDaIG5R",
+          "type": "event_profile"
+        },
+        {
+          "title": "Matched founder role and source-reported dates",
+          "url": "https://linkedin.com/in/frankleeiveyjr",
+          "type": "self_authored"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "hudson-manpower",
+      "name": "Hudson Manpower",
+      "publish_status": "profile_ready",
+      "founder": "[Mayank Doultani](https://luma.com/user/usr-piRnopD4rExsT7R)",
+      "sector": "Recruitment and staffing",
+      "website": "https://hudsonmanpower.com/",
+      "description": "Supplies professional and skilled-trade recruitment across energy, EPC, hospitality and technology markets.",
+      "capabilities": "Executive search; Campaign recruitment; IT staffing; Cross-border workforce deployment.",
+      "audience": "Employers in the United States and Gulf markets",
+      "businessModel": "Recruitment and staffing services; fee schedules not found.",
+      "founderRole": "Founder relationship supported by the cited source; exact title and role dates are not separately established in this record.",
+      "evidence": "Explicit founder statement on the event profile; company facts have separate sources.",
+      "reviewNotes": "The site reports 650+ placements in 2025. This is an operating metric reported by the company, not revenue or verified equity funding.",
+      "sources": [
+        {
+          "title": "Founder/company claim",
+          "url": "https://luma.com/user/usr-piRnopD4rExsT7R",
+          "type": "guest_profile"
+        },
+        {
+          "title": "Operating model, geography and company-reported history",
+          "url": "https://hudsonmanpower.com/about",
+          "type": "company"
+        },
+        {
+          "title": "Co-founder role",
+          "url": "https://linkedin.com/company/hudsonitandmanpower",
+          "type": "company"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "kojable",
+      "name": "Kojable",
+      "publish_status": "profile_ready",
+      "founder": "[Piush Vaish](https://luma.com/user/usr-hRY2D4hoilelWj1)",
+      "sector": "AI answer alignment",
+      "website": "https://kojable.com/",
+      "description": "Helps B2B companies inspect AI descriptions, identify missing or inaccurate evidence, prioritize corrections and retest answers.",
+      "capabilities": "Representation monitoring; Source and gap analysis; Competitor context; Retesting.",
+      "audience": "B2B founders, marketing teams and agencies",
+      "businessModel": "Website advertises paid plans starting at USD 99/month.",
+      "founderRole": "Founder relationship supported by the cited source; exact title and role dates are not separately established in this record.",
+      "evidence": "Explicit founder statement on the event profile; company facts have separate sources.",
+      "reviewNotes": "The Acme example is expressly illustrative. This is a relevant adjacent product for the team's AI discoverability idea.",
+      "sources": [
+        {
+          "title": "Direct founder claim",
+          "url": "https://luma.com/user/usr-hRY2D4hoilelWj1",
+          "type": "guest_profile"
+        },
+        {
+          "title": "Product, price and explicit demo labels",
+          "url": "https://kojable.com/",
+          "type": "company"
+        },
+        {
+          "title": "Location and founding year",
+          "url": "https://kojable.com/about.html",
+          "type": "company"
+        },
+        {
+          "title": "Company-supplied machine-readable profile",
+          "url": "https://kojable.com/llm-info/",
+          "type": "company"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "localhost-nyc",
+      "name": "localhost:nyc",
+      "publish_status": "profile_ready",
+      "founder": "Somya Gupta (event host)",
+      "sector": "Startup community",
+      "website": "https://localhost-nyc.com/",
+      "description": "Runs a New York founder and builder community with hackathons and a longer-term roadmap for a hacker house and venture fund.",
+      "capabilities": "Hackathons; Founder community; Residency and fund roadmap.",
+      "audience": "Young founders and builders in New York",
+      "businessModel": "Commercial terms not found.",
+      "founderRole": "Founder relationship supported by the cited source; exact title and role dates are not separately established in this record.",
+      "evidence": "Founder role supported by cited host/company materials; host tracked separately from the guest roster.",
+      "reviewNotes": "The website distinguishes active hackathons from planned infrastructure. Do not describe the planned fund as an operating investment fund.",
+      "sources": [
+        {
+          "title": "Founder, mission, active events and roadmap",
+          "url": "https://localhost-nyc.com/",
+          "type": "company"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "make-connnext",
+      "name": "Make ConnNext Corporation / ConnNext",
+      "publish_status": "profile_ready",
+      "founder": "Celia Davis (event host)",
+      "sector": "Community software",
+      "website": "https://celiadavis.com/about",
+      "description": "Celia R. Davis describes ConnNext as a forthcoming mobile app for social and professional community building.",
+      "capabilities": "Community formation; Social and professional connections.",
+      "audience": "Gen Z and Millennial users",
+      "businessModel": "Pricing and launch availability not found.",
+      "founderRole": "Founder relationship supported by the cited source; exact title and role dates are not separately established in this record.",
+      "evidence": "Founder role supported by cited host/company materials; host tracked separately from the guest roster.",
+      "reviewNotes": "Founder-controlled biography supports the project; an independently verified launch, corporate registration or investment offering was not established.",
+      "sources": [
+        {
+          "title": "Founder, company name, target audience and launch description",
+          "url": "https://celiadavis.com/about",
+          "type": "self_authored"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "meghaos",
+      "name": "MeghaOS",
+      "publish_status": "profile_ready",
+      "founder": "[Abhishek Kuruba Nagabhushanam](https://luma.com/user/usr-wcHyRBF5usUG9cy)",
+      "sector": "Local AI operating system",
+      "website": "https://meghaos.ai/",
+      "description": "Offers a privacy-oriented operating system and desktop surfaces for AI agents running models on the user's machine.",
+      "capabilities": "Local model inference; Agent-composed workspaces; Mac product and full OS positioning.",
+      "audience": "People and organizations wanting local AI computing",
+      "businessModel": "Free download advertised; enterprise deployment conversations offered.",
+      "founderRole": "Founder relationship supported by the cited source; exact title and role dates are not separately established in this record.",
+      "evidence": "Event identity matched through a public handle, personal site or company context; explicit founder role in cited sources.",
+      "reviewNotes": "The roster's X handle Abhishekkuruba matches the professional profile. Homepage runway, burn and budget numbers are expressly invented, not company financials.",
+      "sources": [
+        {
+          "title": "Founder and identity",
+          "url": "https://linkedin.com/in/abhishekkuruba",
+          "type": "self_authored"
+        },
+        {
+          "title": "Current product and invented-data label",
+          "url": "https://meghaos.ai/",
+          "type": "company"
+        },
+        {
+          "title": "Historical founder/product account",
+          "url": "https://thestute.com/2024/05/03/grad-student-project-aims-to-disrupt-duopoly-in-mobile-market/",
+          "type": "institutional"
+        },
+        {
+          "title": "Event profile and identity context",
+          "url": "https://luma.com/user/usr-wcHyRBF5usUG9cy",
+          "type": "event_profile"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "mooss",
+      "name": "Mooss / Modascope Inc.",
+      "publish_status": "profile_ready",
+      "founder": "[Sia Fu](https://luma.com/user/usr-XmBt5kcb0NFkjJN)",
+      "sector": "AI fashion software",
+      "website": "https://modascope.app/",
+      "description": "Provides a digital wardrobe and AI styling assistance with outfit and shopping recommendations.",
+      "capabilities": "Wardrobe digitization; Image background removal; Outfit suggestions.",
+      "audience": "Consumers organizing and styling their clothing",
+      "businessModel": "Website mentions prepaid options; exact prices not captured.",
+      "founderRole": "Founder relationship supported by the cited source; exact title and role dates are not separately established in this record.",
+      "evidence": "Explicit founder statement on the event profile; company facts have separate sources.",
+      "reviewNotes": "The terms identify a Delaware corporation but no registry verification was performed. Sia Fu's founder role is self-reported on Luma.",
+      "sources": [
+        {
+          "title": "Direct Mooss founder claim",
+          "url": "https://luma.com/user/usr-XmBt5kcb0NFkjJN",
+          "type": "guest_profile"
+        },
+        {
+          "title": "Product",
+          "url": "https://modascope.app/",
+          "type": "company"
+        },
+        {
+          "title": "Operator and service description",
+          "url": "https://www.modascope.app/terms.html",
+          "type": "company"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "neat-roots",
+      "name": "Neat Roots",
+      "publish_status": "profile_ready",
+      "founder": "[Rana Tahir Bilal](https://luma.com/user/ranatahirbilal)",
+      "sector": "Developer education",
+      "website": "https://neatroots.com/",
+      "description": "Runs app-development training and mentorship around Android, Flutter and practical software building.",
+      "capabilities": "Android instruction; Flutter mentorship; Developer community.",
+      "audience": "Developers learning app development in South Asia",
+      "businessModel": "Education and mentorship programs; current course prices not captured.",
+      "founderRole": "Founder relationship supported by the cited source; exact title and role dates are not separately established in this record.",
+      "evidence": "Explicit founder statement on the event profile; company facts have separate sources.",
+      "reviewNotes": "Homepage reports 300K+ YouTube subscribers and 3,500+ mentored students. The Luma bio says 330K; preserve source/date differences instead of creating a single exact count.",
+      "sources": [
+        {
+          "title": "Direct founder claim",
+          "url": "https://luma.com/user/ranatahirbilal",
+          "type": "guest_profile"
+        },
+        {
+          "title": "Programs and company-reported audience",
+          "url": "https://neatroots.com/",
+          "type": "company"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "novawerke-ai",
+      "name": "Novawerke AI",
+      "publish_status": "profile_ready",
+      "founder": "[Frank Ivey](https://luma.com/user/usr-cfrLts3lTDaIG5R)",
+      "sector": "Resilient AI infrastructure",
+      "website": "https://novawerke.ai/",
+      "description": "Develops AI infrastructure intended to preserve useful capability when connectivity conditions change.",
+      "capabilities": "AI resilience research; Infrastructure development.",
+      "audience": "Organizations affected by unreliable connectivity",
+      "businessModel": "Commercial model not disclosed in reviewed page.",
+      "founderRole": "- Frank Ivey: Co-Founder / CTO; 2025-09 to Present (source report; current position not independently reconfirmed).",
+      "evidence": "Exact professional profile linked from the event profile; explicit founder-role evidence. Independent company/institutional corroboration only where cited.",
+      "reviewNotes": "Exact Luma-to-LinkedIn identity link confirmed. Current founder role from September 2025. Company describes validation/development; deployed capability not independently tested.",
+      "sources": [
+        {
+          "title": "Product direction and Frank Ivey co-founder/CTO role",
+          "url": "https://novawerke.ai/about.html",
+          "type": "company"
+        },
+        {
+          "title": "Matched founder role and source-reported dates",
+          "url": "https://linkedin.com/in/frankleeiveyjr",
+          "type": "self_authored"
+        },
+        {
+          "title": "Guest directly links the reviewed LinkedIn identity",
+          "url": "https://luma.com/user/usr-cfrLts3lTDaIG5R",
+          "type": "event_profile"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "nugenix-ai",
+      "name": "NugeniX-AI",
+      "publish_status": "profile_ready",
+      "founder": "[Anilkumar Peketi](https://luma.com/user/usr-q0lGLyvLj03qtJd)",
+      "sector": "AI implementation",
+      "website": "https://www.nugenix-ai.com/",
+      "description": "Offers AI process automation, business analytics, custom applications and agentic sales support for smaller businesses.",
+      "capabilities": "Process automation; Data insights; Custom AI applications; Sales assistants.",
+      "audience": "Small and medium businesses",
+      "businessModel": "Implementation and integration services; pricing not found.",
+      "founderRole": "Founder relationship supported by the cited source; exact title and role dates are not separately established in this record.",
+      "evidence": "Explicit founder statement on the event profile; company facts have separate sources.",
+      "reviewNotes": "The public profile uses Anil Peketi; the roster uses Anilkumar Peketi. The shared company resolves the name variant.",
+      "sources": [
+        {
+          "title": "Founder self-report",
+          "url": "https://luma.com/user/usr-q0lGLyvLj03qtJd",
+          "type": "guest_profile"
+        },
+        {
+          "title": "Service descriptions",
+          "url": "https://www.nugenix-ai.com/offernings",
+          "type": "company"
+        },
+        {
+          "title": "Founder role and name variant",
+          "url": "https://linkedin.com/in/anil-peketi-73b18a130",
+          "type": "self_authored"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "nxtconnect-ai",
+      "name": "NxtConnect AI",
+      "publish_status": "profile_ready",
+      "founder": "[Frederike Falke](https://luma.com/user/frederikefalke)",
+      "sector": "Customer-facing AI implementation",
+      "website": "https://www.nxtconnect.ai/",
+      "description": "Designs and embeds AI systems for customer relationships, sales and operations in established businesses.",
+      "capabilities": "AI integration; Customer-facing workflows; Operational adoption.",
+      "audience": "Established firms in market research, law, real estate and SaaS",
+      "businessModel": "Consulting and implementation services; rates not captured.",
+      "founderRole": "Founder relationship supported by the cited source; exact title and role dates are not separately established in this record.",
+      "evidence": "Event identity matched through a public handle, personal site or company context; explicit founder role in cited sources.",
+      "reviewNotes": "Official team page names Farhan FK and Frederike Falke as co-founders. No audited revenue or customer total found.",
+      "sources": [
+        {
+          "title": "Exact identity handle",
+          "url": "https://luma.com/user/frederikefalke",
+          "type": "guest_profile"
+        },
+        {
+          "title": "Frederike Falke CRO/co-founder and service scope",
+          "url": "https://www.nxtconnect.ai/about",
+          "type": "company"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "opflowos",
+      "name": "OpFlowOS",
+      "publish_status": "profile_ready",
+      "founder": "[Adil Rahman](https://luma.com/user/usr-uKvd72vLZrdDU3v)",
+      "sector": "AI business operations",
+      "website": "https://opflowos.com",
+      "description": "Presents an AI executive team that researches, prepares reports and coordinates work on a schedule with owner approval.",
+      "capabilities": "Executive and department agents; Scheduled reports; Approval workflow.",
+      "audience": "Small companies and solo founders",
+      "businessModel": "Pricing and commercial availability not found.",
+      "founderRole": "Founder relationship supported by the cited source; exact title and role dates are not separately established in this record.",
+      "evidence": "Explicit founder statement on the event profile; company facts have separate sources.",
+      "reviewNotes": "The fetched page exposes unresolved template placeholders. Treat capabilities as product claims; verify a working deployment before making adoption claims.",
+      "sources": [
+        {
+          "title": "Founder self-report and exact domain",
+          "url": "https://luma.com/user/usr-uKvd72vLZrdDU3v",
+          "type": "guest_profile"
+        },
+        {
+          "title": "Product and approval model",
+          "url": "https://opflowos.com",
+          "type": "company"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "optimchain",
+      "name": "OptimChain",
+      "publish_status": "profile_ready",
+      "founder": "[Jason Bian](https://luma.com/user/usr-1vY8G1OwjEPwCRx)",
+      "sector": "Industrial analytics",
+      "website": "https://optimchain.github.io/Main/",
+      "description": "Provides proof-of-concept analytics and automation for supply chain, manufacturing and inventory workflows.",
+      "capabilities": "Time-series analytics; Script automation; Business intelligence; Factory-floor integration.",
+      "audience": "Manufacturing and supply-chain teams",
+      "businessModel": "Project consulting and prototypes; pricing not established.",
+      "founderRole": "- Jason Bian: Founder; 2021-01 to Present (source report; current position not independently reconfirmed). Profile says Present but elapsed duration is stale. Website confirms founder; present trading activity not independently established.",
+      "evidence": "Exact professional profile linked from the event profile; explicit founder-role evidence. Independent company/institutional corroboration only where cited.",
+      "reviewNotes": "Founder named on company site and exact guest-linked profile. Present-tense role has a stale elapsed duration; current trading activity unknown.",
+      "sources": [
+        {
+          "title": "Matched guest founder role, dates and founder-described business",
+          "url": "https://linkedin.com/in/jason-bian-7b9027a5",
+          "type": "self_authored"
+        },
+        {
+          "title": "Guest profile directly links this LinkedIn identity",
+          "url": "https://luma.com/user/usr-1vY8G1OwjEPwCRx",
+          "type": "event_profile"
+        },
+        {
+          "title": "Company services",
+          "url": "https://optimchain.github.io/Main/",
+          "type": "company"
+        },
+        {
+          "title": "Jason Bian explicitly named founder",
+          "url": "https://optimchain.github.io/Main/team.html",
+          "type": "company"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "pillpilot",
+      "name": "PillPilot",
+      "publish_status": "profile_ready",
+      "founder": "[Ashu Duggal](https://luma.com/user/ashu_duggal)",
+      "sector": "Pharmacy automation",
+      "website": "https://www.pillpilot.ai/",
+      "description": "Builds AI agents for pharmacy phone calls, prescription data entry and administrative work inside existing pharmacy systems.",
+      "capabilities": "Call handling; Prescription intake and queue preparation; PMS integration.",
+      "audience": "Independent pharmacies and pharmacy operators",
+      "businessModel": "Scoped pilot and usage/store-specific pricing; exact prices not captured.",
+      "founderRole": "Founder relationship supported by the cited source; exact title and role dates are not separately established in this record.",
+      "evidence": "Exact professional profile linked from the event profile; explicit founder-role evidence. Independent company/institutional corroboration only where cited.",
+      "reviewNotes": "The site claims live pharmacy deployments but does not provide an independently audited customer count in reviewed material. Do not infer medical efficacy or certification.",
+      "sources": [
+        {
+          "title": "Direct company domain and builder identity",
+          "url": "https://luma.com/user/ashu_duggal",
+          "type": "guest_profile"
+        },
+        {
+          "title": "Co-founder and CEO role",
+          "url": "https://linkedin.com/in/ashu-duggal",
+          "type": "self_authored"
+        },
+        {
+          "title": "Product and deployment",
+          "url": "https://www.pillpilot.ai/",
+          "type": "company"
+        },
+        {
+          "title": "Team background",
+          "url": "https://www.pillpilot.ai/about/",
+          "type": "company"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "quizrs",
+      "name": "Quizrs",
+      "publish_status": "profile_ready",
+      "founder": "[Slavik Kaushan](https://luma.com/user/usr-cM4LRsiV9aDXIBY)",
+      "sector": "AI educational content",
+      "website": "https://quizrs.com/",
+      "description": "Generates quizzes from topics or supplied text and provides embedding and customization tools.",
+      "capabilities": "Quiz generation; Website embeds; Custom branding; Analytics.",
+      "audience": "Educators, content creators and website operators",
+      "businessModel": "Free entry with paid Pro and Teams tiers advertised; billing not tested.",
+      "founderRole": "- Slavik Kaushan: Co-Founder; 2025-01 to Present (source report; current position not independently reconfirmed).",
+      "evidence": "Exact professional profile linked from the event profile; explicit founder-role evidence. Independent company/institutional corroboration only where cited.",
+      "reviewNotes": "Usage totals, platform logos, testimonials, generation-speed and availability claims are marketing claims, not verified traction. No subscription purchase tested.",
+      "sources": [
+        {
+          "title": "Matched guest founder role, dates and founder-described business",
+          "url": "https://linkedin.com/in/kaushan",
+          "type": "self_authored"
+        },
+        {
+          "title": "Guest profile directly links this LinkedIn identity",
+          "url": "https://luma.com/user/usr-cM4LRsiV9aDXIBY",
+          "type": "event_profile"
+        },
+        {
+          "title": "Current product and advertised plan features",
+          "url": "https://quizrs.com/",
+          "type": "company"
+        },
+        {
+          "title": "Company product/domain and founder association",
+          "url": "https://linkedin.com/company/quizrs",
+          "type": "company"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "rolemate",
+      "name": "Rolemate",
+      "publish_status": "profile_ready",
+      "founder": "[Advik Bhatt](https://luma.com/user/usr-O1az3atAid1MjSD)",
+      "sector": "Developer hiring tools",
+      "website": "https://rolemateapp.com/",
+      "description": "Turns development work recorded through coding agents into a proof-of-skill profile for hiring discovery.",
+      "capabilities": "Coding-agent integration; Authorship and work signals; Hiring discovery.",
+      "audience": "Developers and hiring teams",
+      "businessModel": "Commercial terms not captured.",
+      "founderRole": "Founder relationship supported by the cited source; exact title and role dates are not separately established in this record.",
+      "evidence": "Exact professional profile linked from the event profile; explicit founder-role evidence. Independent company/institutional corroboration only where cited.",
+      "reviewNotes": "Demo hiring ranks and skill scores are product examples. Do not treat them as validated hiring outcomes or user counts.",
+      "sources": [
+        {
+          "title": "Direct personal and product domains",
+          "url": "https://luma.com/user/usr-O1az3atAid1MjSD",
+          "type": "guest_profile"
+        },
+        {
+          "title": "Builder and project identity",
+          "url": "https://advikbhatt.com/",
+          "type": "self_authored"
+        },
+        {
+          "title": "Product plus explicit founder link",
+          "url": "https://rolemateapp.com/",
+          "type": "company"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "sirca",
+      "name": "Sirca",
+      "publish_status": "profile_ready",
+      "founder": "[Roman Baptiste](https://luma.com/user/usr-aiayJ2SwqJ6Bfe0)",
+      "sector": "Healthcare revenue-cycle automation",
+      "website": "https://www.sirca.ai/",
+      "description": "Builds insurance verification, claim preparation/submission and payment posting inside practice-management workflows.",
+      "capabilities": "Coverage verification; Claim checks; Payment posting.",
+      "audience": "Healthcare and dental practices",
+      "businessModel": "Commercial pricing not captured.",
+      "founderRole": "- Roman Baptiste: Co-Founder / CEO; 2026-02 to Present (source report; current position not independently reconfirmed).",
+      "evidence": "Exact professional profile linked from the event profile; explicit founder-role evidence. Independent company/institutional corroboration only where cited.",
+      "reviewNotes": "Exact Luma-to-LinkedIn identity link confirmed. Founder/CEO role from February 2026. Current website billing scope takes precedence over older front-office descriptions.",
+      "sources": [
+        {
+          "title": "Current insurance-billing product",
+          "url": "https://www.sirca.ai/",
+          "type": "company"
+        },
+        {
+          "title": "Matched founder role and source-reported dates",
+          "url": "https://linkedin.com/in/romanjessebaptiste",
+          "type": "self_authored"
+        },
+        {
+          "title": "Guest directly links the reviewed LinkedIn identity",
+          "url": "https://luma.com/user/usr-aiayJ2SwqJ6Bfe0",
+          "type": "event_profile"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "vident",
+      "name": "Vident",
+      "publish_status": "profile_ready",
+      "founder": "[Donal Bishnoi](https://luma.com/user/Vident)",
+      "sector": "AI implementation and financial operations",
+      "website": "https://discovervident.com/",
+      "description": "Combines technology modernization through Vident Technologies with AI strategy and agentic workflows through Vident Consulting.",
+      "capabilities": "Cloud and data infrastructure; Workflow automation; AI readiness and governance; Financial decision support.",
+      "audience": "Established firms with complex operational workflows",
+      "businessModel": "Consulting and implementation services; rates not found.",
+      "founderRole": "Founder relationship supported by the cited source; exact title and role dates are not separately established in this record.",
+      "evidence": "Explicit founder statement on the event profile; company facts have separate sources.",
+      "reviewNotes": "Keep the technology/consulting umbrella distinct from similarly named investment-management firms.",
+      "sources": [
+        {
+          "title": "Direct founder claim",
+          "url": "https://luma.com/user/Vident",
+          "type": "guest_profile"
+        },
+        {
+          "title": "Business structure and offerings",
+          "url": "https://discovervident.com/",
+          "type": "company"
+        },
+        {
+          "title": "Founder work and background",
+          "url": "https://www.bishnoi.cc/",
+          "type": "self_authored"
+        },
+        {
+          "title": "Founder role",
+          "url": "https://linkedin.com/in/donal-bishnoi-ab49222",
+          "type": "self_authored"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "water-pistol",
+      "name": "Water Pistol",
+      "publish_status": "profile_ready",
+      "founder": "[Devin J. Dawson](https://luma.com/user/devinjdawson)",
+      "sector": "AI development",
+      "website": "https://waterpistol.co/",
+      "description": "Devin J. Dawson lists Water Pistol as his AI/ML research and data-science venture.",
+      "capabilities": "AI and ML development positioning.",
+      "audience": "Not established",
+      "businessModel": "Not found.",
+      "founderRole": "Founder relationship supported by the cited source; exact title and role dates are not separately established in this record.",
+      "evidence": "Event identity matched through a public handle, personal site or company context; explicit founder role in cited sources.",
+      "reviewNotes": "The company page is a holding page. No shipped product, active customers or financial metrics were established.",
+      "sources": [
+        {
+          "title": "Identity handle",
+          "url": "https://luma.com/user/devinjdawson",
+          "type": "guest_profile"
+        },
+        {
+          "title": "Explicit founder role and company domain",
+          "url": "https://devinjdawson.com/",
+          "type": "self_authored"
+        },
+        {
+          "title": "Current minimal holding page",
+          "url": "https://waterpistol.co/",
+          "type": "company"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "wealthryse",
+      "name": "WealthRyse",
+      "publish_status": "profile_ready",
+      "founder": "[David LEE](https://luma.com/user/usr-GfeNyH3fJzFMlJE)",
+      "sector": "Institutional portfolio analytics",
+      "website": "https://wealthryse.ai/",
+      "description": "Provides portfolio calculation, optimisation and scenario-analysis software for licensed financial institutions and professional users.",
+      "capabilities": "Portfolio metrics; Scenario and stress testing; Model construction; Analytics APIs.",
+      "audience": "Licensed institutions and professional financial users",
+      "businessModel": "B2B software licensing / SaaS.",
+      "founderRole": "- David LEE: Co-Founder; start not established to Present (source report; current position not independently reconfirmed). Linked profile identifies WealthRyse directorship; Harvard Law identifies David Lee as founder. Start date not established.",
+      "evidence": "Exact professional profile linked from the event profile; explicit founder-role evidence. Independent company/institutional corroboration only where cited.",
+      "reviewNotes": "Guest links David Hyungtek Lee profile and WealthRyse social handles. Harvard founder biography supplies institutional corroboration. Current site identifies WealthRyse (Hong Kong) Co., Limited; relationship to Holdings Limited not independently established. Site describes analytics, not retail advice, execution or custody.",
+      "sources": [
+        {
+          "title": "Matched guest founder role, dates and founder-described business",
+          "url": "https://linkedin.com/in/davidhyungteklee",
+          "type": "self_authored"
+        },
+        {
+          "title": "Guest profile directly links this LinkedIn identity",
+          "url": "https://luma.com/user/usr-GfeNyH3fJzFMlJE",
+          "type": "event_profile"
+        },
+        {
+          "title": "Current professional-only software scope",
+          "url": "https://wealthryse.ai/",
+          "type": "company"
+        },
+        {
+          "title": "David Lee founder biography and matching career context",
+          "url": "https://hls.harvard.edu/events/alumni-in-residence-with-david-lee-j-d-98-of-wealthryse-holdings-limited/",
+          "type": "institutional"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    },
+    {
+      "id": "zacc-ai",
+      "name": "Zacc.AI",
+      "publish_status": "profile_ready",
+      "founder": "[Zacc Romero](https://luma.com/user/usr-FJ8ggjSCEUUgSC1)",
+      "sector": "AI products and infrastructure",
+      "website": "https://zacc.ai/",
+      "description": "Zacc Romero's current site presents AI products for builders and athletic performance alongside an agent infrastructure layer.",
+      "capabilities": "Milo athlete performance platform; Drako Core agent runtime; Drako Arcade.",
+      "audience": "Builders, athletes, coaches and gyms, depending on product",
+      "businessModel": "Product-level commercial terms not captured.",
+      "founderRole": "Founder relationship supported by the cited source; exact title and role dates are not separately established in this record.",
+      "evidence": "Explicit founder statement on the event profile; company facts have separate sources.",
+      "reviewNotes": "Luma's local-first daily-life positioning differs from the current product portfolio. Prefer current dated descriptions. Gym/cafe work on the personal site does not establish company ownership.",
+      "sources": [
+        {
+          "title": "Direct founder and domain claim",
+          "url": "https://luma.com/user/usr-FJ8ggjSCEUUgSC1",
+          "type": "guest_profile"
+        },
+        {
+          "title": "Current portfolio",
+          "url": "https://zacc.ai/",
+          "type": "company"
+        },
+        {
+          "title": "Solo-founder role",
+          "url": "https://linkedin.com/in/zacc-romero-594708175",
+          "type": "self_authored"
+        }
+      ],
+      "checkedAt": "2026-10-17"
+    }
+  ]
+}

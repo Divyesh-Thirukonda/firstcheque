@@ -8,7 +8,8 @@
     "start": "next start --hostname 127.0.0.1",
     "typecheck": "tsc --noEmit",
     "test": "NODE_OPTIONS=--conditions=react-server tsx --test tests/*.test.ts",
-    "eval": "tsx scripts/evaluate.ts"
+    "eval": "tsx scripts/evaluate.ts",
+    "catalog:collect": "tsx scripts/collect-catalog.ts"
   },
   "dependencies": {
     "@ai-sdk/openai-compatible": "latest",

@@ -1,7 +1,9 @@
 import type { DiscoveryCompany, DiscoveryMatch, DiscoveryPreferences } from "./discovery-types";
 import type { Industry, Stage } from "./types";
 
-export const DISCOVERY_SECTORS = ["AI & software", "AI infrastructure", "Developer tools", "Climate tech", "Fintech", "Healthcare", "Consumer", "Local business", "Robotics", "Space"];
+export const DISCOVERY_INDUSTRIES: Industry[] = ["AI & software", "Cybersecurity", "Fintech", "Healthcare", "Climate", "Consumer", "Local business"];
+export const DISCOVERY_STAGES: Stage[] = ["Pre-seed", "Seed", "Series A", "Series B", "Series C", "Series D", "Small business"];
+export const DISCOVERY_SECTORS = ["AI & software", "AI infrastructure", "Developer tools", "Climate tech", "Cybersecurity", "Fintech", "Healthcare", "Consumer", "Local business", "Robotics", "Space"];
 export const DEFAULT_DISCOVERY_PREFERENCES: DiscoveryPreferences = {
   industries: [], stages: [], riskAppetite: "adventurous", horizonYears: 7,
   budget: 2000, maxAllocationPct: 25, thesis: "", sectors: [],
@@ -13,6 +15,7 @@ const sectorRules: Array<{ label: string; industry: Industry; expression: RegExp
   {label:"AI infrastructure",industry:"AI & software",expression:/\b(?:ai infrastructure|inference|gpu|compute|model infrastructure)\b/i},
   {label:"Developer tools",industry:"AI & software",expression:/\b(?:developer[- ]tools?|dev[- ]?tools?|developer infrastructure|coding tools?)\b/i},
   {label:"Climate tech",industry:"Climate",expression:/\b(?:climate|cleantech|clean energy|renewable|carbon|battery|batteries)\b/i},
+  {label:"Cybersecurity",industry:"Cybersecurity",expression:/\b(?:cybersecurity|cyber security|security operations|appsec|data security)\b/i},
   {label:"Fintech",industry:"Fintech",expression:/\b(?:fintech|payments?|banking)\b/i},
   {label:"Healthcare",industry:"Healthcare",expression:/\b(?:healthcare|health tech|medical|biotech)\b/i},
   {label:"Consumer",industry:"Consumer",expression:/\b(?:consumer|retail|food|beverage|fashion)\b/i},
@@ -47,7 +50,9 @@ export function parseDiscoveryBrief(brief: string, base: DiscoveryPreferences = 
   const stages: Stage[]=[];
   if (/\bpre[- ]seed\b/i.test(brief)) stages.push("Pre-seed");
   if (/(?<!pre[- ])\bseed\b/i.test(brief)) stages.push("Seed");
-  if (/\bseries\s*a\b/i.test(brief)) stages.push("Series A");
+  const stageRanges=[...brief.matchAll(/\bseries\s*([a-d])\s*(?:-|–|through|to)\s*([a-d])\b/gi)];
+  for(const range of stageRanges){const start=range[1].toUpperCase().charCodeAt(0),end=range[2].toUpperCase().charCodeAt(0);for(let letter=start;letter<=end;letter++) stages.push(`Series ${String.fromCharCode(letter)}` as Stage);}
+  for(const match of brief.matchAll(/\bseries\s*([a-d])\b/gi)) stages.push(`Series ${match[1].toUpperCase()}` as Stage);
   if (/\bsmall business\b/i.test(brief)) stages.push("Small business");
   if (stages.length) {preferences.stages=[...new Set(stages)];interpretation.push(`Stages: ${preferences.stages.join(", ")}`);}
   if (/\b(?:pre[- ]revenue (?:is okay|is ok|allowed)|no revenue requirement|revenue optional)\b/i.test(brief)) preferences.revenueRequirement="any";
@@ -61,6 +66,7 @@ export function parseDiscoveryBrief(brief: string, base: DiscoveryPreferences = 
   const horizon=brief.match(/\b(\d{1,2})[- ]years?\b/i);
   if(horizon&&Number(horizon[1])>=1&&Number(horizon[1])<=30){preferences.horizonYears=Number(horizon[1]);interpretation.push(`Holding horizon: ${horizon[1]} years`);}
   if(/\b(?:research[- ]only|not raising|include known companies|any company)\b/i.test(brief)){preferences.offeringOnly=false;interpretation.push("Include companies without a current public offering");}
+  if(!/\$\s*\d|\b(?:budget|invest|investing|investment|allocate|allocation)\b/i.test(brief) && (stages.length || /\b(?:find|discover|show|search|research|explore)\b.*\b(?:companies|startups|founders)\b/i.test(brief))) preferences.offeringOnly=false;
   if(!interpretation.length) warnings.push("No structured constraints detected. Review the editable filters; your full brief will still guide the research memo.");
   return {preferences,interpretation,warnings};
 }
@@ -77,7 +83,7 @@ export function filterAndRankCompanies(companies:DiscoveryCompany[],preferences:
   const matches:DiscoveryMatch[]=[],excluded:Array<{company:DiscoveryCompany;reasons:string[]}>=[];
   for(const company of companies){
     const failures:string[]=[],reasons:string[]=[],warnings:string[]=[];
-    if(preferences.query&&!normalized([company.name,company.description,...company.sectors].join(" ")).includes(normalized(preferences.query))) failures.push("Does not match your search");
+    if(preferences.query&&!matchesCatalogQuery(company,preferences.query)) failures.push("Does not match your search");
     if(preferences.sectors.length&&!preferences.sectors.some(s=>hasSector(company,s))) failures.push("Outside your selected sectors");
     else if(!preferences.sectors.length&&preferences.industries.length&&!preferences.industries.includes(company.industry as Industry)) failures.push("Outside your selected industries");
     if(preferences.excludedSectors?.some(s=>hasSector(company,s))) failures.push("Matches an excluded sector");
@@ -116,4 +122,16 @@ export function filterAndRankCompanies(companies:DiscoveryCompany[],preferences:
     matches.push({company,score:Math.min(99,score),reasons,warnings});
   }
   return {matches:matches.sort((a,b)=>b.score-a.score||a.company.name.localeCompare(b.company.name)),excluded};
+}
+
+/** Stored profile facts only. Basic catalog search never calls a model or crawler. */
+export function companySearchText(company: DiscoveryCompany) {
+  return normalized([company.name,company.website,company.description,company.industry,company.stage,...company.sectors,...(company.capabilities||[]),...(company.founders||[]).map(person=>person.name),company.audience,company.businessModel,company.headquarters].filter(Boolean).join(" "));
+}
+export function matchesCatalogQuery(company: DiscoveryCompany, query: string) {
+  const text=companySearchText(company);
+  const explicitStage=query.match(/\bseries\s*([a-d])\b/i);
+  if(explicitStage&&company.stage!==`Series ${explicitStage[1].toUpperCase()}`) return false;
+  const words=text.split(" ");
+  return normalized(query).split(" ").filter(Boolean).every(token=>words.some(word=>token.length<=2?word===token:word.startsWith(token)));
 }

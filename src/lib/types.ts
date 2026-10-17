@@ -1,5 +1,5 @@
-export type Industry = "Climate" | "Fintech" | "Healthcare" | "AI & software" | "Consumer" | "Local business";
-export type Stage = "Pre-seed" | "Seed" | "Series A" | "Small business";
+export type Industry = "Climate" | "Fintech" | "Healthcare" | "AI & software" | "Consumer" | "Local business" | "Cybersecurity";
+export type Stage = "Pre-seed" | "Seed" | "Series A" | "Small business" | "Series B" | "Series C" | "Series D";
 export type RiskAppetite = "conservative" | "balanced" | "adventurous";
 
 export interface Thesis {
