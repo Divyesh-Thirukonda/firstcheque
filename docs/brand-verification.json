@@ -1,0 +1,26 @@
+{
+  "product": "Seed Street",
+  "sourceRevision": "9b09e507f100d6b5d69065a7c2dabad21db2affa",
+  "deployment": {
+    "id": "dpl_BLN3ABH9cPVs9xeSKTXH5s9X3L7A",
+    "url": "https://firstcheque-gul6nouq0-divyesh-thirukondas-projects.vercel.app",
+    "state": "READY"
+  },
+  "validation": {
+    "offlineTests": 67,
+    "typecheck": "passed",
+    "productionBuild": "passed",
+    "browserTitle": "Seed Street \u2014 Startup research",
+    "hostedCatalogCount": 124,
+    "browserConsoleErrorsObserved": 0,
+    "desktopWordmarkWidth": 171,
+    "desktopWordmarkScrollWidth": 171,
+    "mobile": "Compact street-sign mark verified; viewport override reset"
+  },
+  "preserved": "Existing local searches, report paths, PRISM agent identities and frozen benchmark artifacts",
+  "assets": [
+    "public/seed-street-logo.svg",
+    "public/seed-street-mark.svg",
+    "src/app/icon.svg"
+  ]
+}
