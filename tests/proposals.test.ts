@@ -115,3 +115,15 @@ test("pasted synthetic notes cannot lose their rehearsal label by omitting the U
   };
   assert.match(proposalDocument(draft), /^SYNTHETIC REHEARSAL/);
 });
+
+test("an investor proposal or agent question is not promoted into founder terms", () => {
+  const quote = "Would you consider a $5 million valuation cap?";
+  const notes = `Agent: ${quote}\nFounder: We have not proposed a cap yet.`;
+  const result = groundProposalTerms(
+    extractedTermsSchema.parse({
+      terms: [{ key: "valuation", value: quote, quote }],
+    }),
+    notes,
+  );
+  assert.deepEqual(result, []);
+});

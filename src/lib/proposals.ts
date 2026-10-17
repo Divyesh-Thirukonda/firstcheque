@@ -111,9 +111,27 @@ export function groundProposalTerms(
   const normal = (s: string) =>
     s.normalize("NFKC").replace(/\s+/g, " ").trim().toLowerCase();
   const seen = new Set<string>();
+  const segments = notes.split(
+    /(?=^(?:Agent|Investor|Assistant|Founder|Fictional founder|Issuer)\s*:)/im,
+  );
+  const investorSegments = segments.filter((text) =>
+    /^\s*(?:Agent|Investor|Assistant)\s*:/i.test(text),
+  );
+  const issuerSegments = segments.filter((text) =>
+    /^\s*(?:Founder|Fictional founder|Issuer)\s*:/i.test(text),
+  );
   const grounded: ExtractedTerm[] = candidate.terms.flatMap((term) => {
     // The displayed value is always the actual passage, never the model's paraphrase or computed ownership.
-    if (seen.has(term.key) || !normal(notes).includes(normal(term.quote)))
+    const onlyInvestor =
+      investorSegments.some((text) =>
+        normal(text).includes(normal(term.quote)),
+      ) &&
+      !issuerSegments.some((text) => normal(text).includes(normal(term.quote)));
+    if (
+      onlyInvestor ||
+      seen.has(term.key) ||
+      !normal(notes).includes(normal(term.quote))
+    )
       return [];
     seen.add(term.key);
     return [{ ...term, value: term.quote }];
