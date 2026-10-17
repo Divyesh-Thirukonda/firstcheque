@@ -1,7 +1,7 @@
 import type { DiscoveryCompany, DiscoveryMatch, DiscoveryPreferences } from "./discovery-types";
 import type { Industry, Stage } from "./types";
 
-export const DISCOVERY_SECTORS = ["AI infrastructure", "Developer tools", "Climate tech", "Fintech", "Healthcare", "Consumer", "Local business", "Robotics", "Space"];
+export const DISCOVERY_SECTORS = ["AI & software", "AI infrastructure", "Developer tools", "Climate tech", "Fintech", "Healthcare", "Consumer", "Local business", "Robotics", "Space"];
 export const DEFAULT_DISCOVERY_PREFERENCES: DiscoveryPreferences = {
   industries: [], stages: [], riskAppetite: "adventurous", horizonYears: 7,
   budget: 2000, maxAllocationPct: 25, thesis: "", sectors: [],
@@ -37,8 +37,10 @@ export function parseDiscoveryBrief(brief: string, base: DiscoveryPreferences = 
   if (risk) {preferences.riskAppetite=risk;interpretation.push(`Risk preference: ${risk}`);}
   const positiveText=brief.replace(/\b(?:exclude|avoid|not interested in|don't want|do not want|no)\s+[^.;]+/gi, "");
   const positive=sectorRules.filter(rule=>rule.expression.test(positiveText));
+  if (/\b(?:artificial intelligence|ai|software)\b/i.test(positiveText) && !positive.some(rule=>rule.industry==="AI & software")) positive.unshift({label:"AI & software",industry:"AI & software",expression:/\b(?:artificial intelligence|ai|software)\b/i});
   const negativeText=[...brief.matchAll(/\b(?:exclude|avoid|not interested in|don't want|do not want|no)\s+([^.;]+)/gi)].map(x=>x[1]).join(" ");
   const negative=sectorRules.filter(rule=>rule.expression.test(negativeText));
+  if (/\b(?:artificial intelligence|ai|software)\b/i.test(negativeText) && !negative.some(rule=>rule.industry==="AI & software")) negative.unshift({label:"AI & software",industry:"AI & software",expression:/\b(?:artificial intelligence|ai|software)\b/i});
   if (positive.length) {preferences.sectors=positive.map(x=>x.label);preferences.industries=[...new Set(positive.map(x=>x.industry))];interpretation.push(`Interests: ${preferences.sectors.join(", ")}`);}
   else if (/\b(?:artificial intelligence|AI|software)\b/.test(positiveText)) {preferences.industries=["AI & software"];preferences.sectors=[];interpretation.push("Industry: AI & software");}
   if (negative.length) {preferences.excludedSectors=negative.map(x=>x.label);interpretation.push(`Exclude: ${preferences.excludedSectors.join(", ")}`);}
@@ -49,7 +51,7 @@ export function parseDiscoveryBrief(brief: string, base: DiscoveryPreferences = 
   if (/\bsmall business\b/i.test(brief)) stages.push("Small business");
   if (stages.length) {preferences.stages=[...new Set(stages)];interpretation.push(`Stages: ${preferences.stages.join(", ")}`);}
   if (/\b(?:pre[- ]revenue (?:is okay|is ok|allowed)|no revenue requirement|revenue optional)\b/i.test(brief)) preferences.revenueRequirement="any";
-  else if (/\b(?:existing|generating|positive|with|have|has|reported)\s+(?:recurring\s+)?revenue\b|\brevenue[- ]generating\b|\brequire(?:s)? revenue\b/i.test(brief)) preferences.revenueRequirement="reported-revenue";
+  else if (/\b(?:existing|generating|positive|with|have|has|reported)\s+(?:annual\s+)?(?:recurring\s+)?revenue\b|\brevenue[- ]generating\b|\brequire(?:s)? (?:annual )?revenue\b/i.test(brief)) preferences.revenueRequirement="reported-revenue";
   if (/\b(?:require|prefer|with|existing|reported)\s+(?:positive\s+)?(?:ARR|annual recurring revenue)\b/i.test(brief)) preferences.revenueRequirement="reported-arr";
   if (preferences.revenueRequirement!=="any") interpretation.push(preferences.revenueRequirement==="reported-arr"?"Reported ARR required; undisclosed ARR is excluded":"Reported positive annual revenue required; ARR is a separate option and unknown annual revenue is excluded");
   const minimumRevenue=brief.match(new RegExp(`(?:annual\\s+)?revenue(?:\\s+of)?\\s*(?:at least|above|over|>=)\\s*${amount}`,"i")) || brief.match(new RegExp(`at least\\s*${amount}\\s+(?:in\\s+)?(?:annual\\s+)?revenue`,"i"));
@@ -65,6 +67,7 @@ export function parseDiscoveryBrief(brief: string, base: DiscoveryPreferences = 
 
 const normalized=(s:string)=>s.toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
 function hasSector(company:DiscoveryCompany, sector:string){
+  if (sector === "AI & software") return company.industry === "AI & software";
   const rule=sectorRules.find(x=>x.label===sector);
   const content=[company.name,company.description,...company.sectors].join(" ");
   return company.sectors.some(x=>normalized(x)===normalized(sector)) || (rule?rule.expression.test(content):normalized(content).includes(normalized(sector)));

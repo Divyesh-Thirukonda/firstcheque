@@ -50,3 +50,12 @@ test("a risk preference excludes incompatible and unknown risk instead of awardi
   assert.equal(filterAndRankCompanies([{...company,riskLevel:"unknown"}],{...DEFAULT_DISCOVERY_PREFERENCES,riskAppetite:"balanced"}).matches.length,0);
   assert.equal(filterAndRankCompanies([{...company,riskLevel:"high"}],{...DEFAULT_DISCOVERY_PREFERENCES,riskAppetite:"balanced"}).matches.length,1);
 });
+test("ordinary AI-or-climate briefs preserve both interests and the annual revenue rule",()=>{
+  const {preferences}=parseDiscoveryBrief("I have $2,000 to invest in AI or climate startups. I am comfortable with high risk and prefer companies with existing annual revenue.");
+  assert.deepEqual(preferences.sectors,["AI & software","Climate tech"]);
+  assert.equal(preferences.revenueRequirement,"reported-revenue");
+  assert.equal(filterAndRankCompanies([company],preferences).matches.length,1);
+  const climate={...company,id:"climate",industry:"Climate" as const,sectors:["Climate tech"],description:"Clean energy"};
+  assert.equal(filterAndRankCompanies([climate],preferences).matches.length,1);
+  assert.equal(parseDiscoveryBrief("I prefer companies with annual revenue.").preferences.revenueRequirement,"reported-revenue");
+});
