@@ -1,0 +1,168 @@
+{
+  "scope": "Sourced startup catalog, handoff import and stored-fact discovery",
+  "checkedAt": "2026-10-17",
+  "sourceRevision": "6ce020334424f33874834722f5e47ca7eeeb96fe",
+  "coverage": {
+    "totalApiEntries": 124,
+    "ventureCompanies": 80,
+    "eventProfiles": 34,
+    "reviewHistoryCompanies": 41,
+    "founderOnlyLeads": 13,
+    "existingOfferingSnapshots": 10,
+    "perStage": {
+      "Series A": 20,
+      "Series B": 20,
+      "Series C": 20,
+      "Series D": 20
+    },
+    "perStageIndustry": [
+      {
+        "stage": "Series A",
+        "industry": "AI & software",
+        "count": 4
+      },
+      {
+        "stage": "Series A",
+        "industry": "Cybersecurity",
+        "count": 4
+      },
+      {
+        "stage": "Series A",
+        "industry": "Fintech",
+        "count": 4
+      },
+      {
+        "stage": "Series A",
+        "industry": "Healthcare",
+        "count": 4
+      },
+      {
+        "stage": "Series A",
+        "industry": "Climate",
+        "count": 4
+      },
+      {
+        "stage": "Series B",
+        "industry": "AI & software",
+        "count": 4
+      },
+      {
+        "stage": "Series B",
+        "industry": "Cybersecurity",
+        "count": 4
+      },
+      {
+        "stage": "Series B",
+        "industry": "Fintech",
+        "count": 4
+      },
+      {
+        "stage": "Series B",
+        "industry": "Healthcare",
+        "count": 4
+      },
+      {
+        "stage": "Series B",
+        "industry": "Climate",
+        "count": 4
+      },
+      {
+        "stage": "Series C",
+        "industry": "AI & software",
+        "count": 4
+      },
+      {
+        "stage": "Series C",
+        "industry": "Cybersecurity",
+        "count": 4
+      },
+      {
+        "stage": "Series C",
+        "industry": "Fintech",
+        "count": 4
+      },
+      {
+        "stage": "Series C",
+        "industry": "Healthcare",
+        "count": 4
+      },
+      {
+        "stage": "Series C",
+        "industry": "Climate",
+        "count": 4
+      },
+      {
+        "stage": "Series D",
+        "industry": "AI & software",
+        "count": 4
+      },
+      {
+        "stage": "Series D",
+        "industry": "Cybersecurity",
+        "count": 4
+      },
+      {
+        "stage": "Series D",
+        "industry": "Fintech",
+        "count": 4
+      },
+      {
+        "stage": "Series D",
+        "industry": "Healthcare",
+        "count": 4
+      },
+      {
+        "stage": "Series D",
+        "industry": "Climate",
+        "count": 4
+      }
+    ],
+    "ventureProfilesWithFounders": 58,
+    "explicitHeadquarters": 16,
+    "explicitFoundingYears": 20
+  },
+  "collection": {
+    "requestedPages": 303,
+    "fetchedPages": 271,
+    "unavailablePages": 32
+  },
+  "validation": {
+    "offlineTests": 67,
+    "typecheck": "passed",
+    "productionBuild": "passed",
+    "modelCallsThisCatalogUpdate": 0,
+    "mobileViewportWidth": 400,
+    "mobileDocumentWidth": 400,
+    "desktopViewportWidth": 1280
+  },
+  "localBrowserChecks": [
+    "GET /api/catalog returns 124 records: 80 venture, 34 event, 10 offering snapshots",
+    "Series B + Cybersecurity filters return Exaforce, Onyx Security, MIND and HiddenLayer",
+    "Search for founder Zain Asgar returns Gimlet Labs",
+    "Search for optical circuit returns Salience Labs on a 400px viewport",
+    "Money Talks founders collection has 34 companies; Show more expands 24 visible tiles to 34",
+    "Series D + Climate & energy returns four energy companies",
+    "Oxide profile displays October 9, 2026 Series D, $445M, sourced founder, 2019 founding year and Emeryville headquarters",
+    "Browsing and filtering do not start deep research"
+  ],
+  "limitations": [
+    "Stage labels reflect located disclosed rounds, not guaranteed latest financing or an open raise",
+    "Base Power has an investor stage label but no retained primary round date/amount",
+    "Private financial unknowns remain null; company traction claims are not independently audited",
+    "32 automated collection attempts were unavailable; receipt distinguishes failures and retries",
+    "No new live model synthesis was run for this stored catalog update"
+  ],
+  "deployment": {
+    "id": "dpl_2gg4YJMjdGCRmPqPBa94i5UoaGLG",
+    "url": "https://firstcheque-9z02q1q5e-divyesh-thirukondas-projects.vercel.app",
+    "state": "READY",
+    "sourceRevision": "6ce020334424f33874834722f5e47ca7eeeb96fe",
+    "protection": "Vercel authentication retained; temporary guest access supplied separately"
+  },
+  "hostedBrowserChecks": [
+    "Series C + Healthcare + Venture catalog returns PatientIQ, Assort Health, AcuityMD and Nourish",
+    "Assort Health opens with product facts, sourced founders, dated funding, explicit unknown financials and a separate Deep research action",
+    "No browser console errors observed",
+    "Authenticated GET /api/catalog returns 124 entries, including 80 venture and 34 event profiles"
+  ]
+}
