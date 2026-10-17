@@ -162,6 +162,7 @@ function PortfolioView({ thesis, positions, onOpen, onReset, onExplore }: { thes
 interface LiveBenchmarkData {
   status: "complete";
   caseCount: number;
+  metricLabel: string;
   normalCases: number;
   adversarialCases: number;
   provider: string;
@@ -177,6 +178,7 @@ function isCompleteBenchmark(value: unknown): value is LiveBenchmarkData {
   if (!value || typeof value !== "object") return false;
   const data = value as Record<string, unknown>;
   if (data.status !== "complete" || !Number.isInteger(data.caseCount) || Number(data.caseCount) <= 0) return false;
+  if (typeof data.metricLabel !== "string" || !data.metricLabel.trim() || data.metricLabel.length > 80) return false;
   if (!Number.isInteger(data.normalCases) || !Number.isInteger(data.adversarialCases) || Number(data.normalCases) < 0 || Number(data.adversarialCases) < 0 || Number(data.normalCases) + Number(data.adversarialCases) !== data.caseCount) return false;
   for (const name of ["baseline", "improved"]) {
     const run = data[name] as Record<string, unknown> | null;
@@ -216,7 +218,7 @@ function LiveBenchmarkCard() {
       {([data.baseline, data.improved]).map((run, index) => <div key={index} style={{ padding: 19, border: "1px solid #425a31", borderRadius: 8, background: "#14200f" }}>
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 10, marginBottom: 17 }}><span style={{ color: "#d2e5c1", fontSize: 12 }}>{run.label}</span><span className="version">{index === 0 ? "BASELINE" : "IMPROVED"}</span></div>
         <div style={{ color: index === 1 ? "var(--lime)" : "#cad7bd", fontSize: 32, letterSpacing: -1, marginBottom: 6 }}>{run.usableCount}<span style={{ color: "#80956d", fontSize: 20 }}> / {data.caseCount}</span></div>
-        <p style={{ margin: 0 }}>{percent(run.usableCount / data.caseCount * 100)}% usable responses</p>
+        <p style={{ margin: 0 }}>{percent(run.usableCount / data.caseCount * 100)}% {data.metricLabel}</p>
         {run.groundedCount !== null ? <p style={{ borderTop: "1px solid #34492a", paddingTop: 11, margin: "14px 0 0", fontSize: 10 }}><FileCheck2 size={12} className="lime" /> {run.groundedCount} / {data.caseCount} source-grounded responses</p> : null}
       </div>)}
     </div>
