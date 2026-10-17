@@ -63,6 +63,11 @@ export function AgentWorkspace({ companies, preferences, reports, selectedId, in
   useEffect(() => { conversationEnd.current?.scrollIntoView({ block: "nearest", behavior: "smooth" }); }, [messages, steps]);
   useEffect(() => () => { controller.current?.abort(); }, []);
   useEffect(() => {
+    if (agentOpen && window.matchMedia("(max-width: 820px)").matches) {
+      document.getElementById("research-agent-pane")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [agentOpen]);
+  useEffect(() => {
     const media = window.matchMedia("(max-width: 1120px)");
     const update = () => setNarrowViewport(media.matches);
     update(); media.addEventListener("change", update);
