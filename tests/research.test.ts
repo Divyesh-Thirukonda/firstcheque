@@ -24,6 +24,25 @@ test("correct metric metadata cannot hide contradictory prose", () => {
   assert.ok(result.findings.some((finding) => finding.rule === "arr_semantics" && !finding.passed));
 });
 
+test("the retained cloud claim identifies subscription revenue explicitly as ARR, not total revenue", () => {
+  const claim = { text: "Recurring subscription revenue of $620,000 ARR is reported separately from one-time installation and services revenue, which fits the stated preference for recurring revenue.", sourceIds: ["volt-financials"], confidence: "high" as const, metric: { key: "arr" as const, value: 620000 } };
+  const evaluation = evaluateGrounding(report(claim), getEvidence("voltgrid"));
+  assert.equal(evaluation.passed, true);
+  assert.equal(evaluation.score, 100);
+  assert.ok(evaluation.findings.some((finding) => finding.rule === "arr_semantics" && finding.passed));
+});
+
+test("subscription phrasing cannot hide wrong ARR, contradictory annual revenue, or an unsupported historical amount", () => {
+  for (const text of [
+    "Recurring subscription revenue of $840,000 ARR is reported.",
+    "Recurring subscription revenue of $620,000 ARR; total annual revenue is $620,000.",
+    "Historical subscription revenue of $620,000.",
+  ]) {
+    const evaluation = evaluateGrounding(report({ text, sourceIds: ["volt-financials"], confidence: "high" }), getEvidence("voltgrid"));
+    assert.equal(evaluation.passed, false, text);
+  }
+});
+
 test("a genuine citation cannot launder invented financial numbers or a missing typed metric", () => {
   for (const text of [
     "VoltGrid has $900 million revenue.", "Annual revenue is 900 million.", "Revenue grew 999% year over year.",

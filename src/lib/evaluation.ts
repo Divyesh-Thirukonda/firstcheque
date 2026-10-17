@@ -10,6 +10,16 @@ function proseAssertions(text: string): ProseAssertion[] {
   const add = (pattern: RegExp, key: ProseAssertion["key"], numberGroup = 1, suffixGroup?: number) => {
     for (const match of text.matchAll(pattern)) {
       let resolvedKey = key;
+      if (key === "annualRevenue") {
+        const prefix = text.slice(Math.max(0, match.index! - 80), match.index);
+        const suffix = text.slice(match.index! + match[0].length);
+        const qualifiedSubscriptionLabel = /\b(?:recurring(?:\s+(?:subscription|platform))?|subscription)\s+$/i.test(prefix);
+        const explicitlyAnnualOrTotal = /\b(?:annual|total|trailing|TTM)\b/i.test(match[0]);
+        // The same amount in "subscription revenue of $N ARR" is explicitly
+        // ARR, not a second assertion of total annual revenue. Subscription
+        // revenue without that ARR qualification is not assumed to be ARR.
+        if (qualifiedSubscriptionLabel && !explicitlyAnnualOrTotal && /^\s*ARR\b/i.test(suffix)) continue;
+      }
       if (key === "customerConcentrationPct") {
         const prefix = text.slice(Math.max(0, match.index! - 100), match.index).split(/[.;!?]/).at(-1) || "";
         if (/\bARR\b|recurring/i.test(prefix)) resolvedKey = "recurringSharePct";
