@@ -27,3 +27,9 @@ export function normalizeResearchQueries(value:unknown,company:string){
  return [{category:category as DiligenceCategory,query}];
  });
 }
+export function ensureContextQueries(queries:{category:DiligenceCategory;query:string}[],title:string){
+ const result=[...queries];const topic=(queries.find(q=>q.category==='competitors')?.query||title).split(/\s+/).slice(0,12).join(' ');
+ if(!result.some(q=>q.category==='market'))result.unshift({category:'market',query:`${topic} industry needs standards adoption`.slice(0,240)});
+ if(!result.some(q=>q.category==='competitors'))result.unshift({category:'competitors',query:`${title} software alternatives comparison`.slice(0,240)});
+ return result.slice(0,6);
+}
