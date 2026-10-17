@@ -311,3 +311,21 @@ test("builder icons are excluded on customer sites while the builder can use its
   assert.equal(isGenericBuilderLogo(triangle, "https://palura.net"), true);
   assert.equal(isGenericBuilderLogo(triangle, "https://vercel.com"), false);
 });
+
+test("PillPilot's observed official-domain redirect merges a live .com report into its event profile", async () => {
+  const { mergeCatalogCompanies } = await import("../src/lib/dossier-store");
+  const seed = EVENT_COMPANIES.find((company) => company.name === "PillPilot")!;
+  assert.equal(seed.website, "https://www.pillpilot.com/");
+  const merged = mergeCatalogCompanies(EVENT_COMPANIES, [
+    { ...seed, id: "live-pillpilot", commercialSignals: [] },
+  ]);
+  assert.equal(merged.length, 75);
+  assert.equal(
+    merged.filter((company) => company.name === "PillPilot").length,
+    1,
+  );
+  assert.equal(
+    merged.find((company) => company.name === "PillPilot")?.catalogOrigin,
+    "event-handoff",
+  );
+});

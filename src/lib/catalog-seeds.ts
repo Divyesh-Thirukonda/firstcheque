@@ -7,6 +7,7 @@ import venture from "@/data/venture-companies.json";
 import handoff from "@/data/event-handoff.json";
 import review from "@/data/catalog-review.json";
 import commercialRecords from "@/data/event-commercial.json";
+import eventWebsites from "@/data/event-websites.json";
 import { OFFERING_SEEDS } from "./offering-seeds";
 import type {
   DiscoveryCompany,
@@ -73,7 +74,10 @@ export const EVENT_COMPANIES: DiscoveryCompany[] = [
   return {
     id: `event-${profile.id}`,
     name: profile.name,
-    website: profile.website || "",
+    website:
+      (eventWebsites as Record<string, { url: string }>)[profile.id]?.url ||
+      profile.website ||
+      "",
     description: profile.description,
     industry,
     sectors: known(profile.sector) ? [profile.sector] : [],

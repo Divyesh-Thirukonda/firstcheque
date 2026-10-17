@@ -1,0 +1,9 @@
+{
+  "pillpilot": {
+    "requestedUrl": "https://www.pillpilot.ai/",
+    "url": "https://www.pillpilot.com/",
+    "httpStatus": 301,
+    "checkedAt": "2026-10-17T17:53:29Z",
+    "method": "official-domain HTTP redirect"
+  }
+}
