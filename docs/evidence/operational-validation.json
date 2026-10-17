@@ -1,0 +1,229 @@
+{
+  "type": "post_benchmark_operational_validation",
+  "scope": "Separate cloud deployment check; not part of either frozen50-case experiment.",
+  "syntheticData": true,
+  "frozenBenchmark": {
+    "v1SourceHead": "a61eccc6ab3ea1f0d930feaa27f1141eaf4a05a3",
+    "v2SourceHead": "7e8ff256f80f78a9b1dfc8359b57bb24ca5767f3",
+    "contractValidCounts": [
+      48,
+      50
+    ],
+    "datasetSha256": "3a109e456069150baeed7ea79cb069ce92fe889fef54bfdd5a4bdc5b35a29bc1",
+    "unchanged": true
+  },
+  "originalCloudCheck": {
+    "sourceHead": "a5150758d0d898679bd466e4b3e026b73131abd2",
+    "traceId": "56a11f73-646f-4420-9004-1fa57ee05422",
+    "callerTraceId": "3b4850a6-7278-4986-9898-86c291423bd8",
+    "createdAt": "2026-10-17T15:04:43.193078Z",
+    "actualProvider": "Nicrron",
+    "modelRoutingSlug": "nicrron/auto",
+    "actualProviderCalls": 1,
+    "deliveredMode": "replay",
+    "deliveredProvider": "FirstCheque source-pack replay",
+    "deliveredModel": "deterministic-replay-v2",
+    "deliveredReplayReason": "The live model response failed the source-grounding gate. This verified source-pack replay is shown instead.",
+    "originalModelResponseWasDeliveredAsLive": false,
+    "rawModelOutputSha256": "83428f957c0516da4942fb6c021985b2802e8a91cc1e8400b291118d0756ae88",
+    "deliveredReplaySha256": "326a05e26aeca4e56fb666c1de18e09d718e10b886f28ebf76acd08cf86ad869",
+    "rawModelOutput": "{\"title\":\"VoltGrid: Recurring Battery-Software Revenue With Concentration and Approval Risks\",\"summary\":\"VoltGrid is a seed-stage climate software company that partly fits a thesis favoring recurring revenue and practical essential-services technology. The evidence shows a real recurring revenue base, but customer concentration, utility approval dependencies, and the absence of liquidity create material uncertainty. Founder-reported runway and valuation figures are unaudited. Capital efficiency and unit economics per operator are not documented.\",\"recommendation\":\"research\",\"strengths\":[{\"text\":\"Recurring subscription revenue of $620,000 ARR is reported separately from one-time installation and services revenue, which fits the stated preference for recurring revenue.\",\"sourceIds\":[\"volt-financials\"],\"confidence\":\"high\",\"metric\":{\"key\":\"arr\",\"value\":620000}},{\"text\":\"The financial snapshot reports 68% revenue growth year over year. This growth covers total revenue, not ARR alone.\",\"sourceIds\":[\"volt-financials\"],\"confidence\":\"medium\",\"metric\":{\"key\":\"growthPct\",\"value\":68}}],\"risks\":[{\"text\":\"Revenue is concentrated: the three largest operators contribute 46% of revenue, so losing any of them could materially affect results.\",\"sourceIds\":[\"volt-risk\"],\"confidence\":\"high\",\"metric\":{\"key\":\"customerConcentrationPct\",\"value\":46}},{\"text\":\"Utility interconnection and market-participation approvals can delay deployments. There is no secondary market and no scheduled exit, and a long horizon does not ensure liquidity.\",\"sourceIds\":[\"volt-risk\"],\"confidence\":\"high\",\"metric\":null}],\"diligenceQuestions\":[\"Can the founder-reported runway, burn rate, and indicative valuation be verified with bank statements and a cap table?\",\"What are the contract terms, renewal history, and churn for the largest battery operators?\",\"What is the status and expected timing of the utility approvals required for the planned integrations?\"]}",
+    "deliveredReplay": {
+      "title": "VoltGrid: the case, and the questions",
+      "summary": "VoltGrid is a seed climate company. The fictional source pack reports $840,000 annual revenue, including $620,000 ARR. Climate matches your interests. This is a repeatable source-pack replay; founder figures are unaudited, and preference alignment is not a return forecast.",
+      "recommendation": "research",
+      "strengths": [
+        {
+          "text": "$620,000 ARR is reported separately from total annual revenue of $840,000.",
+          "sourceIds": [
+            "volt-financials"
+          ],
+          "confidence": "medium",
+          "metric": {
+            "key": "arr",
+            "value": 620000
+          }
+        },
+        {
+          "text": "The company reports 68% year-over-year revenue growth. Growth from an early base does not establish durability.",
+          "sourceIds": [
+            "volt-financials"
+          ],
+          "confidence": "medium",
+          "metric": {
+            "key": "growthPct",
+            "value": 68
+          }
+        },
+        {
+          "text": "23 paying customers provide an initial traction signal; retention and contract terms still need verification.",
+          "sourceIds": [
+            "volt-financials"
+          ],
+          "confidence": "medium",
+          "metric": {
+            "key": "customers",
+            "value": 23
+          }
+        }
+      ],
+      "risks": [
+        {
+          "text": "14 months of reported cash runway creates a future financing dependency.",
+          "sourceIds": [
+            "volt-update"
+          ],
+          "confidence": "medium",
+          "metric": {
+            "key": "runwayMonths",
+            "value": 14
+          }
+        },
+        {
+          "text": "The three largest operators contribute 46% of revenue. Utility interconnection and market-participation approvals can delay deployments. There is no active secondary market, no scheduled exit, and no guarantee that the round will close. Investors may lose their entire investment.",
+          "sourceIds": [
+            "volt-risk"
+          ],
+          "confidence": "high"
+        }
+      ],
+      "diligenceQuestions": [
+        "Can the founder reconcile the reported financials to bank records and signed customer contracts?",
+        "What are retention, customer concentration, and gross margin after all delivery costs?",
+        "What milestones does this round fund, and what happens if the next round cannot be raised?",
+        "What rights, dilution, transfer restrictions, and eligibility requirements apply to the actual security?"
+      ],
+      "mode": "replay",
+      "provider": "FirstCheque source-pack replay",
+      "model": "deterministic-replay-v2",
+      "repairAttempts": 0,
+      "modelCalls": 1,
+      "guardrails": [
+        "Fictional companies and illustrative financials. No live securities are offered.",
+        "Preference match is not a return forecast, suitability determination, or investment advice.",
+        "Private investments are illiquid; investors may lose their entire investment.",
+        "Simulation only: no money moves and no transaction is executed.",
+        "The live model response failed the source-grounding gate. This verified source-pack replay is shown instead."
+      ],
+      "replayReason": "The live model response failed the source-grounding gate. This verified source-pack replay is shown instead."
+    }
+  },
+  "observedDefect": {
+    "type": "local_validator_false_positive",
+    "claim": "Recurring subscription revenue of $620,000 ARR is reported separately from one-time installation and services revenue, which fits the stated preference for recurring revenue.",
+    "sourceFields": {
+      "arr": 620000,
+      "annualRevenue": 840000
+    },
+    "correctStructuredMetric": {
+      "key": "arr",
+      "value": 620000
+    },
+    "beforeGate": {
+      "passed": false,
+      "score": 92,
+      "failedFindings": [
+        {
+          "claim": "Recurring subscription revenue of $620,000 ARR is reported separately from one-time installation and services revenue, which fits the stated preference for recurring revenue.",
+          "rule": "financial_prose_grounding",
+          "passed": false,
+          "explanation": "The prose claims annualRevenue=620000; cited annualRevenue is 840000. Correct structured metadata cannot override contradictory prose."
+        }
+      ]
+    },
+    "cause": "The generic revenue prose matcher overlapped with an explicit recurring subscription revenue amount immediately followed by ARR, incorrectly classifying the 620000 ARR amount as annualRevenue."
+  },
+  "fix": {
+    "sourceHead": "fa9bb482f6d236119cd3c0bc2923ff24fe5101d8",
+    "behavior": "The narrow exception requires qualified recurring/subscription phrasing plus the same amount immediately followed by explicit ARR. It does not treat arbitrary subscription revenue as ARR.",
+    "retainedNegativeCases": [
+      "Historical subscription revenue of $620,000.",
+      "Recurring subscription revenue of $840,000 ARR is reported.",
+      "Recurring subscription revenue of $620,000 ARR; total annual revenue is $620,000."
+    ]
+  },
+  "verification": {
+    "mode": "offline_saved_response_recheck",
+    "newProviderCalls": 0,
+    "networkRequests": 0,
+    "schemaValid": true,
+    "localGroundingDiagnostic": {
+      "score": 100,
+      "passed": true,
+      "findings": [
+        {
+          "claim": "Recurring subscription revenue of $620,000 ARR is reported separately from one-time installation and services revenue, which fits the stated preference for recurring revenue.",
+          "rule": "citation_integrity",
+          "passed": true,
+          "explanation": "All cited document IDs exist in this company's evidence pack."
+        },
+        {
+          "claim": "Recurring subscription revenue of $620,000 ARR is reported separately from one-time installation and services revenue, which fits the stated preference for recurring revenue.",
+          "rule": "financial_metric_grounding",
+          "passed": true,
+          "explanation": "arr=620000 matches the cited financial field."
+        },
+        {
+          "claim": "Recurring subscription revenue of $620,000 ARR is reported separately from one-time installation and services revenue, which fits the stated preference for recurring revenue.",
+          "rule": "arr_semantics",
+          "passed": true,
+          "explanation": "Written arr=620000 matches the cited field."
+        },
+        {
+          "claim": "The financial snapshot reports 68% revenue growth year over year. This growth covers total revenue, not ARR alone.",
+          "rule": "citation_integrity",
+          "passed": true,
+          "explanation": "All cited document IDs exist in this company's evidence pack."
+        },
+        {
+          "claim": "The financial snapshot reports 68% revenue growth year over year. This growth covers total revenue, not ARR alone.",
+          "rule": "financial_metric_grounding",
+          "passed": true,
+          "explanation": "growthPct=68 matches the cited financial field."
+        },
+        {
+          "claim": "The financial snapshot reports 68% revenue growth year over year. This growth covers total revenue, not ARR alone.",
+          "rule": "financial_prose_grounding",
+          "passed": true,
+          "explanation": "Written growthPct=68 matches the cited field."
+        },
+        {
+          "claim": "Revenue is concentrated: the three largest operators contribute 46% of revenue, so losing any of them could materially affect results.",
+          "rule": "citation_integrity",
+          "passed": true,
+          "explanation": "All cited document IDs exist in this company's evidence pack."
+        },
+        {
+          "claim": "Revenue is concentrated: the three largest operators contribute 46% of revenue, so losing any of them could materially affect results.",
+          "rule": "financial_metric_grounding",
+          "passed": true,
+          "explanation": "customerConcentrationPct=46 matches the cited financial field."
+        },
+        {
+          "claim": "Revenue is concentrated: the three largest operators contribute 46% of revenue, so losing any of them could materially affect results.",
+          "rule": "financial_prose_grounding",
+          "passed": true,
+          "explanation": "Written customerConcentrationPct=46 matches the cited field."
+        },
+        {
+          "claim": "Utility interconnection and market-participation approvals can delay deployments. There is no secondary market and no scheduled exit, and a long horizon does not ensure liquidity.",
+          "rule": "citation_integrity",
+          "passed": true,
+          "explanation": "All cited document IDs exist in this company's evidence pack."
+        },
+        {
+          "claim": "Risk language",
+          "rule": "no_return_promises",
+          "passed": true,
+          "explanation": "No return or liquidity promise detected."
+        }
+      ]
+    },
+    "testCommand": "npm test",
+    "testsPassed": 24,
+    "typecheckCommand": "npm run typecheck",
+    "typecheckPassed": true,
+    "meaning": "The exact previously rejected response passes the corrected local validator. This is not a new live model response, an external judge result, or a new 50-case benchmark."
+  },
+  "deploymentStatus": "Fix verified offline. Original cloud fallback is retained as replay; any later deployment/live check requires its own receipt."
+}

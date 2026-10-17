@@ -14,6 +14,7 @@ This export contains synthetic company data and genuine provider results. It con
 | `root-cause.json` | Actual tentative cluster diagnosis and three directly sampled member identities |
 | `binding-defect-examples.json` | Original stored-output versus raw-memo mismatches for the three confirmed members |
 | `excluded-evaluations.json` | Earlier 50 scores with invalid output binding, explicitly excluded from model-outcome claims |
+| `operational-validation.json` | Separate post-benchmark cloud fallback, validator false positive and exact saved-response regression |
 
 ## How to read the results
 
@@ -37,3 +38,9 @@ With local recordings present, `node scripts/curate-evidence.mjs` rebuilds this 
 The runtime parser lives in `src/lib/validation.ts`. The source commits preserve the original and improved prompts. Running the same dataset against the sponsor API is a **new paid provider experiment**, not a byte-reproducible model replay: `nicrron/auto` may route differently. The saved outputs are the evidence for the reported counts.
 
 The app's separate illustrative regression replay is deterministic and labeled. Its ARR example is not substituted for the actual provider experiment.
+
+## Post-benchmark operational check
+
+A later cloud check at source `a5150758d0d898679bd466e4b3e026b73131abd2` delivered an explicitly labeled replay after the local validator incorrectly rejected “Recurring subscription revenue of $620,000 ARR…” as contradictory annual revenue. The cited source and typed metric correctly identify ARR as $620,000; total annual revenue is $840,000. Original trace `56a11f73-646f-4420-9004-1fa57ee05422` and the actual model response/fallback remain preserved in `operational-validation.json`.
+
+Fix `fa9bb482f6d236119cd3c0bc2923ff24fe5101d8` narrows the overlapping matcher. The exact saved response now passes the parser and local gate offline; wrong ARR, explicit contradictory annual revenue and unsupported historical amounts still fail. All 24 tests and typecheck pass. No new provider calls were made for this recheck. The original cloud result remains a replay, and the frozen benchmark source commits, outputs and 48/50→50/50 contract counts are unchanged.
