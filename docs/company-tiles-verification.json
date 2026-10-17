@@ -1,0 +1,51 @@
+{
+  "scope": "Compact company tiles and Robinhood-inspired black, white and green interface",
+  "sourceRevision": "af8660da1c9dc9bb18fdec78202adf205c18ec2a",
+  "validation": {
+    "offlineTests": 57,
+    "typecheck": "passed",
+    "productionBuild": "passed",
+    "desktopWidth": 1440,
+    "narrowWidth": 400,
+    "narrowPageWidth": 400,
+    "officialIconsLoaded": 9,
+    "modelCallsThisRefinement": 0
+  },
+  "localBrowserChecks": [
+    "Discover displays ten company tiles from the full sourced catalog; reviewed searches still use strict filters",
+    "A tile shows a logo or initials, company name, short business description, sector and minimum check label",
+    "Bookmarking is a separate button and does not open the company",
+    "Watchlist and Portfolio shortlist reuse the same tile component",
+    "A standalone profile opened from Watchlist leaves the view URL unchanged and does not create or modify a search",
+    "Profiles show business description, unknown financials, exact minimum cents, offering source and research",
+    "Research citations open their source passage; Escape returns focus to the cited source button",
+    "Existing search results retain the company profile and research inside that search",
+    "Paper demo discovery and filled paper portfolio reuse the tile component; a temporary $250 fictional allocation was verified and reset",
+    "At 400px the grid has two 178px tiles and no horizontal page overflow; company profile fits within 372px"
+  ],
+  "brandAssets": "Nine website icons downloaded from links on the official company websites. The Gifted and unsourced imported companies use initials. See COMPANY-LOGOS.md.",
+  "preserved": [
+    "Unknown and source-reported financial fields",
+    "Source dates, quotes and offering links",
+    "Frozen benchmark artifacts",
+    "Existing Nicrron and PRISM wiring"
+  ],
+  "limitations": [
+    "Offering availability remains a dated source snapshot",
+    "Company logo availability does not verify the business or offering",
+    "No new public-web research or PRISM quality experiment was performed for this UI change"
+  ],
+  "deployment": {
+    "id": "dpl_GgvvQErCwAD3mSEjKqpgbGUV8JRb",
+    "url": "https://firstcheque-163l0nz0c-divyesh-thirukondas-projects.vercel.app",
+    "state": "READY",
+    "environment": "preview",
+    "protection": "Vercel Authentication retained; temporary access supplied separately"
+  },
+  "hostedBrowserChecks": [
+    "Ten tiles rendered and nine local official company icons loaded",
+    "Rendered background rgb(0,0,0); primary accent rgb(0,200,5)",
+    "Opening Bito retained Discover URL and opened a standalone profile",
+    "Read research reopened the saved seven-readable-source report without starting another search"
+  ]
+}
