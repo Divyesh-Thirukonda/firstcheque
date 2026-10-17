@@ -1,0 +1,102 @@
+{
+  "checkedAt": "2026-10-17T17:57:04.435Z",
+  "sourceCommit": "f380df86732373e7b3621c4c93cd352c5410ddf8",
+  "story": "Discover all hackathon companies, prioritize them in browsing and equal-fit search results, inspect public commercial facts, and take explicit evidence gaps to founders.",
+  "catalog": {
+    "seededCompanyProfiles": 165,
+    "eventCompanies": 75,
+    "readyProfiles": 34,
+    "reviewProfiles": 41,
+    "founderLeads": 13,
+    "ventureProfiles": 80,
+    "offeringSnapshots": 10,
+    "deployedCompanyProfiles": 166,
+    "reviewStatusesPreserved": true,
+    "defaultCollection": "Money Talks",
+    "seededLogosFetched": 124,
+    "canonicalRedirects": {
+      "pillpilot": {
+        "requestedUrl": "https://www.pillpilot.ai/",
+        "url": "https://www.pillpilot.com/",
+        "httpStatus": 301,
+        "checkedAt": "2026-10-17T17:53:29Z",
+        "method": "official-domain HTTP redirect"
+      }
+    }
+  },
+  "publicCollection": {
+    "attempts": 56,
+    "readable": 42,
+    "companiesWithFacts": 11,
+    "commercialFacts": 39,
+    "undisclosed": [
+      "actual active pilot counts",
+      "direct paying customer counts",
+      "customer percentage distribution",
+      "revenue concentration"
+    ],
+    "preRevenue": "Explicit planning assumption; does not populate numeric revenue or satisfy reported-revenue filters"
+  },
+  "actualLiveRun": {
+    "company": "PillPilot",
+    "mode": "live-web",
+    "status": "partial",
+    "persisted": true,
+    "model": {
+      "provider": "Nicrron",
+      "id": "openai/gpt-4.1-mini",
+      "inputTokens": 5196,
+      "outputTokens": 1501,
+      "calls": 1
+    },
+    "readableSources": 2,
+    "commercialKinds": [
+      "pilot-program",
+      "pricing"
+    ],
+    "numericFinancials": {
+      "annualRevenue": null,
+      "arr": null,
+      "valuation": null,
+      "runwayMonths": null
+    },
+    "prism": {
+      "recordId": "b0cd2e0e-1302-49c0-8d86-0c16469d5cc9",
+      "traceId": "8ab91622-dcbf-4946-89d9-67d2c48d8fef",
+      "readbackHTTP": 200,
+      "storedSpans": 16,
+      "commercialEvaluatorFacts": 2
+    },
+    "limitations": "Several search and source attempts were unavailable; the result remains partial. No pilot count or paying-customer count inferred."
+  },
+  "validation": {
+    "testsPassed": 85,
+    "typecheck": "passed",
+    "nextBuild": "passed",
+    "secretScan": "no matches",
+    "browser": [
+      "desktop: default 75-company collection",
+      "review collection: 41",
+      "historical namesake keeps warning and requires official website",
+      "Kojable: five sourced pricing/billing facts and founder questions",
+      "founder leads: 13, with irrelevant funding filters removed",
+      "mobile 375px: no horizontal overflow",
+      "deployed UI: persisted PillPilot commercial facts appear with seeded capabilities and founder connection"
+    ],
+    "deployedApi": {
+      "eventCompanies": 75,
+      "founderLeads": 13,
+      "pillPilotCards": 1,
+      "storedLiveCommercialFacts": 4,
+      "pillPilotIndustry": "Healthcare"
+    }
+  },
+  "deployment": {
+    "id": "dpl_7aHMrSN3eCFyM43x12iaG73o7q1K",
+    "url": "https://firstcheque-bqqhfq3cy-divyesh-thirukondas-projects.vercel.app",
+    "state": "READY",
+    "sourceCommit": "f380df86732373e7b3621c4c93cd352c5410ddf8",
+    "alias": "https://seed-street.vercel.app",
+    "protection": "Vercel Authentication retained"
+  }
+}
