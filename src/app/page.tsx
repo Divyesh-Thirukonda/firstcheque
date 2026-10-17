@@ -11,6 +11,8 @@ import { appendSearchMessage, createSearchThread, hydrateSearchThreads, isDiscov
 import { safeWebUrl } from "@/components/agent-workspace";
 import { SearchWorkspace } from "@/components/search-workspace";
 import { CompanyProfile } from "@/components/company-profile";
+import {FounderLeads} from "@/components/commercial-profile";
+import {eventPriority} from "@/lib/event-discovery";
 import { CompanyList, formatUSD as currency } from "@/components/company-list";
 import { InvestmentPreferences, riskLabel, revenueLabel, type BriefProposal } from "@/components/investment-preferences";
 import { EXPLORATIONS, explorationCompanies, explorationIntent, type ExplorationKind } from "@/lib/exploration";
@@ -53,7 +55,7 @@ export default function Home() {
   const [catalogQuery, setCatalogQuery] = useState("");
   const [catalogStage, setCatalogStage] = useState("all");
   const [catalogIndustry, setCatalogIndustry] = useState("all");
-  const [catalogGroup, setCatalogGroup] = useState("all");
+  const [catalogGroup, setCatalogGroup] = useState("event-handoff");
   const [catalogLimit, setCatalogLimit] = useState(24);
   const [parsing, setParsing] = useState(false);
   const [briefError, setBriefError] = useState("");
@@ -69,6 +71,8 @@ export default function Home() {
   const [toast, setToast] = useState("");
   const [sort, setSort] = useState("fit");
   const companies = catalog?.companies || [];
+  const founderLeads=(catalog?.founderLeads||[]).filter(person=>!catalogQuery||`${person.name} ${person.role}`.toLowerCase().includes(catalogQuery.toLowerCase()));
+  const eventCount=companies.filter(company=>company.catalogOrigin==='event-handoff').length;
   const activeThread = threads.find(thread => thread.id === activeThreadId) || null;
   const browsePreferences = useMemo(() => ({ ...preferences, query: catalogQuery }), [preferences, catalogQuery]);
   const ranked = useMemo(() => filterAndRankCompanies(companies, browsePreferences), [companies, browsePreferences]);
@@ -76,11 +80,12 @@ export default function Home() {
   const entries = (view === "Watchlist" ? savedCompanies : companies).filter(company => matchesCatalogQuery(company,catalogQuery)
     && (catalogStage === "all" || company.stage === catalogStage)
     && (catalogIndustry === "all" || company.industry === catalogIndustry)
-    && (catalogGroup === "all" || (catalogGroup === "offering" ? company.kind === "offering" : company.catalogOrigin === catalogGroup)))
+    && (catalogGroup === "all" || (catalogGroup === "offering" ? company.kind === "offering" : catalogGroup === "event-review" ? company.catalogOrigin === "event-handoff" && company.publishStatus!=="profile_ready" : company.catalogOrigin === catalogGroup)))
     .map(company => {const match=ranked.matches.find(item=>item.company.id===company.id);return {company,reasons:match?.reasons||[],score:match?.score,warnings:match?.warnings||ranked.excluded.find(item=>item.company.id===company.id)?.reasons||[]};});
-  const sortedEntries = [...entries].sort((a,b)=>sort === "name" ? a.company.name.localeCompare(b.company.name) : sort === "minimum" ? (a.company.minInvestment??Infinity)-(b.company.minInvestment??Infinity) : 0);
+  const sortedEntries = [...entries].sort((a,b)=>sort === "name" ? a.company.name.localeCompare(b.company.name) : sort === "minimum" ? (a.company.minInvestment??Infinity)-(b.company.minInvestment??Infinity) : eventPriority(a.company)-eventPriority(b.company));
   const visibleEntries = sortedEntries.slice(0,catalogLimit);
   useEffect(()=>setCatalogLimit(24),[catalogQuery,catalogStage,catalogIndustry,catalogGroup,view,sort]);
+  function browseCollection(group:string){setCatalogGroup(group);setCatalogQuery("");setCatalogStage("all");setCatalogIndustry("all");setSort("fit");}
   function clearCatalogFilters(){setCatalogQuery("");setCatalogStage("all");setCatalogIndustry("all");setCatalogGroup("all");}
 
 
@@ -167,6 +172,7 @@ export default function Home() {
   }, [toast]);
 
   function navigate(next: View) {
+    if(next!=="Discover"&&catalogGroup==="founders")setCatalogGroup("all");
     setView(next);
     setInitialUrl("");
     window.scrollTo({ top: 0 });
@@ -340,7 +346,7 @@ export default function Home() {
       <header className="fc-topbar">
         <span className="fc-breadcrumb">{view === "Agent" ? "Search workspace" : view}</span>
         <div className="fc-top-actions">
-          <label className="fc-global-search"><Search size={18}/><input aria-label="Search company catalog" placeholder="Search companies, founders or products" value={catalogQuery} onChange={event => { setCatalogQuery(event.target.value); if (view === "Agent" || view === "Portfolio") navigate("Discover"); }}/></label>
+          <label className="fc-global-search"><Search size={18}/><input aria-label="Search company catalog" placeholder="Search companies, founders or products" value={catalogQuery} onChange={event => { setCatalogQuery(event.target.value);setCatalogGroup("all"); if (view === "Agent" || view === "Portfolio") navigate("Discover"); }}/></label>
           <button className="fc-text-btn" onClick={() => setDemoView("Discover")}>Paper demo</button>
         </div>
       </header>
@@ -352,13 +358,15 @@ export default function Home() {
             <button className="fc-btn secondary" onClick={() => setImportOpen(true)}><Plus size={18}/>Add company</button>
           </div>
 
+            {view==="Discover"?<div className="fc-event-collections" aria-label="Browse collections"><button aria-pressed={catalogGroup==="event-handoff"} onClick={()=>browseCollection("event-handoff")}>Money Talks<span>{eventCount}</span></button><button aria-pressed={catalogGroup==="founders"} onClick={()=>browseCollection("founders")}>Founder leads<span>{catalog?.founderLeads?.length||0}</span></button><button aria-pressed={catalogGroup==="all"} onClick={()=>browseCollection("all")}>All companies<span>{companies.length}</span></button></div>:null}
+
           {view === "Portfolio" ? <>
             <div className="fc-overview-stats"><div><span>Saved companies</span><strong>{savedCompanies.length}</strong></div><div><span>Research reports</span><strong>{reports.length}</strong></div></div>
             <div className="fc-portfolio-callout"><Wallet size={28}/><div><h2>Paper portfolio</h2><p>Fictional startups · Simulation</p></div><button className="fc-btn primary" onClick={() => setDemoView("Portfolio")}>Open paper portfolio<ArrowRight size={17}/></button></div>
             <div className="fc-results-heading"><h2>Saved companies</h2></div>
             {savedCompanies.length ? <CompanyList entries={savedCompanies.map(company => ({ company, reasons: [] }))} savedIds={watchlist} onSave={toggleSave} onResearch={openCompany}/> : <div className="fc-empty-state"><Bookmark size={28}/><h2>No saved companies yet</h2><button className="fc-btn secondary" onClick={() => navigate("Discover")}>Explore companies<ArrowRight size={17}/></button></div>}
           </> : <>
-            {view === "Discover" ? <>
+            {view === "Discover" && catalogGroup === "all" ? <>
               <form className="fc-brief-card" onSubmit={parseBrief}>
                 <label className="fc-brief-title" htmlFor="investing-brief">What are you looking for?</label>
                 <textarea id="investing-brief" aria-label="Your investment brief" value={brief} maxLength={1200} onChange={event => setBrief(event.target.value)} placeholder="I have $2,000 for AI startups with revenue."/>
@@ -371,22 +379,22 @@ export default function Home() {
               </div>
             </> : null}
 
-            <label className="fc-catalog-search"><Search size={17}/><input aria-label="Search catalog facts" placeholder="Companies, founders or products" value={catalogQuery} onChange={event=>setCatalogQuery(event.target.value)}/></label>
+            <label className="fc-catalog-search"><Search size={17}/><input aria-label="Search catalog facts" placeholder={catalogGroup==="founders"?"Search founder names or interests":"Companies, founders or products"} value={catalogQuery} onChange={event=>setCatalogQuery(event.target.value)}/></label>
             <div className="fc-catalog-filters" aria-label="Filter company catalog">
-              <label><span>Stage</span><select aria-label="Catalog funding stage" value={catalogStage} onChange={event=>setCatalogStage(event.target.value)}><option value="all">All stages</option>{DISCOVERY_STAGES.map(stage=><option key={stage}>{stage}</option>)}<option value="Unknown">Undisclosed</option></select></label>
-              <label><span>Industry</span><select aria-label="Catalog industry" value={catalogIndustry} onChange={event=>setCatalogIndustry(event.target.value)}><option value="all">All industries</option>{DISCOVERY_INDUSTRIES.map(industry=><option key={industry} value={industry}>{industry==="Climate"?"Climate & energy":industry}</option>)}<option>Other</option></select></label>
-              <label><span>Collection</span><select aria-label="Catalog collection" value={catalogGroup} onChange={event=>setCatalogGroup(event.target.value)}><option value="all">All companies</option><option value="venture-research">Venture catalog</option><option value="event-handoff">Money Talks founders</option><option value="offering">Offering snapshots</option></select></label>
+              {catalogGroup!=="founders"?<label><span>Stage</span><select aria-label="Catalog funding stage" disabled={catalogGroup==="founders"} value={catalogStage} onChange={event=>setCatalogStage(event.target.value)}><option value="all">All stages</option>{DISCOVERY_STAGES.map(stage=><option key={stage}>{stage}</option>)}<option value="Unknown">Undisclosed</option></select></label>:null}
+              {catalogGroup!=="founders"?<label><span>Industry</span><select aria-label="Catalog industry" disabled={catalogGroup==="founders"} value={catalogIndustry} onChange={event=>setCatalogIndustry(event.target.value)}><option value="all">All industries</option>{DISCOVERY_INDUSTRIES.map(industry=><option key={industry} value={industry}>{industry==="Climate"?"Climate & energy":industry}</option>)}<option>Other</option></select></label>:null}
+              <label><span>Collection</span><select aria-label="Catalog collection" value={catalogGroup} onChange={event=>setCatalogGroup(event.target.value)}><option value="all">All companies</option><option value="venture-research">Venture catalog</option><option value="event-handoff">Money Talks companies</option><option value="event-review">Founder history & review</option><option value="founders">Founder leads</option><option value="offering">Offering snapshots</option></select></label>
               {catalogQuery||catalogStage!=="all"||catalogIndustry!=="all"||catalogGroup!=="all" ? <button className="fc-text-btn" onClick={clearCatalogFilters}>Clear filters</button>:null}
             </div>
             <div className="fc-results-heading">
-              <h2>Companies<span className="fc-count">{sortedEntries.length}</span></h2>
-              <label className="fc-sort"><select aria-label="Sort companies" value={sort} onChange={event => setSort(event.target.value)}><option value="fit">Default order</option><option value="name">Name</option><option value="minimum">Minimum investment</option></select></label>
+              <h2>{catalogGroup==="founders"?"Founder leads":"Companies"}<span className="fc-count">{catalogGroup==="founders"?founderLeads.length:sortedEntries.length}</span></h2>
+              {catalogGroup!=="founders"?<label className="fc-sort"><select aria-label="Sort companies" value={sort} onChange={event => setSort(event.target.value)}><option value="fit">Hackathon first</option><option value="name">Name</option><option value="minimum">Minimum investment</option></select></label>:null}
             </div>
-            {loading && !catalog ? <div className="fc-loading-state"><LoaderCircle className="spin" size={24}/><p>Loading companies…</p></div> : catalogError ? <div className="fc-empty-state"><TriangleAlert size={28}/><h2>We couldn’t load the companies</h2><p>{catalogError}</p><button className="fc-btn secondary" onClick={() => loadCatalog()}>Try again</button></div> : visibleEntries.length ? <CompanyList entries={visibleEntries} savedIds={watchlist} onSave={toggleSave} onResearch={openCompany}/> : <div className="fc-empty-state"><Search size={28}/><h2>{view === "Watchlist" ? "No saved companies yet" : "No companies found"}</h2><button className="fc-btn secondary" onClick={() => view === "Watchlist" ? navigate("Discover") : clearCatalogFilters()}>{view === "Watchlist" ? "Explore companies" : "Clear filters"}<ArrowRight size={17}/></button></div>}
+            {loading && !catalog ? <div className="fc-loading-state"><LoaderCircle className="spin" size={24}/><p>Loading companies…</p></div> : catalogError ? <div className="fc-empty-state"><TriangleAlert size={28}/><h2>We couldn’t load the companies</h2><p>{catalogError}</p><button className="fc-btn secondary" onClick={() => loadCatalog()}>Try again</button></div> : catalogGroup==="founders"&&founderLeads.length ? <FounderLeads people={founderLeads}/> : visibleEntries.length ? <CompanyList entries={visibleEntries} savedIds={watchlist} onSave={toggleSave} onResearch={openCompany}/> : <div className="fc-empty-state"><Search size={28}/><h2>{view === "Watchlist" ? "No saved companies yet" : catalogGroup==="founders"?"No founders found":"No companies found"}</h2><button className="fc-btn secondary" onClick={() => view === "Watchlist" ? navigate("Discover") : clearCatalogFilters()}>{view === "Watchlist" ? "Explore companies" : "Clear filters"}<ArrowRight size={17}/></button></div>}
 
 
-            {sortedEntries.length>catalogLimit ? <div className="fc-catalog-more"><button className="fc-btn secondary" onClick={()=>setCatalogLimit(value=>value+24)}>Show more<span>{sortedEntries.length-catalogLimit} remaining</span></button></div>:null}
-            {view === "Discover" ? <p className="fc-catalog-note">Profiles and dated financing · Deep research on demand</p> : null}
+            {catalogGroup!=="founders"&&sortedEntries.length>catalogLimit ? <div className="fc-catalog-more"><button className="fc-btn secondary" onClick={()=>setCatalogLimit(value=>value+24)}>Show more<span>{sortedEntries.length-catalogLimit} remaining</span></button></div>:null}
+            {view === "Discover" ? <p className="fc-catalog-note">{catalogGroup==="founders"?"Event-linked founders · Company details to confirm":"Profiles and dated financing · Deep research on demand"}</p> : null}
           </>}
           <footer className="fc-page-footer"><ShieldCheck size={16}/><span>Research only · No trades</span></footer>
         </>}

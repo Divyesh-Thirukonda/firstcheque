@@ -1,0 +1,576 @@
+{
+  "checkedAt": "2026-10-17T17:35:25.675Z",
+  "attempts": 56,
+  "readable": 42,
+  "companiesWithCommercialFacts": 11,
+  "facts": 39,
+  "publicCustomerCountPolicy": "No client count is inferred from logos, cases, users, demo counters or downstream customer organizations. Pilot-program scope is separate from actual pilot count.",
+  "sources": [
+    {
+      "id": "block-convey",
+      "name": "Block Convey",
+      "website": "https://blockconvey.com/",
+      "url": "https://blockconvey.com/",
+      "title": "AI Failure Detection and Testing | Block Convey",
+      "publishedAt": null,
+      "checkedAt": "2026-10-17T17:35:18.940Z",
+      "status": "fetched",
+      "sha256": "814f411564dc189750a270c26d8e53c06b0567400a34b9972ca88f1aa401ca4c"
+    },
+    {
+      "id": "arcampass",
+      "name": "Arcampass",
+      "website": "https://arcampass.com/",
+      "url": "https://arcampass.com/",
+      "title": "Arcampass | Agentic Representation for Higher Education",
+      "publishedAt": null,
+      "checkedAt": "2026-10-17T17:35:18.964Z",
+      "status": "fetched",
+      "sha256": "9928b86e402f6fb9771361369e6b884221eb72709cbd2822366606d00716c30b"
+    },
+    {
+      "id": "archer-protocol",
+      "name": "Archer Protocol",
+      "website": "https://www.archerprotocol.com/",
+      "url": "https://www.archerprotocol.com/",
+      "title": "Archer \u00b7 The rails the agent economy runs on",
+      "publishedAt": null,
+      "checkedAt": "2026-10-17T17:35:18.989Z",
+      "status": "fetched",
+      "sha256": "6005e7c2882372bccb4d96a4539baebeb7440f107169c9454b2002d309a16877"
+    },
+    {
+      "id": "bond-ai",
+      "name": "Bond AI",
+      "website": "https://bondcommunity.ai/",
+      "url": "https://bondcommunity.ai/",
+      "title": "Bond AI - The In-Person AI Community",
+      "publishedAt": null,
+      "checkedAt": "2026-10-17T17:35:19.082Z",
+      "status": "fetched",
+      "sha256": "0a92a55057fe505dfb3837980464339ce56c0dc8daffa9914f97b5295559016b"
+    },
+    {
+      "id": "alethical",
+      "name": "Alethical",
+      "website": "https://alethical.com/",
+      "url": "https://www.alethical.com/",
+      "title": "Alethical: Minnesota political intelligence & campaign strategy",
+      "publishedAt": null,
+      "checkedAt": "2026-10-17T17:35:19.109Z",
+      "status": "fetched",
+      "sha256": "fb7f1604fbbfc74049662b7d68c437c40402d1ab1d70f541248c8d192381a7c0"
+    },
+    {
+      "id": "commercialdeals",
+      "name": "CommercialDeals",
+      "url": "https://commercialdeals.com/",
+      "status": "unavailable",
+      "checkedAt": "2026-10-17T17:35:19.238Z",
+      "error": "PublicFetchError: This page disallows automated access in robots.txt; it was not fetched."
+    },
+    {
+      "id": "chrp",
+      "name": "CHRP",
+      "website": "https://chrpme.io",
+      "url": "https://chrpme.io/",
+      "title": "CHRP \u2014 Push-to-talk that works with no service at all",
+      "publishedAt": null,
+      "checkedAt": "2026-10-17T17:35:19.285Z",
+      "status": "fetched",
+      "sha256": "03d559c90c7281f299e549bcf279e149dbffc6fd3cccc323ab1bd1d63c9c6ca6"
+    },
+    {
+      "id": "brix",
+      "name": "Brix",
+      "url": "https://info.brix-ai.com/",
+      "status": "unavailable",
+      "checkedAt": "2026-10-17T17:35:19.477Z",
+      "error": "PublicFetchError: Source contained insufficient readable text."
+    },
+    {
+      "id": "chatbakers",
+      "name": "ChatBakers",
+      "website": "https://chatbakers.com/",
+      "url": "https://chatbakers.com/",
+      "title": "ChatBakers | AI Visibility Monitoring",
+      "publishedAt": null,
+      "checkedAt": "2026-10-17T17:35:19.621Z",
+      "status": "fetched",
+      "sha256": "80d19140f4465a043c40238b6dfb03f5c2bc404194f37ef24cef4f2ba64bbd03"
+    },
+    {
+      "id": "hatchd",
+      "name": "Hatch'd",
+      "website": "https://gethatchd.com/",
+      "url": "https://gethatchd.com/",
+      "title": "The agent that learns how you work then does the work. | Hatch\u2019d",
+      "publishedAt": null,
+      "checkedAt": "2026-10-17T17:35:19.691Z",
+      "status": "fetched",
+      "sha256": "39343d961bf6cc0755858b6de6e2c0a6ec4f2aa77fe949bc5f64b41356764bba"
+    },
+    {
+      "id": "apna-counsellor",
+      "name": "Apna Counsellor",
+      "website": "https://apnacounsellor.in/",
+      "url": "https://www.apnacounsellor.in/",
+      "title": "Apna Counsellor 2026 | India's #1 JoSAA, NEET UG & MHT CET Counseling Platform | Apna Counsellor 2026",
+      "publishedAt": null,
+      "checkedAt": "2026-10-17T17:35:19.719Z",
+      "status": "fetched",
+      "sha256": "aab5a9a2c385e3e4da60beef1a29487eb45f5e6bc4654cbfcc2fd7deba0b0973"
+    },
+    {
+      "id": "dormi",
+      "name": "Dormi",
+      "website": "https://www.dormibeds.com/",
+      "url": "https://www.dormibeds.com/",
+      "title": "Dormi",
+      "publishedAt": null,
+      "checkedAt": "2026-10-17T17:35:19.741Z",
+      "status": "fetched",
+      "sha256": "003ea1e67359d446f7d7567ae23ae291944e5a05d17fbf5a0973c4da92f87c84"
+    },
+    {
+      "id": "ask-nomi",
+      "name": "Ask Nomi",
+      "website": "https://www.asknomi.ai/",
+      "url": "https://www.asknomi.ai/",
+      "title": "Ask Nomi | Endometriosis and Chronic Pain Support",
+      "publishedAt": null,
+      "checkedAt": "2026-10-17T17:35:19.901Z",
+      "status": "fetched",
+      "sha256": "63039268eb5ce841155b2eb9460b971829eec650dd3d84f38525afcb7216b648"
+    },
+    {
+      "id": "meghaos",
+      "name": "MeghaOS",
+      "website": "https://meghaos.ai/",
+      "url": "https://meghaos.ai/",
+      "title": "MeghaOS: Agentic AI Operating System That Runs Locally",
+      "publishedAt": null,
+      "checkedAt": "2026-10-17T17:35:20.004Z",
+      "status": "fetched",
+      "sha256": "b010a64e99160accffda505891dd3e5023b9a3bf4a6a03216f04b861d24e9324"
+    },
+    {
+      "id": "expediter-ai",
+      "name": "Expediter AI",
+      "url": "https://expediter.nyc/",
+      "status": "unavailable",
+      "checkedAt": "2026-10-17T17:35:20.413Z",
+      "error": "PublicFetchError: Source contained insufficient readable text."
+    },
+    {
+      "id": "kojable",
+      "name": "Kojable",
+      "website": "https://kojable.com/",
+      "url": "https://kojable.com/",
+      "title": "Kojable | Be Understood When Buyers Ask AI About You",
+      "publishedAt": null,
+      "checkedAt": "2026-10-17T17:35:20.431Z",
+      "status": "fetched",
+      "sha256": "21060192638b956fcc4c7c2bf9850e270c652fa6fe524d0d60cdcda1f3fc3bdc"
+    },
+    {
+      "id": "localhost-nyc",
+      "name": "localhost:nyc",
+      "url": "https://localhost-nyc.com/",
+      "status": "unavailable",
+      "checkedAt": "2026-10-17T17:35:20.490Z",
+      "error": "PublicFetchError: Source contained insufficient readable text."
+    },
+    {
+      "id": "novawerke-ai",
+      "name": "Novawerke AI",
+      "website": "https://novawerke.ai/",
+      "url": "https://novawerke.ai/",
+      "title": "Novawerke AI \u2014 Resilient AI Infrastructure",
+      "publishedAt": null,
+      "checkedAt": "2026-10-17T17:35:20.578Z",
+      "status": "fetched",
+      "sha256": "e95c0fa4d074bc9728501a856a320055a5344f69d06e86e7a6083c1b600b5ee9"
+    },
+    {
+      "id": "mooss",
+      "name": "Mooss / Modascope Inc.",
+      "url": "https://modascope.app/",
+      "status": "unavailable",
+      "checkedAt": "2026-10-17T17:35:20.638Z",
+      "error": "PublicFetchError: Source contained insufficient readable text."
+    },
+    {
+      "id": "nugenix-ai",
+      "name": "NugeniX-AI",
+      "url": "https://www.nugenix-ai.com/",
+      "status": "unavailable",
+      "checkedAt": "2026-10-17T17:35:20.656Z",
+      "error": "PublicFetchError: Source exceeds the research size limit."
+    },
+    {
+      "id": "optimchain",
+      "name": "OptimChain",
+      "website": "https://optimchain.github.io/Main/",
+      "url": "https://optimchain.github.io/Main/",
+      "title": "What We Are | OptimChain is when industrial engineering meets analytics.",
+      "publishedAt": null,
+      "checkedAt": "2026-10-17T17:35:20.739Z",
+      "status": "fetched",
+      "sha256": "01072d74323fac9c8edb2971b5cee057daafba9b97454ca4923314879973fe34"
+    },
+    {
+      "id": "opflowos",
+      "name": "OpFlowOS",
+      "website": "https://opflowos.com",
+      "url": "https://opflowos.com/",
+      "title": "OpFlowOS \u2014 Your company. In a box.",
+      "publishedAt": null,
+      "checkedAt": "2026-10-17T17:35:20.957Z",
+      "status": "fetched",
+      "sha256": "ff3dd489d9111e407550a7c7ec4672d0f006c3a0676dddeeed5df83d737893e5"
+    },
+    {
+      "id": "quizrs",
+      "name": "Quizrs",
+      "website": "https://quizrs.com/",
+      "url": "https://www.quizrs.com/",
+      "title": "Quizrs \u2014 AI Quiz Generator",
+      "publishedAt": null,
+      "checkedAt": "2026-10-17T17:35:21.302Z",
+      "status": "fetched",
+      "sha256": "f70361de48d865a1f6b9dc8ac42568292c8e823cc7f70cb454c9f52df36ca240"
+    },
+    {
+      "id": "pillpilot",
+      "name": "PillPilot",
+      "website": "https://www.pillpilot.ai/",
+      "url": "https://www.pillpilot.com/",
+      "title": "PillPilot \u2014 Pharmacy Automation & AI Agents, Inside Your PMS",
+      "publishedAt": null,
+      "checkedAt": "2026-10-17T17:35:21.313Z",
+      "status": "fetched",
+      "sha256": "f039f29f16e1c51ca28cd7fab7e3b126ae0c59fa8e2d7ad67bee332daa197843"
+    },
+    {
+      "id": "make-connnext",
+      "name": "Make ConnNext Corporation / ConnNext",
+      "url": "https://celiadavis.com/about",
+      "status": "unavailable",
+      "checkedAt": "2026-10-17T17:35:21.463Z",
+      "error": "PublicFetchError: Source returned HTTP 404."
+    },
+    {
+      "id": "hudson-manpower",
+      "name": "Hudson Manpower",
+      "website": "https://hudsonmanpower.com/",
+      "url": "https://hudsonmanpower.com/",
+      "title": "Hudson Manpower | Global Workforce Solutions",
+      "publishedAt": null,
+      "checkedAt": "2026-10-17T17:35:21.469Z",
+      "status": "fetched",
+      "sha256": "1d87808ac6a7392f9669224d95263316a959084b6b829b45c94b2f9837a787bc"
+    },
+    {
+      "id": "nxtconnect-ai",
+      "name": "NxtConnect AI",
+      "website": "https://www.nxtconnect.ai/",
+      "url": "https://www.nxtconnect.ai/",
+      "title": "NxtConnect.ai | Run your business on AI | NxtConnect AI",
+      "publishedAt": null,
+      "checkedAt": "2026-10-17T17:35:21.506Z",
+      "status": "fetched",
+      "sha256": "5d78dfaf12822eee4ebb3be0052d0798426a03353c4a2aec537ec9a0a4e4821d"
+    },
+    {
+      "id": "sirca",
+      "name": "Sirca",
+      "website": "https://www.sirca.ai/",
+      "url": "https://www.sirca.ai/",
+      "title": "Sirca",
+      "publishedAt": null,
+      "checkedAt": "2026-10-17T17:35:21.527Z",
+      "status": "fetched",
+      "sha256": "8ffff5572e48f0c47328b6dd996c01b3ab8e05e4e884422366a11ab9fcf17095"
+    },
+    {
+      "id": "rolemate",
+      "name": "Rolemate",
+      "website": "https://rolemateapp.com/",
+      "url": "https://rolemateapp.com/",
+      "title": "Rolemate, Monetizing originality",
+      "publishedAt": null,
+      "checkedAt": "2026-10-17T17:35:21.541Z",
+      "status": "fetched",
+      "sha256": "15496f98f35e5b94b2abe4432fbfe0e579ef2b5ade44d69e699ff9e47a4212de"
+    },
+    {
+      "id": "water-pistol",
+      "name": "Water Pistol",
+      "website": "https://waterpistol.co/",
+      "url": "https://waterpistol.co/",
+      "title": "Water Pistol \ud83d\udd2b Make AI Great Again!",
+      "publishedAt": null,
+      "checkedAt": "2026-10-17T17:35:21.641Z",
+      "status": "fetched",
+      "sha256": "2ca3cfa1e8c47623a7e549e854c91fa20a5e3fbae5e7477c1a6795593f3ece73"
+    },
+    {
+      "id": "vident",
+      "name": "Vident",
+      "website": "https://discovervident.com/",
+      "url": "https://discovervident.com/",
+      "title": "Vident | Technology built for intelligent business",
+      "publishedAt": null,
+      "checkedAt": "2026-10-17T17:35:21.644Z",
+      "status": "fetched",
+      "sha256": "da135eb8f83fb1aeff3f91b9f1011a406afaeb614343333e27d0bcce9ae5c38e"
+    },
+    {
+      "id": "buildzee",
+      "name": "Buildzee",
+      "url": "https://buildzee.com/",
+      "status": "unavailable",
+      "checkedAt": "2026-10-17T17:35:21.706Z",
+      "error": "Error: getaddrinfo ENOTFOUND buildzee.com"
+    },
+    {
+      "id": "zacc-ai",
+      "name": "Zacc.AI",
+      "website": "https://zacc.ai/",
+      "url": "https://zacc.ai/",
+      "title": "Zacc Romero \u2014 AI-native products",
+      "publishedAt": null,
+      "checkedAt": "2026-10-17T17:35:21.731Z",
+      "status": "fetched",
+      "sha256": "25d39ee4caeb5b8b47a638329ac15f872ea9e0c2fb2ab1a9d374fe04bd76013c"
+    },
+    {
+      "id": "brightway",
+      "name": "BrightWay",
+      "url": "https://startbrightway.com/",
+      "status": "unavailable",
+      "checkedAt": "2026-10-17T17:35:21.850Z",
+      "error": "PublicFetchError: Source contained insufficient readable text."
+    },
+    {
+      "id": "ekdham",
+      "name": "Ekdham",
+      "url": "https://ekdham.com/",
+      "status": "unavailable",
+      "checkedAt": "2026-10-17T17:35:22.016Z",
+      "error": "PublicFetchError: Source contained insufficient readable text."
+    },
+    {
+      "id": "cognition-medical",
+      "name": "Cognition Medical",
+      "website": "https://www.cognitionmedical.com/",
+      "url": "https://www.cognitionmedical.com/",
+      "title": "HOME | cognition",
+      "publishedAt": null,
+      "checkedAt": "2026-10-17T17:35:22.041Z",
+      "status": "fetched",
+      "sha256": "fb7915bf935ebcd27c19ace675c3a71b906d4c30ee3c931ea9fe649930fa0496"
+    },
+    {
+      "id": "etcetera-technologies",
+      "name": "Et Cetera Technologies / ClaimDelta",
+      "url": "https://etceteratech.net/clamdelta",
+      "status": "unavailable",
+      "checkedAt": "2026-10-17T17:35:22.062Z",
+      "error": "Error: getaddrinfo ENOTFOUND etceteratech.net"
+    },
+    {
+      "id": "handa-help",
+      "name": "Handa Help",
+      "website": "https://handahelp.org/",
+      "url": "https://handahelp.org/",
+      "title": "Handa Help \u2014 Free legal guidance for overseas Filipino workers",
+      "publishedAt": null,
+      "checkedAt": "2026-10-17T17:35:22.289Z",
+      "status": "fetched",
+      "sha256": "4581dc4d33da335341278035b789ebeaa3fc7692e710a3db50c22a926b333c91"
+    },
+    {
+      "id": "hurrae",
+      "name": "Hurrae",
+      "website": "https://hurrae.com/",
+      "url": "https://hurrae.com/",
+      "title": "Hurrae | Where the internet gets its wow-factor",
+      "publishedAt": null,
+      "checkedAt": "2026-10-17T17:35:22.396Z",
+      "status": "fetched",
+      "sha256": "d908daa607f78353ed542a0e5170207199eb1f81431bf293719bcaee9e7e41e1"
+    },
+    {
+      "id": "augen-media-works",
+      "name": "Augen Media Works",
+      "website": "https://www.augen.in/",
+      "url": "https://www.augen.in/",
+      "title": "Augen | Creative Ad Agency",
+      "publishedAt": null,
+      "checkedAt": "2026-10-17T17:35:22.873Z",
+      "status": "fetched",
+      "sha256": "6243bd8b7faa25311434d1458930195e921befd798c7d53d70a0274cd6d8ef32"
+    },
+    {
+      "id": "wealthryse",
+      "name": "WealthRyse",
+      "website": "https://wealthryse.ai/",
+      "url": "https://www.wealthryse.ai/",
+      "title": "WealthRyse (Hong Kong) Co., Limited",
+      "publishedAt": null,
+      "checkedAt": "2026-10-17T17:35:23.035Z",
+      "status": "fetched",
+      "sha256": "b2b040df3a19e30db49dec126a4d447f1bcf73db51b295cc99171c29d1910d29"
+    },
+    {
+      "id": "the-waves-digital-marketing",
+      "name": "The Waves Digital Marketing",
+      "url": "https://thewavesdigitalmarketing.com/",
+      "status": "unavailable",
+      "checkedAt": "2026-10-17T17:35:23.054Z",
+      "error": "Error: getaddrinfo ENOTFOUND thewavesdigitalmarketing.com"
+    },
+    {
+      "id": "web-g",
+      "name": "Web-G",
+      "url": "https://webg.nicolasadem.com/",
+      "status": "unavailable",
+      "checkedAt": "2026-10-17T17:35:23.213Z",
+      "error": "Error: getaddrinfo ENOTFOUND webg.nicolasadem.com"
+    },
+    {
+      "id": "mindbuild",
+      "name": "mindbuild.co",
+      "website": "https://mindbuild.co/",
+      "url": "https://mindbuild.co/",
+      "title": "Index of /",
+      "publishedAt": null,
+      "checkedAt": "2026-10-17T17:35:23.443Z",
+      "status": "fetched",
+      "sha256": "fe0b3a9a7e03d5c0a5a81420c35378ddad0bacee17fbf223cb26e320ee308043"
+    },
+    {
+      "id": "ibl-impacts",
+      "name": "IBL Impacts",
+      "website": "https://iblimpacts.com/",
+      "url": "https://www.iblimpacts.com/",
+      "title": "IBL Impacts \u2014 Growing Sustainable Futures",
+      "publishedAt": null,
+      "checkedAt": "2026-10-17T17:35:23.687Z",
+      "status": "fetched",
+      "sha256": "e53d82cacaa62131d2e859ecba0fd3edaaee8ede303c26437ad2bbef4027de8b"
+    },
+    {
+      "id": "palura",
+      "name": "Palura",
+      "website": "https://palura.net/",
+      "url": "https://palura.net/",
+      "title": "Palura Gaming - Ultimate Gaming Experience",
+      "publishedAt": null,
+      "checkedAt": "2026-10-17T17:35:23.747Z",
+      "status": "fetched",
+      "sha256": "81964a6d1dcfa716aada9d98d9bcc0c69b8df6fd271622e2f5af44fc8977a96e"
+    },
+    {
+      "id": "colabmate",
+      "name": "Colabmate LLC",
+      "url": "https://colabmate.com/",
+      "status": "unavailable",
+      "checkedAt": "2026-10-17T17:35:25.264Z",
+      "error": "PublicFetchError: Source request deadline reached."
+    },
+    {
+      "id": "neat-roots",
+      "name": "Neat Roots",
+      "website": "https://neatroots.com/",
+      "url": "https://neatroots.com/",
+      "title": "Neat Roots \u2013 Start Building Powerful Apps",
+      "publishedAt": null,
+      "checkedAt": "2026-10-17T17:35:25.674Z",
+      "status": "fetched",
+      "sha256": "95e1b37dd1f1224ae1b458b00e44b1769f2fc09e0a51a547a8e68858be712840"
+    },
+    {
+      "id": "block-convey",
+      "name": "Block Convey",
+      "url": "https://blockconvey.com/pricing",
+      "title": "PRISM Pricing: Free, Builder, Growth \u00b7 Block Convey",
+      "publishedAt": null,
+      "checkedAt": "2026-10-17T17:36:48.699Z",
+      "status": "fetched",
+      "sha256": "4148d3e1d208d41deb9fe63547cc76301a6c767d4f7655bdff0073794035d1a7"
+    },
+    {
+      "id": "archer-protocol",
+      "name": "Archer Protocol",
+      "url": "https://www.archerprotocol.com/pricing",
+      "title": "Pricing | Archer",
+      "publishedAt": null,
+      "checkedAt": "2026-10-17T17:36:48.731Z",
+      "status": "fetched",
+      "sha256": "60ec5cde4a7534e2f22e2eaa878e364fcc05ffd8c4eafbd079784e95935cdcfb"
+    },
+    {
+      "id": "pillpilot",
+      "name": "PillPilot",
+      "url": "https://www.pillpilot.com/pricing/",
+      "title": "PillPilot Pricing \u2014 Custom, Scoped to Your Pharmacy",
+      "publishedAt": null,
+      "checkedAt": "2026-10-17T17:36:48.858Z",
+      "status": "fetched",
+      "sha256": "41ef3a80545cfdecfe10de0064874cb06989d6d36c02b7c18b1076eaf3bc59cb"
+    },
+    {
+      "id": "kojable",
+      "name": "Kojable",
+      "url": "https://kojable.com/resources/case-studies.html",
+      "title": "AI Representation Case Studies | Kojable",
+      "publishedAt": null,
+      "checkedAt": "2026-10-17T17:36:49.029Z",
+      "status": "fetched",
+      "sha256": "e45a6dbbcb99379ad245aff84890fdb14633b76abd16ce379acdb1bcb13730b2"
+    },
+    {
+      "id": "kojable",
+      "name": "Kojable",
+      "url": "https://kojable.com/pricing.html",
+      "title": "Kojable Pricing | Research, Priorities and Review",
+      "publishedAt": null,
+      "checkedAt": "2026-10-17T17:36:49.034Z",
+      "status": "fetched",
+      "sha256": "6871ed6c0cdc66113dce26118cf7a9f37ef1145e66e10b39a735585023afe267"
+    },
+    {
+      "id": "meghaos",
+      "name": "MeghaOS",
+      "url": "https://meghaos.ai/pricing",
+      "title": "Pricing | MeghaOS",
+      "publishedAt": null,
+      "checkedAt": "2026-10-17T17:36:49.052Z",
+      "status": "fetched",
+      "sha256": "0cf5c0156aac08b6baa756b363e6077c3eaceb2d4649e8de0128dedbc7402bf3"
+    },
+    {
+      "id": "nxtconnect-ai",
+      "name": "NxtConnect AI",
+      "url": "https://www.nxtconnect.ai/customers",
+      "title": "Customers | NxtConnect AI",
+      "publishedAt": null,
+      "checkedAt": "2026-10-17T17:36:49.081Z",
+      "status": "fetched",
+      "sha256": "fb7434ba316a99b9380eecff3b8b8525db64d0ebfdeecb44688efc34ac3d2243"
+    },
+    {
+      "id": "chatbakers",
+      "name": "ChatBakers",
+      "url": "https://chatbakers.com/pricing/",
+      "title": "Pricing | ChatBakers",
+      "publishedAt": null,
+      "checkedAt": "2026-10-17T17:36:49.805Z",
+      "status": "fetched",
+      "sha256": "8a83201c7710894c1dee070ff95fb45313688add0941e855a8973afd10578538"
+    }
+  ]
+}

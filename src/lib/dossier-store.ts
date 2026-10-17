@@ -1,10 +1,11 @@
+import {mergeCommercialSignals} from "./event-discovery";
 import "server-only";
 import { createHash, randomUUID } from "node:crypto";
 import { mkdir, readFile, readdir, rename, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { get, list, put } from "@vercel/blob";
 import { companyFinancials, reportFinancials, mergeFinancials } from "./company-financials";
-import { CATALOG_SEEDS } from "./catalog-seeds";
+import { CATALOG_SEEDS, EVENT_FOUNDER_LEADS } from "./catalog-seeds";
 import type { CatalogResponse, DiscoveryCompany } from "./discovery-types";
 import type { LiveDiligenceResult } from "./live-research-types";
 
@@ -94,7 +95,7 @@ export async function saveDiligenceReport(result:LiveDiligenceResult):Promise<{d
   const newerFunding=incoming.funding&&(!existing?.funding?.announcedAt||!Number.isFinite(Date.parse(existing.funding.announcedAt))||incoming.funding.announcedAt&&Date.parse(incoming.funding.announcedAt)>=Date.parse(existing.funding.announcedAt))?incoming.funding:existing?.funding;
   const validatedProfile=Object.fromEntries(Object.entries(incoming).filter(([,value])=>value!==null&&value!==undefined&&(!Array.isArray(value)||value.length>0))) as Partial<DiscoveryCompany>;
   const company:DiscoveryCompany={
-    ...existing,...validatedProfile,profileFieldSources:{...existing?.profileFieldSources,...incoming.profileFieldSources},profileSources:[...new Map([...(existing?.profileSources||[]),...(incoming.profileSources||[])].map(s=>[s.url,s])).values()],financials,logo:result.logo?.status==="fetched"?result.logo:existing?.logo||result.logo,
+    ...existing,...validatedProfile,commercialSignals:mergeCommercialSignals(existing?.commercialSignals,incoming.commercialSignals),profileFieldSources:{...existing?.profileFieldSources,...incoming.profileFieldSources},profileSources:[...new Map([...(existing?.profileSources||[]),...(incoming.profileSources||[])].map(s=>[s.url,s])).values()],financials,logo:result.logo?.status==="fetched"?result.logo:existing?.logo||result.logo,
     id:companyId,name:result.company.name,website:result.company.website||existing?.website||"",description:incoming.description||existing?.description||result.sections.find(section=>section.category==="company")?.claims[0]?.text.slice(0,500)||result.summary,
     ...(existing?{industry:existing.industry,sectors:existing.sectors}:classify(result)),stage:newerFunding?.stage as DiscoveryCompany["stage"]||existing?.stage||"Unknown",funding:newerFunding,
     kind:existing?.kind||"company",offeringStatus:existing?.offeringStatus||"not-listed",offeringUrl:existing?.offeringUrl||null,platform:existing?.platform||null,
@@ -116,7 +117,7 @@ export async function saveDiligenceReport(result:LiveDiligenceResult):Promise<{d
 export async function catalogSnapshot(seeds:DiscoveryCompany[]):Promise<CatalogResponse>{
   const stored=process.env.VERCEL&&!blobConfigured()?[]:await listLibraryCompanies();
   const merged=mergeCatalogCompanies(seeds,stored);
-  return {companies:merged,storage:libraryStorage(),updatedAt:new Date().toISOString()};
+  return {companies:merged,founderLeads:EVENT_FOUNDER_LEADS,storage:libraryStorage(),updatedAt:new Date().toISOString()};
 }
 
 /** Match canonical websites as well as IDs so a live report enriches the seeded company. */
@@ -132,7 +133,7 @@ export function mergeCatalogCompanies(seeds:DiscoveryCompany[],stored:DiscoveryC
     if(seed&&seed.id!==company.id)merged.delete(seed.id);
     const financials=mergeFinancials(seed?companyFinancials(seed):companyFinancials(company),companyFinancials(company));
     const revenue=financials.annualRevenue,arr=financials.arr;
-    merged.set(company.id,{...seed,...company,...profile,logo:company.logo?.status==="fetched"?company.logo:seed?.logo||company.logo,financials,annualRevenue:revenue.status==="source-reported"?revenue.value:null,arr:arr.status==="source-reported"?arr.value:null,financialCurrency:revenue.currency,arrCurrency:arr.currency,financialsAsOf:revenue.asOf||arr.asOf,financialSourceUrl:revenue.sourceUrl||arr.sourceUrl,arrComparison:arr.comparison,...(seed&&/public source evidence is retained|review source dates|research retained in this session/i.test(company.description)?{description:seed.description}:{}),...(newestOffering?{offeringStatus:seed.offeringStatus,minInvestment:seed.minInvestment,statusEvidence:seed.statusEvidence,minimumEvidence:seed.minimumEvidence,lastCheckedAt:seed.lastCheckedAt}:{}),sourceUrls:[...new Set([...(seed?.sourceUrls||[]),...company.sourceUrls])]});
+    merged.set(company.id,{...seed,...company,...profile,publishStatus:seed?.publishStatus||company.publishStatus,revenueAssumption:seed?.revenueAssumption||company.revenueAssumption,commercialSignals:mergeCommercialSignals(seed?.commercialSignals,company.commercialSignals),logo:company.logo?.status==="fetched"?company.logo:seed?.logo||company.logo,financials,annualRevenue:revenue.status==="source-reported"?revenue.value:null,arr:arr.status==="source-reported"?arr.value:null,financialCurrency:revenue.currency,arrCurrency:arr.currency,financialsAsOf:revenue.asOf||arr.asOf,financialSourceUrl:revenue.sourceUrl||arr.sourceUrl,arrComparison:arr.comparison,...(seed&&/public source evidence is retained|review source dates|research retained in this session/i.test(company.description)?{description:seed.description}:{}),...(newestOffering?{offeringStatus:seed.offeringStatus,minInvestment:seed.minInvestment,statusEvidence:seed.statusEvidence,minimumEvidence:seed.minimumEvidence,lastCheckedAt:seed.lastCheckedAt}:{}),sourceUrls:[...new Set([...(seed?.sourceUrls||[]),...company.sourceUrls])]});
   }
   return [...merged.values()];
 }

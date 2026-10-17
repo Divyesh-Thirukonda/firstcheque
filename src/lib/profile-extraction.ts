@@ -13,8 +13,27 @@ const number = z.object({
   quote: z.string().max(900).nullable(),
 });
 export const researchedProfileSchema = z.object({
+  commercialSignals: z
+    .array(
+      z.object({
+        kind: z.enum([
+          "pilots",
+          "customers",
+          "pricing",
+          "customer-mix",
+          "revenue-mix",
+          "pilot-program",
+        ]),
+        label: z.string().max(100),
+        value: z.string().max(350),
+        quote: z.string().max(1000),
+        sourceIds: z.array(z.string()).max(3),
+      }),
+    )
+    .max(12)
+    .optional(),
   description: text,
-  capabilities: z.array(text).max(6),
+  capabilities: z.array(text).max(6).default([]),
   audience: text,
   businessModel: text,
   headquarters: text,
@@ -28,7 +47,8 @@ export const researchedProfileSchema = z.object({
         quote: z.string().max(900),
       }),
     )
-    .max(6),
+    .max(6)
+    .default([]),
   funding: z
     .array(
       z.object({
@@ -50,7 +70,8 @@ export const researchedProfileSchema = z.object({
         quote: z.string().max(1200),
       }),
     )
-    .max(3),
+    .max(3)
+    .default([]),
   reportedMetrics: z
     .array(
       z.object({
@@ -60,7 +81,8 @@ export const researchedProfileSchema = z.object({
         quote: z.string().max(900),
       }),
     )
-    .max(4),
+    .max(4)
+    .default([]),
 });
 const normal = (s: string) => s.replace(/\s+/g, " ").trim().toLowerCase();
 function moneyPresent(quote: string, value: number) {
@@ -138,6 +160,106 @@ export function groundedProfile(
       result.profileFieldSources![key] = fact.source.url;
     }
   }
+  result.commercialSignals = (candidate.commercialSignals || []).flatMap(
+    (signal) => {
+      const source = supported(signal);
+      if (!source) return [];
+      const value = normal(signal.quote).includes(normal(signal.value))
+        ? signal.value
+        : signal.quote;
+      if (value.length > 350) return [];
+      const position = normal(source.text).indexOf(normal(signal.quote));
+      const context = normal(source.text).slice(
+        Math.max(0, position - 150),
+        position + normal(signal.quote).length + 100,
+      );
+      if (
+        /competitor|competes|rival|versus|compared with|illustrative|example[- .]|sample data|demo data|mock|simulated|projected|forecast|target(?:ing|s)?\b/.test(
+          context,
+        )
+      )
+        return [];
+      if (
+        (signal.kind === "pilots" || signal.kind === "customers") &&
+        /\b(?:will|plans? to|expects?|targets?|aims? to|hopes? to|projects?)\b/i.test(
+          signal.quote,
+        )
+      )
+        return [];
+      if (
+        signal.kind === "pilots" &&
+        !/\b\d+[+,]?\s+(?:paid |active |live |completed )?pilots?\b|\bpilots?\s*(?:count|total)?\s*(?::|=|is|are|of)\s*\d+/i.test(
+          signal.quote,
+        )
+      )
+        return [];
+      if (
+        signal.kind === "customers" &&
+        !/\b\d[\d,+]*\s*(?:paying |paid |active )?(?:customers?|clients?|organizations?|teams?)\b/i.test(
+          signal.quote,
+        )
+      )
+        return [];
+      if (
+        signal.kind === "pilot-program" &&
+        !/\b(?:pilot|proof of concept|poc)\b/i.test(signal.quote)
+      )
+        return [];
+      if (
+        signal.kind === "revenue-mix" &&
+        !/\b(?:revenue|sales|ARR|MRR)\b/i.test(signal.quote)
+      )
+        return [];
+      if (
+        signal.kind === "pricing" &&
+        !/[$€£]|\b(?:free|custom|contact sales|per month|per seat|pricing)\b/i.test(
+          signal.quote,
+        )
+      )
+        return [];
+      const fallback = {
+        pilots: "Reported pilots",
+        customers: "Reported customers",
+        pricing: "Published pricing",
+        "customer-mix": "Customer breakdown",
+        "revenue-mix": "Revenue breakdown",
+        "pilot-program": "Pilot program",
+      }[signal.kind];
+      const labelTokens = normal(signal.label)
+        .split(/[^a-z0-9]+/)
+        .filter(
+          (token) =>
+            token &&
+            ![
+              "price",
+              "pricing",
+              "plan",
+              "plans",
+              "published",
+              "reported",
+              "tier",
+              "count",
+              "number",
+            ].includes(token),
+        );
+      const label =
+        labelTokens.length &&
+        labelTokens.every((token) => normal(signal.quote).includes(token))
+          ? signal.label
+          : fallback;
+      return [
+        {
+          kind: signal.kind,
+          label,
+          value,
+          quote: signal.quote,
+          sourceUrl: source.url,
+          checkedAt,
+          asOf: evidenceDate(source.publishedAt),
+        },
+      ];
+    },
+  );
   result.capabilities = candidate.capabilities.flatMap((fact) => {
     const valid = field(fact);
     return valid ? [valid.value] : [];

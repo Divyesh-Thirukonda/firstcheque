@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 import { ArrowUpRight, Bookmark } from "lucide-react";
 import type { DiscoveryCompany } from "@/lib/discovery-types";
 import { CompanyLogo } from "./company-logo";
+import {eventStatus,assumesPreRevenue} from "@/lib/event-discovery";
 import { companyTagline } from "@/lib/company-presentation";
 
 export const formatUSD = (value: number | null) => value === null ? "Unknown" : new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: Number.isInteger(value) ? 0 : 2 }).format(value);
@@ -39,7 +40,7 @@ export function CompanyList({ entries, savedIds, onSave, onResearch }: {
   return <div className="fc-company-grid">
     {entries.map(({ company }) => {
       const minimum = company.offeringStatus === "closed" ? "Offering closed" : company.kind !== "offering" ? "Research only" : company.minInvestment !== null ? `From ${formatUSD(company.minInvestment)}` : "Minimum unknown";
-      return <CompanyTile key={company.id} id={company.id} name={company.name} description={companyTagline(company)} sector={company.sectors[0] || company.industry} logo={<CompanyLogo id={company.id} name={company.name} logo={company.logo}/>} footer={company.kind === "company" && company.stage !== "Unknown" ? company.stage : minimum} secondaryLabel={company.catalogOrigin === "event-handoff" ? "Money Talks founder" : undefined} saved={savedIds.includes(company.id)} onSave={() => onSave(company.id)} onOpen={() => onResearch(company)}/>;
+      return <CompanyTile key={company.id} id={company.id} name={company.name} description={companyTagline(company)} sector={company.sectors[0] || company.industry} logo={<CompanyLogo id={company.id} name={company.name} logo={company.logo}/>} footer={company.kind === "company" && company.stage !== "Unknown" ? company.stage : assumesPreRevenue(company) ? "Assumed pre-revenue" : minimum} secondaryLabel={company.catalogOrigin === "event-handoff" ? eventStatus(company) : undefined} saved={savedIds.includes(company.id)} onSave={() => onSave(company.id)} onOpen={() => onResearch(company)}/>;
     })}
   </div>;
 }

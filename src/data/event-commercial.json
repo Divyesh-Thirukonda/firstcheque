@@ -1,0 +1,375 @@
+{
+  "block-convey": [
+    {
+      "kind": "pricing",
+      "label": "Free · monthly, 100 credits",
+      "value": "$0per month",
+      "quote": "grows. Start freeSee how credits work Plans Free $0per month 100 credits each month Connect a real app and understand the first failure before you pay. Start free Individual builders, founders",
+      "sourceUrl": "https://blockconvey.com/pricing",
+      "checkedAt": "2026-10-17T17:36:48.699Z",
+      "asOf": null
+    },
+    {
+      "kind": "pricing",
+      "label": "Builder · monthly, 400 credits",
+      "value": "$20per month",
+      "quote": "when enabled, using credits Most popularBuilder $20per month 400 credits each month Protect and evaluate production AI without losing the simplicity of Free. Choose Builder Developers and",
+      "sourceUrl": "https://blockconvey.com/pricing",
+      "checkedAt": "2026-10-17T17:36:48.699Z",
+      "asOf": null
+    },
+    {
+      "kind": "pricing",
+      "label": "Growth · monthly, 1,000 credits",
+      "value": "$50per month",
+      "quote": "troubleshooting session during activation Growth $50per month 1,000 credits each month Operate AI across more users, workflows, and production history. Choose Growth Teams with real users",
+      "sourceUrl": "https://blockconvey.com/pricing",
+      "checkedAt": "2026-10-17T17:36:48.699Z",
+      "asOf": null
+    },
+    {
+      "kind": "pricing",
+      "label": "Scale · monthly, 4,000 credits",
+      "value": "$300per month",
+      "quote": "access to ready and tested beta capabilities Scale $300per month 4,000 credits each month Use the complete product with hands-on implementation support. Choose Scale Teams that want the platform",
+      "sourceUrl": "https://blockconvey.com/pricing",
+      "checkedAt": "2026-10-17T17:36:48.699Z",
+      "asOf": null
+    }
+  ],
+  "kojable": [
+    {
+      "kind": "pricing",
+      "label": "Starter · per team",
+      "value": "$99/mo",
+      "quote": "your team knows what to work on next. Start at $99/month and choose additional analysis or review when you need it. Talk about Starter Run the free AI brand audit Kojable is an AI",
+      "sourceUrl": "https://kojable.com/pricing.html",
+      "checkedAt": "2026-10-17T17:36:49.034Z",
+      "asOf": null
+    },
+    {
+      "kind": "pricing",
+      "label": "Growth · per team",
+      "value": "$179/mo",
+      "quote": "changes. Weekly refresh Talk about Starter Growth $179/mo Keep your next changes informed. Everything in Starter, with updated research and guidance between weekly reviews while your",
+      "sourceUrl": "https://kojable.com/pricing.html",
+      "checkedAt": "2026-10-17T17:36:49.034Z",
+      "asOf": null
+    },
+    {
+      "kind": "pricing",
+      "label": "Pro · per team",
+      "value": "$299/mo",
+      "quote": "next. Twice-weekly refresh Talk about Growth Pro $299/mo See which gaps keep coming back. Everything in Growth, plus trend analysis to show how answers change over time and which issues",
+      "sourceUrl": "https://kojable.com/pricing.html",
+      "checkedAt": "2026-10-17T17:36:49.034Z",
+      "asOf": null
+    },
+    {
+      "kind": "pricing",
+      "label": "Max · per team",
+      "value": "$499/mo",
+      "quote": "changes. Every-other-day refresh Talk about Pro Max $499/mo Give your team reviewed, tailored priorities. Everything in Pro, with manual review of findings and priorities tailored to your",
+      "sourceUrl": "https://kojable.com/pricing.html",
+      "checkedAt": "2026-10-17T17:36:49.034Z",
+      "asOf": null
+    },
+    {
+      "kind": "pricing",
+      "label": "Billing terms",
+      "value": "Pricing is per team/company, not per seat No annual commitment",
+      "quote": "outreach. Choose the support your team needs Pricing is per team/company, not per seat No annual commitment Start here Starter $99/mo Know what to fix first. See where AI misses your supported strengths and get clear guidance on what",
+      "sourceUrl": "https://kojable.com/pricing.html",
+      "checkedAt": "2026-10-17T17:36:49.034Z",
+      "asOf": null
+    }
+  ],
+  "chatbakers": [
+    {
+      "kind": "pricing",
+      "label": "Starter · monthly billing",
+      "value": "€85",
+      "quote": "small teams getting started with AI visibility. €85 €68 /mo Billed monthly Billed annually Start free trial What's included 1 website 1 800 scans per month 60 prompts daily, or",
+      "sourceUrl": "https://chatbakers.com/pricing/",
+      "checkedAt": "2026-10-17T17:36:49.805Z",
+      "asOf": null
+    },
+    {
+      "kind": "pricing",
+      "label": "Starter · annual billing, monthly equivalent",
+      "value": "€68",
+      "quote": "teams getting started with AI visibility. €85 €68 /mo Billed monthly Billed annually Start free trial What's included 1 website 1 800 scans per month 60 prompts daily, or up",
+      "sourceUrl": "https://chatbakers.com/pricing/",
+      "checkedAt": "2026-10-17T17:36:49.805Z",
+      "asOf": null
+    },
+    {
+      "kind": "pricing",
+      "label": "Pro · monthly billing",
+      "value": "€200",
+      "quote": "popular Pro For teams scaling their AI monitoring. €200 €160 /mo Billed monthly Billed annually Start free trial What's included 2 websites 6 000 scans per month 200 prompts daily,",
+      "sourceUrl": "https://chatbakers.com/pricing/",
+      "checkedAt": "2026-10-17T17:36:49.805Z",
+      "asOf": null
+    },
+    {
+      "kind": "pricing",
+      "label": "Pro · annual billing, monthly equivalent",
+      "value": "€160",
+      "quote": "Pro For teams scaling their AI monitoring. €200 €160 /mo Billed monthly Billed annually Start free trial What's included 2 websites 6 000 scans per month 200 prompts daily, or up",
+      "sourceUrl": "https://chatbakers.com/pricing/",
+      "checkedAt": "2026-10-17T17:36:49.805Z",
+      "asOf": null
+    },
+    {
+      "kind": "pricing",
+      "label": "Advanced · monthly billing",
+      "value": "€400",
+      "quote": "For growing teams that need deeper insights. €400 €320 /mo Billed monthly Billed annually Start free trial What's included 5 websites 13 500 scans per month 450 prompts daily",
+      "sourceUrl": "https://chatbakers.com/pricing/",
+      "checkedAt": "2026-10-17T17:36:49.805Z",
+      "asOf": null
+    },
+    {
+      "kind": "pricing",
+      "label": "Advanced · annual billing, monthly equivalent",
+      "value": "€320",
+      "quote": "growing teams that need deeper insights. €400 €320 /mo Billed monthly Billed annually Start free trial What's included 5 websites 13 500 scans per month 450 prompts daily, or",
+      "sourceUrl": "https://chatbakers.com/pricing/",
+      "checkedAt": "2026-10-17T17:36:49.805Z",
+      "asOf": null
+    },
+    {
+      "kind": "pricing",
+      "label": "Trial",
+      "value": "7-day free trial No credit card required Cancel anytime",
+      "quote": "track up to 14x more prompts on the same plan. 7-day free trial No credit card required Cancel anytime Compare all features Feature Starter Pro Advanced Available AI Models Available AI models Select during onboarding ChatGPT Perplexity",
+      "sourceUrl": "https://chatbakers.com/pricing/",
+      "checkedAt": "2026-10-17T17:36:49.805Z",
+      "asOf": null
+    }
+  ],
+  "archer-protocol": [
+    {
+      "kind": "pricing",
+      "label": "Vibe Builder · monthly; 0.15% TVR fee",
+      "value": "$19/mo",
+      "quote": "Vibe Builder Ship your first agent integration $19/mo Monthly CU 150,000 Rate Limit 60 req/min TVR Fee 0.15% API Keys 5 Overage: $0.00025/CU (pay-as-you-go) EconomyStandardPremium",
+      "sourceUrl": "https://www.archerprotocol.com/pricing",
+      "checkedAt": "2026-10-17T17:36:48.731Z",
+      "asOf": null
+    },
+    {
+      "kind": "pricing",
+      "label": "Pro · monthly; 0.10% TVR fee",
+      "value": "$79/mo",
+      "quote": "Building Pro Production agents, premium intelligence $79/mo Monthly CU 1,000,000 Rate Limit 300 req/min TVR Fee 0.10% API Keys 20 Overage: $0.00020/CU (pay-as-you-go) EconomyStandardPremium",
+      "sourceUrl": "https://www.archerprotocol.com/pricing",
+      "checkedAt": "2026-10-17T17:36:48.731Z",
+      "asOf": null
+    },
+    {
+      "kind": "pricing",
+      "label": "Builder · overage per compute unit",
+      "value": "$0.00025/CU",
+      "quote": "60 req/min TVR Fee 0.15% API Keys 5 Overage: $0.00025/CU (pay-as-you-go) EconomyStandardPremium Core Capabilities Natural language onchain execution EVM + Solana multichain Swap, bridge",
+      "sourceUrl": "https://www.archerprotocol.com/pricing",
+      "checkedAt": "2026-10-17T17:36:48.731Z",
+      "asOf": null
+    },
+    {
+      "kind": "pricing",
+      "label": "Pro · overage per compute unit",
+      "value": "$0.00020/CU",
+      "quote": "300 req/min TVR Fee 0.10% API Keys 20 Overage: $0.00020/CU (pay-as-you-go) EconomyStandardPremium Core Capabilities Natural language onchain execution EVM + Solana multichain Swap, bridge",
+      "sourceUrl": "https://www.archerprotocol.com/pricing",
+      "checkedAt": "2026-10-17T17:36:48.731Z",
+      "asOf": null
+    },
+    {
+      "kind": "pricing",
+      "label": "Free tier · transaction fee",
+      "value": "TVR Fee 0.20%",
+      "quote": "stack Free Monthly CU 2,500 Rate Limit 10 req/min TVR Fee 0.20% API Keys 1 EconomyStandardPremium Core Capabilities Natural language onchain execution EVM + Solana multichain Swap, bridge,",
+      "sourceUrl": "https://www.archerprotocol.com/pricing",
+      "checkedAt": "2026-10-17T17:36:48.731Z",
+      "asOf": null
+    }
+  ],
+  "meghaos": [
+    {
+      "kind": "pricing",
+      "label": "Starter · hosted compute per month",
+      "value": "Starter$25",
+      "quote": "payment. PlanPer monthIncluded usageSupportQueue Starter$25Access to fine-tuned frontier modelsCommunity supportStandard speed Pro$40Access to fine-tuned frontier modelsPriority email",
+      "sourceUrl": "https://meghaos.ai/pricing",
+      "checkedAt": "2026-10-17T17:36:49.052Z",
+      "asOf": null
+    },
+    {
+      "kind": "pricing",
+      "label": "Pro · hosted compute per month",
+      "value": "Pro$40",
+      "quote": "frontier modelsCommunity supportStandard speed Pro$40Access to fine-tuned frontier modelsPriority email supportHigh priority queue Ultra$100Access to fine-tuned frontier models24",
+      "sourceUrl": "https://meghaos.ai/pricing",
+      "checkedAt": "2026-10-17T17:36:49.052Z",
+      "asOf": null
+    },
+    {
+      "kind": "pricing",
+      "label": "Ultra · hosted compute per month",
+      "value": "Ultra$100",
+      "quote": "modelsPriority email supportHigh priority queue Ultra$100Access to fine-tuned frontier models24/7 priority supportHighest priority queue Max$200Access to fine-tuned frontier modelsDedicated",
+      "sourceUrl": "https://meghaos.ai/pricing",
+      "checkedAt": "2026-10-17T17:36:49.052Z",
+      "asOf": null
+    },
+    {
+      "kind": "pricing",
+      "label": "Max · hosted compute per month",
+      "value": "Max$200",
+      "quote": "models24/7 priority supportHighest priority queue Max$200Access to fine-tuned frontier modelsDedicated account managerEnterprise SLA Choose a planOpens login.meghaos.ai, where your account",
+      "sourceUrl": "https://meghaos.ai/pricing",
+      "checkedAt": "2026-10-17T17:36:49.052Z",
+      "asOf": null
+    },
+    {
+      "kind": "pricing",
+      "label": "Local edition",
+      "value": "Free $0 Always. No account, no card.",
+      "quote": "inference we have to pay for on your behalf. Free $0 Always. No account, no card. The complete operating system, running entirely on your hardware. Not a trial and not feature-gated. This is the product. ✓All",
+      "sourceUrl": "https://meghaos.ai/pricing",
+      "checkedAt": "2026-10-17T17:36:49.052Z",
+      "asOf": null
+    }
+  ],
+  "pillpilot": [
+    {
+      "kind": "pricing",
+      "label": "Per-pharmacy quote",
+      "value": "Pricing is custom per pharmacy.",
+      "quote": "Pricing, answered. How much does PillPilot cost? Pricing is custom per pharmacy. We scope the pilot to your script volume, the workflows you want automated first, and the pharmacy system you run, then put",
+      "sourceUrl": "https://www.pillpilot.com/pricing/",
+      "checkedAt": "2026-10-17T17:36:48.858Z",
+      "asOf": null
+    },
+    {
+      "kind": "pilot-program",
+      "label": "Pilot scope",
+      "value": "Most pharmacies start with a scoped pilot on one or two workflows, priced to your store's actual volume",
+      "quote": "week if the fit is right. Is there a pilot? Yes. Most pharmacies start with a scoped pilot on one or two workflows, priced to your store's actual volume, so you see it working before you commit further. What's included? Implementation, training on your store's language and policies",
+      "sourceUrl": "https://www.pillpilot.com/pricing/",
+      "checkedAt": "2026-10-17T17:36:48.858Z",
+      "asOf": null
+    }
+  ],
+  "chrp": [
+    {
+      "kind": "pricing",
+      "label": "Reservation terms",
+      "value": "Reservations cost nothing to hold or cancel.",
+      "quote": "configuration and check out then, or simply walk away. Reservations cost nothing to hold or cancel. Hold my place ◉ Reserved. You’re in the first-run queue. We’ll email you when pricing and configuration open — your place stays",
+      "sourceUrl": "https://chrpme.io/",
+      "checkedAt": "2026-10-17T17:35:19.285Z",
+      "asOf": null
+    },
+    {
+      "kind": "pricing",
+      "label": "Price announcement",
+      "value": "Pricing will be announced before the first run ships",
+      "quote": "earlierNot sure yet Cases −2+ No payment today. Pricing will be announced before the first run ships — you’ll confirm your configuration and check out then, or simply walk away. Reservations cost nothing to hold or cancel. Hold",
+      "sourceUrl": "https://chrpme.io/",
+      "checkedAt": "2026-10-17T17:35:19.285Z",
+      "asOf": null
+    }
+  ],
+  "opflowos": [
+    {
+      "kind": "pricing",
+      "label": "Pre-launch plans",
+      "value": "Plans are announced at launch and waitlist members hear first.",
+      "quote": "Pricing Pay for what runs. Know it before it runs. Plans are announced at launch and waitlist members hear first. The principles are already fixed. 01 A schedule shows its cost first Every job displays a projected monthly figure before you",
+      "sourceUrl": "https://opflowos.com/",
+      "checkedAt": "2026-10-17T17:35:20.957Z",
+      "asOf": null
+    },
+    {
+      "kind": "pricing",
+      "label": "Usage costs",
+      "value": "Their usage is billed to you directly, with nothing added.",
+      "quote": "Bring your own model, mail and payment accounts. Their usage is billed to you directly, with nothing added. Launch pricing Waitlist members hear first. One plan for founders, one for small teams. No per-seat surprises — a company is",
+      "sourceUrl": "https://opflowos.com/",
+      "checkedAt": "2026-10-17T17:35:20.957Z",
+      "asOf": null
+    }
+  ],
+  "dormi": [
+    {
+      "kind": "pricing",
+      "label": "2026 on-campus rental · from price",
+      "value": "$279.00",
+      "quote": "needs. Sale Quick add 2026 On-Campus Rental From $279.00 $758.00 Sale Quick add 2026 Off-Campus Rental From $499.00 $1,099.00 Our Story Built by students, for students. Dormi started",
+      "sourceUrl": "https://www.dormibeds.com/",
+      "checkedAt": "2026-10-17T17:35:19.741Z",
+      "asOf": null
+    },
+    {
+      "kind": "pricing",
+      "label": "2026 off-campus rental · from price",
+      "value": "$499.00",
+      "quote": "00 Sale Quick add 2026 Off-Campus Rental From $499.00 $1,099.00 Our Story Built by students, for students. Dormi started with a simple idea: college students deserve better sleep",
+      "sourceUrl": "https://www.dormibeds.com/",
+      "checkedAt": "2026-10-17T17:35:19.741Z",
+      "asOf": null
+    }
+  ],
+  "quizrs": [
+    {
+      "kind": "pricing",
+      "label": "Free tier",
+      "value": "Free $0 Forever free",
+      "quote": "Upgrade when you need more. Monthly Yearly -20% Free $0 Forever free ✓5 quizzes per month ✓Up to 10 questions each ✓Basic embed code ✓Shareable link ✕Remove quizrs branding ✕Analytics ✕Custom styling",
+      "sourceUrl": "https://www.quizrs.com/",
+      "checkedAt": "2026-10-17T17:35:21.302Z",
+      "asOf": null
+    },
+    {
+      "kind": "customer-mix",
+      "label": "Creators · not paying customers",
+      "value": "8,000+",
+      "quote": "generated 50,000+ Average generation time 4 sec Creators on the platform 8,000+ Quiz responses collected 1.2M+ ★★★★★ \"Generated a 10-question quiz from my blog post in 4 seconds. The embed just works. Incredible",
+      "sourceUrl": "https://www.quizrs.com/",
+      "checkedAt": "2026-10-17T17:35:21.302Z",
+      "asOf": null
+    }
+  ],
+  "nxtconnect-ai": [
+    {
+      "kind": "customer-mix",
+      "label": "Published client stories",
+      "value": "Two stories are named with permission; two run under NDA",
+      "quote": "have cost six figures surfaced before it could. Two stories are named with permission; two run under NDA — their numbers are shown as agreed. Built for any business that runs on data. The layer is the same. The tools, the industries",
+      "sourceUrl": "https://www.nxtconnect.ai/customers",
+      "checkedAt": "2026-10-17T17:36:49.081Z",
+      "asOf": null
+    },
+    {
+      "kind": "customer-mix",
+      "label": "Prevou deployment · downstream agencies",
+      "value": "30+estate agencies run their inquiries on Madisan.",
+      "quote": "from the running systems. Prevou · UK real estate30+estate agencies run their inquiries on Madisan. Madisan is the AI lead agent we build and operate for Prevou. It is connected to the 7 leading UK real-estate CRMs and the major",
+      "sourceUrl": "https://www.nxtconnect.ai/customers",
+      "checkedAt": "2026-10-17T17:36:49.081Z",
+      "asOf": null
+    },
+    {
+      "kind": "customer-mix",
+      "label": "Client sectors · named cases",
+      "value": "SIS International Research · global research",
+      "quote": "structured 40 yrsof archive, searchable in seconds SIS International Research · global researchEverystudy, proposal and survey, one question away. SIS runs its research archive, proposal drafting and publishing on the platform",
+      "sourceUrl": "https://www.nxtconnect.ai/customers",
+      "checkedAt": "2026-10-17T17:36:49.081Z",
+      "asOf": null
+    }
+  ]
+}

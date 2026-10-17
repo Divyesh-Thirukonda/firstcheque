@@ -1,11 +1,50 @@
-import type { CompanyLogoInfo, CompanyFinancials } from "./company-profile-types";
+import type {
+  CompanyLogoInfo,
+  CompanyFinancials,
+} from "./company-profile-types";
 import type { Industry, Stage, Thesis } from "./types";
 
+export type EventPublishStatus =
+  | "profile_ready"
+  | "historical_founder_relationship"
+  | "company_details_need_review"
+  | "community_or_nonprofit_review";
+export interface CommercialSignal {
+  kind:
+    | "pilots"
+    | "customers"
+    | "pricing"
+    | "customer-mix"
+    | "revenue-mix"
+    | "pilot-program";
+  label: string;
+  value: string;
+  quote: string;
+  sourceUrl: string;
+  checkedAt: string;
+  asOf: string | null;
+}
+export interface FounderLead {
+  id: string;
+  name: string;
+  profileUrl: string;
+  role: string;
+  sourceUrl: string;
+  checkedAt: string;
+}
 export interface DiscoveryCompany {
+  publishStatus?: EventPublishStatus;
+  revenueAssumption?: "pre-revenue";
+  commercialSignals?: CommercialSignal[];
   logo?: CompanyLogoInfo;
   financials?: CompanyFinancials;
-  reportedMetrics?: { label: string; value: string; asOf: string; sourceUrl: string }[];
-  profileFieldSources?: Record<string,string>;
+  reportedMetrics?: {
+    label: string;
+    value: string;
+    asOf: string;
+    sourceUrl: string;
+  }[];
+  profileFieldSources?: Record<string, string>;
   arrComparison?: "greater-than" | "at-least";
   catalogOrigin?: "event-handoff" | "venture-research";
   founders?: { name: string; role: string; sourceUrl: string | null }[];
@@ -14,9 +53,28 @@ export interface DiscoveryCompany {
   businessModel?: string | null;
   headquarters?: string | null;
   foundedYear?: number | null;
-  funding?: { stage: string; amount: number | null; currency: string; announcedAt: string | null; sourceUrl: string; note: string; basis: "disclosed-round" | "investor-stage-label" };
+  funding?: {
+    stage: string;
+    amount: number | null;
+    currency: string;
+    announcedAt: string | null;
+    sourceUrl: string;
+    note: string;
+    basis: "disclosed-round" | "investor-stage-label";
+  };
   profileNotes?: string[];
-  profileSources?: { url: string; title: string; checkedAt: string; publishedAt: string | null; method: "public-page" | "primary-source-review" | "supplied-handoff" | "collection-attempt"; fetchStatus?: "fetched" | "unavailable" }[];
+  profileSources?: {
+    url: string;
+    title: string;
+    checkedAt: string;
+    publishedAt: string | null;
+    method:
+      | "public-page"
+      | "primary-source-review"
+      | "supplied-handoff"
+      | "collection-attempt";
+    fetchStatus?: "fetched" | "unavailable";
+  }[];
   profileCheckedAt?: string;
   id: string;
   name: string;
@@ -68,6 +126,7 @@ export interface DiscoveryMatch {
 
 export interface CatalogResponse {
   companies: DiscoveryCompany[];
+  founderLeads?: FounderLead[];
   storage: { mode: "local" | "blob"; persistent: boolean; shared: boolean };
   updatedAt: string;
 }

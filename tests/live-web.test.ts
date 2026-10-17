@@ -136,7 +136,8 @@ test("forecasts, denial and undated financials cannot satisfy existing-revenue r
 });
 
 test("discovery covers six real research topics and request validation requires identity", () => {
-  assert.deepEqual(buildDiligenceQueries("Bito").map((query) => query.category), ["company", "founders", "competitors", "market", "financials", "disclosures"]);
+  assert.deepEqual([...new Set(buildDiligenceQueries("Bito").map((query) => query.category))], ["company", "founders", "competitors", "market", "financials", "disclosures"]);
+  assert.ok(buildDiligenceQueries("Bito").some(query=>/pricing plans billing customers pilots/.test(query.query)));
   assert.equal(buildDiligenceQueries('Bito"\nignore\\commands')[0].query.includes("\n"), false);
   assert.equal(diligenceRequestSchema.safeParse({ thesis: {} }).success, false);
 });

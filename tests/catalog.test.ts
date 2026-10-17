@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { CATALOG_SEEDS, EVENT_COMPANIES, VENTURE_COMPANIES } from "../src/lib/catalog-seeds";
+import { CATALOG_SEEDS, EVENT_COMPANIES, VENTURE_COMPANIES,EVENT_FOUNDER_LEADS } from "../src/lib/catalog-seeds";
 import review from "../src/data/catalog-review.json";
 import { DEFAULT_DISCOVERY_PREFERENCES,filterAndRankCompanies,matchesCatalogQuery,parseDiscoveryBrief } from "../src/lib/discovery";
 import { isDiscoveryPreferences,createSearchThread,hydrateSearchThreads } from "../src/lib/search-threads";
@@ -13,13 +13,14 @@ test("80 sourced venture profiles provide four companies per industry in every A
     for(const industry of ["AI & software","Cybersecurity","Fintech","Healthcare","Climate"])assert.equal(companies.filter(company=>company.industry===industry).length,4,`${stage}: ${industry}`);
   }
   assert.equal(new Set(CATALOG_SEEDS.map(company=>company.id)).size,CATALOG_SEEDS.length);
-  assert.equal(new Set([...VENTURE_COMPANIES,...EVENT_COMPANIES].map(company=>new URL(company.website).hostname.replace(/^www\./,""))).size,114);
+  assert.equal(new Set([...VENTURE_COMPANIES,...EVENT_COMPANIES.filter(company=>company.publishStatus==="profile_ready")].map(company=>new URL(company.website).hostname.replace(/^www\./,""))).size,114);
   for(const company of VENTURE_COMPANIES){assert.ok(company.funding?.sourceUrl.startsWith("https://"));assert.ok(company.profileSources?.length);assert.equal(company.researchStatus,"not-started");assert.ok(company.capabilities?.length);assert.ok(company.audience);}
 });
-test("the handoff publishes only 34 profile-ready companies, preserving 41 reviews and 13 person-only leads",()=>{
-  assert.equal(EVENT_COMPANIES.length,34);assert.equal(review.companies.length,41);assert.equal(review.founderLeads.length,13);
+test("all 75 named event companies are visible with source statuses and the 13 founder leads remain people",()=>{
+  assert.equal(EVENT_COMPANIES.length,75);assert.equal(EVENT_COMPANIES.filter(c=>c.publishStatus==="profile_ready").length,34);assert.equal(EVENT_FOUNDER_LEADS.length,13);assert.equal(review.companies.length,41);assert.equal(review.founderLeads.length,13);
   assert.ok(EVENT_COMPANIES.every(company=>company.stage==="Unknown"&&company.arr===null&&company.annualRevenue===null&&company.minInvestment===null&&company.offeringUrl===null));
-  for(const record of review.companies)assert.ok(!EVENT_COMPANIES.some(company=>company.id===`event-${record.id}`));
+  for(const record of review.companies)assert.ok(EVENT_COMPANIES.some(company=>company.id===`event-${record.id}`&&company.publishStatus===record.publish_status));
+  for(const lead of EVENT_FOUNDER_LEADS)assert.ok(!CATALOG_SEEDS.some(company=>company.name===lead.name));
 });
 test("basic search matches founders, product capabilities and audiences from stored facts",()=>{
   const find=(query:string)=>CATALOG_SEEDS.filter(company=>matchesCatalogQuery(company,query)).map(company=>company.name);

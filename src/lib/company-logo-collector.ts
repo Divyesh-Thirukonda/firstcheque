@@ -201,14 +201,25 @@ export async function normalizedLogo(
   const png = await pipeline.png({ compressionLevel: 9 }).toBuffer();
   if (png.length > 28000)
     throw new Error("Normalized icon exceeds the size limit.");
-  if (
-    [
-      "1e8f80f65df6d9c956f27ea82d3dacdbc7994816fa369d8f5d26539b26c0188a",
-      "26e3718f44837660d9b33484438f261da601a546a42e581c229ad3c2833f9b99",
-    ].includes(createHash("sha256").update(png).digest("hex"))
-  )
-    throw new Error("Generic site-builder favicon excluded.");
   return { png, background: light / weight > 180 ? "#171717" : "#f5f5f5" };
+}
+
+/** A builder's favicon is valid only when researching that builder itself. */
+export function isGenericBuilderLogo(sha256: string, website: string) {
+  const owner: Record<string, string> = {
+    "1e8f80f65df6d9c956f27ea82d3dacdbc7994816fa369d8f5d26539b26c0188a":
+      "lovable.dev",
+    "26e3718f44837660d9b33484438f261da601a546a42e581c229ad3c2833f9b99":
+      "wix.com",
+    "93d974188f770765cbbe050a8f491672d6e37748e5896a40c2581963139be900":
+      "vercel.com",
+  };
+  const host = new URL(website).hostname.replace(/^www\./, "");
+  return Boolean(
+    owner[sha256] &&
+    host !== owner[sha256] &&
+    !host.endsWith("." + owner[sha256]),
+  );
 }
 
 export async function collectCompanyLogo(
@@ -228,6 +239,12 @@ export async function collectCompanyLogo(
   const errors: string[] = [];
   try {
     const root = normalizePublicUrl(website).href;
+    if (
+      /(?:^|\.)(?:instagram\.com|linkedin\.com|luma\.com|facebook\.com|twitter\.com|x\.com|youtube\.com)$/.test(
+        new URL(root).hostname,
+      )
+    )
+      throw new Error("A shared social profile is not a company logo source.");
     let candidates: {
       url: string;
       method: "website-icon" | "website-logo" | "favicon-cache";
@@ -289,13 +306,16 @@ export async function collectCompanyLogo(
           image.body,
           image.contentType,
         );
+        const sha256 = createHash("sha256").update(png).digest("hex");
+        if (isGenericBuilderLogo(sha256, root))
+          throw new Error("Generic site-builder favicon excluded.");
         return {
           status: "fetched",
           url: `data:image/png;base64,${png.toString("base64")}`,
           sourceUrl: image.url,
           website: root,
           checkedAt,
-          sha256: createHash("sha256").update(png).digest("hex"),
+          sha256,
           background,
           method: candidate.method,
         };

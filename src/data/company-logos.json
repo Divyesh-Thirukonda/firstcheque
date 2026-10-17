@@ -922,13 +922,10 @@
   "event-localhost-nyc": {
     "status": "unavailable",
     "url": null,
-    "sourceUrl": "https://localhost-nyc.com/favicon.ico",
+    "sourceUrl": null,
     "website": "https://localhost-nyc.com/",
-    "checkedAt": "2026-10-17T17:07:50.117Z",
-    "sha256": "1e8f80f65df6d9c956f27ea82d3dacdbc7994816fa369d8f5d26539b26c0188a",
-    "background": "#f5f5f5",
-    "method": "website-icon",
-    "error": "Published favicon belongs to the site builder, not the company. No verified company image retained."
+    "checkedAt": "2026-10-17T17:37:50.886Z",
+    "error": "Generic site-builder favicon excluded. Source returned HTTP 404."
   },
   "event-kojable": {
     "status": "fetched",
@@ -985,7 +982,7 @@
     "url": null,
     "sourceUrl": null,
     "website": "https://modascope.app/",
-    "checkedAt": "2026-10-17T17:11:31.712Z",
+    "checkedAt": "2026-10-17T17:37:50.890Z",
     "error": "Source returned HTTP 404."
   },
   "event-nugenix-ai": {
@@ -1213,7 +1210,7 @@
     "url": null,
     "sourceUrl": null,
     "website": "https://wealthryse.ai/",
-    "checkedAt": "2026-10-17T17:11:32.918Z",
+    "checkedAt": "2026-10-17T17:37:50.890Z",
     "error": "Source returned HTTP 404."
   },
   "wefunder-lppfusion": {
@@ -1233,5 +1230,141 @@
     "website": "",
     "checkedAt": "2026-10-17T17:22:00.000Z",
     "error": "No official company website was supplied in the retained offering snapshot."
+  },
+  "event-a-million-beads": {
+    "status": "unavailable",
+    "url": null,
+    "sourceUrl": null,
+    "website": "https://www.instagram.com/amillionbeads/",
+    "checkedAt": "2026-10-17T17:37:50.890Z",
+    "error": "A shared social profile is not a company logo source."
+  },
+  "event-buildzee": {
+    "status": "unavailable",
+    "url": null,
+    "sourceUrl": null,
+    "website": "https://buildzee.com/",
+    "checkedAt": "2026-10-17T17:37:50.890Z",
+    "error": "getaddrinfo ENOTFOUND buildzee.com Source returned HTTP 404."
+  },
+  "event-brightway": {
+    "status": "unavailable",
+    "url": null,
+    "sourceUrl": null,
+    "website": "https://startbrightway.com/",
+    "checkedAt": "2026-10-17T17:37:50.890Z",
+    "error": "Not a supported logo image. Source returned HTTP 404."
+  },
+  "event-ekdham": {
+    "status": "unavailable",
+    "url": null,
+    "sourceUrl": null,
+    "website": "https://ekdham.com/",
+    "checkedAt": "2026-10-17T17:37:51.690Z",
+    "error": "Not a supported logo image. Source returned HTTP 404."
+  },
+  "event-etcetera-technologies": {
+    "status": "unavailable",
+    "url": null,
+    "sourceUrl": null,
+    "website": "https://etceteratech.net/clamdelta",
+    "checkedAt": "2026-10-17T17:37:51.948Z",
+    "error": "getaddrinfo ENOTFOUND etceteratech.net Source returned HTTP 404."
+  },
+  "event-augen-media-works": {
+    "status": "fetched",
+    "url": "/company-logos/event-augen-media-works.png",
+    "sourceUrl": "https://www.augen.in/images/logo-white.gif",
+    "website": "https://www.augen.in/",
+    "checkedAt": "2026-10-17T17:49:36.982Z",
+    "sha256": "afd143d63fafaf81af7d66455c116cf355d0729abc5f7000c39693c66525394d",
+    "background": "#171717",
+    "method": "website-logo"
+  },
+  "event-cognition-medical": {
+    "status": "unavailable",
+    "url": null,
+    "sourceUrl": null,
+    "website": "https://www.cognitionmedical.com/",
+    "checkedAt": "2026-10-17T17:37:51.054Z",
+    "error": "Robots policy could not be verified (HTTP 403); page not fetched. Generic site-builder favicon excluded."
+  },
+  "event-hurrae": {
+    "status": "fetched",
+    "url": "/company-logos/event-hurrae.png",
+    "sourceUrl": "https://hurrae.com/images/webclip.png",
+    "website": "https://hurrae.com/",
+    "checkedAt": "2026-10-17T17:37:52.087Z",
+    "sha256": "c3250978c1d8d6646a682992add118e1d6c172d8338e7a901d4bcdabcb1df173",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "event-khopoli-ploggers": {
+    "status": "unavailable",
+    "url": null,
+    "sourceUrl": null,
+    "website": "https://www.instagram.com/khopoliploggers/",
+    "checkedAt": "2026-10-17T17:37:52.345Z",
+    "error": "A shared social profile is not a company logo source."
+  },
+  "event-handa-help": {
+    "status": "unavailable",
+    "url": null,
+    "sourceUrl": null,
+    "website": "https://handahelp.org/",
+    "checkedAt": "2026-10-17T17:37:52.011Z",
+    "error": "Source returned HTTP 404."
+  },
+  "event-the-waves-digital-marketing": {
+    "status": "unavailable",
+    "url": null,
+    "sourceUrl": null,
+    "website": "https://thewavesdigitalmarketing.com/",
+    "checkedAt": "2026-10-17T17:37:52.515Z",
+    "error": "getaddrinfo ENOTFOUND thewavesdigitalmarketing.com Source returned HTTP 404."
+  },
+  "event-web-g": {
+    "status": "unavailable",
+    "url": null,
+    "sourceUrl": null,
+    "website": "https://webg.nicolasadem.com/",
+    "checkedAt": "2026-10-17T17:37:52.861Z",
+    "error": "getaddrinfo ENOTFOUND webg.nicolasadem.com Source returned HTTP 404."
+  },
+  "event-ibl-impacts": {
+    "status": "fetched",
+    "url": "/company-logos/event-ibl-impacts.png",
+    "sourceUrl": "https://www.iblimpacts.com/logo.svg",
+    "website": "https://iblimpacts.com/",
+    "checkedAt": "2026-10-17T17:37:52.243Z",
+    "sha256": "e90c7bce2a55c671740fba46a29e23a77e0e24d3b286362ee77ef3e66be0ef8e",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "event-mindbuild": {
+    "status": "unavailable",
+    "url": null,
+    "sourceUrl": null,
+    "website": "https://mindbuild.co/",
+    "checkedAt": "2026-10-17T17:37:52.345Z",
+    "error": "Source returned HTTP 404."
+  },
+  "event-palura": {
+    "status": "fetched",
+    "url": "/company-logos/event-palura.png",
+    "sourceUrl": "https://palura.net/logo.svg",
+    "website": "https://palura.net/",
+    "checkedAt": "2026-10-17T17:49:36.530Z",
+    "sha256": "224bc1b9aaa5e9428d68ba61235128ed67e0cddc489ba80ba3cbd99e4f7444cd",
+    "background": "#171717",
+    "method": "website-logo"
+  },
+  "event-colabmate": {
+    "status": "unavailable",
+    "url": null,
+    "sourceUrl": null,
+    "website": "https://colabmate.com/",
+    "checkedAt": "2026-10-17T17:37:51.311Z",
+    "error": "Source request deadline reached. Source returned HTTP 404."
   }
 }

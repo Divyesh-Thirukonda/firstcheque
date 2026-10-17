@@ -1,3 +1,4 @@
+import {eventPriority,assumesPreRevenue} from "./event-discovery";
 import type { DiscoveryCompany, DiscoveryMatch, DiscoveryPreferences } from "./discovery-types";
 import type { Industry, Stage } from "./types";
 
@@ -121,12 +122,12 @@ export function filterAndRankCompanies(companies:DiscoveryCompany[],preferences:
     if(!reasons.length) reasons.push("Passes your selected discovery filters");
     matches.push({company,score:Math.min(99,score),reasons,warnings});
   }
-  return {matches:matches.sort((a,b)=>b.score-a.score||a.company.name.localeCompare(b.company.name)),excluded};
+  return {matches:matches.sort((a,b)=>b.score-a.score||eventPriority(a.company)-eventPriority(b.company)||a.company.name.localeCompare(b.company.name)),excluded};
 }
 
 /** Stored profile facts only. Basic catalog search never calls a model or crawler. */
 export function companySearchText(company: DiscoveryCompany) {
-  return normalized([company.name,company.website,company.description,company.industry,company.stage,...company.sectors,...(company.capabilities||[]),...(company.founders||[]).map(person=>person.name),company.audience,company.businessModel,company.headquarters].filter(Boolean).join(" "));
+  return normalized([company.name,company.website,company.description,company.industry,company.stage,...company.sectors,...(company.capabilities||[]),...(company.founders||[]).map(person=>person.name),company.audience,company.businessModel,company.headquarters,assumesPreRevenue(company)?"assumed pre revenue":"",...(company.commercialSignals||[]).map(signal=>signal.value)].filter(Boolean).join(" "));
 }
 export function matchesCatalogQuery(company: DiscoveryCompany, query: string) {
   const text=companySearchText(company);
