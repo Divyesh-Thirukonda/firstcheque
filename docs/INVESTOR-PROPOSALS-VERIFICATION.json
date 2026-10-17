@@ -1,0 +1,178 @@
+{
+  "checkedAt": "2026-10-17T18:14:28.511Z",
+  "sourceCommit": "7cb7f388599893f0d32e4579802363a8c2a07ea1",
+  "feature": "Investor-side proposal, voice preview, grounded terms and unsigned discussion draft",
+  "legalScope": "U.S. general product guidance; not a determination that Seed Street or a particular investment qualifies for an exemption.",
+  "routes": [
+    "Regulation Crowdfunding via registered intermediary",
+    "Issuer-specific private offering exemption and counsel-approved closing"
+  ],
+  "implemented": [
+    "editable USD cheque and instrument preference",
+    "live ElevenLabs speech preview with AI disclosure",
+    "Nicrron term extraction with continuous note passages and speaker guard",
+    "local proposal history and resume",
+    "editable terms and original passages",
+    "automatically assembled nonbinding discussion draft",
+    "download and clipboard export",
+    "issuer and investor signature status pending legal review"
+  ],
+  "notEnabled": [
+    "founder outbound phone calls",
+    "binding e-signatures",
+    "payments or securities execution",
+    "founder-facing pages"
+  ],
+  "elevenLabs": {
+    "permissions": [
+      "Text to Speech"
+    ],
+    "creditLimitPerRefresh": 5000,
+    "expiryDays": 30,
+    "storage": [
+      "ignored local environment file",
+      "Vercel Preview secret"
+    ],
+    "liveLocalTraceId": "9acf60c4-85e9-4896-8b84-ecf0fe261ed9",
+    "storedSpans": 2
+  },
+  "nicrron": {
+    "localMeasuredRun": {
+      "provider": "Nicrron",
+      "id": "openai/gpt-4.1-mini",
+      "calls": 1,
+      "inputTokens": 579,
+      "outputTokens": 388
+    },
+    "localTraceId": "d3e57c36-e2bf-4b4b-b206-8852378fdd2a",
+    "storedSpans": 3,
+    "groundedKeys": [
+      "instrument",
+      "valuation",
+      "discount",
+      "ownership",
+      "capTable",
+      "rights",
+      "minimum",
+      "entity",
+      "route",
+      "nextStep"
+    ],
+    "sourceKind": "synthetic-rehearsal",
+    "verbatimQuotesOnly": true
+  },
+  "privacy": {
+    "sharedCatalogMutation": false,
+    "rawNotesInReadback": false,
+    "rawAmountInReadback": false,
+    "notesAndDealDetailsRedactedBeforeTracing": true,
+    "audioPersistedByApp": false,
+    "draftsStored": "browser local storage",
+    "providerTransmission": "script to ElevenLabs on generation; notes to Nicrron on extraction"
+  },
+  "validation": {
+    "testsPassed": 92,
+    "typecheck": "passed",
+    "localBuild": "passed",
+    "http": [
+      {
+        "name": "voice-invalid",
+        "status": 400,
+        "error": "Enter a short call opening."
+      },
+      {
+        "name": "notes-invalid",
+        "status": 400,
+        "error": "Add at least 30 characters of conversation notes."
+      },
+      {
+        "name": "cross-origin",
+        "status": 429,
+        "error": "Please wait before generating another voice preview."
+      }
+    ],
+    "desktop": "proposal editing, live voice, fictional note analysis, automatic review draft, copy export and resume checked",
+    "mobile": {
+      "width": 375,
+      "pageScrollWidth": 375,
+      "dialogWidth": 345,
+      "dialogScrollWidth": 345
+    },
+    "secretScan": "no actual keys or tokens found in git-visible files"
+  },
+  "primarySources": [
+    "https://www.sec.gov/resources-small-businesses/small-business-compliance-guides/regulation-crowdfunding-guidance-issuers",
+    "https://www.sec.gov/about/divisions-offices/division-trading-markets/division-trading-markets-compliance-guides/guide-broker-dealer-registration",
+    "https://docs.fcc.gov/public/attachments/FCC-24-17A1_Rcd.pdf",
+    "https://elevenlabs.io/docs/api-reference/text-to-speech/convert"
+  ],
+  "deployment": {
+    "id": "dpl_BmMGufcCL3ojK1TDeHjsrcYdVJyV",
+    "url": "https://firstcheque-9x9wdhxl2-divyesh-thirukondas-projects.vercel.app",
+    "alias": "https://seed-street.vercel.app",
+    "sourceCommit": "7cb7f388599893f0d32e4579802363a8c2a07ea1",
+    "state": "READY",
+    "protection": "Vercel Authentication retained",
+    "voiceConfigured": true
+  },
+  "cloudVerification": {
+    "ui": {
+      "audioDurationSeconds": 30.88254,
+      "terms": {
+        "valuation": "We are considering a post-money SAFE with a $10 million valuation cap and no conversion discount.",
+        "ownership": "No shares are issued today under the SAFE. Conversion and dilution depend on the definitive terms and future financing."
+      },
+      "synthetic": true,
+      "unsigned": true
+    },
+    "traces": [
+      {
+        "id": "253cf1e8-e9fd-4533-acfa-dc59618e9722",
+        "model": "openai/gpt-4.1-mini",
+        "createdAt": "2026-10-17T18:12:56.385353Z",
+        "inputTokens": 579,
+        "outputTokens": 388,
+        "spans": [
+          {
+            "name": "Investor proposal workflow",
+            "status": "ok"
+          },
+          {
+            "name": "Extract transcript terms with Nicrron",
+            "status": "ok"
+          },
+          {
+            "name": "Ground each term in a verbatim note passage",
+            "status": "ok"
+          }
+        ],
+        "privateNotesPresent": false,
+        "privateAmountPresent": false
+      },
+      {
+        "id": "ee06ea78-d44b-4b55-a57e-118cb01952bb",
+        "model": "elevenlabs/eleven_multilingual_v2",
+        "createdAt": "2026-10-17T18:12:45.808351Z",
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "spans": [
+          {
+            "name": "Investor proposal workflow",
+            "status": "ok"
+          },
+          {
+            "name": "Generate ElevenLabs speech preview",
+            "status": "ok"
+          }
+        ],
+        "privateNotesPresent": false,
+        "privateAmountPresent": false
+      }
+    ],
+    "catalogEventCompanies": 75,
+    "brokerOrPortalConnection": false,
+    "telephoneCallsPlaced": 0,
+    "signaturesRequested": 0,
+    "fundsTransferred": 0
+  }
+}
