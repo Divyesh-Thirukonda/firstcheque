@@ -40,6 +40,7 @@ export default function Home() {
   const [legacyCompanyId, setLegacyCompanyId] = useState<string | null>(null);
   const [catalog, setCatalog] = useState<CatalogResponse | null>(null);
   const [reports, setReports] = useState<LiveDiligenceResult[]>([]);
+  const [reportsLoading, setReportsLoading] = useState(true);
   const [initialUrl, setInitialUrl] = useState("");
   const [loading, setLoading] = useState(true);
   const [catalogError, setCatalogError] = useState("");
@@ -114,7 +115,7 @@ export default function Home() {
     void loadCatalog();
     fetch("/api/dossiers", { cache: "no-store" }).then(response => response.ok ? response.json() : null).then(data => {
       if (Array.isArray(data?.dossiers)) setReports(current => [...current, ...(data.dossiers as LiveDiligenceResult[]).filter(report => !current.some(item => item.companyId === report.companyId))]);
-    }).catch(() => { /* Reports created in this session remain usable if persistence is unavailable. */ });
+    }).catch(() => { /* Reports created in this session remain usable if persistence is unavailable. */ }).finally(() => setReportsLoading(false));
   }, [loadCatalog]);
 
   useEffect(() => {
@@ -322,7 +323,7 @@ export default function Home() {
       </header>
 
       <main id="fc-main" tabIndex={-1} className={view === "Agent" ? "fc-agent-main" : "fc-main-content"}>
-        {view === "Agent" ? <SearchWorkspace threads={threads} activeThread={activeThread} companies={companies} reports={reports} savedIds={watchlist} initialUrl={initialUrl} loading={loading} catalogError={catalogError} onSelectThread={selectSearch} onNewSearch={newSearch} onAddCompany={() => setImportOpen(true)} onRefine={refineSearch} onRefresh={refreshSearch} onSelectCompany={selectCompany} onSave={toggleSave} onMessage={receivedMessage} onResult={receivedResult} onClearInitialUrl={clearInitialUrl}/> : <>
+        {view === "Agent" ? <SearchWorkspace threads={threads} activeThread={activeThread} companies={companies} reports={reports} reportsLoading={reportsLoading} savedIds={watchlist} initialUrl={initialUrl} loading={loading} catalogError={catalogError} onSelectThread={selectSearch} onNewSearch={newSearch} onAddCompany={() => setImportOpen(true)} onRefine={refineSearch} onRefresh={refreshSearch} onSelectCompany={selectCompany} onSave={toggleSave} onMessage={receivedMessage} onResult={receivedResult} onClearInitialUrl={clearInitialUrl}/> : <>
           <div className="fc-page-heading">
             <div><h1>{view === "Discover" ? "Discover startups" : view === "Watchlist" ? "Your watchlist" : "Your workspace"}</h1><p>{view === "Discover" ? "Start with what you’re looking for. Keep every result and follow-up in one search." : view === "Watchlist" ? "Your saved companies, even when your preferences change." : "Keep track of your research and practice with a paper portfolio."}</p></div>
             <button className="fc-btn secondary" onClick={() => setImportOpen(true)}><Plus size={18}/>Add a company</button>

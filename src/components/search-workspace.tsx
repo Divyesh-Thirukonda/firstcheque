@@ -15,6 +15,7 @@ interface SearchWorkspaceProps {
   activeThread: SearchThread | null;
   companies: DiscoveryCompany[];
   reports: LiveDiligenceResult[];
+  reportsLoading: boolean;
   savedIds: string[];
   initialUrl: string;
   loading: boolean;
@@ -31,7 +32,7 @@ interface SearchWorkspaceProps {
   onClearInitialUrl: () => void;
 }
 
-export function SearchWorkspace({ threads, activeThread, companies, reports, savedIds, initialUrl, loading, catalogError, onSelectThread, onNewSearch, onAddCompany, onRefine, onRefresh, onSelectCompany, onSave, onMessage, onResult, onClearInitialUrl }: SearchWorkspaceProps) {
+export function SearchWorkspace({ threads, activeThread, companies, reports, reportsLoading, savedIds, initialUrl, loading, catalogError, onSelectThread, onNewSearch, onAddCompany, onRefine, onRefresh, onSelectCompany, onSave, onMessage, onResult, onClearInitialUrl }: SearchWorkspaceProps) {
   const [railOpen, setRailOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [refinement, setRefinement] = useState("");
@@ -49,6 +50,7 @@ export function SearchWorkspace({ threads, activeThread, companies, reports, sav
   const searchHeading = preferences?.query ? `Companies matching “${preferences.query}”` : searchInterests ? `Find ${searchInterests} startups` : "Find startups that fit your goals";
   const detailOpen = !!activeThread && (!!activeThread.selectedCompanyId || !!initialUrl);
   const researchedCompanies = [...new Set(activeThread?.messages.flatMap(message => message.kind === "research" && message.companyId ? [message.companyId] : []) || [])].filter(id => !activeThread?.resultCompanyIds.includes(id)).flatMap(id => { const company = knownCompanies.find(item => item.id === id); return company ? [company] : []; });
+  const restoringReport = !!activeThread?.selectedCompanyId && ((loading && !knownCompanies.length) || (reportsLoading && !reports.some(report => report.companyId === activeThread.selectedCompanyId)));
   const newMatches = ranked?.matches.filter(match => !activeThread?.resultCompanyIds.includes(match.company.id)).length || 0;
 
   return <div className={`fc-search-workspace ${railOpen ? "fc-search-rail-open" : ""}`}>
@@ -65,7 +67,7 @@ export function SearchWorkspace({ threads, activeThread, companies, reports, sav
 
     <section className="fc-search-canvas" aria-label={activeThread ? `Search: ${activeThread.title}` : "Search workspace"}>
       <div className="fc-search-context-bar"><button className="fc-icon-btn fc-search-rail-toggle" aria-label="Show searches" aria-controls="search-thread-rail" aria-expanded={railOpen} onClick={() => setRailOpen(!railOpen)}><PanelLeftClose size={17}/><span>Searches</span></button><MessageSquare size={15}/><span className="fc-search-context-title">{activeThread?.title || "Your research starts with a search"}</span>{activeThread ? <button className="fc-text-btn" onClick={() => onRefine()}><Settings2 size={15}/><span>Refine search</span></button> : null}</div>
-      {detailOpen && activeThread && preferences ? <AgentWorkspace key={activeThread.id} companies={knownCompanies} preferences={{ ...preferences, requireRevenue: preferences.revenueRequirement !== "any", minimumAnnualRevenue: preferences.minAnnualRevenue }} reports={reports} selectedId={activeThread.selectedCompanyId} initialUrl={initialUrl} threadId={activeThread.id} messages={activeThread.messages} onMessage={onMessage} onSelect={onSelectCompany} onResult={result => onResult(result, activeThread.id)} onClearInitialUrl={onClearInitialUrl} onBack={() => { onClearInitialUrl(); onSelectCompany(null); }}/> : activeThread && preferences ? <div className="fc-search-results-scroll">
+      {detailOpen && restoringReport ? <div className="fc-loading-state" role="status"><LoaderCircle className="spin" size={24}/><p>Opening company research…</p><button className="fc-text-btn" onClick={() => onSelectCompany(null)}>Back to results<ArrowRight size={15}/></button></div> : detailOpen && activeThread && preferences ? <AgentWorkspace key={activeThread.id} companies={knownCompanies} preferences={{ ...preferences, requireRevenue: preferences.revenueRequirement !== "any", minimumAnnualRevenue: preferences.minAnnualRevenue }} reports={reports} selectedId={activeThread.selectedCompanyId} initialUrl={initialUrl} threadId={activeThread.id} messages={activeThread.messages} onMessage={onMessage} onSelect={onSelectCompany} onResult={result => onResult(result, activeThread.id)} onClearInitialUrl={onClearInitialUrl} onBack={() => { onClearInitialUrl(); onSelectCompany(null); }}/> : activeThread && preferences ? <div className="fc-search-results-scroll">
         <div className="fc-search-results-content">
           <header className="fc-search-objective"><p className="fc-section-label">SEARCH OBJECTIVE</p><h1>{searchHeading}</h1><p className="fc-search-current-label">Current filters</p><div className="fc-search-criteria"><span>{formatUSD(preferences.budget)} budget</span><span>{riskLabel(preferences.riskAppetite)} risk</span><span>{preferences.sectors.join(", ") || preferences.industries.join(", ") || "All sectors"}</span><span>{revenueLabel(preferences.revenueRequirement)}</span></div>{activeThread.brief ? <details className="fc-search-original-brief"><summary>Your original brief<ChevronDown size={14}/></summary><p>{activeThread.brief}</p></details> : null}</header>
           <div className="fc-search-results-header"><div><h2>{loading && !companies.length ? "Search results" : `${entries.length} ${entries.length === 1 ? "company" : "companies"} to explore`}</h2><p>From the sourced catalog. Open a company to inspect its research.</p></div><div className="fc-search-results-actions"><button className="fc-text-btn" onClick={onAddCompany}><Plus size={15}/>Add company</button><button className="fc-text-btn" onClick={onRefresh}>Refresh matches</button></div></div>
