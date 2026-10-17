@@ -1,3 +1,3 @@
 import type { NextConfig } from 'next';
-const nextConfig: NextConfig = { serverExternalPackages: ['@opentelemetry/sdk-trace-node', '@opentelemetry/exporter-trace-otlp-proto'] };
+const nextConfig: NextConfig = { devIndicators: false };
 export default nextConfig;

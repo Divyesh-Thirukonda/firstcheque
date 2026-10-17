@@ -6,9 +6,11 @@ Define your investment thesis, compare fictional pre-seed through Series A compa
 
 ## Run locally
 
+Requires Node.js 20.9 or newer. Dependencies are pinned in `package-lock.json`.
+
 ```bash
 npm ci
-cp .env.example .env.local # Skip this if .env.local already contains your configured keys.
+test -e .env.local || cp .env.example .env.local
 npm run dev
 ```
 
@@ -34,7 +36,9 @@ npm test
 npm run build
 ```
 
-See [docs/HACKATHON.md](docs/HACKATHON.md) for the exact track requirements and integration proof status, and [docs/DEMO.md](docs/DEMO.md) for the presentation sequence. The resource pack requires 50+ genuine baseline runs, a Knowledge Base retrieval proof, an observed failure cluster, and matched evaluator results. A local fixture is not proof that these external requirements have been completed.
+See [docs/HACKATHON.md](docs/HACKATHON.md) for the track requirements and completed proof ledger, and [docs/DEMO.md](docs/DEMO.md) for the three-minute presentation and submission copy. The frozen inputs, source catalog, per-case results, and integration caveats are saved in `docs/evidence/`.
+
+The Research Lab separates a real matched experiment from an illustrative ARR regression replay. JSON-contract validity, source checks, delivery mode, and external judge scores are distinct measurements. Inspect the evidence notes before quoting a score.
 
 ## Stack and boundaries
 
