@@ -40,6 +40,8 @@ See [docs/HACKATHON.md](docs/HACKATHON.md) for the track requirements and comple
 
 The Research Lab separates a real matched experiment from an illustrative ARR regression replay. JSON-contract validity, source checks, delivery mode, and external judge scores are distinct measurements. Inspect the evidence notes before quoting a score.
 
+On 50 identical inputs, contract-valid live memos increased from **48/50 to 50/50**. V2 used 51 provider calls, including one retained invalid response and its successful bounded correction; it used no replay fallbacks. The routing slug stayed `nicrron/auto`, whose underlying model can vary. PRISM's external judge failed calibration, so its scores do not establish a factual-grounding improvement.
+
 ## Stack and boundaries
 
 Next.js App Router, React, TypeScript, Tailwind, Lucide icons, Vercel AI SDK, Nicrron model gateway, PRISM HTTP tracing. Company information, fundraising progress and evidence are synthetic demonstration data. Match scores describe preference alignment, not predicted returns or investment eligibility. Watchlists and paper allocations are stored in the browser; there is no brokerage, custody or execution integration.
