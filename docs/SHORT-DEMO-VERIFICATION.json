@@ -1,0 +1,109 @@
+{
+  "checkedAt": "2026-10-17T18:42:56.913Z",
+  "sourceCommit": "8cce567cce27a4431ae7a081c8fbeb5ea535ac03",
+  "deployment": {
+    "id": "dpl_jXjADnS8DzfA6JHL6onES3YCnfnD",
+    "state": "READY",
+    "url": "https://seed-street.vercel.app/?view=Proposals"
+  },
+  "browserFlow": {
+    "entry": "Try the demo",
+    "action": "Make an offer",
+    "voice": "Start voice demo",
+    "automaticContractAfterPlayback": true,
+    "pdfDownload": true,
+    "elapsedSeconds": 40,
+    "audioDurationSeconds": 23.127075,
+    "phoneCallsPlaced": 0
+  },
+  "execution": {
+    "answers": "explicitly fictional",
+    "voice": "live ElevenLabs",
+    "termExtraction": "live Nicrron",
+    "traces": [
+      {
+        "id": "dc41dd17-513e-422b-895a-c56ae466686b",
+        "status": 200,
+        "model": "elevenlabs/eleven_multilingual_v2",
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "spans": 2,
+        "metadata": {
+          "product": "Seed Street",
+          "flow": "investor-proposal",
+          "operation": "speech-preview",
+          "data_classification": "private-content-redacted",
+          "sample": true,
+          "execution_mode": "live",
+          "source_kind": "synthetic-rehearsal",
+          "model_calls": 0,
+          "success": true,
+          "fields": [],
+          "rejected": 0
+        },
+        "privateNotesRedacted": true
+      },
+      {
+        "id": "d1ce225e-3ced-4ce1-95ed-ee23fd8ff3d8",
+        "status": 200,
+        "model": "openai/gpt-4.1-mini",
+        "inputTokens": 663,
+        "outputTokens": 488,
+        "spans": 3,
+        "metadata": {
+          "product": "Seed Street",
+          "flow": "investor-proposal",
+          "operation": "extract-terms",
+          "data_classification": "private-content-redacted",
+          "sample": true,
+          "execution_mode": "live",
+          "source_kind": "synthetic-rehearsal",
+          "model_calls": 1,
+          "success": true,
+          "fields": [
+            "instrument",
+            "valuation",
+            "discount",
+            "entity",
+            "jurisdiction",
+            "signatory",
+            "ownership",
+            "capTable",
+            "rights",
+            "conversionTerms",
+            "minimum",
+            "governingLaw",
+            "interest",
+            "closingDate"
+          ],
+          "rejected": 0
+        },
+        "privateNotesRedacted": true
+      }
+    ]
+  },
+  "checks": {
+    "testsPassed": 101,
+    "testsFailed": 0,
+    "typecheck": "passed",
+    "build": "passed",
+    "mobileViewport": 375,
+    "mobileDocumentScrollWidth": 375,
+    "pdfPages": 3,
+    "pdfPagesVisuallyInspected": 3,
+    "pdfSignatureFields": 0,
+    "secretScan": "passed"
+  },
+  "catalog": {
+    "companies": 166,
+    "eventCompanies": 75,
+    "founderLeads": 13
+  },
+  "phoneSetup": {
+    "configured": false,
+    "paidUpgrade": false,
+    "phoneNumberPurchased": false,
+    "elevenAgentsTerms": "accepted with explicit user approval",
+    "twilioCredentials": "not persisted in source or deployed environment"
+  }
+}
