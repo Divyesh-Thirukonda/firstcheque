@@ -151,3 +151,4 @@ test("a model cannot silently omit risks or other standard research topics", () 
   assert.equal(result[5].claims.length, 0);
   assert.match(result[5].summary, /No supported account/);
 });
+test('page-wide synthetic financial disclosure cannot be stripped from an otherwise exact financial quote',()=>{const quote='Our ARR was USD 173832 in 2025.';const page=source('All figures are mock data. '+ 'Product description. '.repeat(80)+quote,{officialCompanySource:true});assert.equal(validateFinancialEvidence(candidate(173832,quote),'arr',[page],'Brick').value,null);});

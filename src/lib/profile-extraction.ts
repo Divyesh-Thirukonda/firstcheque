@@ -1,3 +1,4 @@
+import {illustrativeFinancialDisclosure} from "./disclosure-scope";
 import { quotedRoundDate, evidenceDate } from "./evidence-dates";
 import { z } from "zod";
 import type { DiscoveryCompany } from "./discovery-types";
@@ -163,7 +164,7 @@ export function groundedProfile(
   result.commercialSignals = (candidate.commercialSignals || []).flatMap(
     (signal) => {
       const source = supported(signal);
-      if (!source) return [];
+      if (!source || illustrativeFinancialDisclosure(source.text)) return [];
       const value = normal(signal.quote).includes(normal(signal.value))
         ? signal.value
         : signal.quote;
@@ -306,6 +307,7 @@ export function groundedProfile(
       const source = supported(round);
       if (
         !source ||
+        illustrativeFinancialDisclosure(source.text) ||
         !normal(round.quote).includes(normal(round.stage)) ||
         !/rais(?:ed|es|ing)|closed|secured|funding|financing/i.test(round.quote)
       )
@@ -359,7 +361,7 @@ export function groundedProfile(
   }
   result.reportedMetrics = candidate.reportedMetrics.flatMap((metric) => {
     const source = supported(metric);
-    return source && normal(metric.quote).includes(normal(metric.value))
+    return source && !illustrativeFinancialDisclosure(source.text) && normal(metric.quote).includes(normal(metric.value))
       ? [
           {
             label: normal(metric.quote).includes(normal(metric.label))

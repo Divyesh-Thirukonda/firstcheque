@@ -95,6 +95,7 @@ export interface DiscoveryQuery {
 }
 
 export interface LiveDiligenceResult {
+  publicReview?: { checkedAt: string; method: "manual-public-source-review"; sourceIds: string[]; note: string };
   contacts?: import("./company-contacts").CompanyContacts;
   id: string;
   runId: string;
