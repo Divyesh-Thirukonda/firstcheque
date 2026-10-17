@@ -1,15 +1,15 @@
 # Seed Street
 
-**Evidence before conviction.** Discover source-listed private offerings, research a real company website, and retain an inspectable diligence workspace. Built for Money Talks 2, Money Intelligence track.
+**Your thesis. Your AI research team.** Seed Street makes startup investing more accessible through thesis-led discovery, cited diligence and investor-ready proposals. Built for Money Talks 2, Money Intelligence track.
 
-The main **Discover → Agent workspace** flow uses real company sources. A separate **Fictional demo** preserves the original synthetic companies, paper portfolio and measured hackathon experiment. The two data sets are not mixed.
+One investor workspace: **Your thesis → Discover → Agent → Research → Proposals**. Company reports use real public sources. The Research tab also exposes the frozen synthetic benchmark and methodology; there is no separate paper-demo interface. Original experiment artifacts remain preserved.
 
 ## Real-company workflow
 
-1. Browse the full sourced catalog as compact company tiles: official website icon or initials, name, short business description and starting check. Tiles are reused in search results, Watchlist, and Portfolio.
+1. Browse the full sourced catalog as compact company tiles: official website icon or initials, name, short business description and starting check. Tiles are reused in search results, Watchlist and the Research library.
 2. Click a tile to open the company profile: business description, offering terms, financial unknowns, sources and existing research. Browsing from Discover or Watchlist does not create a search.
 3. Describe your budget, interests and requirements; review the filters and start a search. Each search keeps its own criteria, strictly filtered results and conversation.
-4. Open company profiles and research inside that search, or add a company website. Refine the same search as you learn; New search starts with fresh criteria. Source passages, dates and unanswered questions remain inspectable.
+4. Open company profiles and research inside that search, or add a company website. Refine the same search as you learn; New searches start from your saved thesis. Source passages, dates and unanswered questions remain inspectable.
 
 The catalog includes **165 seeded entries**: 80 sourced venture companies (20 each at Series A–D, four per stage in AI/software, cybersecurity, fintech, healthcare and climate/energy), 75 Money Talks companies/projects, and ten manually checked offering snapshots. Discover filters by stage, industry and collection and searches stored founder/product/audience facts. Deep research remains an explicit live investigation. All 75 named handoff records are visible with their original readiness/history labels. The 13 founder-only leads have a separate Founder leads collection. Discover opens on the Money Talks collection; All companies is one click away. See [catalog coverage, collection and field provenance](docs/CATALOG.md).
 

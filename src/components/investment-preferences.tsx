@@ -39,6 +39,7 @@ export function InvestmentPreferences({ preferences, proposal, validate, onClose
 
   return <WorkspaceDialog title={title || (proposal ? "Review your preferences" : "Investment preferences")} onClose={onClose} wide>
     <form onSubmit={submit}>
+      {title === "Your investment thesis" ? <label className="fc-field"><span>What future do you want to invest in?</span><textarea value={draft.thesis} maxLength={1200} onChange={event=>setDraft({...draft,thesis:event.target.value})} placeholder="The industries, founders and ideas you believe in…"/></label> : null}
       {proposal?.warnings.map(warning => <p className="fc-inline-error" key={warning}>{warning}</p>)}
       <section className="fc-preference-section">
         <h3>Budget</h3>
@@ -66,7 +67,7 @@ export function InvestmentPreferences({ preferences, proposal, validate, onClose
       <details className="fc-more-filters">
         <summary>More filters<ChevronDown size={17}/></summary>
         <div>
-          <label className="fc-field"><span>Brief</span><textarea value={draft.thesis} maxLength={1200} onChange={event => setDraft({ ...draft, thesis: event.target.value })} placeholder="Anything else that matters to you?"/></label>
+          {title !== "Your investment thesis" ? <label className="fc-field"><span>Brief</span><textarea value={draft.thesis} maxLength={1200} onChange={event => setDraft({ ...draft, thesis: event.target.value })} placeholder="Anything else that matters to you?"/></label> : null}
           <div className="fc-field"><span>Funding stage</span><div className="fc-choice-group"><button type="button" aria-pressed={!draft.stages.length} className={!draft.stages.length ? "active" : ""} onClick={() => setDraft({ ...draft, stages: [] })}>All stages</button>{STAGES.map(stage => <button type="button" key={stage} aria-pressed={draft.stages.includes(stage)} className={draft.stages.includes(stage) ? "active" : ""} onClick={() => setDraft({ ...draft, stages: draft.stages.includes(stage) ? draft.stages.filter(item => item !== stage) : [...draft.stages, stage] })}>{stage}</button>)}</div></div>
           <div className="fc-form-grid">
             <label className="fc-field"><span>Minimum annual revenue ($ USD)</span><input type="number" min="0" value={draft.minAnnualRevenue ?? ""} placeholder="No minimum" onChange={event => setDraft({ ...draft, minAnnualRevenue: event.target.value ? Number(event.target.value) : null })}/></label>

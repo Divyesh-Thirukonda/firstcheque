@@ -10,12 +10,13 @@ import { CompanyOverview } from "./company-overview";
 import { WorkspaceDialog } from "./workspace-dialog";
 
 /** Browsing a company does not create a search or change an existing search's intent. */
-export function CompanyProfile({ company, report, saved, onSave, onResearch, onClose, initialProposal=false }: {
+export function CompanyProfile({ company, report, saved, onSave, onResearch, onClose, initialProposal=false, initialResearch=false }: {
   initialProposal?:boolean;
+  initialResearch?:boolean;
   company: DiscoveryCompany; report: LiveDiligenceResult | null; saved: boolean;
   onSave: () => void; onResearch: () => void; onClose: () => void;
 }) {
-  const [view, setView] = useState<"Overview" | "Research" | "Proposal">(initialProposal?"Proposal":"Overview");
+  const [view, setView] = useState<"Overview" | "Research" | "Proposal">(initialProposal?"Proposal":initialResearch&&report?"Research":"Overview");
   const [callPurpose,setCallPurpose]=useState<import("@/lib/proposal-calls").CallPurpose|undefined>();
   const [tab, setTab] = useState<"Report" | "Financials" | "Sources">("Report");
   const [source, setSource] = useState<DiligenceSource | null>(null);

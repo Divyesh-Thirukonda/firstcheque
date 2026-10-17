@@ -1,6 +1,6 @@
 "use client";
 
-import dynamic from "next/dynamic";
+import {ResearchHub,YourThesis} from "@/components/research-hub";
 import { SeedStreetBrand } from "@/components/seed-street-brand";
 import { useCallback, useEffect, useMemo, useState, type FormEvent } from "react";
 import { FileText, ArrowRight, Bookmark, Check, CircleHelp, Compass, FlaskConical, LoaderCircle, Plus, Search, Settings2, ShieldCheck, Sparkles, TriangleAlert, Wallet, TrendingUp, Radar, ArrowUpRight } from "lucide-react";
@@ -19,8 +19,7 @@ import { InvestmentPreferences, riskLabel, revenueLabel, type BriefProposal } fr
 import { EXPLORATIONS, explorationCompanies, explorationIntent, type ExplorationKind } from "@/lib/exploration";
 import { WorkspaceDialog } from "@/components/workspace-dialog";
 
-const DemoWorkspace = dynamic(() => import("@/components/demo-workspace"), { loading: () => <div className="fc-loading-page"><LoaderCircle className="spin" size={24}/>Opening paper demo…</div> });
-type View = "Discover" | "Agent" | "Watchlist" | "Portfolio" | "Proposals";
+type View = "Discover" | "Agent" | "Watchlist" | "Research" | "Your thesis" | "Proposals";
 type ReviewIntent = { kind: "new" } | { kind: "refine"; threadId: string };
 const STORAGE_KEY = "firstcheque.live-workspace.v1";
 const SEARCH_STORAGE_KEY = "firstcheque.searches.v1";
@@ -38,7 +37,6 @@ function recordSearch(thread: SearchThread, request: string): SearchThread {
 
 export default function Home() {
   const [view, setView] = useState<View>("Discover");
-  const [demoView, setDemoView] = useState<"Discover" | "Portfolio" | "Research Lab" | null>(null);
   const [preferences, setPreferences] = useState<DiscoveryPreferences>(DEFAULT_DISCOVERY_PREFERENCES);
   const [watchlist, setWatchlist] = useState<string[]>([]);
   const [threads, setThreads] = useState<SearchThread[]>([]);
@@ -122,7 +120,7 @@ export default function Home() {
     } catch { /* Search history may be unavailable when browser storage is disabled. */ }
     const params = new URLSearchParams(window.location.search);
     const initial = params.get("view");
-    if (initial && ["Discover", "Agent", "Watchlist", "Portfolio", "Proposals"].includes(initial)) setView(initial as View);
+    if (initial && ["Discover", "Agent", "Watchlist", "Research", "Your thesis", "Proposals"].includes(initial)) setView(initial as View);
     const requestedSearch = params.get("search");
     const requestedCompany = params.get("company");
     const restored = restoredThreads.find(thread => thread.id === requestedSearch) || (!requestedSearch ? restoredThreads[0] : null);
@@ -180,8 +178,7 @@ export default function Home() {
     window.scrollTo({ top: 0 });
   }
   function newSearch() {
-    setPreferences({ ...DEFAULT_DISCOVERY_PREFERENCES });
-    setBrief("");
+    setBrief(preferences.thesis);
     setBriefError("");
     setCatalogQuery("");
     navigate("Discover");
@@ -266,6 +263,7 @@ export default function Home() {
     setPrefsOpen(true);
   }
   function saveSearch(next: DiscoveryPreferences) {
+    if(view==="Your thesis"){setPreferences({...next,query:""});setPrefsOpen(false);setProposal(null);setToast("Your thesis is saved");return;}
     const ids = resultIds(companies, next);
     if (reviewIntent.kind === "refine") {
       const targetId = reviewIntent.threadId;
@@ -327,8 +325,7 @@ export default function Home() {
     setView("Agent");
   }
 
-  if (demoView) return <DemoWorkspace initialView={demoView} onExit={() => setDemoView(null)}/>;
-  const nav = [{ title: "Discover", icon: Compass }, { title: "Agent", icon: Sparkles }, { title: "Watchlist", icon: Bookmark }, { title: "Proposals", icon: FileText }, { title: "Portfolio", icon: Wallet }] as const;
+  const nav = [{ title: "Discover", icon: Compass }, { title: "Your thesis", icon: Settings2 }, { title: "Agent", icon: Sparkles }, { title: "Research", icon: FlaskConical }, { title: "Watchlist", icon: Bookmark }, { title: "Proposals", icon: FileText }] as const;
 
   return <div className="fc-workspace">
     <a className="skip-link" href="#fc-main">Skip to main content</a>
@@ -339,7 +336,6 @@ export default function Home() {
       </nav>
       <div className="fc-sidebar-footer">
         <button onClick={() => setHelpOpen(true)} title="How it works"><CircleHelp size={19}/><span>How it works</span></button>
-        <button onClick={() => setDemoView("Research Lab")} title="Demo and proof lab"><FlaskConical size={19}/><span>Demo & proof</span></button>
         <button onClick={view === "Agent" && activeThread?.exploration ? newSearch : editPreferences} title={view === "Agent" && activeThread?.exploration ? "Start an investment search" : view === "Agent" && activeThread ? "Edit this search" : "Choose search preferences"}><Settings2 size={19}/><span>{view === "Agent" && activeThread?.exploration ? "Investment search" : view === "Agent" && activeThread ? "Search preferences" : "Preferences"}</span></button>
       </div>
     </aside>
@@ -348,27 +344,22 @@ export default function Home() {
       <header className="fc-topbar">
         <span className="fc-breadcrumb">{view === "Agent" ? "Search workspace" : view}</span>
         <div className="fc-top-actions">
-          <label className="fc-global-search"><Search size={18}/><input aria-label="Search company catalog" placeholder="Search companies, founders or products" value={catalogQuery} onChange={event => { setCatalogQuery(event.target.value);setCatalogGroup("all"); if (view === "Agent" || view === "Portfolio" || view === "Proposals") navigate("Discover"); }}/></label>
-          <button className="fc-text-btn" onClick={() => setDemoView("Discover")}>Paper demo</button>
+          <label className="fc-global-search"><Search size={18}/><input aria-label="Search company catalog" placeholder="Search companies, founders or products" value={catalogQuery} onChange={event => { setCatalogQuery(event.target.value);setCatalogGroup("all"); if (view === "Agent" || view === "Research" || view === "Proposals") navigate("Discover"); }}/></label>
+          <button className="fc-text-btn" onClick={() => navigate("Your thesis")}>Your thesis</button>
         </div>
       </header>
 
       <main id="fc-main" tabIndex={-1} className={view === "Agent" ? "fc-agent-main" : "fc-main-content"}>
-        {view === "Agent" ? <SearchWorkspace threads={threads} activeThread={activeThread} companies={companies} reports={reports} reportsLoading={reportsLoading} savedIds={watchlist} initialUrl={initialUrl} loading={loading} catalogError={catalogError} onSelectThread={selectSearch} onNewSearch={newSearch} onAddCompany={() => setImportOpen(true)} onRefine={refineSearch} onRefresh={refreshSearch} onSelectCompany={selectCompany} onSave={toggleSave} onMessage={receivedMessage} onResult={receivedResult} onClearInitialUrl={clearInitialUrl} onExplore={startExploration}/> : <>
+        {view === "Your thesis" ? <><div className="fc-page-heading"><h1>Your thesis</h1></div><YourThesis preferences={preferences} onEdit={editPreferences} onSearch={newSearch}/></> : view === "Research" ? <><div className="fc-page-heading"><h1>Research</h1><button className="fc-btn secondary" onClick={()=>setImportOpen(true)}><Plus size={17}/>Research a company</button></div><ResearchHub reports={reports} companies={companies} savedIds={watchlist} onOpen={openCompany} onSave={toggleSave} onDiscover={()=>navigate("Discover")}/></> : view === "Agent" ? <SearchWorkspace threads={threads} activeThread={activeThread} companies={companies} reports={reports} reportsLoading={reportsLoading} savedIds={watchlist} initialUrl={initialUrl} loading={loading} catalogError={catalogError} onSelectThread={selectSearch} onNewSearch={newSearch} onAddCompany={() => setImportOpen(true)} onRefine={refineSearch} onRefresh={refreshSearch} onSelectCompany={selectCompany} onSave={toggleSave} onMessage={receivedMessage} onResult={receivedResult} onClearInitialUrl={clearInitialUrl} onExplore={startExploration}/> : <>
           <div className="fc-page-heading">
-            <div><h1>{view === "Discover" ? "Discover" : view === "Watchlist" ? "Watchlist" : view === "Proposals" ? "Proposals" : "Portfolio"}</h1></div>
+            <div><h1>{view}</h1>{view==="Discover"?<p className="ss-discover-tagline">Discover startups. Research with AI. Build conviction.</p>:null}</div>
             <button className="fc-btn secondary" onClick={() => view==="Proposals" ? (browseCollection("event-handoff"),navigate("Discover")) : setImportOpen(true)}><Plus size={18}/>{view==="Proposals"?"New proposal":"Add company"}</button>
           </div>
 
             {view==="Discover"?<div className="fc-event-collections" aria-label="Browse collections"><button aria-pressed={catalogGroup==="event-handoff"} onClick={()=>browseCollection("event-handoff")}>Money Talks<span>{eventCount}</span></button><button aria-pressed={catalogGroup==="founders"} onClick={()=>browseCollection("founders")}>Founder leads<span>{catalog?.founderLeads?.length||0}</span></button><button aria-pressed={catalogGroup==="all"} onClick={()=>browseCollection("all")}>All companies<span>{companies.length}</span></button></div>:null}
 
-          {view === "Proposals" ? <ProposalLibrary companies={companies} onOpen={company=>{setBrowseProposal(true);setBrowseCompany(company);}} onDiscover={()=>navigate("Discover")}/> : view === "Portfolio" ? <>
-            <div className="fc-overview-stats"><div><span>Saved companies</span><strong>{savedCompanies.length}</strong></div><div><span>Research reports</span><strong>{reports.length}</strong></div></div>
-            <div className="fc-portfolio-callout"><Wallet size={28}/><div><h2>Paper portfolio</h2><p>Fictional startups · Simulation</p></div><button className="fc-btn primary" onClick={() => setDemoView("Portfolio")}>Open paper portfolio<ArrowRight size={17}/></button></div>
-            <div className="fc-results-heading"><h2>Saved companies</h2></div>
-            {savedCompanies.length ? <CompanyList entries={savedCompanies.map(company => ({ company, reasons: [] }))} savedIds={watchlist} onSave={toggleSave} onResearch={openCompany}/> : <div className="fc-empty-state"><Bookmark size={28}/><h2>No saved companies yet</h2><button className="fc-btn secondary" onClick={() => navigate("Discover")}>Explore companies<ArrowRight size={17}/></button></div>}
-          </> : <>
-            {view === "Discover" && catalogGroup === "all" ? <>
+          {view === "Proposals" ? <ProposalLibrary companies={companies} onOpen={company=>{setBrowseProposal(true);setBrowseCompany(company);}} onDiscover={()=>navigate("Discover")}/> : <>
+            {view === "Discover" && catalogGroup !== "founders" ? <>
               <form className="fc-brief-card" onSubmit={parseBrief}>
                 <label className="fc-brief-title" htmlFor="investing-brief">What are you looking for?</label>
                 <textarea id="investing-brief" aria-label="Your investment brief" value={brief} maxLength={1200} onChange={event => setBrief(event.target.value)} placeholder="I have $2,000 for AI startups with revenue."/>
@@ -403,11 +394,11 @@ export default function Home() {
       </main>
     </div>
 
-    {browseCompany ? <CompanyProfile initialProposal={browseProposal} key={`${browseCompany.id}-${browseProposal}`} company={browseCompany} report={reports.find(report => report.companyId === browseCompany.id) || null} saved={watchlist.includes(browseCompany.id)} onSave={() => toggleSave(browseCompany.id)} onResearch={() => startCompanyResearch(browseCompany)} onClose={() => setBrowseCompany(null)}/> : null}
-    {prefsOpen ? <InvestmentPreferences preferences={proposal?.preferences || reviewPreferences} proposal={proposal} validate={isDiscoveryPreferences} title="Search filters" focusField={filterFocus} submitLabel={reviewIntent.kind === "refine" ? "Update search" : "Start search"} onClose={() => { setPrefsOpen(false); setProposal(null); }} onSave={saveSearch}/> : null}
+    {browseCompany ? <CompanyProfile initialResearch={view==="Research"} initialProposal={browseProposal} key={`${browseCompany.id}-${browseProposal}`} company={browseCompany} report={reports.find(report => report.companyId === browseCompany.id) || null} saved={watchlist.includes(browseCompany.id)} onSave={() => toggleSave(browseCompany.id)} onResearch={() => startCompanyResearch(browseCompany)} onClose={() => setBrowseCompany(null)}/> : null}
+    {prefsOpen ? <InvestmentPreferences preferences={proposal?.preferences || reviewPreferences} proposal={proposal} validate={isDiscoveryPreferences} title={view==="Your thesis"?"Your investment thesis":"Search filters"} focusField={filterFocus} submitLabel={view==="Your thesis"?"Save thesis":reviewIntent.kind === "refine" ? "Update search" : "Start search"} onClose={() => { setPrefsOpen(false); setProposal(null); }} onSave={saveSearch}/> : null}
     {importOpen ? <WorkspaceDialog title="Add company" onClose={() => setImportOpen(false)}><form onSubmit={importCompany}><label className="fc-field"><span>Company website</span><input type="url" required placeholder="https://company.com" value={importUrl} onChange={event => setImportUrl(event.target.value)}/></label><div className="fc-dialog-actions"><button className="fc-btn secondary" type="button" onClick={() => setImportOpen(false)}>Cancel</button><button className="fc-btn primary" type="submit">Open agent<ArrowRight size={17}/></button></div></form></WorkspaceDialog> : null}
 
-    {helpOpen ? <WorkspaceDialog title="How Seed Street works" onClose={() => setHelpOpen(false)}><ol className="fc-help-steps"><li><strong>Start a search</strong><p>Describe your budget, interests, and requirements. Review the filters to create your search.</p></li><li><strong>Research within that search</strong><p>Explore its results, open company reports, and refine the same search as you learn.</p></li><li><strong>Continue at the source</strong><p>Review current offering terms and eligibility on the original platform.</p></li></ol><p className="fc-preference-footnote">Your searches stay in this browser. Seed Street does not hold money or execute trades. The paper demo uses fictional companies.</p><div className="fc-dialog-actions"><button className="fc-btn primary" onClick={() => setHelpOpen(false)}>Got it</button></div></WorkspaceDialog> : null}
+    {helpOpen ? <WorkspaceDialog title="How Seed Street works" onClose={() => setHelpOpen(false)}><ol className="fc-help-steps"><li><strong>Start a search</strong><p>Describe your budget, interests, and requirements. Review the filters to create your search.</p></li><li><strong>Research within that search</strong><p>Explore its results, open company reports, and refine the same search as you learn.</p></li><li><strong>Continue at the source</strong><p>Review current offering terms and eligibility on the original platform.</p></li></ol><p className="fc-preference-footnote">Your searches stay in this browser. Seed Street does not hold money or execute trades.</p><div className="fc-dialog-actions"><button className="fc-btn primary" onClick={() => setHelpOpen(false)}>Got it</button></div></WorkspaceDialog> : null}
     {toast ? <div className="fc-toast" role="status"><Check size={17}/>{toast}</div> : null}
   </div>;
 }
