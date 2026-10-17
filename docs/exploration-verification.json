@@ -1,0 +1,47 @@
+{
+  "scope": "Exploration starters and conversational agent task UI inspired by the supplied Specter reference",
+  "sourceRevision": "8b468f91cb0dffe02830eaefa51d6304b25a9bea",
+  "validation": {
+    "offlineTests": 61,
+    "typecheck": "passed",
+    "productionBuild": "passed",
+    "desktopWidth": 1440,
+    "mobileWidth": 400,
+    "mobileDocumentWidth": 400,
+    "modelCallsThisRefinement": 0
+  },
+  "localBrowserChecks": [
+    "Fundraising starter creates a separate saved search with two AI infrastructure companies",
+    "Growth follow-up creates a saved ten-company research map",
+    "Reload restores the exploration kind and scope",
+    "Company detail retains exploration search identity without showing unrelated budget exclusions",
+    "Ask agent receives a short growth/fundraising question through the existing research route",
+    "Saved report steps appear in the new icon timeline; task details expand",
+    "Follow-up suggestion fills and focuses the composer without auto-sending",
+    "Existing allocation search retains the same two results and $8,000 budget",
+    "400px mobile map and expanded saved-report timeline have no horizontal page overflow"
+  ],
+  "hostedBrowserChecks": [
+    "Discover shows both enabled starters after the catalog loads",
+    "Fundraising starter opens a saved map with two companies, seven readable sources and unknown raise likelihood"
+  ],
+  "animation": "CSS entry transitions and running-task shimmer; reduced-motion preference respected. Status uses real SSE events or completed local catalog work, never timed fabricated steps.",
+  "preserved": [
+    "Existing Nicrron and PRISM research route",
+    "Strict allocation filters",
+    "Source dates, unknown financials and citation detail",
+    "Frozen hackathon benchmark artifacts"
+  ],
+  "limitations": [
+    "Maps currently explore the sourced FirstCheque catalog and retained reports, not a comprehensive startup universe",
+    "No comparable growth series or calibrated fundraising probabilities are available; no such rankings are assigned",
+    "New live public-web research is started explicitly inside a company research pane"
+  ],
+  "deployment": {
+    "id": "dpl_C7eRD1csJGKtG5UBo8RhdAjhZUcj",
+    "url": "https://firstcheque-ksxeddjmy-divyesh-thirukondas-projects.vercel.app",
+    "state": "READY",
+    "environment": "preview",
+    "protection": "Vercel Authentication retained; temporary access supplied separately"
+  }
+}
