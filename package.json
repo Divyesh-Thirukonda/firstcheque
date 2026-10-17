@@ -7,12 +7,14 @@
     "build": "next build",
     "start": "next start --hostname 127.0.0.1",
     "typecheck": "tsc --noEmit",
-    "test": "tsx --test tests/*.test.ts",
+    "test": "NODE_OPTIONS=--conditions=react-server tsx --test tests/*.test.ts",
     "eval": "tsx scripts/evaluate.ts"
   },
   "dependencies": {
     "@ai-sdk/openai-compatible": "latest",
+    "@vercel/blob": "^2.8.2",
     "ai": "latest",
+    "cheerio": "^1.2.0",
     "lucide-react": "latest",
     "next": "latest",
     "react": "latest",

@@ -1,6 +1,6 @@
 # FirstCheque
 
-Next.js App Router, React, TypeScript and Tailwind. All opportunity financials and investor profiles are synthetic. Never imply fictional companies are actual securities offerings. Keep paper allocations local and never execute trades. Model calls must use Nicrron for the hackathon. Distinguish replay, live inference, and verified external proof. Never manufacture metrics or PRISM success. Preserve same-input baseline evidence before changing v1. Never commit .env.local, work/, keys, or raw setup briefs.
+Next.js App Router, React, TypeScript and Tailwind. The original six-company catalog and frozen experiment are synthetic. The user has authorized real public offering imports and web diligence: keep these in a separate sourced live catalog, cite actual pages and dates, preserve unknown financials as unknown, and never mix demo figures into real-company research. Never imply fictional companies are actual securities offerings or label a company's website as an investable offering. Keep paper allocations local and never execute trades. Model calls must use Nicrron for the hackathon. Distinguish replay, live inference, reported facts, and verified external proof. Never manufacture metrics or PRISM success. Preserve the frozen v1/v2 benchmark artifacts and source commits. Never commit .env.local, work/, keys, or raw setup briefs.
 
 ## PRISM tracing (do not remove)
 

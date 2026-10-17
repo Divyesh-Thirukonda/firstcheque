@@ -7,3 +7,4 @@ work/
 *.tsbuildinfo
 .DS_Store
 .venv/
+.vercel
