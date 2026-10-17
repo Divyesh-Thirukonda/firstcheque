@@ -1,3 +1,4 @@
+import { EXPLORATIONS, type ExplorationKind } from "./exploration";
 import type { DiscoveryPreferences } from "./discovery-types";
 
 /** Personal searches stay in the browser; company research is stored separately. */
@@ -13,6 +14,7 @@ export interface SearchMessage {
 
 export interface SearchThread {
   id: string;
+  exploration?: ExplorationKind;
   title: string;
   brief: string;
   preferences: DiscoveryPreferences;
@@ -105,7 +107,7 @@ export function createSearchThread(preferences: DiscoveryPreferences, resultComp
 export function updateSearchThreadPreferences(thread: SearchThread, preferences: DiscoveryPreferences, resultCompanyIds: readonly string[]): SearchThread {
   const ids = companyIds(resultCompanyIds);
   return {
-    ...thread, title: searchThreadTitle(preferences), brief: preferences.thesis.trim(), preferences: snapshotPreferences(preferences),
+    ...thread, title: thread.exploration ? EXPLORATIONS[thread.exploration].title : searchThreadTitle(preferences), brief: preferences.thesis.trim(), preferences: snapshotPreferences(preferences),
     resultCompanyIds: ids, selectedCompanyId: thread.selectedCompanyId && ids.includes(thread.selectedCompanyId) ? thread.selectedCompanyId : null,
     messages: thread.messages.map(message => ({ ...message })), updatedAt: new Date().toISOString(),
   };
@@ -147,7 +149,7 @@ function thread(value: unknown): SearchThread | null {
     || !validDate(value.createdAt) || !validDate(value.updatedAt)) return null;
   const messages = value.messages.map(message).filter((item): item is SearchMessage => item !== null);
   return {
-    id: value.id, title: value.title, brief: value.brief, preferences: snapshotPreferences(value.preferences),
+    id: value.id, ...(value.exploration === "growth" || value.exploration === "fundraising" ? { exploration: value.exploration } : {}), title: value.title, brief: value.brief, preferences: snapshotPreferences(value.preferences),
     resultCompanyIds: companyIds(value.resultCompanyIds), selectedCompanyId: value.selectedCompanyId,
     messages: [...new Map(messages.map(item => [item.id, item])).values()], createdAt: value.createdAt, updatedAt: value.updatedAt,
   };

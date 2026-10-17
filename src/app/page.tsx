@@ -2,7 +2,7 @@
 
 import dynamic from "next/dynamic";
 import { useCallback, useEffect, useMemo, useState, type FormEvent } from "react";
-import { ArrowRight, Bookmark, Check, CircleHelp, Compass, FlaskConical, LoaderCircle, Plus, Search, Settings2, ShieldCheck, Sparkles, TriangleAlert, Wallet } from "lucide-react";
+import { ArrowRight, Bookmark, Check, CircleHelp, Compass, FlaskConical, LoaderCircle, Plus, Search, Settings2, ShieldCheck, Sparkles, TriangleAlert, Wallet, TrendingUp, Radar, ArrowUpRight } from "lucide-react";
 import { DEFAULT_DISCOVERY_PREFERENCES, filterAndRankCompanies } from "@/lib/discovery";
 import type { CatalogResponse, DiscoveryCompany, DiscoveryPreferences } from "@/lib/discovery-types";
 import type { LiveDiligenceResult } from "@/lib/live-research-types";
@@ -12,6 +12,7 @@ import { SearchWorkspace } from "@/components/search-workspace";
 import { CompanyProfile } from "@/components/company-profile";
 import { CompanyList, formatUSD as currency } from "@/components/company-list";
 import { InvestmentPreferences, riskLabel, revenueLabel, type BriefProposal } from "@/components/investment-preferences";
+import { EXPLORATIONS, explorationCompanies, explorationIntent, type ExplorationKind } from "@/lib/exploration";
 import { WorkspaceDialog } from "@/components/workspace-dialog";
 
 const DemoWorkspace = dynamic(() => import("@/components/demo-workspace"), { loading: () => <div className="fc-loading-page"><LoaderCircle className="spin" size={24}/>Opening paper demo…</div> });
@@ -210,8 +211,20 @@ export default function Home() {
       if (intent.kind === "refine") setToast(message);
     } finally { setParsing(false); }
   }
+  function startExploration(kind: ExplorationKind, prompt = EXPLORATIONS[kind].prompt as string) {
+    const context = { ...DEFAULT_DISCOVERY_PREFERENCES, sectors: kind === "fundraising" ? ["AI infrastructure"] : [], offeringOnly: false, includeUnverified: true, thesis: prompt };
+    const candidates = explorationCompanies(companies, kind);
+    const thread: SearchThread = { ...createSearchThread(context, candidates.map(company => company.id)), exploration: kind, title: EXPLORATIONS[kind].title };
+    setThreads(current => [thread, ...current]);
+    setActiveThreadId(thread.id);
+    setInitialUrl("");
+    setView("Agent");
+    setBriefError("");
+  }
   function parseBrief(event: FormEvent) {
     event.preventDefault();
+    const exploration = explorationIntent(brief);
+    if (exploration) { startExploration(exploration, brief.trim()); return; }
     void prepareBrief(brief, { ...preferences, query: "" }, { kind: "new" });
   }
   function refineSearch(text?: string, field?: "budget" | "company-limit" | "risk" | "revenue") {
@@ -263,7 +276,7 @@ export default function Home() {
     const targetId = activeThread?.id;
     const refreshed = await loadCatalog();
     if (!targetId || !refreshed) return;
-    setThreads(current => current.map(thread => thread.id === targetId ? { ...thread, resultCompanyIds: resultIds(refreshed.companies, thread.preferences), updatedAt: new Date().toISOString() } : thread));
+    setThreads(current => current.map(thread => thread.id === targetId ? { ...thread, resultCompanyIds: thread.exploration ? explorationCompanies(refreshed.companies, thread.exploration).map(company => company.id) : resultIds(refreshed.companies, thread.preferences), updatedAt: new Date().toISOString() } : thread));
     setToast("Search checked against the current catalog");
   }
   function selectCompany(id: string | null) {
@@ -309,7 +322,7 @@ export default function Home() {
       <div className="fc-sidebar-footer">
         <button onClick={() => setHelpOpen(true)} title="How it works"><CircleHelp size={19}/><span>How it works</span></button>
         <button onClick={() => setDemoView("Research Lab")} title="Demo and proof lab"><FlaskConical size={19}/><span>Demo & proof</span></button>
-        <button onClick={editPreferences} title={view === "Agent" && activeThread ? "Edit this search" : "Choose search preferences"}><Settings2 size={19}/><span>{view === "Agent" && activeThread ? "Search preferences" : "Preferences"}</span></button>
+        <button onClick={view === "Agent" && activeThread?.exploration ? newSearch : editPreferences} title={view === "Agent" && activeThread?.exploration ? "Start an investment search" : view === "Agent" && activeThread ? "Edit this search" : "Choose search preferences"}><Settings2 size={19}/><span>{view === "Agent" && activeThread?.exploration ? "Investment search" : view === "Agent" && activeThread ? "Search preferences" : "Preferences"}</span></button>
       </div>
     </aside>
 
@@ -323,7 +336,7 @@ export default function Home() {
       </header>
 
       <main id="fc-main" tabIndex={-1} className={view === "Agent" ? "fc-agent-main" : "fc-main-content"}>
-        {view === "Agent" ? <SearchWorkspace threads={threads} activeThread={activeThread} companies={companies} reports={reports} reportsLoading={reportsLoading} savedIds={watchlist} initialUrl={initialUrl} loading={loading} catalogError={catalogError} onSelectThread={selectSearch} onNewSearch={newSearch} onAddCompany={() => setImportOpen(true)} onRefine={refineSearch} onRefresh={refreshSearch} onSelectCompany={selectCompany} onSave={toggleSave} onMessage={receivedMessage} onResult={receivedResult} onClearInitialUrl={clearInitialUrl}/> : <>
+        {view === "Agent" ? <SearchWorkspace threads={threads} activeThread={activeThread} companies={companies} reports={reports} reportsLoading={reportsLoading} savedIds={watchlist} initialUrl={initialUrl} loading={loading} catalogError={catalogError} onSelectThread={selectSearch} onNewSearch={newSearch} onAddCompany={() => setImportOpen(true)} onRefine={refineSearch} onRefresh={refreshSearch} onSelectCompany={selectCompany} onSave={toggleSave} onMessage={receivedMessage} onResult={receivedResult} onClearInitialUrl={clearInitialUrl} onExplore={startExploration}/> : <>
           <div className="fc-page-heading">
             <div><h1>{view === "Discover" ? "Discover" : view === "Watchlist" ? "Watchlist" : "Portfolio"}</h1></div>
             <button className="fc-btn secondary" onClick={() => setImportOpen(true)}><Plus size={18}/>Add company</button>
@@ -342,7 +355,10 @@ export default function Home() {
                 <div className="fc-brief-bottom"><div className="fc-brief-controls"><button type="button" className="fc-text-btn" onClick={editPreferences}><Settings2 size={15}/>Filters</button></div><button className="fc-btn primary" type="submit" disabled={parsing}>{parsing ? <LoaderCircle size={17} className="spin"/> : null}{parsing ? "Finding…" : "Find companies"}<ArrowRight size={17}/></button></div>
                 {briefError ? <p className="fc-inline-error" role="alert">{briefError}</p> : null}
               </form>
-
+              <div className="fc-explore-starters" aria-label="Explore with the agent">
+                <button onClick={() => startExploration("growth")} disabled={loading || !!catalogError}><span className="fc-starter-icon"><TrendingUp size={20}/></span><span><small>Explore growth</small><strong>Map the fastest-growing startups</strong></span><ArrowUpRight size={17}/></button>
+                <button onClick={() => startExploration("fundraising")} disabled={loading || !!catalogError}><span className="fc-starter-icon"><Radar size={20}/></span><span><small>Explore fundraising</small><strong>AI infra likely to raise next</strong></span><ArrowUpRight size={17}/></button>
+              </div>
             </> : null}
 
             <div className="fc-results-heading">

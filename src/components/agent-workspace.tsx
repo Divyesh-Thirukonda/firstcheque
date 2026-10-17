@@ -1,11 +1,12 @@
 "use client";
 import { useEffect, useRef, useState, type KeyboardEvent } from "react";
-import { ArrowRight, ArrowUpRight, Check, CheckCircle2, ChevronDown, Circle, FileSearch, FileText, FolderOpen, Globe2, Link2, LoaderCircle, MessageSquare, PanelLeftClose, Plus, Search, ShieldCheck, Sparkles, Square, Target, TriangleAlert } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check, ChevronDown, FileSearch, FileText, Globe2, Link2, LoaderCircle, MessageSquare, ShieldCheck, Sparkles, Square, Target, TriangleAlert } from "lucide-react";
 import type { DiligenceRequest, DiligenceSource, DiligenceStep, DiligenceStreamEvent, LiveDiligenceResult, LiveInvestorThesis } from "@/lib/live-research-types";
 import type { DiscoveryCompany } from "@/lib/discovery-types";
 import { CompanyOverview } from "./company-overview";
 import type { CompanyEntry } from "./company-list";
 import type { SearchMessage } from "@/lib/search-threads";
+import { TaskTimeline } from "./task-timeline";
 import { WorkspaceDialog } from "./workspace-dialog";
 
 export interface AgentCompany { id: string; name: string; website: string; description: string; offeringStatus: string; offeringUrl: string | null; platform: string | null; dossierId?: string }
@@ -38,7 +39,8 @@ function Citations({ ids, sources, onSource, passage }: { ids: string[]; sources
   return <span className="fc-citations">{ids.map(id => { const index = sources.findIndex(source => source.id === id); const source = sources[index]; return source ? <button key={id} onClick={() => onSource(source, passage)} aria-label={`Read source ${index + 1}: ${source.title}`}>Source {index + 1}</button> : null; })}</span>;
 }
 
-export function AgentWorkspace({ companies, preferences, reports, selectedId, initialUrl, messages, threadId, onMessage, onSelect, onResult, onClearInitialUrl, onBack, companyDetails, fit, savedIds, onSaveCompany }: {
+export function AgentWorkspace({ companies, preferences, reports, selectedId, initialUrl, messages, threadId, onMessage, onSelect, onResult, onClearInitialUrl, onBack, companyDetails, fit, savedIds, onSaveCompany, researchQuestion }: {
+  researchQuestion?: string;
   companyDetails?: DiscoveryCompany; fit?: Omit<CompanyEntry, "company">; savedIds: string[]; onSaveCompany: (id: string) => void;
   companies: AgentCompany[]; preferences: LiveInvestorThesis; reports: LiveDiligenceResult[];
   selectedId: string | null; initialUrl: string; messages: SearchMessage[]; threadId: string;
@@ -47,7 +49,7 @@ export function AgentWorkspace({ companies, preferences, reports, selectedId, in
   onClearInitialUrl: () => void; onBack: () => void;
 }) {
   const [companyTab, setCompanyTab] = useState<"Overview" | "Research">(companyDetails ? "Overview" : "Research");
-  const [question, setQuestion] = useState("");
+  const [question, setQuestion] = useState(researchQuestion || "");
   const [url, setUrl] = useState(initialUrl);
   const [reportTab, setReportTab] = useState<"Report" | "Financials" | "Sources">("Report");
   const [activeSource, setActiveSource] = useState<DiligenceSource | null>(null);
@@ -87,9 +89,9 @@ export function AgentWorkspace({ companies, preferences, reports, selectedId, in
     const targetName = !url.trim() ? company?.name || report?.company.name : undefined;
     if (!targetUrl && !targetName) { setError("Paste a company website, or select a company from your workspace."); composer.current?.focus(); return; }
     if (targetUrl && !safeWebUrl(targetUrl)) { setError("Use a complete company URL beginning with https:// or http://."); return; }
-    const prompt = customQuestion || question.trim() || "Research this company against my investment brief. Cover founders, competitors, market, financials, and material risks. Cite the evidence and identify what is not disclosed.";
+    const prompt = customQuestion || question.trim() || researchQuestion || "Research this company against my investment brief. Cover founders, competitors, market, financials, and material risks. Cite the evidence and identify what is not disclosed.";
     const body: DiligenceRequest = { companyName: targetName, companyUrl: targetUrl || undefined, question: prompt, thesis: preferences, dossierId: !url.trim() ? report?.dossierId : undefined, ...(!url.trim() && company?.offeringUrl ? { offeringUrl: company.offeringUrl } : {}) };
-    onMessage(threadId, { id: crypto.randomUUID(), role: "user", text: `${targetName || targetUrl}\n\n${customQuestion || question.trim() || "Research the business, team, and financials."}`, kind: "research", ...(!url.trim() && selectedId ? { companyId: selectedId } : {}) });
+    onMessage(threadId, { id: crypto.randomUUID(), role: "user", text: `${targetName || targetUrl}\n\n${customQuestion || question.trim() || researchQuestion || "Research the business, team, and financials."}`, kind: "research", ...(!url.trim() && selectedId ? { companyId: selectedId } : {}) });
     setLastQuestion(prompt); setQuestion(""); setError(""); setSteps([]); setRunning(true); controller.current = new AbortController();
     let resultReceived = false;
     const handleEvent = (event: DiligenceStreamEvent) => { if (event.type === "result") resultReceived = true; receive(event); };
@@ -107,7 +109,9 @@ export function AgentWorkspace({ companies, preferences, reports, selectedId, in
       else { const message = failure instanceof Error ? failure.message : "Research could not be completed."; setError(message); onMessage(threadId, { id: crypto.randomUUID(), role: "assistant", kind: "research", text: message, error: true }); }
     } finally { setRunning(false); controller.current = null; }
   }
-  const completed = steps.filter(step => step.status === "complete").length;
+  const activitySteps = steps.length ? steps : report?.steps || [];
+  const researchMessages = messages.filter(message => message.kind === "research" && (!message.companyId || message.companyId === selectedId));
+  const latestRequestIndex = researchMessages.findLastIndex(message => message.role === "user");
   return (
     <div className={`fc-company-detail ${agentOpen ? "" : "fc-company-chat-hidden"}`}>
       <section className="fc-agent-editor" aria-label="Company research report">
@@ -154,18 +158,14 @@ export function AgentWorkspace({ companies, preferences, reports, selectedId, in
       <aside id="research-agent-pane" className="fc-agent-chat" aria-label="Research agent conversation" hidden={!agentOpen}>
         <div className="fc-pane-heading"><span><Sparkles size={16}/>Research agent</span><span className="fc-chat-engine">Public web</span></div>
         <div className="fc-chat-scroll">
-          {!messages.length ? <div className="fc-agent-greeting"><strong>What would you like to research?</strong></div> : null}
-          {messages.map(message => <div className={`fc-chat-message ${message.role} ${message.error ? "error" : ""}`} key={message.id}>{message.role === "assistant" ? <Sparkles size={14}/> : null}<p>{message.text}</p></div>)}
-          {running || steps.length ? (
-            <details className="fc-task-progress" open={running || undefined}>
-              <summary className="fc-task-heading">
-                {running ? <LoaderCircle size={15} className="spin"/> : error ? <TriangleAlert size={15}/> : <CheckCircle2 size={15}/>}
-                <strong>{running ? steps.find(step => step.status === "running")?.label || "Starting research…" : error ? "Research needs attention" : "Research activity"}</strong>
-                {steps.length ? <span>{completed}/{steps.length}</span> : null}<ChevronDown size={14}/>
-              </summary>
-              {steps.map(step => <div className={`fc-task-step ${step.status}`} key={step.id}>{step.status === "running" ? <LoaderCircle size={13} className="spin"/> : step.status === "complete" ? <Check size={13}/> : step.status === "warning" || step.status === "failed" ? <TriangleAlert size={13}/> : <Circle size={9}/>}<div><strong>{step.label}</strong><p>{researchNote(step.detail)}</p></div></div>)}
-            </details>
-          ) : null}
+          {!researchMessages.length ? report ? <div className="fc-agent-presence"><Sparkles size={16}/><span>Saved research</span></div> : <div className="fc-agent-greeting"><strong>What would you like to research?</strong></div> : null}
+          {researchMessages.map((message, index) => <div key={message.id}>
+            <div className={`fc-chat-message ${message.role} ${message.error ? "error" : ""}`}>{message.role === "assistant" ? <Sparkles size={14}/> : null}<p>{message.text}</p></div>
+            {index === latestRequestIndex && activitySteps.length ? <TaskTimeline steps={activitySteps} running={running} failed={!!error} formatDetail={researchNote}/> : null}
+          </div>)}
+          {latestRequestIndex < 0 && activitySteps.length ? <TaskTimeline steps={activitySteps} running={running} failed={!!error} formatDetail={researchNote}/> : null}
+          {running && !activitySteps.length ? <div className="fc-agent-connecting" role="status"><LoaderCircle size={15} className="spin"/>Starting research</div> : null}
+          {!running && (report || company) ? <div className="fc-agent-followups" aria-label="Research suggestions">{["Check revenue and growth", "Compare competitors", "Investigate the next funding round"].map(prompt => <button key={prompt} onClick={() => { setQuestion(prompt); composer.current?.focus(); }}><ArrowRight size={14}/>{prompt}</button>)}</div> : null}
           <div ref={conversationEnd}/>
         </div>
         <div className="fc-agent-composer">
