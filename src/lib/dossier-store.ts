@@ -54,6 +54,7 @@ async function readGroup<T>(prefix:string):Promise<T[]>{
   return (await Promise.all(names.filter(n=>/^[a-zA-Z0-9_-]+\.json$/.test(n)).slice(0,200).map(name=>readRecord<T>(`${prefix}/${name.replace(/\.json$/,"")}`)))).filter(value=>value!==null) as T[];
 }
 
+export async function getCatalogCompany(id:string){if(!safeId(id))return null;return (await readRecord<DiscoveryCompany>(`catalog/${id}`))||CATALOG_SEEDS.find(company=>company.id===id)||null;}
 export async function listLibraryCompanies(){return readGroup<DiscoveryCompany>("catalog");}
 export async function saveCatalogCompany(company:DiscoveryCompany){
   if(!safeId(company.id))throw new Error("Invalid company identifier.");
@@ -95,7 +96,7 @@ export async function saveDiligenceReport(result:LiveDiligenceResult):Promise<{d
   const newerFunding=incoming.funding&&(!existing?.funding?.announcedAt||!Number.isFinite(Date.parse(existing.funding.announcedAt))||incoming.funding.announcedAt&&Date.parse(incoming.funding.announcedAt)>=Date.parse(existing.funding.announcedAt))?incoming.funding:existing?.funding;
   const validatedProfile=Object.fromEntries(Object.entries(incoming).filter(([,value])=>value!==null&&value!==undefined&&(!Array.isArray(value)||value.length>0))) as Partial<DiscoveryCompany>;
   const company:DiscoveryCompany={
-    ...existing,...validatedProfile,commercialSignals:mergeCommercialSignals(existing?.commercialSignals,incoming.commercialSignals),profileFieldSources:{...existing?.profileFieldSources,...incoming.profileFieldSources},profileSources:[...new Map([...(existing?.profileSources||[]),...(incoming.profileSources||[])].map(s=>[s.url,s])).values()],financials,logo:result.logo?.status==="fetched"?result.logo:existing?.logo||result.logo,
+    ...existing,...validatedProfile,contacts:result.contacts||existing?.contacts,commercialSignals:mergeCommercialSignals(existing?.commercialSignals,incoming.commercialSignals),profileFieldSources:{...existing?.profileFieldSources,...incoming.profileFieldSources},profileSources:[...new Map([...(existing?.profileSources||[]),...(incoming.profileSources||[])].map(s=>[s.url,s])).values()],financials,logo:result.logo?.status==="fetched"?result.logo:existing?.logo||result.logo,
     id:companyId,name:result.company.name,website:result.company.website||existing?.website||"",description:incoming.description||existing?.description||result.sections.find(section=>section.category==="company")?.claims[0]?.text.slice(0,500)||result.summary,
     ...(existing?{industry:existing.industry,sectors:existing.sectors}:classify(result)),stage:newerFunding?.stage as DiscoveryCompany["stage"]||existing?.stage||"Unknown",funding:newerFunding,
     kind:existing?.kind||"company",offeringStatus:existing?.offeringStatus||"not-listed",offeringUrl:existing?.offeringUrl||null,platform:existing?.platform||null,

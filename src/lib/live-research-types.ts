@@ -93,6 +93,7 @@ export interface DiscoveryQuery {
 }
 
 export interface LiveDiligenceResult {
+  contacts?: import("./company-contacts").CompanyContacts;
   id: string;
   runId: string;
   dossierId: string;

@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { callSessionSchema } from "./proposal-call-schema";
 import type { DiscoveryCompany } from "./discovery-types";
 
 export const PROPOSAL_STORAGE_KEY = "seed-street.proposals.v1";
@@ -38,6 +39,7 @@ export type ExtractedTerm = z.infer<
   typeof extractedTermsSchema
 >["terms"][number];
 export const proposalSchema = z.object({
+  call: callSessionSchema.optional(),
   id: z.string().max(100),
   companyId: z.string().max(160),
   companyName: z.string().max(160),
@@ -180,4 +182,13 @@ export function proposalDocument(draft: ProposalDraft) {
   const term = (key: TermKey) =>
     draft.terms.find((row) => row.key === key)?.value || "To be confirmed";
   return `${sample ? "SYNTHETIC REHEARSAL — FICTIONAL TERMS\n" : ""}SEED STREET · NONBINDING INVESTMENT DISCUSSION DRAFT\n${draft.companyName}\nPrepared ${new Date(draft.updatedAt).toISOString().slice(0, 10)}\n\nSTATUS\nFor discussion and legal review only. This document is not an executable investment agreement, offer acceptance, funding commitment, or evidence of ownership. No company or investor has signed.\n\nPARTIES & PROPOSED AMOUNT\nInvestor: ${draft.investorName || "Investor identity to be confirmed"}\nCatalog company: ${draft.companyName}\nLegal issuer: ${term("entity")}\nInvestor's proposed amount: ${dollars(draft.amount)} USD, subject to issuer acceptance and an eligible offering.\nInvestor's instrument preference: ${draft.instrument}\n\nINVESTOR NOTE\n${draft.message}\n\nDISCUSSION TERMS — UNVERIFIED NOTES${sample ? " (SYNTHETIC)" : ""}\n${(Object.keys(TERM_LABELS) as TermKey[]).map((key) => `${TERM_LABELS[key]}: ${term(key)}`).join("\n\n")}\n\nREQUIRED BEFORE CLOSING\nConfirm issuer identity and authority; offering exemption and investor eligibility; current fully diluted cap table, outstanding SAFEs/notes, option pool and dilution; instrument-specific economics, share class, conversion terms and rights; required disclosures and company approvals; definitive documents prepared or approved by securities counsel; and the registered intermediary or lawful closing/payment process. A SAFE is not current equity ownership.\n\nSIGNATURE STATUS\nInvestor — not requested; pending definitive documents and legal review.\nIssuer authorized signatory — not requested; identity and authority unconfirmed.\nSigning and payment occur only through the approved closing process. Seed Street does not accept funds or execute trades.\n`;
+}
+
+export function proposalTermIsOpen(value: string | undefined) {
+  return (
+    !value?.trim() ||
+    /unconfirmed|undisclosed|to be confirmed|not (?:yet )?agreed|not an approved minimum|need(?:s)? review|subject to (?:board approval|final documents and approval)/i.test(
+      value,
+    )
+  );
 }

@@ -1,4 +1,6 @@
 "use client";
+import { ProposalCallPanel } from "./proposal-call-panel";
+import type { CallPurpose } from "@/lib/proposal-calls";
 import { contractText } from "@/lib/proposal-contract";
 
 import { useEffect, useRef, useState } from "react";
@@ -29,6 +31,7 @@ import {
   openingScript,
   PROPOSAL_STORAGE_KEY,
   proposalMessage,
+  proposalTermIsOpen,
   SAMPLE_CONVERSATION,
   TERM_LABELS,
   type ExtractedTerm,
@@ -91,11 +94,16 @@ function safeOffering(company: DiscoveryCompany) {
 export function InvestmentProposal({
   company,
   onBack,
+  initialPurpose,
 }: {
   company: DiscoveryCompany;
+  initialPurpose?: CallPurpose;
   onBack: () => void;
 }) {
   const [draft, setDraft] = useState<ProposalDraft>(() => newProposal(company));
+  const [callPurpose, setCallPurpose] = useState<CallPurpose>(
+    initialPurpose || "offer",
+  );
   const [amountText, setAmountText] = useState("1000");
   useEffect(() => setAmountText(String(draft.amount)), [draft.amount]);
   const [ready, setReady] = useState(false),
@@ -127,7 +135,14 @@ export function InvestmentProposal({
       const prior = hydrateProposals(
         localStorage.getItem(PROPOSAL_STORAGE_KEY),
       ).find((row) => row.companyId === company.id);
-      if (prior) setDraft(prior);
+      if (prior)
+        setDraft(
+          initialPurpose
+            ? { ...prior, step: initialPurpose === "missing-info" ? 1 : 0 }
+            : prior,
+        );
+      else if (initialPurpose === "missing-info")
+        setDraft((current) => ({ ...current, step: 1 }));
     } catch {
       setError(
         "Browser storage is unavailable. You can still edit and download this draft.",
@@ -286,7 +301,8 @@ export function InvestmentProposal({
         "governingLaw",
       ] as TermKey[]
     ).filter(
-      (key) => !draft.terms.some((t) => t.key === key && t.value.trim()),
+      (key) =>
+        !draft.terms.some((t) => t.key === key && !proposalTermIsOpen(t.value)),
     );
   const paper = (
     <section className="sp-paper" aria-label="Proposal preview">
@@ -359,7 +375,11 @@ export function InvestmentProposal({
         <div>
           <p>{company.name}</p>
           <h1 ref={headingRef} tabIndex={-1}>
-            Draft your proposal.
+            {draft.step === 1
+              ? "Call the company."
+              : draft.step === 3
+                ? "Your contract draft."
+                : "Make an offer."}
           </h1>
         </div>
         <span className="sp-draft-badge">
@@ -469,7 +489,7 @@ export function InvestmentProposal({
               className="fc-btn primary sp-next"
               onClick={() => update({ step: 1 })}
             >
-              Prepare conversation
+              Review call
               <ArrowRight size={17} />
             </button>
           </div>
@@ -500,174 +520,192 @@ export function InvestmentProposal({
         </div>
       ) : null}
       {draft.step === 1 ? (
-        <div className="sp-columns">
-          <div className="sp-editor">
-            <p className="sp-eyebrow">FOUNDER CONVERSATION</p>
-            <h2>
-              A warm introduction.
-              <br />
-              The right questions.
-            </h2>
-            <div className="sp-voice-card">
-              <div
-                className={`sp-voice-orb ${busy === "voice" ? "working" : ""}`}
-              >
-                <Headphones size={27} />
-              </div>
-              <div>
-                <strong>Seed Street voice</strong>
-                <span>ElevenLabs · AI assistant</span>
-              </div>
-              <span className="sp-preview-label">Preview only</span>
-            </div>
-            <label className="sp-field">
-              <span>
-                Call opening <small>Editable</small>
-              </span>
-              <textarea
-                value={draft.script}
-                maxLength={1800}
-                rows={8}
-                disabled={busy === "voice"}
-                onChange={(e) => {
-                  update({ script: e.target.value });
-                  setAudioUrl("");
-                  if (currentAudio.current) {
-                    URL.revokeObjectURL(currentAudio.current);
-                    currentAudio.current = "";
-                  }
-                }}
-              />
-            </label>
-            <button
-              className="fc-btn secondary"
-              onClick={voicePreview}
-              disabled={busy !== null || draft.script.trim().length < 10}
-            >
-              {busy === "voice" ? (
-                <LoaderCircle className="spin" size={16} />
-              ) : (
-                <Play size={16} />
-              )}{" "}
-              {busy === "voice"
-                ? "Creating voice…"
-                : audioUrl
-                  ? "Regenerate voice"
-                  : "Generate voice preview"}
-            </button>
-            {audioUrl ? (
-              <audio
-                ref={audioRef}
-                className="sp-audio"
-                aria-label="ElevenLabs call opening preview"
-                controls
-                src={audioUrl}
-              />
-            ) : null}
-            <p className="sp-muted">
-              <Phone size={14} />
-              No call placed. Live outreach needs founder consent and an
-              approved investment route.
-            </p>
-            <details className="sp-details">
-              <summary>
-                What the agent will ask
-                <ChevronDown size={15} />
-              </summary>
-              {questions.map((q) => (
-                <div className="sp-question" key={q.title}>
-                  <q.icon size={17} />
-                  <div>
-                    <strong>{q.title}</strong>
-                    <p>{q.detail}</p>
+        <div>
+          <ProposalCallPanel
+            company={company}
+            draft={draft}
+            purpose={callPurpose}
+            onPurpose={setCallPurpose}
+            onUpdate={update}
+          />
+          <details className="sp-details sp-call-advanced">
+            <summary>
+              Voice preview & manual notes
+              <ChevronDown size={15} />
+            </summary>
+            <div className="sp-columns">
+              <div className="sp-editor">
+                <p className="sp-eyebrow">FOUNDER CONVERSATION</p>
+                <h2>
+                  A warm introduction.
+                  <br />
+                  The right questions.
+                </h2>
+                <div className="sp-voice-card">
+                  <div
+                    className={`sp-voice-orb ${busy === "voice" ? "working" : ""}`}
+                  >
+                    <Headphones size={27} />
                   </div>
+                  <div>
+                    <strong>Seed Street voice</strong>
+                    <span>ElevenLabs · AI assistant</span>
+                  </div>
+                  <span className="sp-preview-label">Preview only</span>
                 </div>
-              ))}
-            </details>
-          </div>
-          <aside className="sp-notes">
-            <div className="sp-notes-head">
-              <MessageSquare size={20} />
-              <h2>Conversation notes</h2>
-            </div>
-            <p>Add a transcript or notes after speaking with the founder.</p>
-            <div className="sp-notes-actions">
-              <button
-                className="fc-text-btn"
-                disabled={busy !== null}
-                onClick={() =>
-                  update({
-                    notes: SAMPLE_CONVERSATION,
-                    sample: true,
-                    terms: [],
-                  })
-                }
-              >
-                <Sparkles size={14} />
-                Try a fictional example
-              </button>
-              {draft.notes ? (
+                <label className="sp-field">
+                  <span>
+                    Call opening <small>Editable</small>
+                  </span>
+                  <textarea
+                    value={draft.script}
+                    maxLength={1800}
+                    rows={8}
+                    disabled={busy === "voice"}
+                    onChange={(e) => {
+                      update({ script: e.target.value });
+                      setAudioUrl("");
+                      if (currentAudio.current) {
+                        URL.revokeObjectURL(currentAudio.current);
+                        currentAudio.current = "";
+                      }
+                    }}
+                  />
+                </label>
                 <button
-                  className="fc-text-btn"
-                  disabled={busy !== null}
-                  onClick={() =>
-                    update({ notes: "", sample: false, terms: [] })
-                  }
+                  className="fc-btn secondary"
+                  onClick={voicePreview}
+                  disabled={busy !== null || draft.script.trim().length < 10}
                 >
-                  Clear
+                  {busy === "voice" ? (
+                    <LoaderCircle className="spin" size={16} />
+                  ) : (
+                    <Play size={16} />
+                  )}{" "}
+                  {busy === "voice"
+                    ? "Creating voice…"
+                    : audioUrl
+                      ? "Regenerate voice"
+                      : "Generate voice preview"}
                 </button>
-              ) : null}
+                {audioUrl ? (
+                  <audio
+                    ref={audioRef}
+                    className="sp-audio"
+                    aria-label="ElevenLabs call opening preview"
+                    controls
+                    src={audioUrl}
+                  />
+                ) : null}
+                <p className="sp-muted">
+                  <Phone size={14} />
+                  No call placed. Live outreach needs founder consent and an
+                  approved investment route.
+                </p>
+                <details className="sp-details">
+                  <summary>
+                    What the agent will ask
+                    <ChevronDown size={15} />
+                  </summary>
+                  {questions.map((q) => (
+                    <div className="sp-question" key={q.title}>
+                      <q.icon size={17} />
+                      <div>
+                        <strong>{q.title}</strong>
+                        <p>{q.detail}</p>
+                      </div>
+                    </div>
+                  ))}
+                </details>
+              </div>
+              <aside className="sp-notes">
+                <div className="sp-notes-head">
+                  <MessageSquare size={20} />
+                  <h2>Conversation notes</h2>
+                </div>
+                <p>
+                  Add a transcript or notes after speaking with the founder.
+                </p>
+                <div className="sp-notes-actions">
+                  <button
+                    className="fc-text-btn"
+                    disabled={busy !== null}
+                    onClick={() =>
+                      update({
+                        notes: SAMPLE_CONVERSATION,
+                        sample: true,
+                        terms: [],
+                      })
+                    }
+                  >
+                    <Sparkles size={14} />
+                    Try a fictional example
+                  </button>
+                  {draft.notes ? (
+                    <button
+                      className="fc-text-btn"
+                      disabled={busy !== null}
+                      onClick={() =>
+                        update({ notes: "", sample: false, terms: [] })
+                      }
+                    >
+                      Clear
+                    </button>
+                  ) : null}
+                </div>
+                {draft.sample ? (
+                  <span className="sp-sample-label">
+                    Synthetic rehearsal · Not founder statements
+                  </span>
+                ) : null}
+                <label className="sp-field">
+                  <span>Transcript or notes</span>
+                  <textarea
+                    value={draft.notes}
+                    maxLength={14000}
+                    disabled={busy !== null}
+                    onChange={(e) =>
+                      update({
+                        notes: e.target.value,
+                        sample:
+                          draft.sample || isSyntheticNotes(e.target.value),
+                        terms: [],
+                      })
+                    }
+                    placeholder="Founder: We're raising on a SAFE…"
+                    rows={14}
+                  />
+                </label>
+                <button
+                  className="fc-btn primary sp-next"
+                  disabled={busy !== null || draft.notes.trim().length < 30}
+                  onClick={analyze}
+                >
+                  {busy === "terms" ? (
+                    <LoaderCircle className="spin" size={17} />
+                  ) : (
+                    <Sparkles size={17} />
+                  )}{" "}
+                  {busy === "terms"
+                    ? "Reading the conversation…"
+                    : "Extract proposed terms"}
+                  <ArrowRight size={17} />
+                </button>
+                <small className="sp-data-note">
+                  Notes go to Nicrron for extraction. PRISM receives operation
+                  metadata; note text and deal amounts are redacted.
+                </small>
+                <button
+                  className="fc-text-btn sp-manual"
+                  disabled={busy !== null}
+                  onClick={() => update({ step: 2 })}
+                >
+                  Enter terms manually
+                  <ArrowRight size={14} />
+                </button>
+              </aside>
             </div>
-            {draft.sample ? (
-              <span className="sp-sample-label">
-                Synthetic rehearsal · Not founder statements
-              </span>
-            ) : null}
-            <label className="sp-field">
-              <span>Transcript or notes</span>
-              <textarea
-                value={draft.notes}
-                maxLength={14000}
-                disabled={busy !== null}
-                onChange={(e) =>
-                  update({
-                    notes: e.target.value,
-                    sample: draft.sample || isSyntheticNotes(e.target.value),
-                    terms: [],
-                  })
-                }
-                placeholder="Founder: We're raising on a SAFE…"
-                rows={14}
-              />
-            </label>
-            <button
-              className="fc-btn primary sp-next"
-              disabled={busy !== null || draft.notes.trim().length < 30}
-              onClick={analyze}
-            >
-              {busy === "terms" ? (
-                <LoaderCircle className="spin" size={17} />
-              ) : (
-                <Sparkles size={17} />
-              )}{" "}
-              {busy === "terms"
-                ? "Reading the conversation…"
-                : "Extract proposed terms"}
-              <ArrowRight size={17} />
-            </button>
-            <small className="sp-data-note">
-              Notes go to Nicrron for extraction. PRISM receives operation
-              metadata; note text and deal amounts are redacted.
-            </small>
-            <button
-              className="fc-text-btn sp-manual"
-              disabled={busy !== null}
-              onClick={() => update({ step: 2 })}
-            >
-              Enter terms manually
-              <ArrowRight size={14} />
-            </button>
-          </aside>
+          </details>
         </div>
       ) : null}
       {draft.step === 2 ? (
@@ -770,6 +808,20 @@ export function InvestmentProposal({
                 </span>
               </div>
             </div>
+            <div className="sp-bottom-actions">
+              <button
+                className="fc-btn primary"
+                onClick={download}
+                disabled={busy !== null}
+              >
+                <Download size={16} />
+                {busy === "pdf" ? "Preparing PDF…" : "Download contract"}
+              </button>
+              <button className="fc-btn secondary" onClick={copy}>
+                {copied ? <Check size={16} /> : <Clipboard size={16} />}{" "}
+                {copied ? "Copied" : "Copy draft"}
+              </button>
+            </div>
             <div className="sp-closing-steps">
               <div>
                 <span className="done">
@@ -811,20 +863,6 @@ export function InvestmentProposal({
                   </p>
                 </section>
               </div>
-            </div>
-            <div className="sp-bottom-actions">
-              <button
-                className="fc-btn primary"
-                onClick={download}
-                disabled={busy !== null}
-              >
-                <Download size={16} />
-                {busy === "pdf" ? "Preparing PDF…" : "Export contract PDF"}
-              </button>
-              <button className="fc-btn secondary" onClick={copy}>
-                {copied ? <Check size={16} /> : <Clipboard size={16} />}{" "}
-                {copied ? "Copied" : "Copy draft"}
-              </button>
             </div>
             {offering ? (
               <a
@@ -925,9 +963,37 @@ export function ProposalLibrary({
   return (
     <div className="sp-library">
       <p className="sp-library-intro">
-        Your investment conversations, from first interest to a draft for
-        review.
+        Your investment conversations and unsigned drafts.
       </p>
+      {companies.some((company) => company.id === "event-kojable") ? (
+        <section className="sp-demo-entry">
+          <div>
+            <span className="sp-eyebrow">ONE-MINUTE DEMO</span>
+            <h2>From a conversation to a contract.</h2>
+            <p>
+              Choose an action, hear the fictional founder, download the draft.
+            </p>
+          </div>
+          <button
+            className="fc-btn primary"
+            onClick={() => {
+              const company = companies.find(
+                (company) => company.id === "event-kojable",
+              )!;
+              const demo = newProposal(company);
+              demo.investorName = "Demo investor";
+              demo.step = 1;
+              try {
+                persistDraft(demo);
+              } catch {}
+              onOpen(company);
+            }}
+          >
+            <Play size={16} />
+            Try the demo
+          </button>
+        </section>
+      ) : null}
       {drafts.length ? (
         <div className="sp-library-grid">
           {drafts.map((draft) => {
@@ -980,7 +1046,7 @@ export function ProposalLibrary({
         <div className="fc-empty-state">
           <FileText size={32} />
           <h2>Your first cheque starts with a conversation.</h2>
-          <p>Open a company and choose Draft proposal.</p>
+          <p>Open a company and choose Find missing info or Make an offer.</p>
           <button className="fc-btn primary" onClick={onDiscover}>
             Explore companies
             <ArrowRight size={16} />

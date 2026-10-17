@@ -33,6 +33,7 @@ export interface FounderLead {
   checkedAt: string;
 }
 export interface DiscoveryCompany {
+  contacts?: import("./company-contacts").CompanyContacts;
   publishStatus?: EventPublishStatus;
   revenueAssumption?: "pre-revenue";
   commercialSignals?: CommercialSignal[];

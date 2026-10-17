@@ -50,6 +50,7 @@ export function AgentWorkspace({ companies, preferences, reports, selectedId, in
   onSelect: (id: string | null) => void; onResult: (result: LiveDiligenceResult) => void;
   onClearInitialUrl: () => void; onBack: () => void;
 }) {
+  const [callPurpose,setCallPurpose]=useState<import("@/lib/proposal-calls").CallPurpose|undefined>();
   const [companyTab, setCompanyTab] = useState<"Overview" | "Research" | "Proposal">(companyDetails ? "Overview" : "Research");
   const [question, setQuestion] = useState(researchQuestion || "");
   const [url, setUrl] = useState(initialUrl);
@@ -126,7 +127,7 @@ export function AgentWorkspace({ companies, preferences, reports, selectedId, in
         </div>
         {companyDetails ? <nav className="fc-company-subnav" aria-label="Company views"><button aria-pressed={companyTab === "Overview"} className={companyTab === "Overview" ? "active" : ""} onClick={() => setCompanyTab("Overview")}>Overview</button><button aria-pressed={companyTab === "Proposal"} className={companyTab === "Proposal" ? "active" : ""} onClick={() => setCompanyTab("Proposal")}>Proposal</button><button aria-pressed={companyTab === "Research"} className={companyTab === "Research" ? "active" : ""} onClick={() => setCompanyTab("Research")}>Research{report ? <span>{report.sources.filter(source => source.status === "fetched").length} sources</span> : null}</button></nav> : null}
         <div className="fc-report-scroll">
-          {companyDetails && companyTab === "Proposal"?<InvestmentProposal key={companyDetails.id} company={companyDetails} onBack={()=>setCompanyTab("Overview")}/> : companyDetails && companyTab === "Overview" ? <CompanyOverview onProposal={()=>setCompanyTab("Proposal")} company={companyDetails} report={report} fit={fit} saved={savedIds.includes(companyDetails.id)} onSave={() => onSaveCompany(companyDetails.id)} onResearch={() => { setCompanyTab("Research"); if (!report) { setAgentOpen(true); void research(); } }}/> : report ? (
+          {companyDetails && companyTab === "Proposal"?<InvestmentProposal initialPurpose={callPurpose} key={companyDetails.id} company={companyDetails} onBack={()=>setCompanyTab("Overview")}/> : companyDetails && companyTab === "Overview" ? <CompanyOverview onProposal={purpose=>{setCallPurpose(purpose);setCompanyTab("Proposal");}} company={companyDetails} report={report} fit={fit} saved={savedIds.includes(companyDetails.id)} onSave={() => onSaveCompany(companyDetails.id)} onResearch={() => { setCompanyTab("Research"); if (!report) { setAgentOpen(true); void research(); } }}/> : report ? (
             <ResearchReport
               report={report}
               tab={reportTab}

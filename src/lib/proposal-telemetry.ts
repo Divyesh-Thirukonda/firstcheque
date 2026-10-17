@@ -2,7 +2,8 @@ import "server-only";
 
 /** Proposal contents can be private. Trace only operation metadata, never notes, amounts, names or audio. */
 export async function traceProposalOperation(input: {
-  operation: "speech-preview" | "extract-terms";
+  operation:
+    "speech-preview" | "extract-terms" | "outbound-call" | "voice-agent-turn";
   started: number;
   model: string;
   success: boolean;
@@ -29,7 +30,9 @@ export async function traceProposalOperation(input: {
     source_kind: input.sample
       ? "synthetic-rehearsal"
       : "investor-notes-or-script",
-    model_calls: input.operation === "extract-terms" ? 1 : 0,
+    model_calls: ["extract-terms", "voice-agent-turn"].includes(input.operation)
+      ? 1
+      : 0,
     success: input.success,
     fields: input.fields || [],
     rejected: input.rejected || 0,
@@ -93,9 +96,15 @@ export async function traceProposalOperation(input: {
       span(
         input.operation === "extract-terms"
           ? "Extract transcript terms with Nicrron"
-          : "Generate ElevenLabs speech preview",
+          : input.operation === "outbound-call"
+            ? "Start ElevenLabs outbound call"
+            : input.operation === "voice-agent-turn"
+              ? "Voice agent turn via Nicrron"
+              : "Generate ElevenLabs speech preview",
         root + "01",
-        input.operation === "extract-terms" ? "llm" : "tool",
+        ["extract-terms", "voice-agent-turn"].includes(input.operation)
+          ? "llm"
+          : "tool",
         root,
       ),
       ...(input.operation === "extract-terms"

@@ -17,6 +17,7 @@ export async function POST(request: Request) {
     );
   const started = Date.now();
   let text: string;
+  let sample = false;
   try {
     const raw = await request.text();
     if (raw.length > 6000)
@@ -24,9 +25,14 @@ export async function POST(request: Request) {
         { error: "Voice preview is too long." },
         { status: 413 },
       );
-    text = z
-      .object({ text: z.string().trim().min(10).max(1800) })
-      .parse(JSON.parse(raw)).text;
+    const parsed = z
+      .object({
+        text: z.string().trim().min(10).max(1800),
+        sample: z.boolean().optional(),
+      })
+      .parse(JSON.parse(raw));
+    text = parsed.text;
+    sample = parsed.sample === true;
   } catch {
     return Response.json(
       { error: "Enter a short call opening." },
@@ -63,6 +69,7 @@ export async function POST(request: Request) {
       started,
       model: "elevenlabs/eleven_multilingual_v2",
       success: true,
+      sample,
     });
     return new Response(audio, {
       headers: {
@@ -78,6 +85,7 @@ export async function POST(request: Request) {
       started,
       model: "elevenlabs/eleven_multilingual_v2",
       success: false,
+      sample,
     });
     return Response.json(
       {

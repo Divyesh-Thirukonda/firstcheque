@@ -1,3 +1,4 @@
+import { collectCompanyContacts } from "./company-contact-collector";
 import {evidenceDate} from "./evidence-dates";
 import "server-only";
 import { createHash } from "node:crypto";
@@ -270,6 +271,7 @@ export async function runWebDiligence(request: DiligenceRequest, onEvent?: (even
     emit({id:"logo",label:"Fetch company logo",status:"running",detail:"Read identity assets published by the company website",durationMs:0});
     return collectCompanyLogo(site,{companyName,previous:CATALOG_SEEDS.find(company=>company.website&&sameCompanyDomain(company.website,site))?.logo}).then(logo=>{spans.push({name:"Collect and normalize company logo",type:"retrieval",input:site,output:JSON.stringify({...logo,url:logo.url?"[normalized PNG retained]":null}),started:logoStarted,ended:Date.now(),...(logo.status==="unavailable"?{error:logo.error}: {})});emit({id:"logo",label:"Fetch company logo",status:logo.status==="fetched"?"complete":"warning",detail:logo.status==="fetched"?"Website icon retained with source and fetch date":logo.error||"No website icon available",durationMs:Date.now()-logoStarted});return logo;});
   };
+  let contactsPromise=website?collectCompanyContacts(website):Promise.resolve(undefined);
   let logoPromise=website?collectLogo(website):Promise.resolve(undefined);
   const provider: LiveDiligenceResult["discovery"]["provider"] = process.env.EXA_API_KEY && !process.env.TAVILY_API_KEY ? "exa" : "tavily";
   emit({ id: "discovery", label: "Search public evidence", status: "running", detail: "Company, founder, competitor, market, financial and disclosure queries", durationMs: 0 });
@@ -309,7 +311,7 @@ export async function runWebDiligence(request: DiligenceRequest, onEvent?: (even
   }));
   if(!website){
     website=inferCompanyWebsite(sources,companyName);
-    if(website){companyId=`company-${hash(new URL(website).hostname).slice(0,16)}`;for(const source of sources)source.officialCompanySource=sameCompanyDomain(source.url,website);logoPromise=collectLogo(website);warnings.push("Company website inferred from the matching fetched domain and page title; confirm the company identity.");spans.push({name:"Resolve company website identity",type:"evaluator",input:companyName,output:website,started:Date.now(),ended:Date.now()});}
+    if(website){companyId=`company-${hash(new URL(website).hostname).slice(0,16)}`;for(const source of sources)source.officialCompanySource=sameCompanyDomain(source.url,website);logoPromise=collectLogo(website);contactsPromise=collectCompanyContacts(website);warnings.push("Company website inferred from the matching fetched domain and page title; confirm the company identity.");spans.push({name:"Resolve company website identity",type:"evaluator",input:companyName,output:website,started:Date.now(),ended:Date.now()});}
     else emit({id:"logo",label:"Fetch company logo",status:"warning",detail:"A confirmed company website is needed to fetch its logo.",durationMs:0});
   }
   const fetched = sources.filter((source) => source.status === "fetched");
@@ -370,8 +372,10 @@ export async function runWebDiligence(request: DiligenceRequest, onEvent?: (even
   const profile=groundedProfile(parsed?.profile,sources,companyName,new Date().toISOString());
   spans.push({name:"Validate shared company profile fields",type:"evaluator",input:JSON.stringify(parsed?.profile||{}),output:JSON.stringify(profile),started:profileStarted,ended:Date.now()});
   const logo=await logoPromise;
+  const contacts=await contactsPromise;
+  spans.push({name:"Collect company website phone contacts",type:"retrieval",input:website||"No website",output:JSON.stringify({status:contacts?.status,count:contacts?.phones.length,pagesChecked:contacts?.pagesChecked}),started:profileStarted,ended:Date.now()});
   const result: LiveDiligenceResult = {
-    logo,profile,
+    logo,profile,contacts,
     id: crypto.randomUUID(), runId, dossierId: request.dossierId || crypto.randomUUID(), companyId, company: { name: companyName, website }, generatedAt: new Date().toISOString(),
     status: !fetched.length ? "unavailable" : parsed && discovered.every((query) => query.status === "complete") && queries.every((query) => fetched.some((source) => source.category === query.category)) ? "complete" : "partial",
     mode: !fetched.length ? "unavailable" : parsed ? "live-web" : "sources-only", title: parsed?.title || `${companyName} · public evidence`,

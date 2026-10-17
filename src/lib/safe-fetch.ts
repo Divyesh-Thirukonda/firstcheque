@@ -103,7 +103,7 @@ async function requestPinned(url: URL, address: Address, timeoutMs: number, maxB
   });
 }
 
-export function readablePage(html: string, contentType: string): { title: string; text: string; publishedAt: string | null; links: string[] } {
+export function readablePage(html: string, contentType: string): { title: string; text: string; publishedAt: string | null; links: string[]; contactText?: string } {
   const decode = (text: string) => text.replace(/&#(x[\da-f]+|\d+);/gi, (_all, value: string) => {
     const code = value[0].toLowerCase() === "x" ? parseInt(value.slice(1), 16) : parseInt(value, 10);
     return code > 0 && code <= 0x10ffff ? String.fromCodePoint(code) : " ";
@@ -116,9 +116,13 @@ export function readablePage(html: string, contentType: string): { title: string
   const parsedDate = date ? Date.parse(date) : NaN;
   let readable = html;
   let links: string[] = [];
+  let contactText: string | undefined;
   if (contentType.includes("html")) {
     const $ = load(html);
     links = [...new Set($("a[href]").toArray().map((element) => $(element).attr("href") || "").filter((href) => href.length <= 2048))].slice(0, 200);
+    const contactClone=$.root().clone();
+    contactClone.find("script,style,noscript,iframe,svg,form").remove();
+    contactText=contactClone.text().replace(/\s+/g," ").trim().slice(0,30000);
     $("script,style,noscript,iframe,svg,nav,footer,form").remove();
     $("p,div,li,h1,h2,h3,h4,section,article,br,tr").append(" ");
     const main = $("main").first().text(), article = $("article").first().text();
@@ -126,10 +130,10 @@ export function readablePage(html: string, contentType: string): { title: string
   }
   const text = decode(readable)
     .replace(/[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f]/g, " ").replace(/\s+/g, " ").trim();
-  return { title, text: text.slice(0, 16000), publishedAt: Number.isFinite(parsedDate) ? new Date(parsedDate).toISOString() : null, links };
+  return { title, text: text.slice(0, 16000), contactText, publishedAt: Number.isFinite(parsedDate) ? new Date(parsedDate).toISOString() : null, links };
 }
 
-async function fetchPageAfterRobots(input: string, options: { timeoutMs?: number; resolver?: PublicResolver } = {}): Promise<{ url: string; title: string; text: string; publishedAt: string | null; links: string[] }> {
+async function fetchPageAfterRobots(input: string, options: { timeoutMs?: number; resolver?: PublicResolver } = {}): Promise<{ url: string; title: string; text: string; publishedAt: string | null; links: string[]; contactText?: string }> {
   const deadline = Date.now() + (options.timeoutMs || 10000);
   let next = input;
   for (let hop = 0; hop <= 3; hop++) {
@@ -223,7 +227,7 @@ async function assertRobotsAllowed(input: string, resolver?: PublicResolver, dea
   if (!robotsAllows(cached.text, `${url.pathname}${url.search}`)) throw new PublicFetchError("This page disallows automated access in robots.txt; it was not fetched.");
 }
 
-export async function fetchPublicPage(input: string, options: { timeoutMs?: number; resolver?: PublicResolver } = {}): Promise<{ url: string; title: string; text: string; publishedAt: string | null; links: string[] }> {
+export async function fetchPublicPage(input: string, options: { timeoutMs?: number; resolver?: PublicResolver } = {}): Promise<{ url: string; title: string; text: string; publishedAt: string | null; links: string[]; contactText?: string }> {
   const started = Date.now();
   await assertRobotsAllowed(input, options.resolver, started + (options.timeoutMs || 12000));
   const remaining = (options.timeoutMs || 12000) - (Date.now() - started);

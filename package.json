@@ -18,6 +18,7 @@
     "@vercel/blob": "^2.8.2",
     "ai": "latest",
     "cheerio": "^1.2.0",
+    "libphonenumber-js": "^1.13.15",
     "lucide-react": "latest",
     "next": "latest",
     "pdf-lib": "^1.17.1",
