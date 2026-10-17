@@ -3,13 +3,14 @@
 import dynamic from "next/dynamic";
 import { SeedStreetBrand } from "@/components/seed-street-brand";
 import { useCallback, useEffect, useMemo, useState, type FormEvent } from "react";
-import { ArrowRight, Bookmark, Check, CircleHelp, Compass, FlaskConical, LoaderCircle, Plus, Search, Settings2, ShieldCheck, Sparkles, TriangleAlert, Wallet, TrendingUp, Radar, ArrowUpRight } from "lucide-react";
+import { FileText, ArrowRight, Bookmark, Check, CircleHelp, Compass, FlaskConical, LoaderCircle, Plus, Search, Settings2, ShieldCheck, Sparkles, TriangleAlert, Wallet, TrendingUp, Radar, ArrowUpRight } from "lucide-react";
 import { DEFAULT_DISCOVERY_PREFERENCES, DISCOVERY_INDUSTRIES, DISCOVERY_STAGES, matchesCatalogQuery, filterAndRankCompanies } from "@/lib/discovery";
 import type { CatalogResponse, DiscoveryCompany, DiscoveryPreferences } from "@/lib/discovery-types";
 import type { LiveDiligenceResult } from "@/lib/live-research-types";
 import { appendSearchMessage, createSearchThread, hydrateSearchThreads, isDiscoveryPreferences, selectThreadCompany, updateSearchThreadPreferences, type SearchMessage, type SearchThread } from "@/lib/search-threads";
 import { safeWebUrl } from "@/components/agent-workspace";
 import { SearchWorkspace } from "@/components/search-workspace";
+import { ProposalLibrary } from "@/components/investment-proposal";
 import { CompanyProfile } from "@/components/company-profile";
 import {FounderLeads} from "@/components/commercial-profile";
 import {eventPriority} from "@/lib/event-discovery";
@@ -19,7 +20,7 @@ import { EXPLORATIONS, explorationCompanies, explorationIntent, type Exploration
 import { WorkspaceDialog } from "@/components/workspace-dialog";
 
 const DemoWorkspace = dynamic(() => import("@/components/demo-workspace"), { loading: () => <div className="fc-loading-page"><LoaderCircle className="spin" size={24}/>Opening paper demo…</div> });
-type View = "Discover" | "Agent" | "Watchlist" | "Portfolio";
+type View = "Discover" | "Agent" | "Watchlist" | "Portfolio" | "Proposals";
 type ReviewIntent = { kind: "new" } | { kind: "refine"; threadId: string };
 const STORAGE_KEY = "firstcheque.live-workspace.v1";
 const SEARCH_STORAGE_KEY = "firstcheque.searches.v1";
@@ -43,6 +44,7 @@ export default function Home() {
   const [threads, setThreads] = useState<SearchThread[]>([]);
   const [activeThreadId, setActiveThreadId] = useState<string | null>(null);
   const [legacyCompanyId, setLegacyCompanyId] = useState<string | null>(null);
+  const [browseProposal, setBrowseProposal] = useState(false);
   const [browseCompany, setBrowseCompany] = useState<DiscoveryCompany | null>(null);
   const [catalog, setCatalog] = useState<CatalogResponse | null>(null);
   const [reports, setReports] = useState<LiveDiligenceResult[]>([]);
@@ -120,7 +122,7 @@ export default function Home() {
     } catch { /* Search history may be unavailable when browser storage is disabled. */ }
     const params = new URLSearchParams(window.location.search);
     const initial = params.get("view");
-    if (initial && ["Discover", "Agent", "Watchlist", "Portfolio"].includes(initial)) setView(initial as View);
+    if (initial && ["Discover", "Agent", "Watchlist", "Portfolio", "Proposals"].includes(initial)) setView(initial as View);
     const requestedSearch = params.get("search");
     const requestedCompany = params.get("company");
     const restored = restoredThreads.find(thread => thread.id === requestedSearch) || (!requestedSearch ? restoredThreads[0] : null);
@@ -190,7 +192,7 @@ export default function Home() {
     setInitialUrl("");
     setView("Agent");
   }
-  function openCompany(company: DiscoveryCompany) { setBrowseCompany(company); }
+  function openCompany(company: DiscoveryCompany) { setBrowseProposal(false); setBrowseCompany(company); }
   function startCompanyResearch(company: DiscoveryCompany) {
     const context = { ...preferences, query: company.name, thesis: `Research ${company.name}. Investigate its business, founders, competition, financials, and risks.` };
     const existing = threads.find(thread => thread.brief === context.thesis);
@@ -326,7 +328,7 @@ export default function Home() {
   }
 
   if (demoView) return <DemoWorkspace initialView={demoView} onExit={() => setDemoView(null)}/>;
-  const nav = [{ title: "Discover", icon: Compass }, { title: "Agent", icon: Sparkles }, { title: "Watchlist", icon: Bookmark }, { title: "Portfolio", icon: Wallet }] as const;
+  const nav = [{ title: "Discover", icon: Compass }, { title: "Agent", icon: Sparkles }, { title: "Watchlist", icon: Bookmark }, { title: "Proposals", icon: FileText }, { title: "Portfolio", icon: Wallet }] as const;
 
   return <div className="fc-workspace">
     <a className="skip-link" href="#fc-main">Skip to main content</a>
@@ -346,7 +348,7 @@ export default function Home() {
       <header className="fc-topbar">
         <span className="fc-breadcrumb">{view === "Agent" ? "Search workspace" : view}</span>
         <div className="fc-top-actions">
-          <label className="fc-global-search"><Search size={18}/><input aria-label="Search company catalog" placeholder="Search companies, founders or products" value={catalogQuery} onChange={event => { setCatalogQuery(event.target.value);setCatalogGroup("all"); if (view === "Agent" || view === "Portfolio") navigate("Discover"); }}/></label>
+          <label className="fc-global-search"><Search size={18}/><input aria-label="Search company catalog" placeholder="Search companies, founders or products" value={catalogQuery} onChange={event => { setCatalogQuery(event.target.value);setCatalogGroup("all"); if (view === "Agent" || view === "Portfolio" || view === "Proposals") navigate("Discover"); }}/></label>
           <button className="fc-text-btn" onClick={() => setDemoView("Discover")}>Paper demo</button>
         </div>
       </header>
@@ -354,13 +356,13 @@ export default function Home() {
       <main id="fc-main" tabIndex={-1} className={view === "Agent" ? "fc-agent-main" : "fc-main-content"}>
         {view === "Agent" ? <SearchWorkspace threads={threads} activeThread={activeThread} companies={companies} reports={reports} reportsLoading={reportsLoading} savedIds={watchlist} initialUrl={initialUrl} loading={loading} catalogError={catalogError} onSelectThread={selectSearch} onNewSearch={newSearch} onAddCompany={() => setImportOpen(true)} onRefine={refineSearch} onRefresh={refreshSearch} onSelectCompany={selectCompany} onSave={toggleSave} onMessage={receivedMessage} onResult={receivedResult} onClearInitialUrl={clearInitialUrl} onExplore={startExploration}/> : <>
           <div className="fc-page-heading">
-            <div><h1>{view === "Discover" ? "Discover" : view === "Watchlist" ? "Watchlist" : "Portfolio"}</h1></div>
-            <button className="fc-btn secondary" onClick={() => setImportOpen(true)}><Plus size={18}/>Add company</button>
+            <div><h1>{view === "Discover" ? "Discover" : view === "Watchlist" ? "Watchlist" : view === "Proposals" ? "Proposals" : "Portfolio"}</h1></div>
+            <button className="fc-btn secondary" onClick={() => view==="Proposals" ? (browseCollection("event-handoff"),navigate("Discover")) : setImportOpen(true)}><Plus size={18}/>{view==="Proposals"?"New proposal":"Add company"}</button>
           </div>
 
             {view==="Discover"?<div className="fc-event-collections" aria-label="Browse collections"><button aria-pressed={catalogGroup==="event-handoff"} onClick={()=>browseCollection("event-handoff")}>Money Talks<span>{eventCount}</span></button><button aria-pressed={catalogGroup==="founders"} onClick={()=>browseCollection("founders")}>Founder leads<span>{catalog?.founderLeads?.length||0}</span></button><button aria-pressed={catalogGroup==="all"} onClick={()=>browseCollection("all")}>All companies<span>{companies.length}</span></button></div>:null}
 
-          {view === "Portfolio" ? <>
+          {view === "Proposals" ? <ProposalLibrary companies={companies} onOpen={company=>{setBrowseProposal(true);setBrowseCompany(company);}} onDiscover={()=>navigate("Discover")}/> : view === "Portfolio" ? <>
             <div className="fc-overview-stats"><div><span>Saved companies</span><strong>{savedCompanies.length}</strong></div><div><span>Research reports</span><strong>{reports.length}</strong></div></div>
             <div className="fc-portfolio-callout"><Wallet size={28}/><div><h2>Paper portfolio</h2><p>Fictional startups · Simulation</p></div><button className="fc-btn primary" onClick={() => setDemoView("Portfolio")}>Open paper portfolio<ArrowRight size={17}/></button></div>
             <div className="fc-results-heading"><h2>Saved companies</h2></div>
@@ -401,7 +403,7 @@ export default function Home() {
       </main>
     </div>
 
-    {browseCompany ? <CompanyProfile key={browseCompany.id} company={browseCompany} report={reports.find(report => report.companyId === browseCompany.id) || null} saved={watchlist.includes(browseCompany.id)} onSave={() => toggleSave(browseCompany.id)} onResearch={() => startCompanyResearch(browseCompany)} onClose={() => setBrowseCompany(null)}/> : null}
+    {browseCompany ? <CompanyProfile initialProposal={browseProposal} key={`${browseCompany.id}-${browseProposal}`} company={browseCompany} report={reports.find(report => report.companyId === browseCompany.id) || null} saved={watchlist.includes(browseCompany.id)} onSave={() => toggleSave(browseCompany.id)} onResearch={() => startCompanyResearch(browseCompany)} onClose={() => setBrowseCompany(null)}/> : null}
     {prefsOpen ? <InvestmentPreferences preferences={proposal?.preferences || reviewPreferences} proposal={proposal} validate={isDiscoveryPreferences} title="Search filters" focusField={filterFocus} submitLabel={reviewIntent.kind === "refine" ? "Update search" : "Start search"} onClose={() => { setPrefsOpen(false); setProposal(null); }} onSave={saveSearch}/> : null}
     {importOpen ? <WorkspaceDialog title="Add company" onClose={() => setImportOpen(false)}><form onSubmit={importCompany}><label className="fc-field"><span>Company website</span><input type="url" required placeholder="https://company.com" value={importUrl} onChange={event => setImportUrl(event.target.value)}/></label><div className="fc-dialog-actions"><button className="fc-btn secondary" type="button" onClick={() => setImportOpen(false)}>Cancel</button><button className="fc-btn primary" type="submit">Open agent<ArrowRight size={17}/></button></div></form></WorkspaceDialog> : null}
 

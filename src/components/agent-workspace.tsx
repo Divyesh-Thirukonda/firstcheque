@@ -4,6 +4,7 @@ import { useEffect, useRef, useState, type KeyboardEvent } from "react";
 import { ArrowRight, ArrowUpRight, Check, ChevronDown, FileSearch, FileText, Globe2, Link2, LoaderCircle, MessageSquare, ShieldCheck, Sparkles, Square, Target, TriangleAlert } from "lucide-react";
 import type { DiligenceRequest, DiligenceSource, DiligenceStep, DiligenceStreamEvent, LiveDiligenceResult, LiveInvestorThesis } from "@/lib/live-research-types";
 import type { DiscoveryCompany } from "@/lib/discovery-types";
+import { InvestmentProposal } from "./investment-proposal";
 import { CompanyOverview } from "./company-overview";
 import type { CompanyEntry } from "./company-list";
 import type { SearchMessage } from "@/lib/search-threads";
@@ -49,7 +50,7 @@ export function AgentWorkspace({ companies, preferences, reports, selectedId, in
   onSelect: (id: string | null) => void; onResult: (result: LiveDiligenceResult) => void;
   onClearInitialUrl: () => void; onBack: () => void;
 }) {
-  const [companyTab, setCompanyTab] = useState<"Overview" | "Research">(companyDetails ? "Overview" : "Research");
+  const [companyTab, setCompanyTab] = useState<"Overview" | "Research" | "Proposal">(companyDetails ? "Overview" : "Research");
   const [question, setQuestion] = useState(researchQuestion || "");
   const [url, setUrl] = useState(initialUrl);
   const [reportTab, setReportTab] = useState<"Report" | "Financials" | "Sources">("Report");
@@ -123,9 +124,9 @@ export function AgentWorkspace({ companies, preferences, reports, selectedId, in
           <span className="fc-editor-label">{report?.persisted ? <><Check size={13}/>Saved</> : report ? "Unsaved report" : "Research workspace"}</span>
           <button className={`fc-agent-pane-toggle ${agentOpen ? "active" : ""}`} onClick={() => setAgentOpen(!agentOpen)} aria-expanded={agentOpen} aria-controls="research-agent-pane"><MessageSquare size={15}/><span>{agentOpen ? "Hide agent" : "Ask agent"}</span></button>
         </div>
-        {companyDetails ? <nav className="fc-company-subnav" aria-label="Company views"><button aria-pressed={companyTab === "Overview"} className={companyTab === "Overview" ? "active" : ""} onClick={() => setCompanyTab("Overview")}>Overview</button><button aria-pressed={companyTab === "Research"} className={companyTab === "Research" ? "active" : ""} onClick={() => setCompanyTab("Research")}>Research{report ? <span>{report.sources.filter(source => source.status === "fetched").length} sources</span> : null}</button></nav> : null}
+        {companyDetails ? <nav className="fc-company-subnav" aria-label="Company views"><button aria-pressed={companyTab === "Overview"} className={companyTab === "Overview" ? "active" : ""} onClick={() => setCompanyTab("Overview")}>Overview</button><button aria-pressed={companyTab === "Proposal"} className={companyTab === "Proposal" ? "active" : ""} onClick={() => setCompanyTab("Proposal")}>Proposal</button><button aria-pressed={companyTab === "Research"} className={companyTab === "Research" ? "active" : ""} onClick={() => setCompanyTab("Research")}>Research{report ? <span>{report.sources.filter(source => source.status === "fetched").length} sources</span> : null}</button></nav> : null}
         <div className="fc-report-scroll">
-          {companyDetails && companyTab === "Overview" ? <CompanyOverview company={companyDetails} report={report} fit={fit} saved={savedIds.includes(companyDetails.id)} onSave={() => onSaveCompany(companyDetails.id)} onResearch={() => { setCompanyTab("Research"); if (!report) { setAgentOpen(true); void research(); } }}/> : report ? (
+          {companyDetails && companyTab === "Proposal"?<InvestmentProposal key={companyDetails.id} company={companyDetails} onBack={()=>setCompanyTab("Overview")}/> : companyDetails && companyTab === "Overview" ? <CompanyOverview onProposal={()=>setCompanyTab("Proposal")} company={companyDetails} report={report} fit={fit} saved={savedIds.includes(companyDetails.id)} onSave={() => onSaveCompany(companyDetails.id)} onResearch={() => { setCompanyTab("Research"); if (!report) { setAgentOpen(true); void research(); } }}/> : report ? (
             <ResearchReport
               report={report}
               tab={reportTab}
