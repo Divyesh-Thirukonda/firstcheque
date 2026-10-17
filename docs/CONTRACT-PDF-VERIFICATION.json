@@ -1,0 +1,64 @@
+{
+  "checkedAt": "2026-10-17T18:26:30.597Z",
+  "sourceCommit": "0d74f99",
+  "feature": "Unsigned investor contract draft PDF",
+  "tests": {
+    "passed": 95,
+    "failed": 0,
+    "typecheck": "passed",
+    "productionBuild": "passed"
+  },
+  "pdf": {
+    "browserExport": true,
+    "pages": 3,
+    "visuallyInspectedPages": [
+      1,
+      2,
+      3
+    ],
+    "signatureFields": 0,
+    "pendingSignaturesOnEveryPage": true,
+    "syntheticExampleLabeled": true,
+    "generation": "local browser / pdf-lib / embedded Geist OFL font"
+  },
+  "mobile": {
+    "width": 375,
+    "documentScrollWidth": 375,
+    "dialogOverflow": false
+  },
+  "liveTermExtraction": {
+    "provider": "Nicrron",
+    "traceId": "b743696b-fcb0-47b2-ae6e-0fbe7fa507c8",
+    "prismReadbackStatus": 200,
+    "privateNotesAbsentFromTrace": true,
+    "fields": [
+      "instrument",
+      "valuation",
+      "discount",
+      "ownership",
+      "capTable",
+      "rights",
+      "minimum",
+      "entity",
+      "jurisdiction",
+      "signatory",
+      "closingDate",
+      "nextStep"
+    ]
+  },
+  "boundaries": {
+    "signaturesCollected": false,
+    "fundsTransferred": false,
+    "equityIssued": false,
+    "voice": "Existing ElevenLabs preview only; no outbound call"
+  },
+  "deployment": {
+    "url": "https://seed-street.vercel.app",
+    "preview": "https://firstcheque-poxe9na25-divyesh-thirukondas-projects.vercel.app",
+    "status": "READY",
+    "id": "dpl_HW14sGExxBUSHBUwgKzeaVQCDhkP",
+    "commit": "0d74f9978cf87b9f67daf83db6af011a28eb4922",
+    "browserPdfDownload": true,
+    "elevenLabsConfigured": true
+  }
+}
