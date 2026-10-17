@@ -59,3 +59,26 @@ test("ordinary AI-or-climate briefs preserve both interests and the annual reven
   assert.equal(filterAndRankCompanies([climate],preferences).matches.length,1);
   assert.equal(parseDiscoveryBrief("I prefer companies with annual revenue.").preferences.revenueRequirement,"reported-revenue");
 });
+test("natural budget refinements change the amount while retaining the search's other constraints",()=>{
+  const base={...parseDiscoveryBrief("I have $2,000 for high-risk climate tech companies with existing annual revenue.").preferences,maxMinimumCheck:400,horizonYears:10};
+  for(const [brief,budget] of [["raise my budget to $5,000",5000],["make my budget $5,000",5000],["set my budget to $3,000",3000]] as const){
+    const {preferences}=parseDiscoveryBrief(brief,base);
+    assert.equal(preferences.budget,budget,brief);
+    assert.deepEqual(preferences.sectors,base.sectors);
+    assert.equal(preferences.revenueRequirement,base.revenueRequirement);
+    assert.equal(preferences.riskAppetite,base.riskAppetite);
+    assert.equal(preferences.maxMinimumCheck,400);
+    assert.equal(preferences.horizonYears,10);
+    assert.equal(preferences.thesis,brief);
+  }
+  assert.equal(base.budget,2000);
+  const invalid=parseDiscoveryBrief("set my budget to $50",base);
+  assert.equal(invalid.preferences.budget,2000);
+  assert.ok(invalid.warnings.some(warning=>warning.includes("previous amount was kept")));
+});
+test("a bare AI company search includes the whole AI industry without narrowing to infrastructure",()=>{
+  const {preferences}=parseDiscoveryBrief("AI companies");
+  assert.deepEqual(preferences.sectors,["AI & software"]);
+  const developerTools={...company,id:"developer-tools",description:"Tools for software developers",sectors:["Developer tools"]};
+  assert.equal(filterAndRankCompanies([company,developerTools],preferences).matches.length,2);
+});

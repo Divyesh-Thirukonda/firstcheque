@@ -27,7 +27,7 @@ export function parseDiscoveryBrief(brief: string, base: DiscoveryPreferences = 
   const preferences: DiscoveryPreferences = { ...base, industries:[...base.industries],stages:[...base.stages],sectors:[...base.sectors],excludedSectors:[...(base.excludedSectors||[])],thesis:brief };
   const interpretation: string[] = [], warnings: string[] = [];
   const amount = "(?:\\$|USD\\s*)?([0-9]+(?:,[0-9]{3})*(?:\\.[0-9]+)?)\\s*(million|thousand|[km])?";
-  const budget = brief.match(new RegExp(`\\b(?:have|budget(?:\\s+of|\\s+is|:)?|allocate|invest|allocation(?:\\s+of|:)?|deploy)\\s*${amount}`,"i"));
+  const budget = brief.match(new RegExp(`\\b(?:have|budget(?:\\s+(?:of|is|to)|:)?|allocate|invest|allocation(?:\\s+of|:)?|deploy)\\s*${amount}`,"i"));
   if (budget) {
     const value = amountValue(budget[1],budget[2]);
     if (value>=100 && value<=10_000_000) {preferences.budget=value;interpretation.push(`Research budget: $${value.toLocaleString("en-US")}`);}

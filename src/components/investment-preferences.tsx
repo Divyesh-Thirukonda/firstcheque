@@ -16,7 +16,9 @@ export interface BriefProposal {
 export const riskLabel = (risk: DiscoveryPreferences["riskAppetite"]) => ({ conservative: "Low", balanced: "Moderate", adventurous: "High" }[risk]);
 export const revenueLabel = (rule: DiscoveryPreferences["revenueRequirement"]) => ({ any: "Any revenue stage", "reported-revenue": "Annual revenue required", "reported-arr": "ARR required" }[rule]);
 
-export function InvestmentPreferences({ preferences, proposal, validate, onClose, onSave }: {
+export function InvestmentPreferences({ preferences, proposal, validate, onClose, onSave, submitLabel, title }: {
+  submitLabel?: string;
+  title?: string;
   preferences: DiscoveryPreferences;
   proposal: BriefProposal | null;
   validate: (value: unknown) => boolean;
@@ -34,7 +36,7 @@ export function InvestmentPreferences({ preferences, proposal, validate, onClose
     onSave(draft);
   }
 
-  return <WorkspaceDialog title={proposal ? "Review your preferences" : "Investment preferences"} subtitle={proposal ? "Check these filters before continuing." : "Choose what a company needs to match."} onClose={onClose} wide>
+  return <WorkspaceDialog title={title || (proposal ? "Review your preferences" : "Investment preferences")} subtitle={proposal ? "Check these filters before continuing." : "Choose what a company needs to match."} onClose={onClose} wide>
     <form onSubmit={submit}>
       {proposal?.warnings.map(warning => <p className="fc-inline-error" key={warning}>{warning}</p>)}
       <section className="fc-preference-section">
@@ -81,7 +83,7 @@ export function InvestmentPreferences({ preferences, proposal, validate, onClose
       <div className="fc-dialog-actions">
         <button type="button" className="fc-text-btn" onClick={() => setDraft({ ...DEFAULT_DISCOVERY_PREFERENCES })}>Reset</button>
         <button type="button" className="fc-btn secondary" onClick={onClose}>Cancel</button>
-        <button type="submit" className="fc-btn primary">{proposal ? "Use these preferences" : "Save preferences"}<ArrowRight size={16}/></button>
+        <button type="submit" className="fc-btn primary">{submitLabel || (proposal ? "Use these preferences" : "Save preferences")}<ArrowRight size={16}/></button>
       </div>
     </form>
   </WorkspaceDialog>;

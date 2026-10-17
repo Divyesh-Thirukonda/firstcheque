@@ -2,10 +2,10 @@
 import { useEffect, useRef, useState, type KeyboardEvent } from "react";
 import { ArrowRight, ArrowUpRight, Check, CheckCircle2, ChevronDown, Circle, FileSearch, FileText, FolderOpen, Globe2, Link2, LoaderCircle, MessageSquare, PanelLeftClose, Plus, Search, ShieldCheck, Sparkles, Square, Target, TriangleAlert } from "lucide-react";
 import type { DiligenceRequest, DiligenceSource, DiligenceStep, DiligenceStreamEvent, LiveDiligenceResult, LiveInvestorThesis } from "@/lib/live-research-types";
+import type { SearchMessage } from "@/lib/search-threads";
 import { WorkspaceDialog } from "./workspace-dialog";
 
 export interface AgentCompany { id: string; name: string; website: string; description: string; offeringStatus: string; offeringUrl: string | null; platform: string | null; dossierId?: string }
-interface AgentMessage { id: string; role: "user" | "assistant"; text: string; error?: boolean }
 const sectionNames: Record<string, string> = { company: "The business", founders: "The team", competitors: "Competition", market: "The market", financials: "Financials", disclosures: "Funding & disclosures" };
 const reportTabs = ["Report", "Financials", "Sources"] as const;
 const financialLabels: Record<string, string> = { annualRevenue: "Annual revenue", arr: "Recurring revenue (ARR)", valuation: "Company valuation", runwayMonths: "Cash runway" };
@@ -35,31 +35,29 @@ function Citations({ ids, sources, onSource, passage }: { ids: string[]; sources
   return <span className="fc-citations">{ids.map(id => { const index = sources.findIndex(source => source.id === id); const source = sources[index]; return source ? <button key={id} onClick={() => onSource(source, passage)} aria-label={`Read source ${index + 1}: ${source.title}`}>Source {index + 1}</button> : null; })}</span>;
 }
 
-export function AgentWorkspace({ companies, preferences, reports, selectedId, initialUrl, onSelect, onResult, onClearInitialUrl, onDiscover }: { companies: AgentCompany[]; preferences: LiveInvestorThesis; reports: LiveDiligenceResult[]; selectedId: string | null; initialUrl: string; onSelect: (id: string | null) => void; onResult: (result: LiveDiligenceResult) => void; onClearInitialUrl: () => void; onDiscover: () => void }) {
-  const [companySearch, setCompanySearch] = useState("");
+export function AgentWorkspace({ companies, preferences, reports, selectedId, initialUrl, messages, threadId, onMessage, onSelect, onResult, onClearInitialUrl, onBack }: {
+  companies: AgentCompany[]; preferences: LiveInvestorThesis; reports: LiveDiligenceResult[];
+  selectedId: string | null; initialUrl: string; messages: SearchMessage[]; threadId: string;
+  onMessage: (threadId: string, message: SearchMessage) => void;
+  onSelect: (id: string | null) => void; onResult: (result: LiveDiligenceResult) => void;
+  onClearInitialUrl: () => void; onBack: () => void;
+}) {
   const [question, setQuestion] = useState("");
   const [url, setUrl] = useState(initialUrl);
   const [reportTab, setReportTab] = useState<"Report" | "Financials" | "Sources">("Report");
   const [activeSource, setActiveSource] = useState<DiligenceSource | null>(null);
   const [sourcePassage, setSourcePassage] = useState<string | null>(null);
-  const [messages, setMessages] = useState<AgentMessage[]>([]);
   const [steps, setSteps] = useState<DiligenceStep[]>([]);
   const [running, setRunning] = useState(false);
   const [error, setError] = useState("");
-  const [runCompanyId, setRunCompanyId] = useState<string | null>(null);
-  const [railOpen, setRailOpen] = useState(true);
   const [agentOpen, setAgentOpen] = useState(false);
-  const [mobileRailOpen, setMobileRailOpen] = useState(false);
-  const [narrowViewport, setNarrowViewport] = useState(false);
   const [lastQuestion, setLastQuestion] = useState("");
   const controller = useRef<AbortController | null>(null);
   const composer = useRef<HTMLTextAreaElement>(null);
   const conversationEnd = useRef<HTMLDivElement>(null);
   const company = companies.find(item => item.id === selectedId) || null;
   const report = reports.find(item => item.companyId === selectedId || item.dossierId === company?.dossierId) || null;
-  const railVisible = narrowViewport ? mobileRailOpen : railOpen;
-  const list = companies.filter(item => `${item.name} ${item.website}`.toLowerCase().includes(companySearch.toLowerCase()));
-  useEffect(() => { if (initialUrl) { setUrl(initialUrl); setAgentOpen(true); onClearInitialUrl(); composer.current?.focus(); } }, [initialUrl, onClearInitialUrl]);
+  useEffect(() => { if (initialUrl) { setUrl(initialUrl); setAgentOpen(true); composer.current?.focus(); } }, [initialUrl, onClearInitialUrl]);
   useEffect(() => { conversationEnd.current?.scrollIntoView({ block: "nearest", behavior: "smooth" }); }, [messages, steps]);
   useEffect(() => () => { controller.current?.abort(); }, []);
   useEffect(() => {
@@ -67,12 +65,7 @@ export function AgentWorkspace({ companies, preferences, reports, selectedId, in
       document.getElementById("research-agent-pane")?.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   }, [agentOpen]);
-  useEffect(() => {
-    const media = window.matchMedia("(max-width: 1120px)");
-    const update = () => setNarrowViewport(media.matches);
-    update(); media.addEventListener("change", update);
-    return () => media.removeEventListener("change", update);
-  }, []);
+
 
   function openSource(source: DiligenceSource, passage?: string | null) { setActiveSource(source); setSourcePassage(passage || null); }
   function receive(event: DiligenceStreamEvent) {
@@ -80,19 +73,19 @@ export function AgentWorkspace({ companies, preferences, reports, selectedId, in
     else if (event.type === "result") {
       onResult(event.result); onSelect(event.result.companyId); setReportTab("Report");
       const status = event.result.mode === "live-web" ? "Your cited research report is ready." : event.result.mode === "sources-only" ? "Sources were collected, but a complete AI memo was unavailable. The retained evidence and limitations are shown." : "Research could not be completed. The report explains what was unavailable.";
-      setMessages(current => [...current, { id: `${event.result.id}-answer`, role: "assistant", text: status, error: event.result.status === "unavailable" }]);
+      onMessage(threadId, { id: `${event.result.id}-answer`, role: "assistant", text: `${event.result.company.name}: ${status}`, companyId: event.result.companyId, reportId: event.result.id, kind: "research", error: event.result.status === "unavailable" });
     } else throw new Error(event.error);
   }
   async function research(customQuestion?: string) {
     if (running) return;
-    const targetUrl = url.trim() || company?.website || "";
-    const targetName = !url.trim() ? company?.name : undefined;
+    const targetUrl = url.trim() || company?.website || report?.company.website || "";
+    const targetName = !url.trim() ? company?.name || report?.company.name : undefined;
     if (!targetUrl && !targetName) { setError("Paste a company website, or select a company from your workspace."); composer.current?.focus(); return; }
     if (targetUrl && !safeWebUrl(targetUrl)) { setError("Use a complete company URL beginning with https:// or http://."); return; }
     const prompt = customQuestion || question.trim() || "Research this company against my investment brief. Cover founders, competitors, market, financials, and material risks. Cite the evidence and identify what is not disclosed.";
     const body: DiligenceRequest = { companyName: targetName, companyUrl: targetUrl || undefined, question: prompt, thesis: preferences, dossierId: !url.trim() ? report?.dossierId : undefined, ...(!url.trim() && company?.offeringUrl ? { offeringUrl: company.offeringUrl } : {}) };
-    setMessages(current => [...current, { id: crypto.randomUUID(), role: "user", text: `${targetName || targetUrl}\n\n${customQuestion || question.trim() || "Research the business, team, and financials."}` }]);
-    setLastQuestion(prompt); setQuestion(""); setError(""); setSteps([]); setRunning(true); setRunCompanyId(selectedId); controller.current = new AbortController();
+    onMessage(threadId, { id: crypto.randomUUID(), role: "user", text: `${targetName || targetUrl}\n\n${customQuestion || question.trim() || "Research the business, team, and financials."}`, kind: "research", ...(!url.trim() && selectedId ? { companyId: selectedId } : {}) });
+    setLastQuestion(prompt); setQuestion(""); setError(""); setSteps([]); setRunning(true); controller.current = new AbortController();
     let resultReceived = false;
     const handleEvent = (event: DiligenceStreamEvent) => { if (event.type === "result") resultReceived = true; receive(event); };
     try {
@@ -103,46 +96,19 @@ export function AgentWorkspace({ companies, preferences, reports, selectedId, in
         while (true) { const { done, value } = await reader.read(); buffer += decoder.decode(value, { stream: !done }); const frames = buffer.split(/\r?\n\r?\n/); buffer = frames.pop() || ""; for (const frame of frames) { const data = frame.split(/\r?\n/).filter(line => line.startsWith("data:")).map(line => line.slice(5).trimStart()).join("\n"); if (data) handleEvent(JSON.parse(data) as DiligenceStreamEvent); } if (done) { if (buffer.trim().startsWith("data:")) handleEvent(JSON.parse(buffer.trim().slice(5)) as DiligenceStreamEvent); break; } }
       } else handleEvent({ type: "result", result: await response.json() as LiveDiligenceResult });
       if (!resultReceived) throw new Error("The research connection ended before a report was returned. Try this request again.");
-      setUrl("");
+      setUrl(""); onClearInitialUrl();
     } catch (failure) {
-      if (failure instanceof Error && failure.name === "AbortError") setMessages(current => [...current, { id: crypto.randomUUID(), role: "assistant", text: "Stopped waiting for this request. Any completed server research will appear when the workspace refreshes." }]);
-      else { const message = failure instanceof Error ? failure.message : "Research could not be completed."; setError(message); setMessages(current => [...current, { id: crypto.randomUUID(), role: "assistant", text: message, error: true }]); }
-    } finally { setRunning(false); setRunCompanyId(null); controller.current = null; }
+      if (failure instanceof Error && failure.name === "AbortError") onMessage(threadId, { id: crypto.randomUUID(), role: "assistant", kind: "research", text: "Stopped waiting for this request. Any completed server research will appear when the workspace refreshes." });
+      else { const message = failure instanceof Error ? failure.message : "Research could not be completed."; setError(message); onMessage(threadId, { id: crypto.randomUUID(), role: "assistant", kind: "research", text: message, error: true }); }
+    } finally { setRunning(false); controller.current = null; }
   }
-  function newResearch() { if (running) return; setAgentOpen(true); onSelect(null); setUrl(""); setQuestion(""); setError(""); setReportTab("Report"); composer.current?.focus(); }
   const completed = steps.filter(step => step.status === "complete").length;
   return (
-    <div className={`fc-agent-workspace ${railOpen ? "" : "fc-agent-rail-hidden"} ${mobileRailOpen ? "fc-mobile-rail-open" : ""} ${agentOpen ? "" : "fc-agent-chat-hidden"}`}>
-      <aside id="research-company-rail" className="fc-agent-files">
-        <div className="fc-pane-heading">
-          <span><FolderOpen size={15}/> Companies</span>
-          <button className="fc-icon-btn" onClick={newResearch} disabled={running} aria-label="Research a new company"><Plus size={16}/></button>
-        </div>
-        <div className="fc-rail-search">
-          <Search size={14}/>
-          <input aria-label="Find a company in workspace" placeholder="Find a company…" value={companySearch} onChange={event => setCompanySearch(event.target.value)}/>
-        </div>
-        <p className="fc-section-label">YOUR WORKSPACE</p>
-        <div className="fc-agent-file-list">
-          {list.map(item => {
-            const saved = reports.some(result => result.companyId === item.id || result.dossierId === item.dossierId);
-            return (
-              <button key={item.id} disabled={running} className={`fc-file-row ${selectedId === item.id ? "active" : ""}`} onClick={() => { onSelect(item.id); setMobileRailOpen(false); setUrl(""); setError(""); }}>
-                <span className="fc-company-avatar small">{item.name.slice(0, 1)}</span>
-                <span><strong>{item.name}</strong><small>{saved ? "Report saved" : item.offeringStatus === "open" ? "Offering listed" : "Ready to research"}</small></span>
-                {running && runCompanyId === item.id ? <LoaderCircle className="spin" size={14}/> : saved ? <FileText size={14}/> : null}
-              </button>
-            );
-          })}
-          {!list.length ? <p className="fc-rail-empty">No companies found. Add a website to begin.</p> : null}
-        </div>
-        <div className="fc-rail-bottom"><ShieldCheck size={15}/><span>Every claim has a source.<br/>Every gap stays visible.</span></div>
-      </aside>
-
+    <div className={`fc-company-detail ${agentOpen ? "" : "fc-company-chat-hidden"}`}>
       <section className="fc-agent-editor" aria-label="Company research report">
         <div className="fc-editor-tabbar">
-          <button className="fc-icon-btn" onClick={() => narrowViewport ? setMobileRailOpen(!mobileRailOpen) : setRailOpen(!railOpen)} aria-label={railVisible ? "Hide companies" : "Show companies"} aria-expanded={railVisible} aria-controls="research-company-rail"><PanelLeftClose size={16}/></button>
-          <span className="fc-file-tab"><FileText size={14}/>{report?.company.name || company?.name || "New research"}</span>
+          <button className="fc-back-results" onClick={onBack}><ArrowRight size={15}/><span>Results</span></button>
+          <span className="fc-file-tab"><FileText size={14}/>{report?.company.name || company?.name || (url ? sourceHost(url) : "New research")}</span>
           <span className="fc-tab-spacer"/>
           <span className="fc-editor-label">{report?.persisted ? <><Check size={13}/>Saved</> : report ? "Unsaved report" : "Research workspace"}</span>
           <button className={`fc-agent-pane-toggle ${agentOpen ? "active" : ""}`} onClick={() => setAgentOpen(!agentOpen)} aria-expanded={agentOpen} aria-controls="research-agent-pane"><MessageSquare size={15}/><span>{agentOpen ? "Hide agent" : "Ask agent"}</span></button>
@@ -163,13 +129,13 @@ export function AgentWorkspace({ companies, preferences, reports, selectedId, in
             <div className="fc-agent-empty">
               <span className="fc-agent-symbol"><FileSearch size={31}/></span>
               <p className="fc-section-label">COMPANY RESEARCH</p>
-              <h1>{company ? `Understand ${company.name}.` : "Research a company"}</h1>
-              <p>{company ? company.description : "Start with a company website. Get a clear report on the business, the team, and the questions worth asking."}</p>
-              {company ? (
+              <h1>{company || url ? `Understand ${company?.name || sourceHost(url)}.` : "Research a company"}</h1>
+              <p>{company ? company.description : url ? "Research this website within your current search. Your criteria and follow-ups stay together." : "Start with a company website. Get a clear report on the business, the team, and the questions worth asking."}</p>
+              {company || url ? (
                 <>
-                  <div className="fc-empty-company-note"><Globe2 size={16}/><span>{company.website ? sourceHost(company.website) : "Company website not provided"}</span></div>
-                  <button className="fc-btn primary" disabled={running} onClick={() => { setAgentOpen(true); void research(); }}><Sparkles size={16}/>{running ? "Researching…" : `Research ${company.name}`}<ArrowRight size={16}/></button>
-                  <p className="fc-empty-small-note">{company.offeringStatus === "open" ? "An offering is listed. Check the source platform for current terms." : "A research report does not mean an investment offering is available."}</p>
+                  <div className="fc-empty-company-note"><Globe2 size={16}/><span>{company?.website ? sourceHost(company.website) : sourceHost(url)}</span></div>
+                  <button className="fc-btn primary" disabled={running} onClick={() => { setAgentOpen(true); void research(); }}><Sparkles size={16}/>{running ? "Researching…" : `Research ${company?.name || sourceHost(url)}`}<ArrowRight size={16}/></button>
+                  <p className="fc-empty-small-note">{company?.offeringStatus === "open" ? "An offering is listed. Check the source platform for current terms." : "A research report does not mean an investment offering is available."}</p>
                 </>
               ) : (
                 <>
@@ -177,7 +143,7 @@ export function AgentWorkspace({ companies, preferences, reports, selectedId, in
                   {!agentOpen ? <button className="fc-btn primary" onClick={() => { setAgentOpen(true); composer.current?.focus(); }}>Add a company<ArrowRight size={16}/></button> : null}
                 </>
               )}
-              <button className="fc-text-btn" onClick={onDiscover}>Browse companies <ArrowRight size={15}/></button>
+              <button className="fc-text-btn" onClick={onBack}>Back to search results <ArrowRight size={15}/></button>
             </div>
           )}
         </div>
@@ -186,7 +152,7 @@ export function AgentWorkspace({ companies, preferences, reports, selectedId, in
       <aside id="research-agent-pane" className="fc-agent-chat" aria-label="Research agent conversation" hidden={!agentOpen}>
         <div className="fc-pane-heading"><span><Sparkles size={16}/>Research agent</span><span className="fc-chat-engine">Public web</span></div>
         <div className="fc-chat-scroll">
-          {!messages.length ? <div className="fc-agent-greeting"><strong>{report ? "Go a little deeper." : "What should we look into?"}</strong><p>{report ? "Ask a follow-up question or research another company." : "Add a website below. Ask a specific question, or let the agent cover the essentials."}</p></div> : null}
+          {!messages.length ? <div className="fc-agent-greeting"><strong>{report ? "Go a little deeper." : "What should we look into?"}</strong><p>{report ? "Ask a follow-up question or research another company." : "This question researches the selected company. Your search criteria stay attached to this conversation."}</p></div> : null}
           {messages.map(message => <div className={`fc-chat-message ${message.role} ${message.error ? "error" : ""}`} key={message.id}>{message.role === "assistant" ? <Sparkles size={14}/> : null}<p>{message.text}</p></div>)}
           {running || steps.length ? (
             <details className="fc-task-progress" open={running || undefined}>
@@ -201,7 +167,7 @@ export function AgentWorkspace({ companies, preferences, reports, selectedId, in
           <div ref={conversationEnd}/>
         </div>
         <div className="fc-agent-composer">
-          <label className="fc-agent-prompt-label" htmlFor="research-company-url">Company website</label>
+          <p className="fc-research-target"><Target size={14}/><span>Research target: <strong>{url ? sourceHost(url) : company?.name || "a company website"}</strong></span></p><label className="fc-agent-prompt-label" htmlFor="research-company-url">Company website {company ? <span>Optional override</span> : null}</label>
           <div className="fc-url-input"><Link2 size={15}/><input id="research-company-url" value={url} onChange={event => setUrl(event.target.value)} placeholder={company?.website || "https://company.com"} disabled={running}/></div>
           <label className="fc-agent-prompt-label" htmlFor="research-question">Your question <span>Optional</span></label>
           <textarea id="research-question" ref={composer} placeholder={company ? `What should we know about ${company.name}?` : "For example: How does this company make money?"} value={question} onChange={event => setQuestion(event.target.value)} disabled={running} onKeyDown={event => { if (event.key === "Enter" && (event.metaKey || event.ctrlKey)) { event.preventDefault(); void research(); } }}/>
@@ -280,9 +246,7 @@ function ResearchReport({ report, tab, onTab, onSource, offeringUrl, platform, r
   const businessVerified = report.sections.some(section => section.category === "company" && section.claims.length);
   const coverageLimited = report.status !== "complete" || report.mode !== "live-web";
   const limitations = [...new Set([...report.warnings, ...report.discovery.limitations].map(researchNote))];
-  const sharedFit = /^(?:Shared company research\.|Compare the cited business and risk evidence)/.test(report.thesisFit.explanation);
-  const specificCaveats = report.thesisFit.caveats.filter(item => !/^Research alignment is not a return forecast or eligibility assessment\./.test(item));
-  const showFit = report.thesisFit.score !== null || (!sharedFit && !!report.thesisFit.explanation) || specificCaveats.length > 0;
+
   const coverageLabel = report.status === "unavailable" ? "Unavailable" : report.mode === "sources-only" ? "Sources only" : coverageLimited ? "Partial" : "Report ready";
   function changeTab(event: KeyboardEvent<HTMLButtonElement>, current: typeof reportTabs[number]) {
     const index = reportTabs.indexOf(current);
@@ -309,7 +273,7 @@ function ResearchReport({ report, tab, onTab, onSource, offeringUrl, platform, r
           <>
             {!businessVerified && companySource ? <section className="fc-research-section fc-company-intro"><h2>The business</h2><p className="fc-financial-note">From the company website</p><p>{companySource.title} <Citations ids={[companySource.id]} sources={report.sources} onSource={onSource}/></p></section> : null}
             {!/public source evidence is retained below/i.test(report.summary) ? <section className="fc-research-section fc-report-overview"><h2>Overview</h2><div className="fc-report-summary">{report.summary.split(/\n\s*\n/).map((paragraph, index) => <p key={index}>{paragraph}</p>)}</div></section> : null}
-            {showFit ? <details className="fc-report-disclosure fc-fit-context"><summary><span><strong><Target size={16}/>How it fits your brief</strong>{report.thesisFit.score !== null ? <small>{report.thesisFit.score}/100 preference alignment</small> : null}</span><ChevronDown size={18}/></summary><div className="fc-disclosure-content">{!sharedFit ? <p>{report.thesisFit.explanation}</p> : null}{specificCaveats.length ? <ul className="fc-plain-list">{specificCaveats.map(item => <li key={item}>{item}</li>)}</ul> : null}</div></details> : null}
+
             {report.sections.filter(section => section.claims.length > 0).map(section => <section className="fc-research-section" key={section.category}><div className="fc-report-section-heading"><h2>{sectionNames[section.category] || section.title}</h2></div>{section.title === "Source-listed alternatives" ? <><p>A source lists alternatives. We haven’t validated the comparison.</p><details className="fc-claim-evidence"><summary>Read the source’s list<ChevronDown size={15}/></summary>{section.claims.map((claim, index) => <ClaimEvidence key={index} claim={claim} sources={report.sources} onSource={onSource}/>)}</details></> : <div className="fc-claims-list">{section.claims.map((claim, index) => <ClaimEvidence key={`${section.category}-${index}`} claim={claim} sources={report.sources} onSource={onSource}/>)}</div>}</section>)}
             {report.conflicts.length ? <section className="fc-research-section fc-conflicts-section"><h2>Evidence that needs a closer look</h2><p>These sources may disagree. Check the dates and definitions before comparing them.</p>{report.conflicts.map((conflict, index) => <div className="fc-note warning" key={index}><TriangleAlert size={17}/><div><strong>{readableEvidence(conflict.field)}</strong><p>{conflict.description}</p><Citations ids={conflict.sourceIds} sources={report.sources} onSource={onSource}/>{conflict.evidence?.length ? <details className="fc-claim-evidence"><summary>Compare the passages<ChevronDown size={13}/></summary>{conflict.evidence.map((evidence, evidenceIndex) => <div key={evidenceIndex}><blockquote>{evidence.quote}</blockquote><Citations ids={[evidence.sourceId]} sources={report.sources} onSource={onSource}/></div>)}</details> : null}</div></div>)}</section> : null}
             {report.missingEvidence.length ? <ReportGaps gaps={report.missingEvidence}/> : null}
