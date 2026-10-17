@@ -8,3 +8,28 @@ test('an integration page is useful evidence, while sample handovers are exclude
 test('incomplete plans still search both competitive and market context',async()=>{const {ensureContextQueries}=await import('../src/lib/research-expansion');const queries=ensureContextQueries([{category:'competitors',query:'digital twin handover hospital facilities Autodesk Tandem'}],'Brick: Hospital handover');assert.ok(queries.some(query=>query.category==='market'));assert.ok(queries.some(query=>query.category==='competitors'));assert.ok(!queries.find(query=>query.category==='market')!.query.includes('vercel'));});
 test('investor disclosures and nested product links are included in company research',()=>{const hits=followupCompanyLinks('https://brick.example/',[{url:'https://brick.example/',officialCompanySource:true,links:['/investors','/integrations/tandem','/leadership','/workspace']}]);assert.equal(hits.find(h=>h.url.endsWith('/investors'))?.category,'disclosures');assert.equal(hits.find(h=>h.url.endsWith('/leadership'))?.category,'founders');assert.ok(hits.some(h=>h.url.endsWith('/integrations/tandem')));});
 test('product documentation links remain external comparison leads',async()=>{const {linkedProductReferences,normalizeSourceLeads}=await import('../src/lib/research-expansion');const refs=linkedProductReferences('https://brick.example/',[{url:'https://brick.example/integrations',officialCompanySource:true,links:['https://aps.autodesk.com/developer/overview/tandem-data-api','https://modelcontextprotocol.io/specification/transports','https://brick.example/products','mailto:test@example.com']}]);assert.equal(refs.length,1);assert.equal(refs[0].category,'competitors');const leads=normalizeSourceLeads({urls:[{category:'competitors',url:'https://www.autodesk.com/products/tandem/overview'},{category:'financials',url:'https://other.example/finance'},{category:'market',url:'https://user:secret@other.example/'}]});assert.equal(leads.length,1);assert.deepEqual(normalizeSourceLeads({urls:'bad'}),[]);});
+
+test('investor pages are retained even after four earlier product links',()=>{
+ const hits=followupCompanyLinks('https://brick.example/',[{url:'https://brick.example/',officialCompanySource:true,links:['/product','/solutions','/security','/integrations','/investors','/team','/pricing']}]);
+ assert.equal(hits[0].url,'https://brick.example/investors');
+ assert.ok(hits.some(hit=>hit.url.endsWith('/team')));
+ assert.ok(hits.some(hit=>hit.url.endsWith('/pricing')));
+ assert.equal(hits.length,4);
+});
+test('failed discovery fetches do not suppress a linked investor-page retry',()=>{
+ const hits=followupCompanyLinks('https://brick.example/',[
+  {url:'https://brick.example/',officialCompanySource:true,status:'fetched',links:['/investors']},
+  {url:'https://brick.example/investors',officialCompanySource:false,status:'unavailable',links:[]},
+ ]);
+ assert.equal(hits[0]?.url,'https://brick.example/investors');
+});
+
+test('a successful retry replaces the failed citation entry without duplicate IDs',async()=>{
+ const {retainResearchSource}=await import('../src/lib/research-expansion');
+ const failed={id:'web-investors',url:'https://brick.example/investors',status:'unavailable',text:'',title:'Investor relations',publisher:'brick.example',publishedAt:null,retrievedAt:'2026-10-17',category:'disclosures',query:'official link',contentHash:'empty',officialCompanySource:false} as import('../src/lib/live-research-types').DiligenceSource;
+ const sources=[failed];
+ const fetched={...failed,status:'fetched' as const,text:'All figures are mock data.',officialCompanySource:true};
+ retainResearchSource(sources,fetched);
+ assert.equal(sources.length,1);assert.equal(sources[0].status,'fetched');assert.equal(sources[0].text,fetched.text);
+ retainResearchSource(sources,failed);assert.equal(sources[0].status,'fetched');
+});

@@ -1,6 +1,6 @@
 import {illustrativeFinancialDisclosure} from "./disclosure-scope";
 import {searchExaPublic} from "./exa-discovery";
-import {resolveResearchName,followupCompanyLinks,researchSourceScope,normalizeResearchQueries,ensureContextQueries,linkedProductReferences,normalizeSourceLeads,linkedCompanyProfiles} from "./research-expansion";
+import {retainResearchSource,resolveResearchName,followupCompanyLinks,researchSourceScope,normalizeResearchQueries,ensureContextQueries,linkedProductReferences,normalizeSourceLeads,linkedCompanyProfiles} from "./research-expansion";
 import { collectCompanyContacts } from "./company-contact-collector";
 import {evidenceDate} from "./evidence-dates";
 import "server-only";
@@ -339,8 +339,8 @@ export async function runWebDiligence(request: DiligenceRequest, onEvent?: (even
     activeFollowups++;
     try{const page=await fetchPublicPage(hit.url,{timeoutMs:8000});const related=!website||isRelatedCompanyPage(website,page);const scope=researchSourceScope(hit.category,related);if(!scope||(!context&&!related))throw new Error("Company identity could not be established; this is not company evidence.");
       const source:DiligenceSource={id,url:page.url,title:page.title,publisher:new URL(page.url).hostname,publishedAt:evidenceDate(page.publishedAt),retrievedAt:new Date().toISOString(),category:hit.category,query:hit.query||"Followed an official company website link",text:page.text,contentHash:hash(page.text),officialCompanySource:Boolean(website&&sameCompanyDomain(page.url,website)),scope,links:page.links,status:"fetched"};
-      sources.push(source);spans.push({name:scope==="company"?"Follow company evidence link":"Read scoped industry context",type:"retrieval",input:hit.url,output:JSON.stringify(source),started:begin,ended:Date.now()});
-    }catch(error){const message=error instanceof Error?error.message:"Unavailable";sources.push({id,url:hit.url,title:new URL(hit.url).hostname,publisher:new URL(hit.url).hostname,publishedAt:null,retrievedAt:new Date().toISOString(),category:hit.category,query:hit.query||"Followed company link",text:"",contentHash:hash(""),officialCompanySource:false,status:"unavailable",error:message});spans.push({name:"Follow-up source unavailable",type:"retrieval",input:hit.url,output:error instanceof Error?error.message:"Unavailable",error:error instanceof Error?error.message:"Unavailable",started:begin,ended:Date.now()});}finally{activeFollowups--;}
+      retainResearchSource(sources,source);spans.push({name:scope==="company"?"Follow company evidence link":"Read scoped industry context",type:"retrieval",input:hit.url,output:JSON.stringify(source),started:begin,ended:Date.now()});
+    }catch(error){const message=error instanceof Error?error.message:"Unavailable";retainResearchSource(sources,{id,url:hit.url,title:new URL(hit.url).hostname,publisher:new URL(hit.url).hostname,publishedAt:null,retrievedAt:new Date().toISOString(),category:hit.category,query:hit.query||"Followed company link",text:"",contentHash:hash(""),officialCompanySource:false,status:"unavailable",error:message});spans.push({name:"Follow-up source unavailable",type:"retrieval",input:hit.url,output:error instanceof Error?error.message:"Unavailable",error:error instanceof Error?error.message:"Unavailable",started:begin,ended:Date.now()});}finally{activeFollowups--;}
   };
   await Promise.all(followups.map(hit=>retainFollowup(hit)));
   // A second hop reaches pages such as /investors and /integrations/product.

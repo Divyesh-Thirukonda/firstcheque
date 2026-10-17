@@ -10,6 +10,7 @@ import type { CompanyEntry } from "./company-list";
 import type { SearchMessage } from "@/lib/search-threads";
 import { TaskTimeline } from "./task-timeline";
 import { WorkspaceDialog } from "./workspace-dialog";
+import { illustrativeFinancialDisclosure } from "@/lib/disclosure-scope";
 
 export interface AgentCompany { id: string; name: string; website: string; description: string; offeringStatus: string; offeringUrl: string | null; platform: string | null; dossierId?: string }
 const sectionNames: Record<string, string> = { company: "The business", founders: "The team", competitors: "Competition", market: "The market", financials: "Financials", disclosures: "Funding & disclosures" };
@@ -250,6 +251,7 @@ function ClaimEvidence({ claim, sources, onSource }: { claim: LiveDiligenceResul
 export function ResearchReport({ report, tab, onTab, onSource, offeringUrl, platform, running, onRetry }: { report: LiveDiligenceResult; tab: typeof reportTabs[number]; onTab: (tab: typeof reportTabs[number]) => void; onSource: (source: DiligenceSource, passage?: string | null) => void; offeringUrl?: string | null; platform?: string | null; running: boolean; onRetry: () => void }) {
   const readableSources = report.sources.filter(source => source.status === "fetched").length;
   const attemptedSources = report.sources.length;
+  const illustrativeSource = report.sources.find(source => source.status === "fetched" && source.officialCompanySource && illustrativeFinancialDisclosure(source.text));
   const companySource = report.sources.find(source => source.status === "fetched" && source.officialCompanySource && safeWebUrl(source.url) && new URL(source.url).pathname === "/") || report.sources.find(source => source.status === "fetched" && source.officialCompanySource);
   const businessVerified = report.sections.some(section => section.category === "company" && section.claims.length);
   const coverageLimited = report.status !== "complete" || report.mode !== "live-web";
@@ -290,6 +292,7 @@ export function ResearchReport({ report, tab, onTab, onSource, offeringUrl, plat
         ) : tab === "Financials" ? (
           <>
             <div className="fc-section-intro"><h2>Financials</h2></div>
+            {illustrativeSource ? <section className="fc-research-section"><h3>Illustrative figures found</h3><p>A company source labels financial figures as mock or synthetic. Those figures are excluded from actual company financials. <Citations ids={[illustrativeSource.id]} sources={report.sources} onSource={onSource}/></p></section> : null}
             <div className="fc-financial-grid">{Object.entries(report.financials).map(([key, field]) => <section className="fc-financial-tile" key={key}><h3>{financialLabels[key]}</h3><strong>{financialValue(field, key)}</strong>{field.status !== "not-found" ? <span className={`fc-status ${field.status === "conflicting" ? "warning" : "neutral"}`}>{field.status === "source-reported" ? "Reported in a source" : "Sources disagree"}</span> : null}{field.value !== null ? <p className="fc-financial-note">{field.period || "Reporting period not stated"}{field.asOf ? ` · As of ${displayDate(field.asOf)}` : ""}</p> : null}<Citations ids={field.sourceIds} sources={report.sources} onSource={onSource} passage={field.quote}/>{field.quote ? <details className="fc-claim-evidence"><summary>Read the financial disclosure<ChevronDown size={13}/></summary><blockquote>{field.quote}</blockquote></details> : null}</section>)}</div>
             <details className="fc-filter-data-rules"><summary>Revenue definitions<ChevronDown size={14}/></summary><p>ARR is annual recurring revenue, distinct from total annual revenue. Source reporting is not an audit.</p></details>
           </>

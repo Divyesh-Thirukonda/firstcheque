@@ -1,8 +1,8 @@
 import "server-only";
+import { proposalOriginAllowed } from "./frontend-origins";
 const visits = new Map<string, { count: number; until: number }>();
 export function proposalRequestAllowed(request: Request, operation: string) {
-  const origin = request.headers.get("origin");
-  if (origin && origin !== new URL(request.url).origin) return false;
+  if (!proposalOriginAllowed(request)) return false;
   const key = `${operation}:${request.headers.get("x-forwarded-for")?.split(",")[0] || "local"}`,
     now = Date.now(),
     previous = visits.get(key);

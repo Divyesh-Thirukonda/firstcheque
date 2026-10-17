@@ -1,12 +1,10 @@
 import type { NextConfig } from 'next';
+import { FRONTEND_ORIGINS } from './src/lib/frontend-origins';
 const nextConfig: NextConfig = {
   devIndicators: false,
   // The Ninoo build hosts the investor UI; these exact origins use this backend.
   async headers() {
-    return [
-      'https://seed-street-source-e8e0.ninoo.app',
-      'https://p-f60820e4f4623fd8.preview.ninoo.app',
-    ].map(origin => ({
+    return FRONTEND_ORIGINS.map(origin => ({
       source: '/api/:path*',
       has: [{ type: 'header' as const, key: 'origin', value: origin.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') }],
       headers: [

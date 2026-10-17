@@ -7,6 +7,7 @@ import {
   LoaderCircle,
   Play,
   FileText,
+  TriangleAlert,
 } from "lucide-react";
 import { proposalDemo } from "@/lib/proposal-demo";
 import type { CallPurpose } from "@/lib/proposal-calls";
@@ -48,6 +49,11 @@ export function ProposalVoiceDemo({
   async function start() {
     setStage("loading");
     setError("");
+    setTerms(null);
+    audio.current?.pause();
+    if (currentUrl.current) URL.revokeObjectURL(currentUrl.current);
+    currentUrl.current = "";
+    setAudioUrl("");
     finished.current = false;
     const demo = proposalDemo(draft, purpose);
     setNotes(demo.notes);
@@ -76,6 +82,13 @@ export function ProposalVoiceDemo({
         return data.terms as ExtractedTerm[];
       }),
     ]);
+    // Voice playback remains available even when the independent analysis fails.
+    const voice = results[0];
+    if (voice.status === "fulfilled") {
+      if (currentUrl.current) URL.revokeObjectURL(currentUrl.current);
+      currentUrl.current = URL.createObjectURL(voice.value);
+      setAudioUrl(currentUrl.current);
+    }
     const analysis = results[1];
     if (analysis.status === "fulfilled") setTerms(analysis.value);
     else {
@@ -84,14 +97,10 @@ export function ProposalVoiceDemo({
           ? analysis.reason.message
           : "Could not prepare the draft.",
       );
-      setStage("idle");
+      setStage(voice.status === "fulfilled" ? "playing" : "idle");
       return;
     }
-    const voice = results[0];
     if (voice.status === "fulfilled") {
-      if (currentUrl.current) URL.revokeObjectURL(currentUrl.current);
-      currentUrl.current = URL.createObjectURL(voice.value);
-      setAudioUrl(currentUrl.current);
       setStage("playing");
     } else {
       setError("Voice preview unavailable. Your draft is ready below.");
@@ -110,10 +119,10 @@ export function ProposalVoiceDemo({
         </div>
         <span className="sp-draft-badge">DEMO</span>
       </div>
-      {stage === "idle" ? (
+      {stage === "idle" || (error && !terms && stage !== "loading") ? (
         <button className="fc-btn primary" onClick={start}>
           <Play size={16} />
-          Start voice demo
+          {error ? "Retry voice demo" : "Start voice demo"}
         </button>
       ) : null}
       {stage !== "idle" ? (
@@ -121,14 +130,18 @@ export function ProposalVoiceDemo({
           <div>
             {stage === "loading" ? (
               <LoaderCircle className="spin" size={15} />
-            ) : (
+            ) : audioUrl ? (
               <Check size={15} />
+            ) : (
+              <TriangleAlert size={15} />
             )}
             Generate ElevenLabs voice
           </div>
           <div>
             {terms ? (
               <Check size={15} />
+            ) : error ? (
+              <TriangleAlert size={15} />
             ) : (
               <LoaderCircle className="spin" size={15} />
             )}
@@ -145,7 +158,7 @@ export function ProposalVoiceDemo({
           ref={audio}
           controls
           src={audioUrl}
-          onEnded={finish}
+          onEnded={() => { setStage("ready"); finish(); }}
           aria-label="Fictional founder conversation demo"
         />
       ) : null}
