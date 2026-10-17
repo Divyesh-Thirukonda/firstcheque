@@ -1,0 +1,43 @@
+{
+  "scope": "Concise copy and directly editable search criteria",
+  "sourceRevision": "aed3801d8892f2401ac72904bdeabdbde852a928",
+  "validation": {
+    "offlineTests": 57,
+    "typecheck": "passed",
+    "productionBuild": "passed",
+    "desktopWidth": 1440,
+    "narrowWidth": 400,
+    "narrowPageWidth": 400,
+    "modelCallsThisRefinement": 0
+  },
+  "localBrowserChecks": [
+    "Risk tile opens Search filters with filter-risk focused",
+    "Per company tile opens editor with filter-company-limit focused on mobile",
+    "All sectors and All stages explicitly represent unrestricted choices",
+    "Cancel preserves the search and current criteria",
+    "Four criterion controls form two columns at 400px with no horizontal overflow",
+    "Discover and company overview show concise actions and preserve source dates and unknown values"
+  ],
+  "hostedBrowserChecks": [
+    "Ten companies load in Discover with shorter headings and actions",
+    "Bito opens without leaving Discover or creating a search",
+    "Read research opens saved seven-source partial report with source citations and evidence gaps"
+  ],
+  "preserved": [
+    "Strict preference filtering and per-search state",
+    "Dated offering facts and unknown financial values",
+    "Frozen experiment artifacts",
+    "Nicrron and PRISM model wiring"
+  ],
+  "limitations": [
+    "Offering status is a dated snapshot",
+    "No new public research or model experiment was run for this display change"
+  ],
+  "deployment": {
+    "id": "dpl_GRsJFPMMv32WhzP2sUP9rQM4cDsa",
+    "url": "https://firstcheque-oc5wypqik-divyesh-thirukondas-projects.vercel.app",
+    "state": "READY",
+    "environment": "preview",
+    "protection": "Vercel Authentication retained; temporary access supplied separately"
+  }
+}
