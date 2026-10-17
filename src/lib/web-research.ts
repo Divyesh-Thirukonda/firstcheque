@@ -331,13 +331,16 @@ export async function runWebDiligence(request: DiligenceRequest, onEvent?: (even
   // Follow actual company links before deciding the team/product facts are absent.
   const followups=website?followupCompanyLinks(website,sources):[];
   emit({id:"followups",label:"Follow product and team links",status:"running",detail:`${followups.length} linked company pages`,durationMs:0});
+  let activeFollowups=0;
   const retainFollowup=async(hit:{url:string;category:DiligenceCategory;query?:string},context=false)=>{
     const begin=Date.now(),id=`web-${hash(hit.url).slice(0,12)}`;
     if(sources.some(source=>source.url===hit.url&&source.status==="fetched"))return;
+    if(sources.filter(source=>source.status==="fetched").length+activeFollowups>=(context?MAX_SOURCES:MAX_SOURCES-4))return;
+    activeFollowups++;
     try{const page=await fetchPublicPage(hit.url,{timeoutMs:8000});const related=!website||isRelatedCompanyPage(website,page);const scope=researchSourceScope(hit.category,related);if(!scope||(!context&&!related))throw new Error("Company identity could not be established; this is not company evidence.");
       const source:DiligenceSource={id,url:page.url,title:page.title,publisher:new URL(page.url).hostname,publishedAt:evidenceDate(page.publishedAt),retrievedAt:new Date().toISOString(),category:hit.category,query:hit.query||"Followed an official company website link",text:page.text,contentHash:hash(page.text),officialCompanySource:Boolean(website&&sameCompanyDomain(page.url,website)),scope,links:page.links,status:"fetched"};
       sources.push(source);spans.push({name:scope==="company"?"Follow company evidence link":"Read scoped industry context",type:"retrieval",input:hit.url,output:JSON.stringify(source),started:begin,ended:Date.now()});
-    }catch(error){const message=error instanceof Error?error.message:"Unavailable";sources.push({id,url:hit.url,title:new URL(hit.url).hostname,publisher:new URL(hit.url).hostname,publishedAt:null,retrievedAt:new Date().toISOString(),category:hit.category,query:hit.query||"Followed company link",text:"",contentHash:hash(""),officialCompanySource:false,status:"unavailable",error:message});spans.push({name:"Follow-up source unavailable",type:"retrieval",input:hit.url,output:error instanceof Error?error.message:"Unavailable",error:error instanceof Error?error.message:"Unavailable",started:begin,ended:Date.now()});}
+    }catch(error){const message=error instanceof Error?error.message:"Unavailable";sources.push({id,url:hit.url,title:new URL(hit.url).hostname,publisher:new URL(hit.url).hostname,publishedAt:null,retrievedAt:new Date().toISOString(),category:hit.category,query:hit.query||"Followed company link",text:"",contentHash:hash(""),officialCompanySource:false,status:"unavailable",error:message});spans.push({name:"Follow-up source unavailable",type:"retrieval",input:hit.url,output:error instanceof Error?error.message:"Unavailable",error:error instanceof Error?error.message:"Unavailable",started:begin,ended:Date.now()});}finally{activeFollowups--;}
   };
   await Promise.all(followups.map(hit=>retainFollowup(hit)));
   // A second hop reaches pages such as /investors and /integrations/product.
