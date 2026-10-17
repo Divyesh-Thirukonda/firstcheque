@@ -9,7 +9,8 @@
     "typecheck": "tsc --noEmit",
     "test": "NODE_OPTIONS=--conditions=react-server tsx --test tests/*.test.ts",
     "eval": "tsx scripts/evaluate.ts",
-    "catalog:collect": "tsx scripts/collect-catalog.ts"
+    "catalog:collect": "tsx scripts/collect-catalog.ts",
+    "catalog:logos": "NODE_OPTIONS=--conditions=react-server tsx scripts/collect-company-logos.ts"
   },
   "dependencies": {
     "@ai-sdk/openai-compatible": "latest",
@@ -21,6 +22,7 @@
     "react": "latest",
     "react-dom": "latest",
     "server-only": "^0.0.1",
+    "sharp": "^0.34.5",
     "zod": "latest"
   },
   "devDependencies": {

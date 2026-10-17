@@ -1,0 +1,168 @@
+{
+  "venture-pave-finance": {
+    "valuation": {
+      "value": 100000000.0,
+      "currency": "$",
+      "period": "2026-09-14",
+      "asOf": "2026-09-14",
+      "sourceUrl": "https://www.pavefinance.com/newsletter/series-a",
+      "quote": "Finance announces Series A Pave Finance announces Series A Pave Finance raises $15 million in oversubscribed Series A at $100 million pre-money valuation The funding will support the expansion of Pave\u2019s market-facing and engineering teams, as advisors using the platform now oversee more than $130 billion in assets NEW YORK, NY \u2013 September 14, 2026.",
+      "status": "source-reported"
+    }
+  },
+  "venture-gimlet-labs": {
+    "valuation": {
+      "value": 3000000000.0,
+      "currency": "$",
+      "period": "2026-09-04",
+      "asOf": "2026-09-04",
+      "sourceUrl": "https://www.globenewswire.com/news-release/2026/9/4/3356707/0/en/now-valued-at-3-billion-gimlet-labs-raises-300-million-in-series-b-led-by-andreessen-horowitz-for-industry-s-first-multi-silicon-inference-cloud-for-agentic-ai.html",
+      "quote": "04, 2026 (GLOBE NEWSWIRE) -- Gimlet Labs, the Applied AI research and product company, today announced that it has raised $300 million in Series B funding, bringing its current valuation to $3 billion and the total funding raised to $392 million.",
+      "status": "source-reported"
+    }
+  },
+  "venture-positron-ai": {
+    "valuation": {
+      "value": 5000000000.0,
+      "currency": "$",
+      "period": "2026-09-10",
+      "asOf": "2026-09-10",
+      "sourceUrl": "https://www.prnewswire.com/news-releases/positron-ai-raises-875-million-at-a-5-billion-valuation-to-bring-its-next-generation-inference-silicon-to-market-302874601.html",
+      "quote": "10, 2026 /PRNewswire/ -- Positron AI, the AI inference hardware company built to make serving AI models dramatically cheaper and more energy efficient, today announced an $875 million Series C financing at a $5 billion post-money valuation.",
+      "status": "source-reported"
+    }
+  },
+  "venture-omni": {
+    "valuation": {
+      "value": 1500000000.0,
+      "currency": "$",
+      "period": "2026-04-23",
+      "asOf": "2026-04-23",
+      "sourceUrl": "https://omni.co/blog/press-release-omni-series-c-funding",
+      "quote": "Omni Raises Series C at $1.5B Valuation, building the AI analytics platform for the enterprise Grew revenue 4x last year, driven by enterprise AI adoption April 23, 2026 Omni Raises Series C at $1.5B Valuation, building the AI analytics platform for the enterprise",
+      "status": "source-reported"
+    }
+  },
+  "venture-socket": {
+    "valuation": {
+      "value": 1000000000.0,
+      "currency": "$",
+      "period": "2026-05-20",
+      "asOf": "2026-05-20",
+      "sourceUrl": "https://socket.dev/blog/socket-raises-60m-series-c-press-release",
+      "quote": "Back Company News Socket Raises $60M Series C at a $1B Valuation to Help Enterprises Build Securely With AI Socket is scaling to defend open source against supply chain attacks as AI accelerates software development.",
+      "status": "source-reported"
+    }
+  },
+  "venture-slash": {
+    "valuation": {
+      "value": 1400000000.0,
+      "currency": "$",
+      "period": "2026-04-16",
+      "asOf": "2026-04-16",
+      "sourceUrl": "https://www.slash.com/blog/series-c",
+      "quote": "Slash raises $100M Series C at a $1.4B valuation Led by Ribbit Capital, Goodwater Capital, and Khosla Ventures to bring a higher standard of business finance to every business.",
+      "status": "source-reported"
+    }
+  },
+  "venture-assort-health": {
+    "valuation": {
+      "value": 1200000000.0,
+      "currency": "$",
+      "period": "2026-06-25",
+      "asOf": "2026-06-25",
+      "sourceUrl": "https://www.prnewswire.com/news-releases/assort-health-raises-120-million-series-c-to-scale-largest-deployment-of-ai-agents-for-the-patient-journey-302808634.html",
+      "quote": "The complete, corrected release follows: Assort Health Raises $120 Million Series C to Scale Largest Deployment of AI Agents for the Patient Journey SAN FRANCISCO, June 25, 2026 /PRNewswire/ -- Assort Health, the most widely-used AI agents platform for the patient journey, today announced a $120 million Series C led by Menlo Ventures at a valuation of $1.2 billion.",
+      "status": "source-reported"
+    }
+  },
+  "venture-acuitymd": {
+    "valuation": {
+      "value": 955000000.0,
+      "currency": "$",
+      "period": "2026-04-21",
+      "asOf": "2026-04-21",
+      "sourceUrl": "https://www.acuitymd.com/company/press-releases/acuitymd-lands-80-million-in-new-funding-to-fuel-ai-innovation-in-medical-device-medtech-industry",
+      "quote": "Now supporting 16 of the top 20 MedTech companies and having helped customers identify over $34 billion in pipeline, AcuityMD has raised more than $160 million to date and is valued at $955 million.",
+      "status": "source-reported"
+    }
+  },
+  "venture-nyobolt": {
+    "valuation": {
+      "value": 1000000000.0,
+      "currency": "$",
+      "period": "2026-05-06",
+      "asOf": "2026-05-06",
+      "sourceUrl": "https://nyobolt.com/resources/news/nyobolt-closes-series-c-round-at-1b-valuation-to-power-the-rise-of-autonomous-machines-physical-ai-applications-and-ai-data-centres/",
+      "quote": "06.05.26 Nyobolt Closes Series C Round at $1B Valuation, to Power the Rise of Autonomous Machines, Physical AI Applications and AI Data Centres Back Share article: New Funding to Accelerate Nyobolt\u2019s Mission to Deliver Instant Power for the World\u2019s Most Demanding Robotics & Automation Applications and AI Data Centres.",
+      "status": "source-reported"
+    }
+  },
+  "venture-fireworks-ai": {
+    "valuation": {
+      "value": 17500000000.0,
+      "currency": "$",
+      "period": "2026-07-15",
+      "asOf": "2026-07-15",
+      "sourceUrl": "https://fireworks.ai/blog/series-d-announcement",
+      "quote": "$1B ARR PUBLISHED 7/15/2026 Every company must own its intelligence Today, Fireworks announced a $1.505 billion Series D at a $17.5 billion valuation, led by Atreides Management, Index Ventures, and TCV, with participation from Evantic Capital, Lightspeed Venture Partners, Nvidia, 20VC, Bessemer Venture Partners, Menlo Ventures, and others.",
+      "status": "source-reported"
+    }
+  },
+  "venture-profound": {
+    "valuation": {
+      "value": 1800000000.0,
+      "currency": "$",
+      "period": "2026-09-15",
+      "asOf": "2026-09-15",
+      "sourceUrl": "https://www.tryprofound.com/newsroom/profound-raises-usd180m-series-d-at-usd1-8b-valuation-to-build-the-ai-platform-for-marketing-teams",
+      "quote": "Press releases15 Sep, 2026 Profound Raises $180M Series D at $1.8B Valuation to Build the AI Platform For Marketing Teams NEW YORK, Sept.",
+      "status": "source-reported"
+    }
+  },
+  "venture-legora": {
+    "valuation": {
+      "value": 5550000000.0,
+      "currency": "$",
+      "period": "2026-03-10",
+      "asOf": "2026-03-10",
+      "sourceUrl": "https://legora.com/newsroom/legora-raises-550-million-series-d-to-fuel-us-growth",
+      "quote": "Legora, the collaborative AI platform for lawyers, today announced it has raised $550 million at a $5.55 billion valuation in a Series D funding round to accelerate its expansion across the United States.",
+      "status": "source-reported"
+    }
+  },
+  "venture-torq": {
+    "valuation": {
+      "value": 1200000000.0,
+      "currency": "$",
+      "period": "2026-01",
+      "asOf": "2026-01",
+      "sourceUrl": "https://torq.io/news/torq-seriesd/",
+      "quote": "Torq Secures $140M Series D at $1.2B Valuation to Lead the AI SOC and Agentic AI Era January 9, 2026 Fueled by Massive Customer Adoption of AI Agents, Torq Scales the World\u2019s First True AI SOC Platform and Accelerates Expansion into the U.S.",
+      "status": "source-reported"
+    }
+  },
+  "venture-obsidian-security": {
+    "valuation": {
+      "value": 1100000000.0,
+      "currency": "$",
+      "period": "2026-08-04",
+      "asOf": "2026-08-04",
+      "sourceUrl": "https://www.obsidiansecurity.com/news/unlocking-ai-potential-securely",
+      "quote": "\u200d Company valued at $1.1B with world\u2019s largest and most complex enterprises deploying agents with Obsidian\u2019s AI security platform Trusted by 60 of the Fortune 500 companies including major financial institutions, social media networks and top telecom providers to prevent rogue agent activity in third-party applications Series D funding, led by Crescent Cove Advisors, fuels Obsidian's R&D to secure enterprises against next-gen frontier models exploiting vulnerabilities in third-party applications \u200d PALO ALTO, Calif.",
+      "status": "source-reported"
+    }
+  },
+  "venture-midi-health": {
+    "valuation": {
+      "value": 1000000000.0,
+      "currency": "$",
+      "period": "2026-02-03",
+      "asOf": "2026-02-03",
+      "sourceUrl": "https://www.joinmidi.com/press-release/series-d-announcement",
+      "quote": "Midi Health Surpasses $1B Valuation, Igniting a New Era for Women\u2019s Health After setting the clinical standard in perimenopause and menopause care, the company is scaling a comprehensive, AI-enabled healthcare platform for women across every life stage PALO",
+      "status": "source-reported",
+      "comparison": "greater-than"
+    }
+  }
+}

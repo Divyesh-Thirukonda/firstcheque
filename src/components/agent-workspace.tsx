@@ -1,4 +1,5 @@
 "use client";
+import { CompanyLogo } from "./company-logo";
 import { useEffect, useRef, useState, type KeyboardEvent } from "react";
 import { ArrowRight, ArrowUpRight, Check, ChevronDown, FileSearch, FileText, Globe2, Link2, LoaderCircle, MessageSquare, ShieldCheck, Sparkles, Square, Target, TriangleAlert } from "lucide-react";
 import type { DiligenceRequest, DiligenceSource, DiligenceStep, DiligenceStreamEvent, LiveDiligenceResult, LiveInvestorThesis } from "@/lib/live-research-types";
@@ -33,7 +34,7 @@ export function sourceAmount(value: number | null, currency: string | null | und
 function financialValue(field: LiveDiligenceResult["financials"]["arr"], key: string) {
   if (field.value === null) return "Unknown";
   if (key === "runwayMonths") return `${field.value} months`;
-  return sourceAmount(field.value, field.currency);
+  return `${field.comparison === "greater-than" ? "> " : field.comparison === "at-least" ? "≥ " : ""}${sourceAmount(field.value, field.currency)}`;
 }
 function Citations({ ids, sources, onSource, passage }: { ids: string[]; sources: DiligenceSource[]; onSource: (source: DiligenceSource, passage?: string | null) => void; passage?: string | null }) {
   return <span className="fc-citations">{ids.map(id => { const index = sources.findIndex(source => source.id === id); const source = sources[index]; return source ? <button key={id} onClick={() => onSource(source, passage)} aria-label={`Read source ${index + 1}: ${source.title}`}>Source {index + 1}</button> : null; })}</span>;
@@ -258,7 +259,7 @@ export function ResearchReport({ report, tab, onTab, onSource, offeringUrl, plat
     <article className="fc-reading-report">
       <header className="fc-report-head">
         <div className="fc-report-kicker"><span className={`fc-status ${report.mode === "live-web" ? "verified" : "warning"}`}>{report.mode === "live-web" ? "Company research" : report.mode === "sources-only" ? "Source collection" : "Research unavailable"}</span></div>
-        <h1>{report.company.name}</h1>
+        <div className="fc-report-identity"><CompanyLogo id={report.companyId} name={report.company.name} logo={report.logo} large/><h1>{report.company.name}</h1></div>
         {!(report.title.toLowerCase().startsWith(report.company.name.toLowerCase()) && /research|summary/i.test(report.title)) ? <p>{report.title}</p> : null}
         <dl className="fc-report-at-glance" aria-label="At a glance">
           <div className="fc-glance-item"><dt>Sources read</dt><dd>{readableSources}<small>of {attemptedSources} attempted</small></dd></div>

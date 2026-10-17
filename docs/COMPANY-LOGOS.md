@@ -1,17 +1,15 @@
-# Company brand assets
+# Company identity assets
 
-Icons are local copies of icons linked by each official company website, retrieved October 17, 2026. They identify the company in research tiles; they are not an endorsement or investment verification.
+Checked October 17, 2026. The seeded catalog retains 120 real company assets across 124 companies. `src/data/company-logos.json` records the original source, collection date, SHA-256, rendering background and retrieval method. PNGs are stored locally under `public/company-logos/` (96px, maximum 28KB). These identify companies; they do not verify investment eligibility.
 
-| Company | Website icon source |
-|---|---|
-| Bito | [https://www.bito.ai](https://bito.ai/wp-content/uploads/2022/03/cropped-android-icon-192x192-1-180x180.png) |
-| Riemann Computing | [https://www.riecomp.org](https://images.squarespace-cdn.com/content/v1/66039e4e8ca5a628a0dc2c8a/de2f489a-7767-4f80-b308-368abea15098/favicon.ico?format=100w) |
-| Namecoach | [https://cloud.name-coach.com](https://cloud.name-coach.com/wp-content/themes/namecoach/dist/images/favicon/apple-touch-icon_4a0144a0.png) |
-| RISE Robotics | [https://www.riserobotics.com](https://images.squarespace-cdn.com/content/v1/66be2a0a6f050c4fd537f953/348841de-42de-4aba-be31-644ca2967c36/favicon.ico) |
-| LPPFusion | [https://lppfusion.com](https://www.lppfusion.com/storage/2022/04/LPP-Favicon.jpg) |
-| Emission Free Generators | [https://www.emissionfreegenerators.com](https://cdn.prod.website-files.com/699350ec91ecf5fdf063a9ce/69aaeb4712ce08eae396fee6_Webclip.jpg) |
-| Miso Robotics | [https://misorobotics.com](https://www.misorobotics.com/hubfs/Miso_Logo_Mark_4C.png) |
-| TRADEFUNDED LLC | [https://www.tradefunded.com](https://tradefunded.com/assets/tf-mark-official.svg) |
-| Canopii | [https://www.canopii.us](https://images.squarespace-cdn.com/content/v1/6684495eac53d91577266e83/f0a1e3de-5ef8-4985-bdd8-d01efa615d53/favicon.ico?format=100w) |
+The automated collector reads published website icons, explicitly named brand images and logo SVGs. It also accepts embedded image assets from those identity locations. If the website is unavailable, a domain favicon cache is attempted and labeled as cached in the profile. Cached icons can be stale. The contact-sheet review replaced Gray Swan's cached icon with its current official wordmark and excluded generic Lovable/Wix icons. Known generic icon hashes and provider defaults are rejected in the live collector too.
 
-The Gifted has no supplied company website, so its tile uses a neutral initials fallback. Newly imported companies also use initials until an official logo is supplied. No fabricated company logo is generated.
+Public pages, redirects and assets use the same DNS pinning, public-address checks, robots policy and bounded download rules as web research. SVGs with active or external content are rejected and rasterized before presentation. Browser export was used for published assets whose CDN would not allow automated collection (Voltus, CommercialDeals, Gray Swan and Nugenix); MatrixOrigin's official linked GitHub organization supplied its avatar. ConnNext's public product site supplied the embedded icon, corroborated against the founder's product identity.
+
+Four seeds remain explicitly unavailable: localhost:nyc, Mooss / Modascope, WealthRyse and The Gifted. The first three publish text branding without a verified company image in the retained sources; The Gifted has no supplied official website. They use a neutral building symbol, with no generated initials or fabricated logo.
+
+## Live research
+
+`collectCompanyLogo` runs inside the public-web diligence flow and is recorded as a PRISM retrieval span. Normalized image bytes, source URL, date, hash and method persist with the company and report. They appear in Discover, search results, Watchlist, company details and the report identity header. Refresh failures preserve the prior fetched asset. Name-only research can resolve an observed company website only when both the fetched domain brand and page title match; ambiguous identity remains unresolved.
+
+Run `npm run catalog:logos` to retry missing seeded assets. Fetched assets are retained until deliberately refreshed. This command does not invent missing branding or synthesize company logos.

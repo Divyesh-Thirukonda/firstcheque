@@ -1,6 +1,9 @@
+import type { CompanyLogoInfo, CompanyFinancials } from "./company-profile-types";
 import type { Industry, Stage, Thesis } from "./types";
 
 export interface DiscoveryCompany {
+  logo?: CompanyLogoInfo;
+  financials?: CompanyFinancials;
   reportedMetrics?: { label: string; value: string; asOf: string; sourceUrl: string }[];
   profileFieldSources?: Record<string,string>;
   arrComparison?: "greater-than" | "at-least";

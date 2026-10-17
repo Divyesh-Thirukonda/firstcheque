@@ -28,7 +28,7 @@ export interface SearchThread {
 }
 
 const INDUSTRIES = ["Climate", "Fintech", "Healthcare", "AI & software", "Consumer", "Local business", "Cybersecurity"];
-const STAGES = ["Pre-seed", "Seed", "Series A", "Series B", "Series C", "Series D", "Small business"];
+const STAGES = ["Pre-seed", "Seed", "Series A", "Series B", "Series C", "Series D", "Series E", "Series F", "Series G", "Small business"];
 const MAX_THREADS = 100;
 const MAX_MESSAGES = 200;
 const MAX_COMPANIES = 1000;

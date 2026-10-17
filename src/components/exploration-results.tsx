@@ -4,6 +4,7 @@ import { ArrowRight, ArrowUpRight, BookOpen, Database, Layers3, Radar, Sparkles,
 import type { DiscoveryCompany } from "@/lib/discovery-types";
 import type { LiveDiligenceResult, DiligenceStep } from "@/lib/live-research-types";
 import { EXPLORATIONS, explorationEvidence, type ExplorationKind } from "@/lib/exploration";
+import { CompanyLogo } from "./company-logo";
 import { CompanyTile } from "./company-list";
 import { companyTagline } from "@/lib/company-presentation";
 import { TaskTimeline } from "./task-timeline";
@@ -30,7 +31,7 @@ export function ExplorationResults({ kind, prompt, companies, catalogCount, repo
     <div className="fc-signal-metrics" aria-label="Evidence coverage"><div><Database size={16}/><strong>{companies.length}</strong><span>companies</span></div><div><BookOpen size={16}/><strong>{reportsLoading ? "…" : sourceCount}</strong><span>sources read</span></div><div><Radar size={16}/><strong>Unknown</strong><span>{kind === "growth" ? "growth ranking" : "raise likelihood"}</span></div></div>
     <section className="fc-explore-collection" aria-label={EXPLORATIONS[kind].label}>
       <header><Layers3 size={17}/><h2>{EXPLORATIONS[kind].label}</h2><span>{companies.length} companies</span></header>
-      <div className="fc-company-grid">{evidence.map(({ company, sourceCount }) => <CompanyTile key={company.id} id={company.id} name={company.name} description={companyTagline(company)} sector={company.sectors[0] || company.industry} footer={sourceCount ? `${sourceCount} sources · Read research` : "Research needed"} saved={savedIds.includes(company.id)} onSave={() => onSave(company.id)} onOpen={() => onSelectCompany(company.id)}/>)}</div>
+      <div className="fc-company-grid">{evidence.map(({ company, sourceCount }) => <CompanyTile key={company.id} id={company.id} name={company.name} logo={<CompanyLogo id={company.id} name={company.name} logo={company.logo}/>} description={companyTagline(company)} sector={company.sectors[0] || company.industry} footer={sourceCount ? `${sourceCount} sources · Read research` : "Research needed"} saved={savedIds.includes(company.id)} onSave={() => onSave(company.id)} onOpen={() => onSelectCompany(company.id)}/>)}</div>
       {!companies.length ? <div className="fc-empty-state"><h2>No companies in this scope yet</h2><button className="fc-btn secondary" onClick={onAddCompany}>Add company<ArrowRight size={16}/></button></div> : null}
       <footer><span className="fc-signal-dot"/>Research universe · No growth or fundraising rank assigned</footer>
     </section>

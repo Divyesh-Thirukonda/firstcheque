@@ -79,18 +79,18 @@ export function pinnedLookup(address: Address): LookupFunction {
   return (_hostname, _options, callback) => callback(null, address.address, address.family);
 }
 
-async function requestPinned(url: URL, address: Address, timeoutMs: number): Promise<{ status: number; headers: Record<string, string | string[] | undefined>; body: Buffer }> {
+async function requestPinned(url: URL, address: Address, timeoutMs: number, maxBytes = MAX_BYTES, accept = "text/html,text/plain,application/xhtml+xml,application/xml;q=0.8"): Promise<{ status: number; headers: Record<string, string | string[] | undefined>; body: Buffer }> {
   return new Promise((resolve, reject) => {
     const requestOptions = {
       method: "GET", lookup: pinnedLookup(address), autoSelectFamily: false,
-      headers: { "User-Agent": "FirstChequeResearch/1.0 (public evidence research)", Accept: "text/html,text/plain,application/xhtml+xml,application/xml;q=0.8", "Accept-Encoding": "identity" },
+      headers: { "User-Agent": "FirstChequeResearch/1.0 (public evidence research)", Accept: accept, "Accept-Encoding": "identity" },
     };
     const request = (url.protocol === "https:" ? requestHttps : requestHttp)(url, requestOptions, (response) => {
-      if (Number(response.headers["content-length"] || 0) > MAX_BYTES) { response.destroy(); reject(new PublicFetchError("Source exceeds the research size limit.")); return; }
+      if (Number(response.headers["content-length"] || 0) > maxBytes) { response.destroy(); reject(new PublicFetchError("Source exceeds the research size limit.")); return; }
       const chunks: Buffer[] = []; let total = 0;
       response.on("data", (chunk: Buffer) => {
         total += chunk.length;
-        if (total > MAX_BYTES) { response.destroy(new PublicFetchError("Source exceeds the research size limit.")); return; }
+        if (total > maxBytes) { response.destroy(new PublicFetchError("Source exceeds the research size limit.")); return; }
         chunks.push(chunk);
       });
       response.on("error", reject);
@@ -229,4 +229,29 @@ export async function fetchPublicPage(input: string, options: { timeoutMs?: numb
   const remaining = (options.timeoutMs || 12000) - (Date.now() - started);
   if (remaining < 1) throw new PublicFetchError("Source deadline reached after robots check.");
   return fetchPageAfterRobots(input, { ...options, timeoutMs: remaining });
+}
+
+/** Bounded public bytes for website identity assets. Same robots, DNS and redirect policy as research. */
+export async function fetchPublicResource(input: string, options: {timeoutMs?:number;maxBytes?:number;accept?:string} = {}) {
+  const deadline=Date.now()+(options.timeoutMs||12000), maxBytes=Math.min(options.maxBytes||600000,2500000);
+  let next=normalizePublicUrl(input).href;
+  for(let hop=0;hop<=3;hop++){
+    await assertRobotsAllowed(next,undefined,deadline);
+    const target=await resolvePublicTarget(next,{timeoutMs:deadline-Date.now()});
+    const response=await requestPinned(target.url,target.address,Math.max(1,deadline-Date.now()),maxBytes,options.accept||"*/*");
+    if([301,302,303,307,308].includes(response.status)){
+      if(typeof response.headers.location!=="string"||hop===3)throw new PublicFetchError("Asset redirect limit reached.");
+      next=normalizePublicUrl(response.headers.location,target.url.href).href;continue;
+    }
+    if(response.status<200||response.status>=300)throw new PublicFetchError(`Source returned HTTP ${response.status}.`);
+    let body=response.body;const encoding=String(response.headers["content-encoding"]||"identity");
+    try{
+      if(encoding==="gzip")body=gunzipSync(body,{maxOutputLength:maxBytes});
+      else if(encoding==="br")body=brotliDecompressSync(body,{maxOutputLength:maxBytes});
+      else if(encoding==="deflate")body=inflateSync(body,{maxOutputLength:maxBytes});
+      else if(encoding!=="identity")throw new Error("Unsupported encoding");
+    }catch{throw new PublicFetchError("Asset compression or size is unsupported.");}
+    return {url:target.url.href,body,contentType:String(response.headers["content-type"]||"").toLowerCase()};
+  }
+  throw new PublicFetchError("Asset redirect limit reached.");
 }

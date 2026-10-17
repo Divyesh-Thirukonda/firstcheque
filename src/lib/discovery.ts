@@ -2,7 +2,7 @@ import type { DiscoveryCompany, DiscoveryMatch, DiscoveryPreferences } from "./d
 import type { Industry, Stage } from "./types";
 
 export const DISCOVERY_INDUSTRIES: Industry[] = ["AI & software", "Cybersecurity", "Fintech", "Healthcare", "Climate", "Consumer", "Local business"];
-export const DISCOVERY_STAGES: Stage[] = ["Pre-seed", "Seed", "Series A", "Series B", "Series C", "Series D", "Small business"];
+export const DISCOVERY_STAGES: Stage[] = ["Pre-seed", "Seed", "Series A", "Series B", "Series C", "Series D", "Series E", "Series F", "Series G", "Small business"];
 export const DISCOVERY_SECTORS = ["AI & software", "AI infrastructure", "Developer tools", "Climate tech", "Cybersecurity", "Fintech", "Healthcare", "Consumer", "Local business", "Robotics", "Space"];
 export const DEFAULT_DISCOVERY_PREFERENCES: DiscoveryPreferences = {
   industries: [], stages: [], riskAppetite: "adventurous", horizonYears: 7,
@@ -50,9 +50,9 @@ export function parseDiscoveryBrief(brief: string, base: DiscoveryPreferences = 
   const stages: Stage[]=[];
   if (/\bpre[- ]seed\b/i.test(brief)) stages.push("Pre-seed");
   if (/(?<!pre[- ])\bseed\b/i.test(brief)) stages.push("Seed");
-  const stageRanges=[...brief.matchAll(/\bseries\s*([a-d])\s*(?:-|–|through|to)\s*([a-d])\b/gi)];
+  const stageRanges=[...brief.matchAll(/\bseries\s*([a-g])\s*(?:-|–|through|to)\s*([a-g])\b/gi)];
   for(const range of stageRanges){const start=range[1].toUpperCase().charCodeAt(0),end=range[2].toUpperCase().charCodeAt(0);for(let letter=start;letter<=end;letter++) stages.push(`Series ${String.fromCharCode(letter)}` as Stage);}
-  for(const match of brief.matchAll(/\bseries\s*([a-d])\b/gi)) stages.push(`Series ${match[1].toUpperCase()}` as Stage);
+  for(const match of brief.matchAll(/\bseries\s*([a-g])\b/gi)) stages.push(`Series ${match[1].toUpperCase()}` as Stage);
   if (/\bsmall business\b/i.test(brief)) stages.push("Small business");
   if (stages.length) {preferences.stages=[...new Set(stages)];interpretation.push(`Stages: ${preferences.stages.join(", ")}`);}
   if (/\b(?:pre[- ]revenue (?:is okay|is ok|allowed)|no revenue requirement|revenue optional)\b/i.test(brief)) preferences.revenueRequirement="any";
@@ -130,7 +130,7 @@ export function companySearchText(company: DiscoveryCompany) {
 }
 export function matchesCatalogQuery(company: DiscoveryCompany, query: string) {
   const text=companySearchText(company);
-  const explicitStage=query.match(/\bseries\s*([a-d])\b/i);
+  const explicitStage=query.match(/\bseries\s*([a-g])\b/i);
   if(explicitStage&&company.stage!==`Series ${explicitStage[1].toUpperCase()}`) return false;
   const words=text.split(" ");
   return normalized(query).split(" ").filter(Boolean).every(token=>words.some(word=>token.length<=2?word===token:word.startsWith(token)));

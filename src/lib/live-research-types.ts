@@ -1,3 +1,5 @@
+import type { DiscoveryCompany } from "./discovery-types";
+import type { CompanyLogoInfo } from "./company-profile-types";
 export type DiligenceCategory = "company" | "founders" | "competitors" | "market" | "financials" | "disclosures";
 export type DiligenceStepStatus = "running" | "complete" | "warning" | "failed";
 
@@ -56,6 +58,7 @@ export interface DiligenceSection {
 }
 
 export interface FinancialEvidence {
+  comparison?: "greater-than" | "at-least";
   value: number | null;
   currency: string | null;
   period: string | null;
@@ -95,6 +98,8 @@ export interface LiveDiligenceResult {
   dossierId: string;
   companyId: string;
   company: { name: string; website: string | null };
+  logo?: CompanyLogoInfo;
+  profile?: Partial<DiscoveryCompany>;
   generatedAt: string;
   status: "complete" | "partial" | "unavailable";
   mode: "live-web" | "sources-only" | "unavailable";

@@ -1,0 +1,1237 @@
+{
+  "venture-go-ai": {
+    "status": "fetched",
+    "url": "/company-logos/venture-go-ai.png",
+    "sourceUrl": "https://go.ai/apple-icon.png?apple-icon.782ea840.png",
+    "website": "https://go.ai/",
+    "checkedAt": "2026-10-17T17:07:40.893Z",
+    "sha256": "d3a6672aea8e704970f8c8511c9b13e3ea21e66e81e292247637926a6dc00c1c",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "venture-rein-security": {
+    "status": "fetched",
+    "url": "/company-logos/venture-rein-security.png",
+    "sourceUrl": "https://reinsec.io/wp-content/uploads/2026/07/cropped-image-180x180.png",
+    "website": "https://reinsec.io/",
+    "checkedAt": "2026-10-17T17:07:40.898Z",
+    "sha256": "3b70d47bf0a63173db18fcbca55f6f74bd8acd59d1818e17c2bb6f710a465468",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "venture-featherless": {
+    "status": "fetched",
+    "url": "/company-logos/venture-featherless.png",
+    "sourceUrl": "https://featherless.ai/favicon.ico",
+    "website": "https://featherless.ai/",
+    "checkedAt": "2026-10-17T17:07:40.898Z",
+    "sha256": "11b116d9c7d3fc31837a39512909245b673b279ec2e024ee34536c619c080c10",
+    "background": "#171717",
+    "method": "website-icon"
+  },
+  "venture-gray-swan": {
+    "status": "fetched",
+    "url": "/company-logos/venture-gray-swan.png",
+    "sourceUrl": "https://cdn.prod.website-files.com/6614467b00e631b0f073e2b7/66886e33b08f49fb5ee91687_584d03b1fc431c846cd06f6237351573_Gray%20Swan%3DDark%20Horizontal.svg",
+    "website": "https://www.grayswan.ai/",
+    "checkedAt": "2026-10-17T17:16:16.684Z",
+    "sha256": "f953e488e86b424c578936c46e088ed212f747a47ab063b5ccd40bc34bec1385",
+    "background": "#f5f5f5",
+    "method": "website-logo"
+  },
+  "venture-geordie-ai": {
+    "status": "fetched",
+    "url": "/company-logos/venture-geordie-ai.png",
+    "sourceUrl": "https://www.geordie.ai/apple-touch-icon.png",
+    "website": "https://www.geordie.ai/",
+    "checkedAt": "2026-10-17T17:07:41.317Z",
+    "sha256": "b72b014d1472dd15547b3888be0b59f44b3e4dcdcaaab3822e8ca3387be86f45",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "venture-straiker": {
+    "status": "fetched",
+    "url": "/company-logos/venture-straiker.png",
+    "sourceUrl": "https://icons.duckduckgo.com/ip3/straiker.ai.ico",
+    "website": "https://www.straiker.ai/",
+    "checkedAt": "2026-10-17T17:11:28.054Z",
+    "sha256": "8de7044e8baf3af5c7ba38de3cde27257e4eb0b2e8988c2ece631ddba704a658",
+    "background": "#f5f5f5",
+    "method": "favicon-cache"
+  },
+  "venture-duna": {
+    "status": "fetched",
+    "url": "/company-logos/venture-duna.png",
+    "sourceUrl": "https://icons.duckduckgo.com/ip3/duna.com.ico",
+    "website": "https://duna.com/",
+    "checkedAt": "2026-10-17T17:11:28.054Z",
+    "sha256": "4c3a099222ac67c434d80dd532d04877f9ad7bb228c5550350e4c9eac36bacd0",
+    "background": "#f5f5f5",
+    "method": "favicon-cache"
+  },
+  "venture-lemonedge": {
+    "status": "fetched",
+    "url": "/company-logos/venture-lemonedge.png",
+    "sourceUrl": "https://icons.duckduckgo.com/ip3/lemonedge.com.ico",
+    "website": "https://www.lemonedge.com/",
+    "checkedAt": "2026-10-17T17:11:28.054Z",
+    "sha256": "7eefbca7b31cca4eb0e4a66fcf02d5f8fecd9bf03144ffae8b098954b2507040",
+    "background": "#171717",
+    "method": "favicon-cache"
+  },
+  "venture-hydra-host": {
+    "status": "fetched",
+    "url": "/company-logos/venture-hydra-host.png",
+    "sourceUrl": "https://hydrahost.com/favicon/apple-icon-57x57.png",
+    "website": "https://hydrahost.com/",
+    "checkedAt": "2026-10-17T17:07:40.898Z",
+    "sha256": "3a94a08c409c145ebb3b30436d65c0d52988bf5f42dea6975f1b6014a1d16b75",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "venture-enzo-health": {
+    "status": "fetched",
+    "url": "/company-logos/venture-enzo-health.png",
+    "sourceUrl": "https://www.enzo.health/icon.svg?icon.25ecu1_5lkord.svg",
+    "website": "https://www.enzo.health/",
+    "checkedAt": "2026-10-17T17:07:41.800Z",
+    "sha256": "3ba16dacbf4de19e9f701814ffa91b8f0fc0308dad771f2689dd5d56efa4531f",
+    "background": "#171717",
+    "method": "website-icon"
+  },
+  "venture-stitch": {
+    "status": "fetched",
+    "url": "/company-logos/venture-stitch.png",
+    "sourceUrl": "https://icons.duckduckgo.com/ip3/stitch.co.ico",
+    "website": "https://www.stitch.co/",
+    "checkedAt": "2026-10-17T17:11:28.055Z",
+    "sha256": "accca0f80d15402f93c9eb5232fdd78acf4db6bf3b0014c412a904a8770530ea",
+    "background": "#f5f5f5",
+    "method": "favicon-cache"
+  },
+  "venture-pave-finance": {
+    "status": "fetched",
+    "url": "/company-logos/venture-pave-finance.png",
+    "sourceUrl": "https://icons.duckduckgo.com/ip3/pavefinance.com.ico",
+    "website": "https://www.pavefinance.com/",
+    "checkedAt": "2026-10-17T17:11:28.560Z",
+    "sha256": "299b46140663d4a584f9c4635545d5015f3e0d3350955e0a630b2cf22dd8f5c9",
+    "background": "#171717",
+    "method": "favicon-cache"
+  },
+  "venture-reel": {
+    "status": "fetched",
+    "url": "/company-logos/venture-reel.png",
+    "sourceUrl": "https://icons.duckduckgo.com/ip3/reel.energy.ico",
+    "website": "https://reel.energy/",
+    "checkedAt": "2026-10-17T17:11:28.600Z",
+    "sha256": "a60f590e89f570b5ef9bf8db68d1a15363f4aff70c56c792c3b402aa4cdd86bf",
+    "background": "#171717",
+    "method": "favicon-cache"
+  },
+  "venture-z-calo-health": {
+    "status": "fetched",
+    "url": "/company-logos/venture-z-calo-health.png",
+    "sourceUrl": "https://icons.duckduckgo.com/ip3/zocalo.health.ico",
+    "website": "https://www.zocalo.health/",
+    "checkedAt": "2026-10-17T17:11:28.587Z",
+    "sha256": "3ab2b595ffe3cd9763a2844ba87ab382b33c3060d4b646c740f83ab6e90f05d6",
+    "background": "#171717",
+    "method": "favicon-cache"
+  },
+  "venture-onos-health": {
+    "status": "fetched",
+    "url": "/company-logos/venture-onos-health.png",
+    "sourceUrl": "https://onoshealth.com/wp-content/uploads/2026/07/favicon-200x200.png",
+    "website": "https://www.onoshealth.com/",
+    "checkedAt": "2026-10-17T17:07:41.855Z",
+    "sha256": "ea847f2ff3a159cd7a65831a42fd1d6beb736468553cad112481cb95b5c5a4ea",
+    "background": "#171717",
+    "method": "website-icon"
+  },
+  "venture-handl-health": {
+    "status": "fetched",
+    "url": "/company-logos/venture-handl-health.png",
+    "sourceUrl": "https://handlhealth.com/apple-touch-icon.png?v=20260902",
+    "website": "https://www.handlhealth.com/",
+    "checkedAt": "2026-10-17T17:07:41.854Z",
+    "sha256": "d8e1a248942ec7758d5a59c31c28cd379aa4a45dacbad6b136841afa31a41115",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "venture-texture": {
+    "status": "fetched",
+    "url": "/company-logos/venture-texture.png",
+    "sourceUrl": "https://www.texturehq.com/apple-icon.png?1f24d4bdf908e55b",
+    "website": "https://www.texturehq.com/",
+    "checkedAt": "2026-10-17T17:07:42.347Z",
+    "sha256": "2f4dbce4b26aba1eeb7ce5f329989df0130a3ab7eab079a88a0068908a4a2f64",
+    "background": "#171717",
+    "method": "website-icon"
+  },
+  "venture-gmi-cloud": {
+    "status": "fetched",
+    "url": "/company-logos/venture-gmi-cloud.png",
+    "sourceUrl": "https://www.gmicloud.ai/favicon.ico?favicon.16990nwjshn44.ico",
+    "website": "https://www.gmicloud.ai/",
+    "checkedAt": "2026-10-17T17:07:42.580Z",
+    "sha256": "0c2460ad1361227f57299472784d4b7c70780dcc7ce9ddfcc530741d056b6f2c",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "venture-critical-loop": {
+    "status": "fetched",
+    "url": "/company-logos/venture-critical-loop.png",
+    "sourceUrl": "https://icons.duckduckgo.com/ip3/criticalloop.com.ico",
+    "website": "https://www.criticalloop.com/",
+    "checkedAt": "2026-10-17T17:11:29.253Z",
+    "sha256": "622090dcdf354f97e4b7d037de5a66bc9b75e37ea1c6d7b34349a8415695c839",
+    "background": "#f5f5f5",
+    "method": "favicon-cache"
+  },
+  "venture-gimlet-labs": {
+    "status": "fetched",
+    "url": "/company-logos/venture-gimlet-labs.png",
+    "sourceUrl": "https://gimletlabs.ai/shared-assets/favicon-adaptive.svg",
+    "website": "https://gimletlabs.ai/",
+    "checkedAt": "2026-10-17T17:07:42.672Z",
+    "sha256": "b2c6b4471498c226d617b5133d6b3dab55d38430bdcaf6edcef60d8044befa0a",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "venture-mind": {
+    "status": "fetched",
+    "url": "/company-logos/venture-mind.png",
+    "sourceUrl": "https://mind.io/favicon/apple-touch-icon.png",
+    "website": "https://mind.io/",
+    "checkedAt": "2026-10-17T17:07:42.923Z",
+    "sha256": "c08c48dd418fe4bcf5a911b9ab2cfccfd071037e41fb872cda8d16dd70a73efe",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "venture-salience-labs": {
+    "status": "fetched",
+    "url": "/company-logos/venture-salience-labs.png",
+    "sourceUrl": "https://www.saliencelabs.ai/wp-content/uploads/2026/02/cropped-mstile-icon-270-180x180.png",
+    "website": "https://www.saliencelabs.ai/",
+    "checkedAt": "2026-10-17T17:07:42.803Z",
+    "sha256": "1f5196d251fc9a5428a538a521d5f82b97c68d1c14a53cdbc4dab4d13e1ae66d",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "venture-exaforce": {
+    "status": "fetched",
+    "url": "/company-logos/venture-exaforce.png",
+    "sourceUrl": "https://www.exaforce.com/apple-touch-icon.png",
+    "website": "https://www.exaforce.com/",
+    "checkedAt": "2026-10-17T17:07:42.890Z",
+    "sha256": "efbc9d0e822fdce214f669d1dafbc06c23b53e4d7a4db4122f1750279c25e58c",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "venture-deepinfra": {
+    "status": "fetched",
+    "url": "/company-logos/venture-deepinfra.png",
+    "sourceUrl": "https://deepinfra.com/fav-192.png",
+    "website": "https://deepinfra.com/",
+    "checkedAt": "2026-10-17T17:07:42.666Z",
+    "sha256": "57e286f2b8c147793a4de47cfdaa376593c46c081f74be164cf846a2c669574c",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "venture-databento": {
+    "status": "fetched",
+    "url": "/company-logos/venture-databento.png",
+    "sourceUrl": "https://databento.com/brand/icon-180-unmasked.png",
+    "website": "https://databento.com/",
+    "checkedAt": "2026-10-17T17:07:43.253Z",
+    "sha256": "e4176876b3fafcdf11760369ff45c544b140a20c261a209a78ff1c1b09d27d24",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "venture-onyx-security": {
+    "status": "fetched",
+    "url": "/company-logos/venture-onyx-security.png",
+    "sourceUrl": "https://icons.duckduckgo.com/ip3/onyx.security.ico",
+    "website": "https://www.onyx.security/",
+    "checkedAt": "2026-10-17T17:11:29.337Z",
+    "sha256": "d94af20802cd21239a25b4b3a745faaa97e85047a4873c59dda7ba446e23ebf7",
+    "background": "#f5f5f5",
+    "method": "favicon-cache"
+  },
+  "venture-forage": {
+    "status": "fetched",
+    "url": "/company-logos/venture-forage.png",
+    "sourceUrl": "https://icons.duckduckgo.com/ip3/joinforage.com.ico",
+    "website": "https://www.joinforage.com/",
+    "checkedAt": "2026-10-17T17:11:29.692Z",
+    "sha256": "e20aa435e207841910b0a12662bcfeadc862e93606b29d1dda98879efc8a7fb4",
+    "background": "#f5f5f5",
+    "method": "favicon-cache"
+  },
+  "venture-multiply-labs": {
+    "status": "fetched",
+    "url": "/company-logos/venture-multiply-labs.png",
+    "sourceUrl": "https://www.multiplylabs.com/static/img/1-brand-multiply-labs-logos-logo-icon.png",
+    "website": "https://www.multiplylabs.com/",
+    "checkedAt": "2026-10-17T17:07:43.385Z",
+    "sha256": "b0be45479b5610da494e94a9370c37026eb84dd457a0c94622305834a012b236",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "venture-hiddenlayer": {
+    "status": "fetched",
+    "url": "/company-logos/venture-hiddenlayer.png",
+    "sourceUrl": "https://icons.duckduckgo.com/ip3/hiddenlayer.com.ico",
+    "website": "https://www.hiddenlayer.com/",
+    "checkedAt": "2026-10-17T17:11:29.531Z",
+    "sha256": "4fbad374b3d48cf0b9a5f4c2584822654557c1949851030df0af83834777d7ee",
+    "background": "#f5f5f5",
+    "method": "favicon-cache"
+  },
+  "venture-tiny-health": {
+    "status": "fetched",
+    "url": "/company-logos/venture-tiny-health.png",
+    "sourceUrl": "https://icons.duckduckgo.com/ip3/tinyhealth.com.ico",
+    "website": "https://www.tinyhealth.com/",
+    "checkedAt": "2026-10-17T17:11:29.840Z",
+    "sha256": "1afc85eda4f1e4ba2e15adc40343b2c004e5d94d187dca4316f473161a5f0e29",
+    "background": "#f5f5f5",
+    "method": "favicon-cache"
+  },
+  "venture-equipifi": {
+    "status": "fetched",
+    "url": "/company-logos/venture-equipifi.png",
+    "sourceUrl": "https://www.equipifi.com/hubfs/equpifi-icon-black-1.png",
+    "website": "https://www.equipifi.com/",
+    "checkedAt": "2026-10-17T17:07:43.235Z",
+    "sha256": "4c5ecbfaf95dc0bb6662ea267243c0622462ced6b41bc46a2ceb2e2acb69f6b8",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "venture-thea-energy": {
+    "status": "fetched",
+    "url": "/company-logos/venture-thea-energy.png",
+    "sourceUrl": "https://thea.energy/wp-content/uploads/2023/04/cropped-favicon-180x180.png",
+    "website": "https://thea.energy/",
+    "checkedAt": "2026-10-17T17:07:44.155Z",
+    "sha256": "2d2bf662748fbefd9218c48449bc877281c291f3a12a6ff6f00b97a43f286752",
+    "background": "#171717",
+    "method": "website-icon"
+  },
+  "venture-courier-health": {
+    "status": "fetched",
+    "url": "/company-logos/venture-courier-health.png",
+    "sourceUrl": "https://icons.duckduckgo.com/ip3/courierhealth.com.ico",
+    "website": "https://www.courierhealth.com/",
+    "checkedAt": "2026-10-17T17:11:29.841Z",
+    "sha256": "0b695ed9d2e836014136e5abdfb8c6f77eb353af77c2f0b8948e3168ff31c84f",
+    "background": "#f5f5f5",
+    "method": "favicon-cache"
+  },
+  "venture-moment-energy": {
+    "status": "fetched",
+    "url": "/company-logos/venture-moment-energy.png",
+    "sourceUrl": "https://icons.duckduckgo.com/ip3/momentenergy.com.ico",
+    "website": "https://www.momentenergy.com/",
+    "checkedAt": "2026-10-17T17:11:30.076Z",
+    "sha256": "1441f513a9637fe2747985d37b70c6a9feb339490ad61cd2432c4c6ec047355e",
+    "background": "#f5f5f5",
+    "method": "favicon-cache"
+  },
+  "venture-jump": {
+    "status": "fetched",
+    "url": "/company-logos/venture-jump.png",
+    "sourceUrl": "https://jump.ai/favicon.ico",
+    "website": "https://jump.ai/",
+    "checkedAt": "2026-10-17T17:10:14.322Z",
+    "sha256": "71d35c8b0432b0cd8fc91f1bc543c1e79e0f7a10fac522a21438dd4b04381c2f",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "venture-together-ai": {
+    "status": "fetched",
+    "url": "/company-logos/venture-together-ai.png",
+    "sourceUrl": "https://icons.duckduckgo.com/ip3/together.ai.ico",
+    "website": "https://www.together.ai/",
+    "checkedAt": "2026-10-17T17:11:30.079Z",
+    "sha256": "3e2c6bd73a8a29b1b8660ccc53255ea2f5aa9cad029a40ba66ba5d3e3d497abe",
+    "background": "#f5f5f5",
+    "method": "favicon-cache"
+  },
+  "venture-verse": {
+    "status": "fetched",
+    "url": "/company-logos/venture-verse.png",
+    "sourceUrl": "https://verse.inc/favicon-light.svg",
+    "website": "https://verse.inc/",
+    "checkedAt": "2026-10-17T17:07:44.299Z",
+    "sha256": "4733306c8d743bf77c2bd7d6a2dd937ef212d187c78ae2edc3d3c61dcb2bbddd",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "venture-tandem-health": {
+    "status": "fetched",
+    "url": "/company-logos/venture-tandem-health.png",
+    "sourceUrl": "https://icons.duckduckgo.com/ip3/tandemhealth.ai.ico",
+    "website": "https://tandemhealth.ai/",
+    "checkedAt": "2026-10-17T17:11:29.927Z",
+    "sha256": "8af0da2cb67684a0dd3b9124bc2e671ad27ac51e652761838d3aede0d87441d2",
+    "background": "#171717",
+    "method": "favicon-cache"
+  },
+  "venture-dg-matrix": {
+    "status": "fetched",
+    "url": "/company-logos/venture-dg-matrix.png",
+    "sourceUrl": "https://pub-603db131244d4898a25e35ad020f3bf9.r2.dev/dgmv4/assets/favicon/dg-matrix-apple-touch-icon.png",
+    "website": "https://dgmatrix.com/",
+    "checkedAt": "2026-10-17T17:07:44.360Z",
+    "sha256": "afee935cebbf0cac6df4e578849ff129c5d509e31b526752ece0109ce8480019",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "venture-positron-ai": {
+    "status": "fetched",
+    "url": "/company-logos/venture-positron-ai.png",
+    "sourceUrl": "https://www.positron.ai/favicon.ico",
+    "website": "https://positron.ai/",
+    "checkedAt": "2026-10-17T17:10:14.368Z",
+    "sha256": "c97e1330715bdc77603c950401981ca134bf21d506844ffce66681651e511e05",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "venture-type-one-energy": {
+    "status": "fetched",
+    "url": "/company-logos/venture-type-one-energy.png",
+    "sourceUrl": "https://typeoneenergy.com/wp-content/uploads/2025/12/cropped-favicon-180x180.png",
+    "website": "https://typeoneenergy.com/",
+    "checkedAt": "2026-10-17T17:07:44.299Z",
+    "sha256": "28dbcc94276e866f3e4db1c060cfea9339d69ac610cb80ecc6dff07e9bae0694",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "venture-upguard": {
+    "status": "fetched",
+    "url": "/company-logos/venture-upguard.png",
+    "sourceUrl": "https://www.upguard.com/favicon.svg",
+    "website": "https://www.upguard.com/",
+    "checkedAt": "2026-10-17T17:07:45.345Z",
+    "sha256": "4e6a2fa1779257efb7d77f1a229d6d677e35614f247c85ad4280145e833f4e02",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "venture-omni": {
+    "status": "fetched",
+    "url": "/company-logos/venture-omni.png",
+    "sourceUrl": "https://omni.co/favicon.png",
+    "website": "https://omni.co/",
+    "checkedAt": "2026-10-17T17:07:44.963Z",
+    "sha256": "4219f69ab77c2ebf16f7d6112768b2ffbffa79302b2f9683bbaf559b03574410",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "venture-higharc": {
+    "status": "fetched",
+    "url": "/company-logos/venture-higharc.png",
+    "sourceUrl": "https://icons.duckduckgo.com/ip3/higharc.com.ico",
+    "website": "https://www.higharc.com/",
+    "checkedAt": "2026-10-17T17:11:30.248Z",
+    "sha256": "514944aab427b8029b4e28342b9920f571cee159b32a030dbc7ca6953215287f",
+    "background": "#171717",
+    "method": "favicon-cache"
+  },
+  "venture-gitguardian": {
+    "status": "fetched",
+    "url": "/company-logos/venture-gitguardian.png",
+    "sourceUrl": "https://icons.duckduckgo.com/ip3/gitguardian.com.ico",
+    "website": "https://www.gitguardian.com/",
+    "checkedAt": "2026-10-17T17:11:30.343Z",
+    "sha256": "efff3632e20f440db3801e03baa65492b3c4099b7ba6022147506f27c76e49ad",
+    "background": "#f5f5f5",
+    "method": "favicon-cache"
+  },
+  "venture-moment": {
+    "status": "fetched",
+    "url": "/company-logos/venture-moment.png",
+    "sourceUrl": "https://moment.com/apple-icon.png?apple-icon.1zi4bf0hjnf0t.png",
+    "website": "https://moment.com/",
+    "checkedAt": "2026-10-17T17:07:45.570Z",
+    "sha256": "fea6cc7044a5ae3a9ab461f8f3f76c41c8624f86f5467be9ea54a630fd1d3e78",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "venture-nucleus-security": {
+    "status": "fetched",
+    "url": "/company-logos/venture-nucleus-security.png",
+    "sourceUrl": "https://nucleussec.com/wp-content/uploads/2024/12/cropped-Nucleus-Full-Color-Logo-180x180.png",
+    "website": "https://nucleussec.com/",
+    "checkedAt": "2026-10-17T17:07:45.568Z",
+    "sha256": "4b1ac487f64f474cb825f89bcf302adade20bec575744a2a96f6deba78ef0c33",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "venture-slash": {
+    "status": "fetched",
+    "url": "/company-logos/venture-slash.png",
+    "sourceUrl": "https://www.slash.com/favicon/favicon.png",
+    "website": "https://www.slash.com/",
+    "checkedAt": "2026-10-17T17:07:45.812Z",
+    "sha256": "fad7c750708f0fc3ffce2427da3afe37d3a9fc98c9e2bd2136cd5d4dcf895638",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "venture-daloopa": {
+    "status": "fetched",
+    "url": "/company-logos/venture-daloopa.png",
+    "sourceUrl": "https://daloopa.com/wp-content/uploads/2026/02/cropped-Favicon-Light-180x180.png",
+    "website": "https://daloopa.com/",
+    "checkedAt": "2026-10-17T17:07:45.880Z",
+    "sha256": "8184fbca2dbff5e56f560644acffb99bc6664b442e525a3ced7ae60ddaba4194",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "venture-socket": {
+    "status": "fetched",
+    "url": "/company-logos/venture-socket.png",
+    "sourceUrl": "https://socket.dev/next-public-assets/apple-icon.png",
+    "website": "https://socket.dev/",
+    "checkedAt": "2026-10-17T17:07:45.328Z",
+    "sha256": "cd9c1277e41ab5f7b298e52781f456a622989fc8799c3c5cbf224cf66909264d",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "venture-taktile": {
+    "status": "fetched",
+    "url": "/company-logos/venture-taktile.png",
+    "sourceUrl": "https://taktile.com/apple-icon.png?apple-icon.1ayvjemp7cgp0.png",
+    "website": "https://www.taktile.com/",
+    "checkedAt": "2026-10-17T17:07:45.722Z",
+    "sha256": "420b51f1681eb8c0f050b4c697be4c12cb5ed03f2c3c445dfc9f012917477b54",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "venture-patientiq": {
+    "status": "fetched",
+    "url": "/company-logos/venture-patientiq.png",
+    "sourceUrl": "https://www.patientiq.io/hubfs/pIQ%20favicon.png",
+    "website": "https://www.patientiq.io/",
+    "checkedAt": "2026-10-17T17:07:46.380Z",
+    "sha256": "f16ee1fa3fce527a08418beeb3ddb61c20887fd07346e0f467be826d48af9be2",
+    "background": "#171717",
+    "method": "website-icon"
+  },
+  "venture-antora-energy": {
+    "status": "fetched",
+    "url": "/company-logos/venture-antora-energy.png",
+    "sourceUrl": "https://www.antora.com/apple-touch-icon.png",
+    "website": "https://www.antora.com/",
+    "checkedAt": "2026-10-17T17:07:46.544Z",
+    "sha256": "7e475305b5d054fc94810172aec07050dffee1b5e505f79549650dcadee01667",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "venture-acuitymd": {
+    "status": "fetched",
+    "url": "/company-logos/venture-acuitymd.png",
+    "sourceUrl": "https://icons.duckduckgo.com/ip3/acuitymd.com.ico",
+    "website": "https://www.acuitymd.com/",
+    "checkedAt": "2026-10-17T17:11:30.680Z",
+    "sha256": "5f99f5b7a933444b7cfa9702133f50c9bb96f8998d417a923980d0e598426bd7",
+    "background": "#f5f5f5",
+    "method": "favicon-cache"
+  },
+  "venture-assort-health": {
+    "status": "fetched",
+    "url": "/company-logos/venture-assort-health.png",
+    "sourceUrl": "https://icons.duckduckgo.com/ip3/assorthealth.com.ico",
+    "website": "https://www.assorthealth.com/",
+    "checkedAt": "2026-10-17T17:11:30.423Z",
+    "sha256": "b7bf5e7219e406ae413ca7b51caddcd2dd47b04902c2d6f16e3ceafd4999e03b",
+    "background": "#f5f5f5",
+    "method": "favicon-cache"
+  },
+  "venture-nyobolt": {
+    "status": "fetched",
+    "url": "/company-logos/venture-nyobolt.png",
+    "sourceUrl": "https://nyobolt.com/wp-content/uploads/2023/10/favicon-1.svg",
+    "website": "https://nyobolt.com/",
+    "checkedAt": "2026-10-17T17:07:46.781Z",
+    "sha256": "2cf94f14f0f58c7554746a681140655fb208bb4b8586b8ace69cce6160ed132d",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "venture-nourish": {
+    "status": "fetched",
+    "url": "/company-logos/venture-nourish.png",
+    "sourceUrl": "https://icons.duckduckgo.com/ip3/nourish.com.ico",
+    "website": "https://www.nourish.com/",
+    "checkedAt": "2026-10-17T17:11:30.764Z",
+    "sha256": "ed86365f3f56607b81a15b363cd3cfb1bacf89ea5b5b725ac22236a767569065",
+    "background": "#f5f5f5",
+    "method": "favicon-cache"
+  },
+  "venture-antares": {
+    "status": "fetched",
+    "url": "/company-logos/venture-antares.png",
+    "sourceUrl": "https://icons.duckduckgo.com/ip3/antaresindustries.com.ico",
+    "website": "https://antaresindustries.com/",
+    "checkedAt": "2026-10-17T17:11:30.880Z",
+    "sha256": "072d8874797407daa04300ffb42a2ac6628ca134fda473c77bee01155188ba08",
+    "background": "#f5f5f5",
+    "method": "favicon-cache"
+  },
+  "venture-utilidata": {
+    "status": "fetched",
+    "url": "/company-logos/venture-utilidata.png",
+    "sourceUrl": "https://www.karman.co/static/karman-favicon.svg",
+    "website": "https://utilidata.com/",
+    "checkedAt": "2026-10-17T17:07:46.818Z",
+    "sha256": "5db1aac98958d56fad5c9bf8fea3feaacb92d4a4a8c59f36938ac2bd339a4698",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "venture-legora": {
+    "status": "fetched",
+    "url": "/company-logos/venture-legora.png",
+    "sourceUrl": "https://icons.duckduckgo.com/ip3/legora.com.ico",
+    "website": "https://legora.com/",
+    "checkedAt": "2026-10-17T17:11:31.196Z",
+    "sha256": "a5f66ca29b0bcb7956f2e600991e0ca6d87d8d903493ecf326e7178853e452e2",
+    "background": "#f5f5f5",
+    "method": "favicon-cache"
+  },
+  "venture-fireworks-ai": {
+    "status": "fetched",
+    "url": "/company-logos/venture-fireworks-ai.png",
+    "sourceUrl": "https://fireworks.ai/apple-icon.png?851b7c333784c47b",
+    "website": "https://fireworks.ai/",
+    "checkedAt": "2026-10-17T17:07:46.981Z",
+    "sha256": "eb5c8d26e56bef7f8c7b41a359e0c112e46c93d8abb240dca385e680725fe355",
+    "background": "#171717",
+    "method": "website-icon"
+  },
+  "venture-oxide-computer-company": {
+    "status": "fetched",
+    "url": "/company-logos/venture-oxide-computer-company.png",
+    "sourceUrl": "https://oxide.computer/favicon.svg",
+    "website": "https://oxide.computer/",
+    "checkedAt": "2026-10-17T17:07:46.984Z",
+    "sha256": "67f4fa57799ce603fccc4ae84361b7978da21147e94bcdd75c2eafd08b182666",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "venture-profound": {
+    "status": "fetched",
+    "url": "/company-logos/venture-profound.png",
+    "sourceUrl": "https://static.tryprofound.com/favicons/v1/production/apple-touch-icon.png",
+    "website": "https://www.tryprofound.com/",
+    "checkedAt": "2026-10-17T17:07:47.000Z",
+    "sha256": "622580c4c262af0a1eed29a3ebdf575c81adcc7471394b123a1e47d7e74d105c",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "venture-censys": {
+    "status": "fetched",
+    "url": "/company-logos/venture-censys.png",
+    "sourceUrl": "https://censys.com/wp-content/uploads/Censys-Favicon.jpg",
+    "website": "https://censys.com/",
+    "checkedAt": "2026-10-17T17:07:47.406Z",
+    "sha256": "923de62f950fdedf173672c977f6504b45d4040524a6609cef144f5c44930873",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "venture-torq": {
+    "status": "fetched",
+    "url": "/company-logos/venture-torq.png",
+    "sourceUrl": "https://torq.io/wp-content/uploads/2024/05/cropped-torq-favicon-black-180x180.png",
+    "website": "https://torq.io/",
+    "checkedAt": "2026-10-17T17:07:47.209Z",
+    "sha256": "7c57d17b034785aa3598cb66feadf30e354c4d01554e1f6bf22a2ea6ede90bbd",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "venture-pentera": {
+    "status": "fetched",
+    "url": "/company-logos/venture-pentera.png",
+    "sourceUrl": "https://pentera.io/wp-content/uploads/2026/03/P_Black_favicon-1-1-300x300.png",
+    "website": "https://pentera.io/",
+    "checkedAt": "2026-10-17T17:07:47.415Z",
+    "sha256": "1b918951fa85b298072a0d99e557bca84a0fa87580f8c6633389820d18530c19",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "venture-obsidian-security": {
+    "status": "fetched",
+    "url": "/company-logos/venture-obsidian-security.png",
+    "sourceUrl": "https://icons.duckduckgo.com/ip3/obsidiansecurity.com.ico",
+    "website": "https://www.obsidiansecurity.com/",
+    "checkedAt": "2026-10-17T17:11:31.233Z",
+    "sha256": "ae1e7362f8baf525b515e9903643179c8abd7d663b742742db1c2a65ff2242b3",
+    "background": "#f5f5f5",
+    "method": "favicon-cache"
+  },
+  "venture-allica-bank": {
+    "status": "fetched",
+    "url": "/company-logos/venture-allica-bank.png",
+    "sourceUrl": "https://www.allica.bank/hubfs/New%20Website%20Theme%202024/logos-and-icons/brand/allica-favicon-orange-transparent.png",
+    "website": "https://www.allica.bank/",
+    "checkedAt": "2026-10-17T17:07:47.531Z",
+    "sha256": "2ff3caa1458de50d2786fa255524202787d4447ae45c5c33c10d231569306cc3",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "venture-mercury": {
+    "status": "fetched",
+    "url": "/company-logos/venture-mercury.png",
+    "sourceUrl": "https://mercury.com/apple-icon.png?apple-icon.24duaeqfro1-o.png",
+    "website": "https://mercury.com/",
+    "checkedAt": "2026-10-17T17:07:47.555Z",
+    "sha256": "b94d80dfca61da039d1581efad6938b60d39d9e75c04b6b54a91315aaefd79bb",
+    "background": "#171717",
+    "method": "website-icon"
+  },
+  "venture-farther": {
+    "status": "fetched",
+    "url": "/company-logos/venture-farther.png",
+    "sourceUrl": "https://www.farther.com/seo/apple-touch-icon.png",
+    "website": "https://www.farther.com/",
+    "checkedAt": "2026-10-17T17:07:47.581Z",
+    "sha256": "4a666bb8c1697c4ffe78dc3f4868c341e3a3bbfe22ebb473e186785c5141321b",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "venture-matrixorigin": {
+    "status": "fetched",
+    "url": "/company-logos/venture-matrixorigin.png",
+    "sourceUrl": "https://avatars.githubusercontent.com/u/76932962?s=200&v=4",
+    "website": "https://www.matrixorigin.io/",
+    "checkedAt": "2026-10-17T17:16:16.904Z",
+    "sha256": "a7ad33558a51e217fd1b3773918623dbe8a9847ff7709175f1bcbdfc51de5ed9",
+    "background": "#171717",
+    "method": "website-logo"
+  },
+  "venture-midi-health": {
+    "status": "fetched",
+    "url": "/company-logos/venture-midi-health.png",
+    "sourceUrl": "https://www.joinmidi.com/favicon.ico?favicon.0wto-tf7u7ugm.ico",
+    "website": "https://www.joinmidi.com/",
+    "checkedAt": "2026-10-17T17:07:47.909Z",
+    "sha256": "eb40d9f9ca87bb0e1fc68ae82aac122116bc487a7abf931f424c24992eaa14a5",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "venture-clearnote-health": {
+    "status": "fetched",
+    "url": "/company-logos/venture-clearnote-health.png",
+    "sourceUrl": "https://www.clearnotehealth.com/wp-content/uploads/2025/10/Screenshot-2025-10-10-at-09.48.13-600x600.png",
+    "website": "https://www.clearnotehealth.com/",
+    "checkedAt": "2026-10-17T17:07:48.013Z",
+    "sha256": "d644aa42acc581b33f63a058a4224e7b35275e229295ad5cbe98d1c5e355fadd",
+    "background": "#171717",
+    "method": "website-icon"
+  },
+  "venture-candid-health": {
+    "status": "fetched",
+    "url": "/company-logos/venture-candid-health.png",
+    "sourceUrl": "https://candidhealth.com/favicon.png",
+    "website": "https://www.joincandidhealth.com/",
+    "checkedAt": "2026-10-17T17:10:14.910Z",
+    "sha256": "44f657d4f3be90347a731c8001e31c78b4a33a4207fa4992e5eeec40a803a425",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "venture-lunar-energy": {
+    "status": "fetched",
+    "url": "/company-logos/venture-lunar-energy.png",
+    "sourceUrl": "https://icons.duckduckgo.com/ip3/lunarenergy.com.ico",
+    "website": "https://www.lunarenergy.com/",
+    "checkedAt": "2026-10-17T17:11:31.324Z",
+    "sha256": "85d564242ddcb7f66d17cf13b42708c3bb708ddb5fb388fd1b11c33199fcf694",
+    "background": "#f5f5f5",
+    "method": "favicon-cache"
+  },
+  "venture-base-power": {
+    "status": "fetched",
+    "url": "/company-logos/venture-base-power.png",
+    "sourceUrl": "https://www.basepowercompany.com/_bpc/assets/apple-touch-icon.png",
+    "website": "https://www.basepowercompany.com/",
+    "checkedAt": "2026-10-17T17:07:48.252Z",
+    "sha256": "2e2f4a8c84ab5bb18c5a8d709e0e6627855ea61cc4355a3e782863c6ac917c8f",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "venture-voltus": {
+    "status": "fetched",
+    "url": "/company-logos/venture-voltus.png",
+    "sourceUrl": "https://www.voltus.co/",
+    "website": "https://www.voltus.co/",
+    "checkedAt": "2026-10-17T17:16:16.675Z",
+    "sha256": "f18a4e69afebcb19e99982bd4e251d991eb6f638fe7b3933e9ea71dab43202c7",
+    "background": "#f5f5f5",
+    "method": "website-logo"
+  },
+  "venture-juspay": {
+    "status": "fetched",
+    "url": "/company-logos/venture-juspay.png",
+    "sourceUrl": "https://juspay.io/favicon.png",
+    "website": "https://juspay.io/",
+    "checkedAt": "2026-10-17T17:07:47.632Z",
+    "sha256": "eae85b931eb6aad47f82c9649b97f70b8b770c28674e993fa503ef620b554c08",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "venture-group14-technologies": {
+    "status": "fetched",
+    "url": "/company-logos/venture-group14-technologies.png",
+    "sourceUrl": "https://group14.technology/wp-content/uploads/2025/10/cropped-group14_favicon-180x180.jpg",
+    "website": "https://group14.technology/",
+    "checkedAt": "2026-10-17T17:07:48.378Z",
+    "sha256": "27341069d8a14b6e7865e46c0679f955f3d3279cea7defd90276fca50e5bea0a",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "event-alethical": {
+    "status": "fetched",
+    "url": "/company-logos/event-alethical.png",
+    "sourceUrl": "https://www.alethical.com/apple-touch-icon.png?brand=twin-peaks",
+    "website": "https://alethical.com/",
+    "checkedAt": "2026-10-17T17:07:48.555Z",
+    "sha256": "7434bb6847a3af97dbb0cee473e8eb5c30f4d580700408c0a45bc22c390b77be",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "event-arcampass": {
+    "status": "fetched",
+    "url": "/company-logos/event-arcampass.png",
+    "sourceUrl": "https://arcampass.com/arcampass-a-logo.png",
+    "website": "https://arcampass.com/",
+    "checkedAt": "2026-10-17T17:07:48.719Z",
+    "sha256": "72fe58e344a8c8d3da4a9fc7efc558ac0d1c5cd97a81c179088999e4d2af0109",
+    "background": "#171717",
+    "method": "website-icon"
+  },
+  "event-ask-nomi": {
+    "status": "fetched",
+    "url": "/company-logos/event-ask-nomi.png",
+    "sourceUrl": "https://www.asknomi.ai/favicon.ico",
+    "website": "https://www.asknomi.ai/",
+    "checkedAt": "2026-10-17T17:07:48.750Z",
+    "sha256": "104167144eb53153d96beebb9c167a982f5dbcf961be7c602cf2720171b67e02",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "event-archer-protocol": {
+    "status": "fetched",
+    "url": "/company-logos/event-archer-protocol.png",
+    "sourceUrl": "https://www.archerprotocol.com/icon.svg?icon.0d14dee8.svg",
+    "website": "https://www.archerprotocol.com/",
+    "checkedAt": "2026-10-17T17:07:48.723Z",
+    "sha256": "6ac38246158df85e5e6ba9cf56425414d16d5a073a4c160b62bc015abba9cbd3",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "event-bond-ai": {
+    "status": "fetched",
+    "url": "/company-logos/event-bond-ai.png",
+    "sourceUrl": "https://bondcommunity.ai/images/apple-touch-icon.png",
+    "website": "https://bondcommunity.ai/",
+    "checkedAt": "2026-10-17T17:07:49.075Z",
+    "sha256": "60a95a59b0ddae7266ed59ea5d5951c42454b80ddb411a9ca3d3b50ce8b6d7ad",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "event-block-convey": {
+    "status": "fetched",
+    "url": "/company-logos/event-block-convey.png",
+    "sourceUrl": "https://blockconvey.com/apple-icon.png?e561337836baa7cb",
+    "website": "https://blockconvey.com/",
+    "checkedAt": "2026-10-17T17:07:49.030Z",
+    "sha256": "56b879a1b047dacfeaca2e69f4f3c7f898b15c5b591aba8ca6d48eece8462070",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "event-commercialdeals": {
+    "status": "fetched",
+    "url": "/company-logos/event-commercialdeals.png",
+    "sourceUrl": "https://www.commercialdeals.com/assets/app/brand-4.png",
+    "website": "https://commercialdeals.com/",
+    "checkedAt": "2026-10-17T17:16:16.682Z",
+    "sha256": "cba49517b9d25dedbc4d420ec51f5c69ac76c35210da012ff9c4b3ba21e0157b",
+    "background": "#171717",
+    "method": "website-logo"
+  },
+  "event-chrp": {
+    "status": "fetched",
+    "url": "/company-logos/event-chrp.png",
+    "sourceUrl": "https://chrpme.io/assets/apple-touch-icon.png",
+    "website": "https://chrpme.io/",
+    "checkedAt": "2026-10-17T17:07:49.237Z",
+    "sha256": "70ca5b3d6e533ea5584ffa4e2de66788b3cafd47930f601c78a892028af7c84a",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "event-brix": {
+    "status": "fetched",
+    "url": "/company-logos/event-brix.png",
+    "sourceUrl": "https://www.info.brix-ai.com/favicon.ico",
+    "website": "https://info.brix-ai.com/",
+    "checkedAt": "2026-10-17T17:10:14.910Z",
+    "sha256": "2e08505418622575afd602d31d10a3c55c6ee1d59bc5f9b6aa048c2dc287fd56",
+    "background": "#171717",
+    "method": "website-icon"
+  },
+  "event-apna-counsellor": {
+    "status": "fetched",
+    "url": "/company-logos/event-apna-counsellor.png",
+    "sourceUrl": "https://www.apnacounsellor.in/icon.png",
+    "website": "https://apnacounsellor.in/",
+    "checkedAt": "2026-10-17T17:07:48.563Z",
+    "sha256": "8308744dfa745b8d1a676ce3237ca1615edd2e18bd9fb80a7a36c26970a9a1b4",
+    "background": "#171717",
+    "method": "website-icon"
+  },
+  "event-chatbakers": {
+    "status": "fetched",
+    "url": "/company-logos/event-chatbakers.png",
+    "sourceUrl": "https://chatbakers.com/favicon.png",
+    "website": "https://chatbakers.com/",
+    "checkedAt": "2026-10-17T17:07:49.166Z",
+    "sha256": "b93e62ad62ffa80dcca33e870b10aea41ab2b1899d5adfb96bbccb247d7ecbac",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "event-hatchd": {
+    "status": "fetched",
+    "url": "/company-logos/event-hatchd.png",
+    "sourceUrl": "https://gethatchd.com/assets/hatchd-icon-gold-transparent-v13-180.png",
+    "website": "https://gethatchd.com/",
+    "checkedAt": "2026-10-17T17:07:49.716Z",
+    "sha256": "15fa182758d1d54ec77be3a7cfc4ff2d2832cc2da8cc11d6417407017ff7544e",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "event-dormi": {
+    "status": "fetched",
+    "url": "/company-logos/event-dormi.png",
+    "sourceUrl": "https://cdn.shopify.com/s/files/1/0514/4536/6983/files/Dormi_favicon_192.png?v=1777903883",
+    "website": "https://www.dormibeds.com/",
+    "checkedAt": "2026-10-17T17:07:49.484Z",
+    "sha256": "233015398a42cc7413230f1ce5279db87403b7b6e813eacd05049b12434990a0",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "event-localhost-nyc": {
+    "status": "unavailable",
+    "url": null,
+    "sourceUrl": "https://localhost-nyc.com/favicon.ico",
+    "website": "https://localhost-nyc.com/",
+    "checkedAt": "2026-10-17T17:07:50.117Z",
+    "sha256": "1e8f80f65df6d9c956f27ea82d3dacdbc7994816fa369d8f5d26539b26c0188a",
+    "background": "#f5f5f5",
+    "method": "website-icon",
+    "error": "Published favicon belongs to the site builder, not the company. No verified company image retained."
+  },
+  "event-kojable": {
+    "status": "fetched",
+    "url": "/company-logos/event-kojable.png",
+    "sourceUrl": "https://kojable.com/favicon.ico",
+    "website": "https://kojable.com/",
+    "checkedAt": "2026-10-17T17:10:14.952Z",
+    "sha256": "6e4c7ef7a6681ccacf8bd6523dff762ae7f35401b979402e3484d46e891b3f58",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "event-expediter-ai": {
+    "status": "fetched",
+    "url": "/company-logos/event-expediter-ai.png",
+    "sourceUrl": "https://expediter.nyc/expediter-logo.png",
+    "website": "https://expediter.nyc/",
+    "checkedAt": "2026-10-17T17:07:49.608Z",
+    "sha256": "a8d135aee5bff0eefc171dba427a0013af7d6a2da2bb41c10a589278ac4c277c",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "venture-leo-cancer-care": {
+    "status": "fetched",
+    "url": "/company-logos/venture-leo-cancer-care.png",
+    "sourceUrl": "https://leocancercare.com/wp-content/themes/Leo/img/icons/apple-touch-icon.png",
+    "website": "https://leocancercare.com/",
+    "checkedAt": "2026-10-17T17:07:47.956Z",
+    "sha256": "538a3ccba7a96a78fe1192925b847c1023c456240c89efd080700ca583bd43e5",
+    "background": "#171717",
+    "method": "website-icon"
+  },
+  "event-meghaos": {
+    "status": "fetched",
+    "url": "/company-logos/event-meghaos.png",
+    "sourceUrl": "https://meghaos.ai/favicon.png",
+    "website": "https://meghaos.ai/",
+    "checkedAt": "2026-10-17T17:07:50.699Z",
+    "sha256": "601bc9f4a163b02b7ce7e8c125d6b25abe25a51420d2badd6dab3746d8f47c0f",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "event-novawerke-ai": {
+    "status": "fetched",
+    "url": "/company-logos/event-novawerke-ai.png",
+    "sourceUrl": "https://novawerke.ai/img/logo.png",
+    "website": "https://novawerke.ai/",
+    "checkedAt": "2026-10-17T17:16:40.193Z",
+    "sha256": "f8c9b468199251b74e950cf6a352409047543f1af8363b8de0da503e8838953b",
+    "background": "#f5f5f5",
+    "method": "website-logo"
+  },
+  "event-mooss": {
+    "status": "unavailable",
+    "url": null,
+    "sourceUrl": null,
+    "website": "https://modascope.app/",
+    "checkedAt": "2026-10-17T17:11:31.712Z",
+    "error": "Source returned HTTP 404."
+  },
+  "event-nugenix-ai": {
+    "status": "fetched",
+    "url": "/company-logos/event-nugenix-ai.png",
+    "sourceUrl": "https://static.wixstatic.com/media/ad3f39_2d054cf19ee140e9b4d47fd2435b9b24~mv2.png/v1/fill/w_410,h_112,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/ad3f39_2d054cf19ee140e9b4d47fd2435b9b24~mv2.png",
+    "website": "https://www.nugenix-ai.com/",
+    "checkedAt": "2026-10-17T17:18:15.627Z",
+    "sha256": "6307f2ddb5e5923a41b51e37ce757764832b0a14786ddc28787167d78f60465b",
+    "background": "#f5f5f5",
+    "method": "website-logo"
+  },
+  "event-opflowos": {
+    "status": "fetched",
+    "url": "/company-logos/event-opflowos.png",
+    "sourceUrl": "https://opflowos.com/apple-touch-icon.png",
+    "website": "https://opflowos.com/",
+    "checkedAt": "2026-10-17T17:07:51.495Z",
+    "sha256": "00f9c24b49378b1c2523c95403c548a8142c3c9d8f6f8d31d3d21c015984838a",
+    "background": "#171717",
+    "method": "website-icon"
+  },
+  "event-optimchain": {
+    "status": "fetched",
+    "url": "/company-logos/event-optimchain.png",
+    "sourceUrl": "https://optimchain.github.io/Main/assets/images/favicon.png",
+    "website": "https://optimchain.github.io/Main/",
+    "checkedAt": "2026-10-17T17:07:51.688Z",
+    "sha256": "dda0fa84dfa5d8e5d8c05733a8c09976b52fa2bed1572c89e6ad11b7686a993e",
+    "background": "#171717",
+    "method": "website-icon"
+  },
+  "event-hudson-manpower": {
+    "status": "fetched",
+    "url": "/company-logos/event-hudson-manpower.png",
+    "sourceUrl": "https://hudsonmanpower.com/assets/hudson-logo-white.png",
+    "website": "https://hudsonmanpower.com/",
+    "checkedAt": "2026-10-17T17:16:42.248Z",
+    "sha256": "ba90b6ecfc10b00162d6feef4d6134b3f0695cb32d9db0d8015a39ee7c942722",
+    "background": "#171717",
+    "method": "website-logo"
+  },
+  "event-neat-roots": {
+    "status": "fetched",
+    "url": "/company-logos/event-neat-roots.png",
+    "sourceUrl": "https://neatroots.com/wp-content/uploads/2024/05/cropped-NR-Logo-180x180.png",
+    "website": "https://neatroots.com/",
+    "checkedAt": "2026-10-17T17:07:50.844Z",
+    "sha256": "e3bf5f0a33321921d2685ee96acb2bcca6dec3463c0f72169e691917142d1715",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "event-make-connnext": {
+    "status": "fetched",
+    "url": "/company-logos/event-make-connnext.png",
+    "sourceUrl": "https://www.connnext.com/",
+    "website": "https://celiadavis.com/about",
+    "checkedAt": "2026-10-17T17:18:15.631Z",
+    "sha256": "c7efda8b71978fdcd0555a83a0b81e0edc980a1ce7acd1662cc995625fe1a0b8",
+    "background": "#f5f5f5",
+    "method": "website-logo"
+  },
+  "event-quizrs": {
+    "status": "fetched",
+    "url": "/company-logos/event-quizrs.png",
+    "sourceUrl": "https://www.quizrs.com/favicon.ico",
+    "website": "https://quizrs.com/",
+    "checkedAt": "2026-10-17T17:07:51.870Z",
+    "sha256": "e7f016e9b563836ea7595530f611f2eb189e5c84b315075232a5e1629b5bc23e",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "event-pillpilot": {
+    "status": "fetched",
+    "url": "/company-logos/event-pillpilot.png",
+    "sourceUrl": "https://www.pillpilot.com/assets/apple-touch-icon.png",
+    "website": "https://www.pillpilot.ai/",
+    "checkedAt": "2026-10-17T17:07:51.837Z",
+    "sha256": "37f050ebfa58bfa24c3df59414431ae9d09805e9a3ac4c13f061020c6a2a5249",
+    "background": "#171717",
+    "method": "website-icon"
+  },
+  "event-nxtconnect-ai": {
+    "status": "fetched",
+    "url": "/company-logos/event-nxtconnect-ai.png",
+    "sourceUrl": "https://www.nxtconnect.ai/apple-touch-icon.png",
+    "website": "https://www.nxtconnect.ai/",
+    "checkedAt": "2026-10-17T17:07:51.494Z",
+    "sha256": "cdbacc8d59022018696343b96b7e0c382246a27b6e5bc48e455781252b0c6912",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "event-sirca": {
+    "status": "fetched",
+    "url": "/company-logos/event-sirca.png",
+    "sourceUrl": "https://www.sirca.ai/apple-icon.png?0a76cbe28d3b81b6",
+    "website": "https://www.sirca.ai/",
+    "checkedAt": "2026-10-17T17:07:52.228Z",
+    "sha256": "a99bd6ffd3c797107ff16527bee7ce055c863068ca0d56f55aa1300e4141a931",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "event-rolemate": {
+    "status": "fetched",
+    "url": "/company-logos/event-rolemate.png",
+    "sourceUrl": "https://rolemateapp.com/icon.png?05174c7a24feddfe",
+    "website": "https://rolemateapp.com/",
+    "checkedAt": "2026-10-17T17:07:51.914Z",
+    "sha256": "03f30266b864c62c31d0639cad9e2f7039233cd9ce385d3f7b90b9f625f4fd48",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "event-water-pistol": {
+    "status": "fetched",
+    "url": "/company-logos/event-water-pistol.png",
+    "sourceUrl": "https://waterpistol.co/wp-content/uploads/2024/12/cropped-Photos_GUO6zdRRie-1-180x180.avif",
+    "website": "https://waterpistol.co/",
+    "checkedAt": "2026-10-17T17:07:52.359Z",
+    "sha256": "2ca132dbcf3435d51767a50824c6a5983240e4ec27ec9676b7ef504bcb45a13d",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "event-zacc-ai": {
+    "status": "fetched",
+    "url": "/company-logos/event-zacc-ai.png",
+    "sourceUrl": "https://zacc.ai/assets/icons/apple-touch-icon.png?v=2",
+    "website": "https://zacc.ai/",
+    "checkedAt": "2026-10-17T17:07:52.555Z",
+    "sha256": "4bd1d7d6e940a2a40668371a4ceb7a81c831704ef85a6028dbb6d42902166173",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "event-vident": {
+    "status": "fetched",
+    "url": "/company-logos/event-vident.png",
+    "sourceUrl": "https://discovervident.com/assets/vident-technologies.png",
+    "website": "https://discovervident.com/",
+    "checkedAt": "2026-10-17T17:16:40.632Z",
+    "sha256": "ef29d01a7b2af96a96c7910c9758b7f092f6895595b675b5274155c4f0f8ec67",
+    "background": "#f5f5f5",
+    "method": "website-logo"
+  },
+  "wefunder-riecomp": {
+    "status": "fetched",
+    "url": "/company-logos/wefunder-riecomp.png",
+    "sourceUrl": "https://images.squarespace-cdn.com/content/v1/66039e4e8ca5a628a0dc2c8a/de2f489a-7767-4f80-b308-368abea15098/favicon.ico?format=100w",
+    "website": "https://www.riecomp.org/",
+    "checkedAt": "2026-10-17T17:07:52.559Z",
+    "sha256": "6b54077dbef0abd29d53288a5b2be343fed0b1caa2fc677288f5ef18f735b552",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "wefunder-riserobotics": {
+    "status": "fetched",
+    "url": "/company-logos/wefunder-riserobotics.png",
+    "sourceUrl": "https://images.squarespace-cdn.com/content/v1/66be2a0a6f050c4fd537f953/348841de-42de-4aba-be31-644ca2967c36/favicon.ico",
+    "website": "https://www.riserobotics.com/",
+    "checkedAt": "2026-10-17T17:07:52.781Z",
+    "sha256": "f25d1b3a1253dab72237b33fa36642957287ef7b337365d0912c47651f777f33",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "wefunder-namecoach": {
+    "status": "fetched",
+    "url": "/company-logos/wefunder-namecoach.png",
+    "sourceUrl": "https://cloud.name-coach.com/wp-content/themes/namecoach/dist/images/favicon/apple-touch-icon_4a0144a0.png",
+    "website": "https://cloud.name-coach.com/",
+    "checkedAt": "2026-10-17T17:07:52.702Z",
+    "sha256": "95cd2e079e2df795d1ab9bd5f50ad7c1b09eb47aeacf6533eaa1df67769a1ccf",
+    "background": "#171717",
+    "method": "website-icon"
+  },
+  "wefunder-bito": {
+    "status": "fetched",
+    "url": "/company-logos/wefunder-bito.png",
+    "sourceUrl": "https://bito.ai/wp-content/uploads/2022/03/cropped-android-icon-192x192-1-180x180.png",
+    "website": "https://www.bito.ai/",
+    "checkedAt": "2026-10-17T17:07:52.555Z",
+    "sha256": "d2a9b189533af81a3f29d28a14e73e4253f22eadfbb8412544f3a3cd1d609346",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "republic-miso-robotics": {
+    "status": "fetched",
+    "url": "/company-logos/republic-miso-robotics.png",
+    "sourceUrl": "https://www.misorobotics.com/hubfs/Miso_Logo_Mark_4C.png",
+    "website": "https://misorobotics.com/",
+    "checkedAt": "2026-10-17T17:07:52.952Z",
+    "sha256": "a6f70b6f5427e49aaa9512d12754c27d9cec63efdb71eddba6dc28041bf2ac90",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "wefunder-emissionfreegenerators": {
+    "status": "fetched",
+    "url": "/company-logos/wefunder-emissionfreegenerators.png",
+    "sourceUrl": "https://icons.duckduckgo.com/ip3/emissionfreegenerators.com.ico",
+    "website": "https://www.emissionfreegenerators.com/",
+    "checkedAt": "2026-10-17T17:11:33.292Z",
+    "sha256": "8fd5fc5eb445e34295002ef84a9d288442030e11134985430bb86661ed2bc50c",
+    "background": "#f5f5f5",
+    "method": "favicon-cache"
+  },
+  "republic-tradefunded": {
+    "status": "fetched",
+    "url": "/company-logos/republic-tradefunded.png",
+    "sourceUrl": "https://tradefunded.com/assets/tf-mark-official.svg",
+    "website": "https://www.tradefunded.com/",
+    "checkedAt": "2026-10-17T17:07:53.360Z",
+    "sha256": "ced4c725812197bd7b187d26c071c2467a9c81f863258c224e9c806e9f4e854b",
+    "background": "#171717",
+    "method": "website-icon"
+  },
+  "wefunder-canopii": {
+    "status": "fetched",
+    "url": "/company-logos/wefunder-canopii.png",
+    "sourceUrl": "https://images.squarespace-cdn.com/content/v1/6684495eac53d91577266e83/f0a1e3de-5ef8-4985-bdd8-d01efa615d53/favicon.ico?format=100w",
+    "website": "https://www.canopii.us/",
+    "checkedAt": "2026-10-17T17:07:53.363Z",
+    "sha256": "7b49a3f475f418beaa64a0cd46ddf16ac1e3104f49e8e064a86d3a69bcfa931c",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "event-wealthryse": {
+    "status": "unavailable",
+    "url": null,
+    "sourceUrl": null,
+    "website": "https://wealthryse.ai/",
+    "checkedAt": "2026-10-17T17:11:32.918Z",
+    "error": "Source returned HTTP 404."
+  },
+  "wefunder-lppfusion": {
+    "status": "fetched",
+    "url": "/company-logos/wefunder-lppfusion.png",
+    "sourceUrl": "https://www.lppfusion.com/storage/2022/04/LPP-Favicon.jpg",
+    "website": "https://lppfusion.com/",
+    "checkedAt": "2026-10-17T17:07:52.830Z",
+    "sha256": "9e028f784bad7ebe69d2961a024e22907a22ac1ae5318c3c1581a5a55e88687e",
+    "background": "#f5f5f5",
+    "method": "website-icon"
+  },
+  "republic-xprize": {
+    "status": "unavailable",
+    "url": null,
+    "sourceUrl": null,
+    "website": "",
+    "checkedAt": "2026-10-17T17:22:00.000Z",
+    "error": "No official company website was supplied in the retained offering snapshot."
+  }
+}

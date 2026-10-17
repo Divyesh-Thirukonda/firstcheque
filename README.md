@@ -65,3 +65,9 @@ npm run build
 ```
 
 Next.js, React, TypeScript, Tailwind, Vercel AI SDK, Nicrron, PRISM and private Vercel Blob. No money moves in Seed Street. Real offering terms and eligibility must be checked at the original intermediary; paper allocations exist only in the fictional demo.
+
+## Company profile parity
+
+Seeded and live-researched companies share sourced logos, product capabilities, audience, founders, headquarters/founding year when disclosed, completed financing, reported traction, and four financial fields: annual revenue, ARR, valuation and runway. Missing values stay null. Financial evidence retains its quote, source, currency, period and qualifiers; a refresh does not replace a dated disclosure with an older or missing value. Basic filters continue to use synchronized revenue/ARR fields.
+
+The catalog includes 120 sourced logos across 124 seeds, 15 disclosed valuation snapshots and one disclosed ARR lower bound. Four logos remain unavailable; see `docs/COMPANY-LOGOS.md`. Live research uses the same collection path and preserves its assets in the company library. Actual Nicrron Resend research and PRISM readback verified the new profile flow; the run retained the company icon, founders, product and its dated $18M Series A. Revenue, ARR, valuation and runway remained unknown where qualifying disclosure was absent.

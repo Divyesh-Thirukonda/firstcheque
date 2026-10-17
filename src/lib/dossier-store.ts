@@ -3,6 +3,7 @@ import { createHash, randomUUID } from "node:crypto";
 import { mkdir, readFile, readdir, rename, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { get, list, put } from "@vercel/blob";
+import { companyFinancials, reportFinancials, mergeFinancials } from "./company-financials";
 import { CATALOG_SEEDS } from "./catalog-seeds";
 import type { CatalogResponse, DiscoveryCompany } from "./discovery-types";
 import type { LiveDiligenceResult } from "./live-research-types";
@@ -86,22 +87,25 @@ export async function saveDiligenceReport(result:LiveDiligenceResult):Promise<{d
   if(!existing&&companies.length>=200)throw new Error("The shared library has reached its 200-company prototype limit.");
   const dossierId=`dossier-${companyId}`;
   const neutral:LiveDiligenceResult={...result,id:dossierId,dossierId,companyId,thesisFit:{score:null,explanation:"Shared company research. Apply your own editable preferences in Discover.",caveats:[]},persisted:true};
-  const revenue=result.financials.annualRevenue,arr=result.financials.arr;
-  const financials= revenue.status==="source-reported"&&revenue.value!==null?revenue:arr.status==="source-reported"&&arr.value!==null?arr:null;
-  const financialSource=financials?.sourceIds.map(id=>result.sources.find(source=>source.id===id)?.url).find(Boolean)||null;
+  const incoming=result.profile||{};
+  const financials=mergeFinancials(existing?companyFinancials(existing):companyFinancials({annualRevenue:null,arr:null} as DiscoveryCompany),reportFinancials(result));
+  const revenue=financials.annualRevenue,arr=financials.arr;
+  const financialSource=revenue.sourceUrl||arr.sourceUrl||null;
+  const newerFunding=incoming.funding&&(!existing?.funding?.announcedAt||!Number.isFinite(Date.parse(existing.funding.announcedAt))||incoming.funding.announcedAt&&Date.parse(incoming.funding.announcedAt)>=Date.parse(existing.funding.announcedAt))?incoming.funding:existing?.funding;
+  const validatedProfile=Object.fromEntries(Object.entries(incoming).filter(([,value])=>value!==null&&value!==undefined&&(!Array.isArray(value)||value.length>0))) as Partial<DiscoveryCompany>;
   const company:DiscoveryCompany={
-    ...existing,
-    id:companyId,name:result.company.name,website:result.company.website||existing?.website||"",description:result.sections.find(section=>section.category==="company")?.claims[0]?.text.slice(0,500)||result.summary,
-    ...(existing?{industry:existing.industry,sectors:existing.sectors}:classify(result)),stage:existing?.stage||"Unknown",
+    ...existing,...validatedProfile,profileFieldSources:{...existing?.profileFieldSources,...incoming.profileFieldSources},profileSources:[...new Map([...(existing?.profileSources||[]),...(incoming.profileSources||[])].map(s=>[s.url,s])).values()],financials,logo:result.logo?.status==="fetched"?result.logo:existing?.logo||result.logo,
+    id:companyId,name:result.company.name,website:result.company.website||existing?.website||"",description:incoming.description||existing?.description||result.sections.find(section=>section.category==="company")?.claims[0]?.text.slice(0,500)||result.summary,
+    ...(existing?{industry:existing.industry,sectors:existing.sectors}:classify(result)),stage:newerFunding?.stage as DiscoveryCompany["stage"]||existing?.stage||"Unknown",funding:newerFunding,
     kind:existing?.kind||"company",offeringStatus:existing?.offeringStatus||"not-listed",offeringUrl:existing?.offeringUrl||null,platform:existing?.platform||null,
     minInvestment:existing?.minInvestment??null,currency:"USD",
     annualRevenue:revenue.status==="source-reported"?revenue.value:null,
-    arrComparison:undefined,
+    arrComparison:arr.comparison,
     arr:arr.status==="source-reported"?arr.value:null,financialCurrency:revenue.status==="source-reported"?revenue.currency:null,arrCurrency:arr.status==="source-reported"?arr.currency:null,
-    financialsAsOf:financials?.asOf||null,financialSourceUrl:financialSource,
+    financialsAsOf:revenue.asOf||arr.asOf||null,financialSourceUrl:financialSource,
     // Replace prior research evidence: rejected namesakes or stale sources must not survive a refresh.
     sourceUrls:[...new Set([...(existing?.offeringUrl?[existing.offeringUrl]:[]),...result.sources.filter(s=>s.status==="fetched").map(s=>s.url)])].slice(0,30),
-    lastCheckedAt:existing?.lastCheckedAt||result.generatedAt,researchStatus:result.status==="unavailable"?"failed":"complete",dossierId,
+    profileCheckedAt:result.generatedAt,lastCheckedAt:existing?.lastCheckedAt||result.generatedAt,researchStatus:result.status==="unavailable"?"failed":"complete",dossierId,
     ...(existing?.statusEvidence?{statusEvidence:existing.statusEvidence}:{}),...(existing?.minimumEvidence?{minimumEvidence:existing.minimumEvidence}:{}),
   };
   await writeRecord(`dossiers/${dossierId}`,neutral);
@@ -122,10 +126,13 @@ export function mergeCatalogCompanies(seeds:DiscoveryCompany[],stored:DiscoveryC
     const key=identity(company.website);
     const seed=merged.get(company.id)||(key?seeds.find(candidate=>identity(candidate.website)===key):undefined);
     const newestOffering=seed&&Date.parse(seed.lastCheckedAt)>Date.parse(company.lastCheckedAt);
-    const profile=seed?.catalogOrigin ? {reportedMetrics:seed.reportedMetrics,profileFieldSources:seed.profileFieldSources,catalogOrigin:seed.catalogOrigin,founders:seed.founders,capabilities:seed.capabilities,audience:seed.audience,businessModel:seed.businessModel,headquarters:seed.headquarters,foundedYear:seed.foundedYear,funding:seed.funding,profileNotes:seed.profileNotes,profileSources:seed.profileSources,profileCheckedAt:seed.profileCheckedAt,stage:seed.stage,industry:seed.industry,sectors:seed.sectors} : {};
+    const liveNewer=Boolean(company.profileCheckedAt&&(!seed?.profileCheckedAt||Date.parse(company.profileCheckedAt)>=Date.parse(seed.profileCheckedAt)));
+    const profile=seed?.catalogOrigin ? {...(liveNewer?{}:{reportedMetrics:seed.reportedMetrics,profileFieldSources:seed.profileFieldSources,founders:seed.founders,capabilities:seed.capabilities,audience:seed.audience,businessModel:seed.businessModel,headquarters:seed.headquarters,foundedYear:seed.foundedYear,funding:seed.funding,profileNotes:seed.profileNotes,profileSources:seed.profileSources,profileCheckedAt:seed.profileCheckedAt,stage:seed.stage,industry:seed.industry,sectors:seed.sectors}),catalogOrigin:seed.catalogOrigin} : {};
     // Preserve a legacy saved ID so existing watchlists and search/report links still resolve.
     if(seed&&seed.id!==company.id)merged.delete(seed.id);
-    merged.set(company.id,{...seed,...company,...profile,arrComparison:company.arrComparison,...(seed&&/public source evidence is retained|review source dates|research retained in this session/i.test(company.description)?{description:seed.description}:{}),...(newestOffering?{offeringStatus:seed.offeringStatus,minInvestment:seed.minInvestment,statusEvidence:seed.statusEvidence,minimumEvidence:seed.minimumEvidence,lastCheckedAt:seed.lastCheckedAt}:{}),sourceUrls:[...new Set([...(seed?.sourceUrls||[]),...company.sourceUrls])]});
+    const financials=mergeFinancials(seed?companyFinancials(seed):companyFinancials(company),companyFinancials(company));
+    const revenue=financials.annualRevenue,arr=financials.arr;
+    merged.set(company.id,{...seed,...company,...profile,logo:company.logo?.status==="fetched"?company.logo:seed?.logo||company.logo,financials,annualRevenue:revenue.status==="source-reported"?revenue.value:null,arr:arr.status==="source-reported"?arr.value:null,financialCurrency:revenue.currency,arrCurrency:arr.currency,financialsAsOf:revenue.asOf||arr.asOf,financialSourceUrl:revenue.sourceUrl||arr.sourceUrl,arrComparison:arr.comparison,...(seed&&/public source evidence is retained|review source dates|research retained in this session/i.test(company.description)?{description:seed.description}:{}),...(newestOffering?{offeringStatus:seed.offeringStatus,minInvestment:seed.minInvestment,statusEvidence:seed.statusEvidence,minimumEvidence:seed.minimumEvidence,lastCheckedAt:seed.lastCheckedAt}:{}),sourceUrls:[...new Set([...(seed?.sourceUrls||[]),...company.sourceUrls])]});
   }
   return [...merged.values()];
 }

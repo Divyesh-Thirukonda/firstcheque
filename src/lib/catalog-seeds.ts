@@ -1,3 +1,8 @@
+import financialRecords from "@/data/seed-financials.json";
+import {companyFinancials} from "./company-financials";
+import type {CompanyFinancials} from "./company-profile-types";
+import logoRecords from "@/data/company-logos.json";
+import type {CompanyLogoInfo} from "./company-profile-types";
 import venture from "@/data/venture-companies.json";
 import handoff from "@/data/event-handoff.json";
 import { OFFERING_SEEDS } from "./offering-seeds";
@@ -17,4 +22,4 @@ export const EVENT_COMPANIES: DiscoveryCompany[] = handoff.profiles.map(profile 
   };
 });
 /** Review/history records and unidentified founder leads are deliberately not published as companies. */
-export const CATALOG_SEEDS: DiscoveryCompany[] = [...VENTURE_COMPANIES,...EVENT_COMPANIES,...OFFERING_SEEDS];
+export const CATALOG_SEEDS: DiscoveryCompany[] = [...VENTURE_COMPANIES,...EVENT_COMPANIES,...OFFERING_SEEDS].map(company=>({...company,logo:(logoRecords as Record<string,CompanyLogoInfo>)[company.id],financials:companyFinancials({...company,financials:(financialRecords as unknown as Record<string,CompanyFinancials>)[company.id]})}));
