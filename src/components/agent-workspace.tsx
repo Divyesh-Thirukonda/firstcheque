@@ -2,6 +2,9 @@
 import { useEffect, useRef, useState, type KeyboardEvent } from "react";
 import { ArrowRight, ArrowUpRight, Check, CheckCircle2, ChevronDown, Circle, FileSearch, FileText, FolderOpen, Globe2, Link2, LoaderCircle, MessageSquare, PanelLeftClose, Plus, Search, ShieldCheck, Sparkles, Square, Target, TriangleAlert } from "lucide-react";
 import type { DiligenceRequest, DiligenceSource, DiligenceStep, DiligenceStreamEvent, LiveDiligenceResult, LiveInvestorThesis } from "@/lib/live-research-types";
+import type { DiscoveryCompany } from "@/lib/discovery-types";
+import { CompanyOverview } from "./company-overview";
+import type { CompanyEntry } from "./company-list";
 import type { SearchMessage } from "@/lib/search-threads";
 import { WorkspaceDialog } from "./workspace-dialog";
 
@@ -35,13 +38,15 @@ function Citations({ ids, sources, onSource, passage }: { ids: string[]; sources
   return <span className="fc-citations">{ids.map(id => { const index = sources.findIndex(source => source.id === id); const source = sources[index]; return source ? <button key={id} onClick={() => onSource(source, passage)} aria-label={`Read source ${index + 1}: ${source.title}`}>Source {index + 1}</button> : null; })}</span>;
 }
 
-export function AgentWorkspace({ companies, preferences, reports, selectedId, initialUrl, messages, threadId, onMessage, onSelect, onResult, onClearInitialUrl, onBack }: {
+export function AgentWorkspace({ companies, preferences, reports, selectedId, initialUrl, messages, threadId, onMessage, onSelect, onResult, onClearInitialUrl, onBack, companyDetails, fit, savedIds, onSaveCompany }: {
+  companyDetails?: DiscoveryCompany; fit?: Omit<CompanyEntry, "company">; savedIds: string[]; onSaveCompany: (id: string) => void;
   companies: AgentCompany[]; preferences: LiveInvestorThesis; reports: LiveDiligenceResult[];
   selectedId: string | null; initialUrl: string; messages: SearchMessage[]; threadId: string;
   onMessage: (threadId: string, message: SearchMessage) => void;
   onSelect: (id: string | null) => void; onResult: (result: LiveDiligenceResult) => void;
   onClearInitialUrl: () => void; onBack: () => void;
 }) {
+  const [companyTab, setCompanyTab] = useState<"Overview" | "Research">(companyDetails ? "Overview" : "Research");
   const [question, setQuestion] = useState("");
   const [url, setUrl] = useState(initialUrl);
   const [reportTab, setReportTab] = useState<"Report" | "Financials" | "Sources">("Report");
@@ -71,7 +76,7 @@ export function AgentWorkspace({ companies, preferences, reports, selectedId, in
   function receive(event: DiligenceStreamEvent) {
     if (event.type === "progress") setSteps(current => current.some(step => step.id === event.step.id) ? current.map(step => step.id === event.step.id ? event.step : step) : [...current, event.step]);
     else if (event.type === "result") {
-      onResult(event.result); onSelect(event.result.companyId); setReportTab("Report");
+      onResult(event.result); onSelect(event.result.companyId); setReportTab("Report"); setCompanyTab("Research");
       const status = event.result.mode === "live-web" ? "Your cited research report is ready." : event.result.mode === "sources-only" ? "Sources were collected, but a complete AI memo was unavailable. The retained evidence and limitations are shown." : "Research could not be completed. The report explains what was unavailable.";
       onMessage(threadId, { id: `${event.result.id}-answer`, role: "assistant", text: `${event.result.company.name}: ${status}`, companyId: event.result.companyId, reportId: event.result.id, kind: "research", error: event.result.status === "unavailable" });
     } else throw new Error(event.error);
@@ -113,8 +118,9 @@ export function AgentWorkspace({ companies, preferences, reports, selectedId, in
           <span className="fc-editor-label">{report?.persisted ? <><Check size={13}/>Saved</> : report ? "Unsaved report" : "Research workspace"}</span>
           <button className={`fc-agent-pane-toggle ${agentOpen ? "active" : ""}`} onClick={() => setAgentOpen(!agentOpen)} aria-expanded={agentOpen} aria-controls="research-agent-pane"><MessageSquare size={15}/><span>{agentOpen ? "Hide agent" : "Ask agent"}</span></button>
         </div>
+        {companyDetails ? <nav className="fc-company-subnav" aria-label="Company views"><button aria-pressed={companyTab === "Overview"} className={companyTab === "Overview" ? "active" : ""} onClick={() => setCompanyTab("Overview")}>Overview</button><button aria-pressed={companyTab === "Research"} className={companyTab === "Research" ? "active" : ""} onClick={() => setCompanyTab("Research")}>Research{report ? <span>{report.sources.filter(source => source.status === "fetched").length} sources</span> : null}</button></nav> : null}
         <div className="fc-report-scroll">
-          {report ? (
+          {companyDetails && companyTab === "Overview" ? <CompanyOverview company={companyDetails} report={report} fit={fit} saved={savedIds.includes(companyDetails.id)} onSave={() => onSaveCompany(companyDetails.id)} onResearch={() => { setCompanyTab("Research"); if (!report) { setAgentOpen(true); void research(); } }}/> : report ? (
             <ResearchReport
               report={report}
               tab={reportTab}
@@ -239,7 +245,7 @@ function ClaimEvidence({ claim, sources, onSource }: { claim: LiveDiligenceResul
   );
 }
 
-function ResearchReport({ report, tab, onTab, onSource, offeringUrl, platform, running, onRetry }: { report: LiveDiligenceResult; tab: typeof reportTabs[number]; onTab: (tab: typeof reportTabs[number]) => void; onSource: (source: DiligenceSource, passage?: string | null) => void; offeringUrl?: string | null; platform?: string | null; running: boolean; onRetry: () => void }) {
+export function ResearchReport({ report, tab, onTab, onSource, offeringUrl, platform, running, onRetry }: { report: LiveDiligenceResult; tab: typeof reportTabs[number]; onTab: (tab: typeof reportTabs[number]) => void; onSource: (source: DiligenceSource, passage?: string | null) => void; offeringUrl?: string | null; platform?: string | null; running: boolean; onRetry: () => void }) {
   const readableSources = report.sources.filter(source => source.status === "fetched").length;
   const attemptedSources = report.sources.length;
   const companySource = report.sources.find(source => source.status === "fetched" && source.officialCompanySource && safeWebUrl(source.url) && new URL(source.url).pathname === "/") || report.sources.find(source => source.status === "fetched" && source.officialCompanySource);

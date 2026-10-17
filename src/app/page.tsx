@@ -9,7 +9,8 @@ import type { LiveDiligenceResult } from "@/lib/live-research-types";
 import { appendSearchMessage, createSearchThread, hydrateSearchThreads, isDiscoveryPreferences, selectThreadCompany, updateSearchThreadPreferences, type SearchMessage, type SearchThread } from "@/lib/search-threads";
 import { safeWebUrl } from "@/components/agent-workspace";
 import { SearchWorkspace } from "@/components/search-workspace";
-import { CompanyList, readableFilterReason, formatUSD as currency } from "@/components/company-list";
+import { CompanyProfile } from "@/components/company-profile";
+import { CompanyList, formatUSD as currency } from "@/components/company-list";
 import { InvestmentPreferences, riskLabel, revenueLabel, type BriefProposal } from "@/components/investment-preferences";
 import { WorkspaceDialog } from "@/components/workspace-dialog";
 
@@ -18,7 +19,7 @@ type View = "Discover" | "Agent" | "Watchlist" | "Portfolio";
 type ReviewIntent = { kind: "new" } | { kind: "refine"; threadId: string };
 const STORAGE_KEY = "firstcheque.live-workspace.v1";
 const SEARCH_STORAGE_KEY = "firstcheque.searches.v1";
-const preferenceKey = (value: DiscoveryPreferences) => { const normalized = { ...value, excludedSectors: value.excludedSectors || [] }; return JSON.stringify(normalized, Object.keys(normalized).sort()); };
+
 const resultIds = (companies: DiscoveryCompany[], preferences: DiscoveryPreferences) => filterAndRankCompanies(companies, preferences).matches.map(({ company }) => company.id);
 function searchCriteriaText(preferences: DiscoveryPreferences) {
   const interests = preferences.sectors.join(", ") || preferences.industries.join(", ") || "all sectors";
@@ -38,6 +39,7 @@ export default function Home() {
   const [threads, setThreads] = useState<SearchThread[]>([]);
   const [activeThreadId, setActiveThreadId] = useState<string | null>(null);
   const [legacyCompanyId, setLegacyCompanyId] = useState<string | null>(null);
+  const [browseCompany, setBrowseCompany] = useState<DiscoveryCompany | null>(null);
   const [catalog, setCatalog] = useState<CatalogResponse | null>(null);
   const [reports, setReports] = useState<LiveDiligenceResult[]>([]);
   const [reportsLoading, setReportsLoading] = useState(true);
@@ -57,7 +59,6 @@ export default function Home() {
   const [importOpen, setImportOpen] = useState(false);
   const [importUrl, setImportUrl] = useState("");
   const [helpOpen, setHelpOpen] = useState(false);
-  const [excludedOpen, setExcludedOpen] = useState(false);
   const [toast, setToast] = useState("");
   const [sort, setSort] = useState("fit");
   const companies = catalog?.companies || [];
@@ -68,9 +69,8 @@ export default function Home() {
   const entries = view === "Watchlist" ? savedCompanies.filter(company => `${company.name} ${company.description}`.toLowerCase().includes(catalogQuery.toLowerCase())).map(company => {
     const match = ranked.matches.find(item => item.company.id === company.id);
     return { company, reasons: match?.reasons || [], score: match?.score, warnings: match?.warnings || ranked.excluded.find(item => item.company.id === company.id)?.reasons || [] };
-  }) : ranked.matches;
+  }) : companies.filter(company => `${company.name} ${company.description} ${company.sectors.join(" ")}`.toLowerCase().includes(catalogQuery.toLowerCase())).map(company => { const match = ranked.matches.find(item => item.company.id === company.id); return { company, reasons: match?.reasons || [], score: match?.score, warnings: match?.warnings || ranked.excluded.find(item => item.company.id === company.id)?.reasons || [] }; });
   const visibleEntries = [...entries].sort((a, b) => sort === "name" ? a.company.name.localeCompare(b.company.name) : sort === "minimum" ? (a.company.minInvestment ?? Infinity) - (b.company.minInvestment ?? Infinity) : 0);
-  const perCompany = Math.min(preferences.budget * preferences.maxAllocationPct / 100, preferences.maxMinimumCheck ?? Infinity);
 
   const loadCatalog = useCallback(async () => {
     setLoading(true);
@@ -172,17 +172,14 @@ export default function Home() {
     setInitialUrl("");
     setView("Agent");
   }
-  function openCompany(company: DiscoveryCompany) {
-    const context = { ...browsePreferences };
-    const existing = threads.find(thread => preferenceKey(thread.preferences) === preferenceKey(context));
-    if (existing) {
-      setThreads(current => current.map(thread => thread.id === existing.id ? selectThreadCompany(thread, company.id) : thread));
-      setActiveThreadId(existing.id);
-    } else {
-      const thread = createSearchThread(context, resultIds(companies, context), company.id);
-      setThreads(current => [thread, ...current]);
-      setActiveThreadId(thread.id);
-    }
+  function openCompany(company: DiscoveryCompany) { setBrowseCompany(company); }
+  function startCompanyResearch(company: DiscoveryCompany) {
+    const context = { ...preferences, query: company.name, thesis: `Research ${company.name}. Investigate its business, founders, competition, financials, and risks.` };
+    const existing = threads.find(thread => thread.brief === context.thesis);
+    const thread = existing ? selectThreadCompany(existing, company.id) : recordSearch(createSearchThread(context, resultIds(companies, context), company.id), context.thesis);
+    setThreads(current => existing ? current.map(item => item.id === thread.id ? thread : item) : [thread, ...current]);
+    setActiveThreadId(thread.id);
+    setBrowseCompany(null);
     setInitialUrl("");
     setView("Agent");
     window.scrollTo({ top: 0 });
@@ -297,7 +294,6 @@ export default function Home() {
 
   if (demoView) return <DemoWorkspace initialView={demoView} onExit={() => setDemoView(null)}/>;
   const nav = [{ title: "Discover", icon: Compass }, { title: "Agent", icon: Sparkles }, { title: "Watchlist", icon: Bookmark }, { title: "Portfolio", icon: Wallet }] as const;
-  const interests = preferences.sectors.length ? preferences.sectors.join(", ") : preferences.industries.length ? preferences.industries.join(", ") : "All sectors";
 
   return <div className="fc-workspace">
     <a className="skip-link" href="#fc-main">Skip to main content</a>
@@ -325,7 +321,7 @@ export default function Home() {
       <main id="fc-main" tabIndex={-1} className={view === "Agent" ? "fc-agent-main" : "fc-main-content"}>
         {view === "Agent" ? <SearchWorkspace threads={threads} activeThread={activeThread} companies={companies} reports={reports} reportsLoading={reportsLoading} savedIds={watchlist} initialUrl={initialUrl} loading={loading} catalogError={catalogError} onSelectThread={selectSearch} onNewSearch={newSearch} onAddCompany={() => setImportOpen(true)} onRefine={refineSearch} onRefresh={refreshSearch} onSelectCompany={selectCompany} onSave={toggleSave} onMessage={receivedMessage} onResult={receivedResult} onClearInitialUrl={clearInitialUrl}/> : <>
           <div className="fc-page-heading">
-            <div><h1>{view === "Discover" ? "Discover startups" : view === "Watchlist" ? "Your watchlist" : "Your workspace"}</h1><p>{view === "Discover" ? "Start with what you’re looking for. Keep every result and follow-up in one search." : view === "Watchlist" ? "Your saved companies, even when your preferences change." : "Keep track of your research and practice with a paper portfolio."}</p></div>
+            <div><h1>{view === "Discover" ? "Discover startups" : view === "Watchlist" ? "Your watchlist" : "Your workspace"}</h1><p>{view === "Discover" ? "Explore startups. Research the ones that interest you." : view === "Watchlist" ? "Your saved companies, even when your preferences change." : "Keep track of your research and practice with a paper portfolio."}</p></div>
             <button className="fc-btn secondary" onClick={() => setImportOpen(true)}><Plus size={18}/>Add a company</button>
           </div>
 
@@ -338,33 +334,31 @@ export default function Home() {
             {view === "Discover" ? <>
               <form className="fc-brief-card" onSubmit={parseBrief}>
                 <label className="fc-brief-title" htmlFor="investing-brief">What are you looking for?</label>
-                <textarea id="investing-brief" aria-label="Your investment brief" value={brief} maxLength={1200} onChange={event => setBrief(event.target.value)} placeholder={"I have $2,000 to invest in AI or climate startups.\nI prefer companies with annual revenue."}/>
-                <div className="fc-brief-bottom"><span>You’ll review the filters, then open a search.</span><button className="fc-btn primary" type="submit" disabled={parsing}>{parsing ? <LoaderCircle size={17} className="spin"/> : null}{parsing ? "Reading your brief…" : "Find companies"}<ArrowRight size={17}/></button></div>
+                <textarea id="investing-brief" aria-label="Your investment brief" value={brief} maxLength={1200} onChange={event => setBrief(event.target.value)} placeholder="I have $2,000 for AI startups with revenue."/>
+                <div className="fc-brief-bottom"><div className="fc-brief-controls"><button type="button" className="fc-text-btn" onClick={editPreferences}><Settings2 size={15}/>Choose filters</button><span>Review before you start.</span></div><button className="fc-btn primary" type="submit" disabled={parsing}>{parsing ? <LoaderCircle size={17} className="spin"/> : null}{parsing ? "Reading your brief…" : "Find companies"}<ArrowRight size={17}/></button></div>
                 {briefError ? <p className="fc-inline-error" role="alert">{briefError}</p> : null}
               </form>
-              <section className="fc-criteria-strip" aria-label="Preferences for a new search">
-                <dl><div><dt>Budget</dt><dd>{currency(preferences.budget)}<small>{riskLabel(preferences.riskAppetite)} risk</small></dd></div><div><dt>Per company</dt><dd>Up to {currency(perCompany)}</dd></div><div><dt>Interests</dt><dd>{interests}</dd></div><div><dt>Revenue</dt><dd>{revenueLabel(preferences.revenueRequirement)}</dd></div></dl>
-                <button className="fc-text-btn" onClick={editPreferences}>Choose filters<Settings2 size={16}/></button>
-              </section>
+
             </> : null}
 
             <div className="fc-results-heading">
               <h2>{view === "Watchlist" ? "Saved companies" : "Explore the catalog"}<span className="fc-count">{visibleEntries.length}</span></h2>
-              <label className="fc-sort">Sort by<select aria-label="Sort companies" value={sort} onChange={event => setSort(event.target.value)}><option value="fit">Best filter fit</option><option value="name">Name</option><option value="minimum">Minimum investment</option></select></label>
+              <label className="fc-sort">Sort by<select aria-label="Sort companies" value={sort} onChange={event => setSort(event.target.value)}><option value="fit">Catalog order</option><option value="name">Name</option><option value="minimum">Minimum investment</option></select></label>
             </div>
-            {loading && !catalog ? <div className="fc-loading-state"><LoaderCircle className="spin" size={24}/><p>Loading companies…</p></div> : catalogError ? <div className="fc-empty-state"><TriangleAlert size={28}/><h2>We couldn’t load the companies</h2><p>{catalogError}</p><button className="fc-btn secondary" onClick={() => loadCatalog()}>Try again</button></div> : visibleEntries.length ? <CompanyList entries={visibleEntries} savedIds={watchlist} onSave={toggleSave} onResearch={openCompany}/> : <div className="fc-empty-state"><Search size={28}/><h2>{view === "Watchlist" ? "No saved companies yet" : "No companies match all your filters"}</h2><p>{view === "Watchlist" ? "Save a company from Discover to start your shortlist." : "Some companies have missing evidence. Review the exclusions below or change the search filters."}</p><button className="fc-btn secondary" onClick={() => view === "Watchlist" ? navigate("Discover") : editPreferences()}>{view === "Watchlist" ? "Explore companies" : "Choose filters"}<ArrowRight size={17}/></button></div>}
+            {loading && !catalog ? <div className="fc-loading-state"><LoaderCircle className="spin" size={24}/><p>Loading companies…</p></div> : catalogError ? <div className="fc-empty-state"><TriangleAlert size={28}/><h2>We couldn’t load the companies</h2><p>{catalogError}</p><button className="fc-btn secondary" onClick={() => loadCatalog()}>Try again</button></div> : visibleEntries.length ? <CompanyList entries={visibleEntries} savedIds={watchlist} onSave={toggleSave} onResearch={openCompany}/> : <div className="fc-empty-state"><Search size={28}/><h2>{view === "Watchlist" ? "No saved companies yet" : "No companies found"}</h2><p>{view === "Watchlist" ? "Save a company from Discover to start your shortlist." : "Try a different company name or sector."}</p><button className="fc-btn secondary" onClick={() => view === "Watchlist" ? navigate("Discover") : editPreferences()}>{view === "Watchlist" ? "Explore companies" : "Choose filters"}<ArrowRight size={17}/></button></div>}
 
-            {view === "Discover" && ranked.excluded.length ? <button className="fc-exclusions-summary" onClick={() => setExcludedOpen(true)}><span><strong>{ranked.excluded.length} companies</strong> are outside your filters</span><span>See why<ArrowRight size={17}/></span></button> : null}
-            {view === "Discover" ? <p className="fc-catalog-note">Offering information is a dated snapshot. Check current terms at the source.</p> : null}
+
+            {view === "Discover" ? <p className="fc-catalog-note">Browsing the full catalog. Start a search to apply your filters. Offering information is a dated snapshot.</p> : null}
           </>}
           <footer className="fc-page-footer"><ShieldCheck size={16}/><span>Research only. Investment terms and eligibility are checked at the original platform.</span></footer>
         </>}
       </main>
     </div>
 
+    {browseCompany ? <CompanyProfile key={browseCompany.id} company={browseCompany} report={reports.find(report => report.companyId === browseCompany.id) || null} saved={watchlist.includes(browseCompany.id)} onSave={() => toggleSave(browseCompany.id)} onResearch={() => startCompanyResearch(browseCompany)} onClose={() => setBrowseCompany(null)}/> : null}
     {prefsOpen ? <InvestmentPreferences preferences={proposal?.preferences || reviewPreferences} proposal={proposal} validate={isDiscoveryPreferences} title={reviewIntent.kind === "refine" ? "Refine this search" : "Review your search"} submitLabel={reviewIntent.kind === "refine" ? "Update search" : "Start search"} onClose={() => { setPrefsOpen(false); setProposal(null); }} onSave={saveSearch}/> : null}
     {importOpen ? <WorkspaceDialog title="Add a company to research" subtitle="Paste a website to research it within a search." onClose={() => setImportOpen(false)}><form onSubmit={importCompany}><label className="fc-field"><span>Company website</span><input type="url" required placeholder="https://company.com" value={importUrl} onChange={event => setImportUrl(event.target.value)}/></label><p className="fc-preference-footnote">You’ll choose a research question next. Adding a company doesn’t mean it has an investment offering.</p><div className="fc-dialog-actions"><button className="fc-btn secondary" type="button" onClick={() => setImportOpen(false)}>Cancel</button><button className="fc-btn primary" type="submit">Continue<ArrowRight size={17}/></button></div></form></WorkspaceDialog> : null}
-    {excludedOpen ? <WorkspaceDialog title="Why companies don’t match" subtitle="You can still research a company that doesn’t meet your filters." onClose={() => setExcludedOpen(false)} wide><div className="fc-excluded-list">{ranked.excluded.map(({ company, reasons }) => <div key={company.id}><div><h3>{company.name}</h3><ul>{reasons.map(reason => <li key={reason}>{readableFilterReason(reason)}</li>)}</ul></div><button className="fc-btn secondary" onClick={() => { setExcludedOpen(false); openCompany(company); }}>{company.dossierId ? "View research" : "Research company"}<ArrowRight size={16}/></button></div>)}</div></WorkspaceDialog> : null}
+
     {helpOpen ? <WorkspaceDialog title="How FirstCheque works" onClose={() => setHelpOpen(false)}><ol className="fc-help-steps"><li><strong>Start a search</strong><p>Describe your budget, interests, and requirements. Review the filters to create your search.</p></li><li><strong>Research within that search</strong><p>Explore its results, open company reports, and refine the same search as you learn.</p></li><li><strong>Continue at the source</strong><p>Review current offering terms and eligibility on the original platform.</p></li></ol><p className="fc-preference-footnote">Your searches stay in this browser. FirstCheque does not hold money or execute trades. The paper demo uses fictional companies.</p><div className="fc-dialog-actions"><button className="fc-btn primary" onClick={() => setHelpOpen(false)}>Got it</button></div></WorkspaceDialog> : null}
     {toast ? <div className="fc-toast" role="status"><Check size={17}/>{toast}</div> : null}
   </div>;

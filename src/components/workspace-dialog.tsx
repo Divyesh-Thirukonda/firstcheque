@@ -2,7 +2,7 @@
 import { useEffect, useRef, type ReactNode } from "react";
 import { X } from "lucide-react";
 
-export function WorkspaceDialog({ title, subtitle, onClose, children, wide = false }: { title: string; subtitle?: string; onClose: () => void; children: ReactNode; wide?: boolean }) {
+export function WorkspaceDialog({ title, subtitle, onClose, children, wide = false, className = "" }: { title: string; subtitle?: string; onClose: () => void; children: ReactNode; wide?: boolean; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
   const close = useRef(onClose);
   useEffect(() => { close.current = onClose; }, [onClose]);
@@ -24,5 +24,5 @@ export function WorkspaceDialog({ title, subtitle, onClose, children, wide = fal
     document.addEventListener("keydown", keydown);
     return () => { document.body.style.overflow = overflow; document.removeEventListener("keydown", keydown); previous?.focus(); };
   }, []);
-  return <div className="fc-overlay" onMouseDown={event => { if (event.target === event.currentTarget) onClose(); }}><div className={`fc-dialog ${wide ? "fc-dialog-wide" : ""}`} role="dialog" aria-modal="true" aria-label={title} ref={ref} tabIndex={-1}><div className="fc-dialog-heading"><div><h2>{title}</h2>{subtitle ? <p>{subtitle}</p> : null}</div><button className="fc-icon-btn" onClick={onClose} aria-label={`Close ${title}`}><X size={19}/></button></div>{children}</div></div>;
+  return <div className="fc-overlay" onMouseDown={event => { if (event.target === event.currentTarget) onClose(); }}><div className={`fc-dialog ${wide ? "fc-dialog-wide" : ""} ${className}`} role="dialog" aria-modal="true" aria-label={title} ref={ref} tabIndex={-1}><div className="fc-dialog-heading"><div><h2>{title}</h2>{subtitle ? <p>{subtitle}</p> : null}</div><button className="fc-icon-btn" onClick={onClose} aria-label={`Close ${title}`}><X size={19}/></button></div>{children}</div></div>;
 }

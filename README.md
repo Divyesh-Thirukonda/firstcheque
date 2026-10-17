@@ -6,10 +6,10 @@ The main **Discover → Agent workspace** flow uses real company sources. A sepa
 
 ## Real-company workflow
 
-1. Describe your budget, interests and requirements; review the filters and start a search.
-2. Each search keeps its own criteria, catalog results and conversation. Refine that search as you learn, or start a separate one with fresh filters.
-3. Open company reports inside the search, or add a company website to the same search. Return to Results to explore another company.
-4. Inspect source retrieval, synthesis and validation, then read cited passages, dates, financial fields and unanswered questions. Shared company dossiers can be reused across searches.
+1. Browse the full sourced catalog as compact company tiles: official website icon or initials, name, short business description and starting check. Tiles are reused in search results, Watchlist, and Portfolio.
+2. Click a tile to open the company profile: business description, offering terms, financial unknowns, sources and existing research. Browsing from Discover or Watchlist does not create a search.
+3. Describe your budget, interests and requirements; review the filters and start a search. Each search keeps its own criteria, strictly filtered results and conversation.
+4. Open company profiles and research inside that search, or add a company website. Refine the same search as you learn; New search starts with fresh criteria. Source passages, dates and unanswered questions remain inspectable.
 
 The catalog starts with ten manually checked primary-source snapshots: nine pages reporting active offerings and one closed campaign. These are **not a live platform feed**. Status timestamps, original URLs and unknown terms are visible. Unknown individual minimums do not pass a strict budget check. Researching a company does not establish that it currently offers securities. See [offering provenance](docs/OFFERING-SOURCES.md).
 
