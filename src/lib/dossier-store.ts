@@ -119,7 +119,8 @@ export async function catalogSnapshot(seeds:DiscoveryCompany[]):Promise<CatalogR
 export function mergeCatalogCompanies(seeds:DiscoveryCompany[],stored:DiscoveryCompany[]):DiscoveryCompany[]{
   const merged=new Map(seeds.map(company=>[company.id,company]));
   for(const company of stored){
-    const seed=merged.get(company.id)||seeds.find(candidate=>identity(candidate.website)===identity(company.website));
+    const key=identity(company.website);
+    const seed=merged.get(company.id)||(key?seeds.find(candidate=>identity(candidate.website)===key):undefined);
     const newestOffering=seed&&Date.parse(seed.lastCheckedAt)>Date.parse(company.lastCheckedAt);
     const profile=seed?.catalogOrigin ? {reportedMetrics:seed.reportedMetrics,profileFieldSources:seed.profileFieldSources,catalogOrigin:seed.catalogOrigin,founders:seed.founders,capabilities:seed.capabilities,audience:seed.audience,businessModel:seed.businessModel,headquarters:seed.headquarters,foundedYear:seed.foundedYear,funding:seed.funding,profileNotes:seed.profileNotes,profileSources:seed.profileSources,profileCheckedAt:seed.profileCheckedAt,stage:seed.stage,industry:seed.industry,sectors:seed.sectors} : {};
     // Preserve a legacy saved ID so existing watchlists and search/report links still resolve.

@@ -47,5 +47,7 @@ test("completed funding rounds never pass the open-offering filter; contracted a
 test("live reports enrich seeded companies by website without duplicate cards, lost facts or a stale ARR qualifier",()=>{
   const seed=VENTURE_COMPANIES.find(company=>company.name==="Pentera")!;
   const saved={...seed,id:"legacy-pentera",website:"https://www.pentera.io/",description:"Public source evidence is retained",arr:150000000,arrComparison:undefined,researchStatus:"complete" as const,dossierId:"dossier-legacy-pentera"};
+  const unnamed={...seed,id:"unrelated",website:"",name:"Unrelated"};
+  assert.equal(mergeCatalogCompanies([{...seed,website:""}],[unnamed]).length,2);
   const merged=mergeCatalogCompanies([seed],[saved]);assert.equal(merged.length,1);assert.equal(merged[0].id,"legacy-pentera");assert.equal(merged[0].arrComparison,undefined);assert.equal(merged[0].description,seed.description);assert.equal(merged[0].funding?.stage,"Series D");assert.ok(merged[0].capabilities?.length);
 });
