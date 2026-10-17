@@ -317,9 +317,19 @@ test("PillPilot's observed official-domain redirect merges a live .com report in
   const seed = EVENT_COMPANIES.find((company) => company.name === "PillPilot")!;
   assert.equal(seed.website, "https://www.pillpilot.com/");
   const merged = mergeCatalogCompanies(EVENT_COMPANIES, [
-    { ...seed, id: "live-pillpilot", commercialSignals: [] },
+    {
+      ...seed,
+      id: "live-pillpilot",
+      industry: "Other",
+      sectors: [],
+      commercialSignals: [],
+    },
   ]);
   assert.equal(merged.length, 75);
+  assert.equal(
+    merged.find((company) => company.name === "PillPilot")?.industry,
+    "Healthcare",
+  );
   assert.equal(
     merged.filter((company) => company.name === "PillPilot").length,
     1,
