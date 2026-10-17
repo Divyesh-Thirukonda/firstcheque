@@ -1,0 +1,32 @@
+{
+  "deploymentId": "dpl_EnWmZhiWTbSqubgkuCUBZxvhmEDq",
+  "sourceSha": "fa9bb482f6d236119cd3c0bc2923ff24fe5101d8",
+  "protectedUrl": "https://firstcheque-279dg3a87-divyesh-thirukondas-projects.vercel.app",
+  "environment": "preview",
+  "ready": true,
+  "projectSsoProtectionRetained": true,
+  "guestAccess": {
+    "deploymentScoped": true,
+    "expiresAt": "2026-10-18T14:10:45Z",
+    "tokenPublished": false,
+    "previousTestShareRevoked": true
+  },
+  "health": {
+    "httpStatus": 200,
+    "nicrronConfigured": true,
+    "prismConfigured": true
+  },
+  "researchSmoke": {
+    "httpStatus": 200,
+    "mode": "live",
+    "provider": "Nicrron",
+    "model": "nicrron/auto",
+    "traceId": "19b14284-f50a-45c1-84d6-d0d786aedb5b",
+    "latencyMs": 13292,
+    "inputTokens": 3486,
+    "outputTokens": 1319,
+    "localGroundingScore": 100,
+    "liveError": null
+  },
+  "interpretation": "Post-benchmark operational smoke; excluded from the frozen50-case-per-version comparison. Local validation is not independent verification of fictional company facts."
+}

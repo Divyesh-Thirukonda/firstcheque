@@ -4,6 +4,12 @@
 
 Define your investment thesis, compare fictional pre-seed through Series A companies and local businesses, inspect evidence-backed analyst memos, and build a paper portfolio with budget and concentration checks. A research lab exposes how an analyst can confuse a financial metric and how claim-level grounding catches the mistake.
 
+## Hosted demo
+
+[Open the protected demo](https://firstcheque-279dg3a87-divyesh-thirukondas-projects.vercel.app). Guest judges can use the temporary access link supplied separately in the handoff; it expires October 18, 2026 at 10:10 a.m. Eastern. No access token is stored in this repository.
+
+Deployment source: `fa9bb482f6d236119cd3c0bc2923ff24fe5101d8`. The final cloud check returned a live Nicrron memo with all local grounding checks passing. See `docs/evidence/deployment.json` for the receipt and the separate operational note for the post-benchmark validator fix.
+
 ## Run locally
 
 Requires Node.js 20.9 or newer. Dependencies are pinned in `package-lock.json`.
