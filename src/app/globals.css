@@ -1316,3 +1316,10 @@ dl.fc-card-metrics { display: grid; grid-template-columns: repeat(2, minmax(0, 1
   .fc-catalog-search:focus-within {border-color:#00c805;}
   .fc-catalog-search + .fc-catalog-filters {margin-top:22px;}
 }
+
+/* Seed Street: opposing street signs, kept legible at favicon and nav scale. */
+.ss-brand-mark { display:block; width:28px; height:34px; flex:0 0 auto; color:#00c805; }
+.ss-brand-wordmark { font-size:21px; font-weight:650; letter-spacing:-.85px; line-height:1.2; color:#fff; }
+.fc-brand { gap:9px; }
+.brand { gap:9px; }
+@media(max-width:650px) { .ss-brand-mark {width:27px;height:32px;} }

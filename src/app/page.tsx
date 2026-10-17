@@ -1,6 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import { SeedStreetBrand } from "@/components/seed-street-brand";
 import { useCallback, useEffect, useMemo, useState, type FormEvent } from "react";
 import { ArrowRight, Bookmark, Check, CircleHelp, Compass, FlaskConical, LoaderCircle, Plus, Search, Settings2, ShieldCheck, Sparkles, TriangleAlert, Wallet, TrendingUp, Radar, ArrowUpRight } from "lucide-react";
 import { DEFAULT_DISCOVERY_PREFERENCES, DISCOVERY_INDUSTRIES, DISCOVERY_STAGES, matchesCatalogQuery, filterAndRankCompanies } from "@/lib/discovery";
@@ -324,7 +325,7 @@ export default function Home() {
   return <div className="fc-workspace">
     <a className="skip-link" href="#fc-main">Skip to main content</a>
     <aside className="fc-sidebar">
-      <button className="fc-brand" onClick={() => navigate("Discover")} aria-label="FirstCheque home"><span className="brand-mark"/><span>firstcheque<span className="lime">.</span></span></button>
+      <button className="fc-brand" onClick={() => navigate("Discover")} aria-label="Seed Street home"><SeedStreetBrand/></button>
       <nav className="fc-navigation" aria-label="Primary navigation">
         {nav.map(item => <button key={item.title} className={view === item.title ? "active" : ""} aria-current={view === item.title ? "page" : undefined} onClick={() => navigate(item.title)} title={item.title}><item.icon size={21}/><span>{item.title}</span>{item.title === "Watchlist" && watchlist.length ? <span className="fc-nav-count">{watchlist.length}</span> : null}</button>)}
       </nav>
@@ -396,7 +397,7 @@ export default function Home() {
     {prefsOpen ? <InvestmentPreferences preferences={proposal?.preferences || reviewPreferences} proposal={proposal} validate={isDiscoveryPreferences} title="Search filters" focusField={filterFocus} submitLabel={reviewIntent.kind === "refine" ? "Update search" : "Start search"} onClose={() => { setPrefsOpen(false); setProposal(null); }} onSave={saveSearch}/> : null}
     {importOpen ? <WorkspaceDialog title="Add company" onClose={() => setImportOpen(false)}><form onSubmit={importCompany}><label className="fc-field"><span>Company website</span><input type="url" required placeholder="https://company.com" value={importUrl} onChange={event => setImportUrl(event.target.value)}/></label><div className="fc-dialog-actions"><button className="fc-btn secondary" type="button" onClick={() => setImportOpen(false)}>Cancel</button><button className="fc-btn primary" type="submit">Open agent<ArrowRight size={17}/></button></div></form></WorkspaceDialog> : null}
 
-    {helpOpen ? <WorkspaceDialog title="How FirstCheque works" onClose={() => setHelpOpen(false)}><ol className="fc-help-steps"><li><strong>Start a search</strong><p>Describe your budget, interests, and requirements. Review the filters to create your search.</p></li><li><strong>Research within that search</strong><p>Explore its results, open company reports, and refine the same search as you learn.</p></li><li><strong>Continue at the source</strong><p>Review current offering terms and eligibility on the original platform.</p></li></ol><p className="fc-preference-footnote">Your searches stay in this browser. FirstCheque does not hold money or execute trades. The paper demo uses fictional companies.</p><div className="fc-dialog-actions"><button className="fc-btn primary" onClick={() => setHelpOpen(false)}>Got it</button></div></WorkspaceDialog> : null}
+    {helpOpen ? <WorkspaceDialog title="How Seed Street works" onClose={() => setHelpOpen(false)}><ol className="fc-help-steps"><li><strong>Start a search</strong><p>Describe your budget, interests, and requirements. Review the filters to create your search.</p></li><li><strong>Research within that search</strong><p>Explore its results, open company reports, and refine the same search as you learn.</p></li><li><strong>Continue at the source</strong><p>Review current offering terms and eligibility on the original platform.</p></li></ol><p className="fc-preference-footnote">Your searches stay in this browser. Seed Street does not hold money or execute trades. The paper demo uses fictional companies.</p><div className="fc-dialog-actions"><button className="fc-btn primary" onClick={() => setHelpOpen(false)}>Got it</button></div></WorkspaceDialog> : null}
     {toast ? <div className="fc-toast" role="status"><Check size={17}/>{toast}</div> : null}
   </div>;
 }

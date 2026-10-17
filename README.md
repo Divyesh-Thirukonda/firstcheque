@@ -1,4 +1,4 @@
-# FirstCheque
+# Seed Street
 
 **Evidence before conviction.** Discover source-listed private offerings, research a real company website, and retain an inspectable diligence workspace. Built for Money Talks 2, Money Intelligence track.
 
@@ -64,4 +64,4 @@ npm test
 npm run build
 ```
 
-Next.js, React, TypeScript, Tailwind, Vercel AI SDK, Nicrron, PRISM and private Vercel Blob. No money moves in FirstCheque. Real offering terms and eligibility must be checked at the original intermediary; paper allocations exist only in the fictional demo.
+Next.js, React, TypeScript, Tailwind, Vercel AI SDK, Nicrron, PRISM and private Vercel Blob. No money moves in Seed Street. Real offering terms and eligibility must be checked at the original intermediary; paper allocations exist only in the fictional demo.
